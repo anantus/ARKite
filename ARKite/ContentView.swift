@@ -18,7 +18,7 @@ class ViewModel: ObservableObject {
     var onStartBoost: () -> Void = { }
 }
 
-//New Comment
+//New Comment AHAH
 struct ContentView : View {
     
     let vm = ViewModel()
