@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealityKit
+import ARKit
 
 class ViewModel: ObservableObject {
     
@@ -221,19 +222,37 @@ struct ARViewContainer: UIViewRepresentable {
         let arView = ARView(frame: .zero)
         
         // Load the "Box" scene from the "Experience" Reality File
-        let mainAnchor = try! Experience.loadFloatingKite()
+        let mainAnchor = try! Experience.loadARKite()
+        let kite = mainAnchor.findEntity(named: "kite")
+        let initialPosition = SIMD3<Float>(0,0,0)
+        
+        var distanceBetweenKite = SIMD3<Float>(0,0,0)
         
         vm.onStartMoveUp = {
             mainAnchor.notifications.moveUp.post()
+            distanceBetweenKite = kite!.position
         }
         vm.onStartMoveDown = {
             mainAnchor.notifications.moveDown.post()
+            distanceBetweenKite = kite!.position
         }
         vm.onStartMoveFront = {
+            //Find kite Angle
             mainAnchor.notifications.moveFront.post()
+            let kiteTravel = kite!.position
+            print(simd_distance(kiteTravel, distanceBetweenKite))
+            let kiteAngle = findAngle(kiteCoordinates: kite!.position, initialCoordinates: initialPosition, kiteDistance: simd_distance(kiteTravel, distanceBetweenKite))
+
+            for _ in 1...Int(kiteAngle){
+                mainAnchor.notifications.frontRotate.post()
+            }
+            
+            print("initial distance", simd_distance(kite!.position, initialPosition))
+
         }
+        
         vm.onStartRotate = {
-            mainAnchor.notifications.kiteRotateClockwise.post()
+            mainAnchor.notifications.moveRotateClockwise.post()
         }
         vm.onStartBoost = {
             mainAnchor.notifications.kiteStart.post()
@@ -247,6 +266,28 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {}
+    
+    func findDistance(kiteCoordinates: SIMD3<Float>, initialCoordinates: SIMD3<Float>) -> Float {
+        let simdDistance = simd_distance(kiteCoordinates, initialCoordinates)
+        print("the distance:\(simdDistance)")
+        return simdDistance
+    }
+    
+    func findAngle(kiteCoordinates: SIMD3<Float>, initialCoordinates: SIMD3<Float>, kiteDistance: Float) -> Float{
+        
+        let radius = simd_distance(kiteCoordinates, initialCoordinates)
+        print("kite distance :",kiteDistance)
+        
+        let cos = 1.00405 / (2 * radius)
+        
+        let acos = acos(cos) * 180 / Float.pi
+        
+        let angle : Float = 90 - acos
+        
+        print("the angle:\(angle)")
+        
+        return angle
+    }
     
 }
 
