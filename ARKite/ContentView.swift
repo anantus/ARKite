@@ -73,7 +73,7 @@ struct ContentView : View {
                     
                     HStack(alignment: .bottom) {
                         Button {
-                            // rotate kite
+                            // TODO: rotate kite
                             vm.onStartRotate()
                         } label: {
                             ZStack(alignment: .top) {
@@ -107,7 +107,8 @@ struct ContentView : View {
                         
                         VStack(spacing: 14) {
                             Button {
-                                // stretch kite
+                                vm.onStartMoveUp()
+                                // TODO: stretch kite
                             } label: {
                                 ZStack(alignment: .top) {
                                     LinearGradient(gradient: Gradient(colors: [Color.init(hex: "9F6B00"), Color.init(hex: "C98A01")]), startPoint: .top, endPoint: .bottom)
@@ -137,7 +138,8 @@ struct ContentView : View {
                             
                             
                             Button {
-                                // pull kite
+                                vm.onStartMoveDown()
+                                // TODO: pull kite
                             } label: {
                                 ZStack(alignment: .top) {
                                     LinearGradient(gradient: Gradient(colors: [Color.init(hex: "D20936"), Color.init(hex: "EA3242")]), startPoint: .top, endPoint: .bottom)
