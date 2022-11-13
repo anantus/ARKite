@@ -223,7 +223,7 @@ struct ARViewContainer: UIViewRepresentable {
         
         let arView = ARView(frame: .zero)
         
-        // Load the "Box" scene from the "Experience" Reality File
+        // Load the "Box" scene from the "Experience" Reality File 
         let mainAnchor = try! Experience.loadARKite()
         let kite = mainAnchor.findEntity(named: "kite")
         let initialPosition = SIMD3<Float>(0,0,0)
