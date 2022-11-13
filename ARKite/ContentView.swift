@@ -24,37 +24,191 @@ struct ContentView : View {
     @State var showContentView: Bool = false
     
     let vm = ViewModel()
+    @State var isStartPlay = false
     
     var body: some View {
-        VStack {
-            ARViewContainer(vm: vm).edgesIgnoringSafeArea(.all)
-            HStack{
-                Spacer()
-                VStack{
-                    Button("MOVE UP"){
-                        vm.onStartMoveUp()
+        ZStack {
+            ARViewContainer(vm: vm)
+            
+            // Buttons UI
+            if isStartPlay {
+                VStack {
+                    HStack {
+                        LinearGradient(gradient: Gradient(colors: [Color.init(hex: "FF6E51"), Color.init(hex: "FF294C")]), startPoint: .top, endPoint: .bottom)
+                            .frame(width: 86, height: 28)
+                            .contentShape(RoundedRectangle(cornerRadius: 3, style: .continuous))
+                            .cornerRadius(3)
+                            .overlay {
+                                Text("End Game")
+                                    .font(.system(.callout, design: .rounded, weight: .semibold))
+                                    .foregroundColor(.white)
+                            }
+                        
+                        Spacer()
+                        
+                        ZStack {
+                            HStack {
+                                RoundedRectangle(cornerRadius: 3)
+                                    .frame(width: 86, height: 28)
+                                    .foregroundColor(.init(hex: "2C2C2C"))
+                                    .overlay {
+                                        Text("25")
+                                            .font(.system(.callout, design: .rounded, weight: .semibold))
+                                            .foregroundColor(.white)
+                                    }
+                            } .frame(width: 103, height: 28, alignment: .trailing)
+                            
+                            HStack {
+                                Image("coinIndicatorIcon")
+                                    .frame(width: 34)
+                            }.frame(width: 103, height: 28, alignment: .leading)
+                            
+                        } .frame(width: 103, height: 28, alignment: .center)
+                        
+                        
                     }
-                    .padding()
                     
-                    Button("MOVE DOWN"){
-                        vm.onStartMoveDown()
+                    Spacer()
+                    
+                    HStack(alignment: .bottom) {
+                        Button {
+                            // rotate kite
+                            vm.onStartRotate()
+                        } label: {
+                            ZStack(alignment: .top) {
+                                LinearGradient(gradient: Gradient(colors: [Color.init(hex: "106514"), Color.init(hex: "3C8F49")]), startPoint: .top, endPoint: .bottom)
+                                    .frame(width: 88, height: 89)
+                                    .contentShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
+                                    .cornerRadius(27)
+                                
+                                
+                                LinearGradient(gradient: Gradient(colors: [Color.init(hex: "57BD6A"), Color.init(hex: "39A239")]), startPoint: .top, endPoint: .bottom)
+                                    .frame(width: 82, height: 82)
+                                    .contentShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                                    .cornerRadius(25)
+                                    .overlay {
+                                        VStack(spacing: 8) {
+                                            Image(systemName: "arrow.clockwise")
+                                                .font(.title)
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.white)
+                                            
+                                            Text("ROTATE")
+                                                .font(.system(.subheadline, design: .rounded, weight: .heavy))
+                                                .foregroundColor(.white)
+                                        }
+                                    }
+                            }
+                        }
+                        
+                        
+                        Spacer()
+                        
+                        VStack(spacing: 14) {
+                            Button {
+                                // stretch kite
+                            } label: {
+                                ZStack(alignment: .top) {
+                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "9F6B00"), Color.init(hex: "C98A01")]), startPoint: .top, endPoint: .bottom)
+                                        .frame(width: 88, height: 89)
+                                        .contentShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
+                                        .cornerRadius(27)
+                                    
+                                    
+                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "F4DB05"), Color.init(hex: "F4970E")]), startPoint: .top, endPoint: .bottom)
+                                        .frame(width: 82, height: 82)
+                                        .contentShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                                        .cornerRadius(25)
+                                        .overlay {
+                                            VStack(spacing: 8) {
+                                                Image(systemName: "chevron.up")
+                                                    .font(.title)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(.white)
+                                                
+                                                Text("STRETCH")
+                                                    .font(.system(.subheadline, design: .rounded, weight: .heavy))
+                                                    .foregroundColor(.white)
+                                            }
+                                        }
+                                }
+                            }
+                            
+                            
+                            Button {
+                                // pull kite
+                            } label: {
+                                ZStack(alignment: .top) {
+                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "D20936"), Color.init(hex: "EA3242")]), startPoint: .top, endPoint: .bottom)
+                                        .frame(width: 88, height: 89)
+                                        .contentShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
+                                        .cornerRadius(27)
+                                    
+                                    
+                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "FF6E51"), Color.init(hex: "FF294C")]), startPoint: .top, endPoint: .bottom)
+                                        .frame(width: 82, height: 82)
+                                        .contentShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                                        .cornerRadius(25)
+                                        .overlay {
+                                            VStack(spacing: 8) {
+                                                Text("PULL")
+                                                    .font(.system(.subheadline, design: .rounded, weight: .heavy))
+                                                    .foregroundColor(.white)
+                                                
+                                                Image(systemName: "chevron.down")
+                                                    .font(.title)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(.white)
+                                            }
+                                        }
+                                }
+                            }
+                            
+                            
+                        }
                     }
-                    Button("FRONT"){
-                        vm.onStartMoveFront()
-                    }
-                    .padding()
-                    Button("ROTATE"){
-                        vm.onStartRotate()
-                    }
-                    .padding()
-                    Button("START"){
+                } .padding()
+            } else {
+                VStack {
+                    Spacer()
+                    
+                    Button {
                         vm.onStartBoost()
+                        
+                        withAnimation {
+                            isStartPlay.toggle()
+                            
+                        }
+                    } label: {
+                        ZStack(alignment: .top) {
+                            LinearGradient(gradient: Gradient(colors: [Color.init(hex: "9F6B00"), Color.init(hex: "C98A01")]), startPoint: .top, endPoint: .bottom)
+                                .frame(width: 223, height: 65)
+                                .contentShape(RoundedRectangle(cornerRadius: 31, style: .continuous))
+                                .cornerRadius(31)
+                            
+                            
+                            LinearGradient(gradient: Gradient(colors: [Color.init(hex: "F4DB05"), Color.init(hex: "F4970E")]), startPoint: .top, endPoint: .bottom)
+                                .frame(width: 217, height: 58)
+                                .contentShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
+                                .cornerRadius(28)
+                                .overlay {
+                                    VStack(spacing: 8) {
+                                        Text("FLY")
+                                            .font(.system(.title, design: .rounded, weight: .heavy))
+                                            .foregroundColor(.white)
+                                        
+                                    }
+                                }
+                        }
                     }
-                    .padding()
-                }
+                    
+                    
+                } .padding()
             }
-            .padding()
+            
+            
         }
+        
     }
 }
 
@@ -103,3 +257,31 @@ struct ContentView_Previews : PreviewProvider {
     }
 }
 #endif
+
+
+
+//HStack{
+//    Spacer()
+//    VStack{
+//        Button("MOVE UP"){
+//            vm.onStartMoveUp()
+//        }
+//        .padding()
+//
+//        Button("MOVE DOWN"){
+//            vm.onStartMoveDown()
+//        }
+//        Button("FRONT"){
+//            vm.onStartMoveFront()
+//        }
+//        .padding()
+//        Button("ROTATE"){
+//            vm.onStartRotate()
+//        }
+//        .padding()
+//        Button("START"){
+//            vm.onStartBoost()
+//        }
+//        .padding()
+//    }
+// }

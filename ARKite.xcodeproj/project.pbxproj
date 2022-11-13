@@ -20,6 +20,7 @@
 		553EFF1E28FD60EF00E54FA1 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1D28FD60EF00E54FA1 /* Experience.rcproject */; };
 		553EFF2028FD60F100E54FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553EFF1F28FD60F100E54FA1 /* Assets.xcassets */; };
 		553EFF2328FD60F100E54FA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553EFF2228FD60F100E54FA1 /* Preview Assets.xcassets */; };
+		56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AEAE7A29211BA8007424F4 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		553EFF1D28FD60EF00E54FA1 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		553EFF1F28FD60F100E54FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		553EFF2228FD60F100E54FA1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		56AEAE7A29211BA8007424F4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		553EFF1828FD60EF00E54FA1 /* ARKite */ = {
 			isa = PBXGroup;
 			children = (
+				56AEAE7C29211BAE007424F4 /* Extensions */,
 				553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */,
 				553EFF1B28FD60EF00E54FA1 /* ContentView.swift */,
 				438F0B22291F753D007551F5 /* NonARView */,
@@ -108,6 +111,14 @@
 				553EFF2228FD60F100E54FA1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		56AEAE7C29211BAE007424F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				56AEAE7A29211BA8007424F4 /* Color+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 				553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */,
 				438F0B26291F7569007551F5 /* SettingView.swift in Sources */,
 				553EFF1E28FD60EF00E54FA1 /* Experience.rcproject in Sources */,
+				56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */,
 				438F0B24291F755F007551F5 /* ChooseKiteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,7 +331,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = Y26BLZ69B8;
+				DEVELOPMENT_TEAM = KFD27J2TGQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -351,7 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = Y26BLZ69B8;
+				DEVELOPMENT_TEAM = KFD27J2TGQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
