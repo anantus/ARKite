@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ChooseKiteView: View {
-    @State var showChooseKite: Bool = false
-    @State var showContentView: Bool = false
+    @Environment(\.presentationMode) var showChooseKite
+    @State var isUsed = false
+//    @State var showChooseKite: Bool = false
+//    @State var showDashboard: Bool = false
     var body: some View {
         VStack{
             ZStack{
@@ -53,12 +55,18 @@ struct ChooseKiteView: View {
                                     .frame(width: 107, height: 135)
                                     .rotationEffect(.degrees(30))
                                     .shadow(radius: 3, y: 3)
-                                NavigationLink(destination: ContentView(), isActive: self.$showContentView, label: {
+                                if isUsed {
+                                    SelectedButton()
+                                } else {
                                     UseButton()
-                                        .onTapGesture {
-                                            self.showContentView = true
-                                        }
-                                })
+                                }
+                                
+//                                isUsed ? SelectedButton() : UseButton()
+                                
+                            }.onTapGesture {
+                                withAnimation {
+                                    isUsed.toggle()
+                                }
                             }
                             .position(x: 75, y: 80)
                         }
@@ -122,63 +130,82 @@ struct ChooseKiteView: View {
                         .padding(.horizontal)
                     }
                     .padding()
-                    HStack{
-                        ZStack{
-                            FrameIjo()
-                            VStack{
-                                Image("KITE 3")
-                                    .resizable()
-                                    .frame(width: 107, height: 135)
-                                    .rotationEffect(.degrees(30))
-                                    .shadow(radius: 3, y: 3)
-                                ZStack{
-                                    Rectangle()
-                                        .fill(LinearGradient(gradient: Gradient(colors: [Color("Kite"), Color("Kite2")]), startPoint: .top, endPoint: .bottom))
-                                        .frame(width: 99, height: 31)
-                                        .cornerRadius(28)
-                                        .shadow(color: Color("KiteShadow"),radius: 2, y: 5)
-                                    StrokeText(text: "1000", width: 1, color: Color("KiteBorder"))
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 17, weight: .heavy, design: .rounded))
-                                        .shadow(color: Color("KiteShadow") ,radius: 2)
-                                    Image("dollar")
-                                        .resizable()
-                                        .frame(width: 39, height: 41)
-                                        .offset(x: -45)
-                                }
-                            }
-                            .position(x: 75, y: 80)
-                        }
-                        .padding()
-                        ZStack{
-                            FrameIjo()
-                            VStack{
-                                Image("KITE 3")
-                                    .resizable()
-                                    .frame(width: 107, height: 135)
-                                    .rotationEffect(.degrees(30))
-                                    .shadow(radius: 3, y: 3)
-                                ZStack{
-                                    Rectangle()
-                                        .fill(LinearGradient(gradient: Gradient(colors: [Color("Kite"), Color("Kite2")]), startPoint: .top, endPoint: .bottom))
-                                        .frame(width: 99, height: 31)
-                                        .cornerRadius(28)
-                                        .shadow(color: Color("KiteShadow"),radius: 2, y: 5)
-                                    StrokeText(text: "2000", width: 1, color: Color("KiteBorder"))
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 17, weight: .heavy, design: .rounded))
-                                        .shadow(color: Color("KiteShadow") ,radius: 2)
-                                    Image("dollar")
-                                        .resizable()
-                                        .frame(width: 39, height: 41)
-                                        .offset(x: -45)
-                                }
-                            }
-                            .position(x: 75, y: 80)
-                        }
-                        .padding(.horizontal)
-                    }
                     .padding()
+                    Button {
+                        self.showChooseKite.wrappedValue.dismiss()
+                    } label: {
+                        
+                        ZStack{
+                            Rectangle()
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color("Settings"), Color("Settings2")]), startPoint: .top, endPoint: .bottom))
+                                .frame(width: 185, height: 65)
+                                .cornerRadius(28)
+                                .shadow(color: Color("SettingShadow"),radius: 2, y: 5)
+                            StrokeText(text: "BACK", width: 1, color: Color("SettingBorder"))
+                                .foregroundColor(.white)
+                                .font(.system(size: 28, weight: .heavy, design: .rounded))
+                                .shadow(color: Color("SettingShadow") ,radius: 2)
+                        }
+                    }
+                                            
+//                    }
+//                    HStack{
+//                        ZStack{
+//                            FrameIjo()
+//                            VStack{
+//                                Image("KITE 3")
+//                                    .resizable()
+//                                    .frame(width: 107, height: 135)
+//                                    .rotationEffect(.degrees(30))
+//                                    .shadow(radius: 3, y: 3)
+//                                ZStack{
+//                                    Rectangle()
+//                                        .fill(LinearGradient(gradient: Gradient(colors: [Color("Kite"), Color("Kite2")]), startPoint: .top, endPoint: .bottom))
+//                                        .frame(width: 99, height: 31)
+//                                        .cornerRadius(28)
+//                                        .shadow(color: Color("KiteShadow"),radius: 2, y: 5)
+//                                    StrokeText(text: "1000", width: 1, color: Color("KiteBorder"))
+//                                        .foregroundColor(.white)
+//                                        .font(.system(size: 17, weight: .heavy, design: .rounded))
+//                                        .shadow(color: Color("KiteShadow") ,radius: 2)
+//                                    Image("dollar")
+//                                        .resizable()
+//                                        .frame(width: 39, height: 41)
+//                                        .offset(x: -45)
+//                                }
+//                            }
+//                            .position(x: 75, y: 80)
+//                        }
+//                        .padding()
+//                        ZStack{
+//                            FrameIjo()
+//                            VStack{
+//                                Image("KITE 3")
+//                                    .resizable()
+//                                    .frame(width: 107, height: 135)
+//                                    .rotationEffect(.degrees(30))
+//                                    .shadow(radius: 3, y: 3)
+//                                ZStack{
+//                                    Rectangle()
+//                                        .fill(LinearGradient(gradient: Gradient(colors: [Color("Kite"), Color("Kite2")]), startPoint: .top, endPoint: .bottom))
+//                                        .frame(width: 99, height: 31)
+//                                        .cornerRadius(28)
+//                                        .shadow(color: Color("KiteShadow"),radius: 2, y: 5)
+//                                    StrokeText(text: "2000", width: 1, color: Color("KiteBorder"))
+//                                        .foregroundColor(.white)
+//                                        .font(.system(size: 17, weight: .heavy, design: .rounded))
+//                                        .shadow(color: Color("KiteShadow") ,radius: 2)
+//                                    Image("dollar")
+//                                        .resizable()
+//                                        .frame(width: 39, height: 41)
+//                                        .offset(x: -45)
+//                                }
+//                            }
+//                            .position(x: 75, y: 80)
+//                        }
+//                        .padding(.horizontal)
+//                    }
+//                    .padding()
                 }
                 .position(x: 195, y: 40)
             }
@@ -187,6 +214,7 @@ struct ChooseKiteView: View {
         .ignoresSafeArea()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LinearGradient(gradient: Gradient(colors: [Color("Bekgron"), Color("Bekgron2")]), startPoint: .top, endPoint: .bottom))
+        .navigationBarBackButtonHidden(true)
     }
 }
 

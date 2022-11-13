@@ -10,6 +10,8 @@ import SwiftUI
 struct DashboardView: View {
     @State var showChooseKite: Bool = false
     @State var showSettingView: Bool = false
+    @State var showContentView: Bool = false
+    @State var showDashboard: Bool = false
     var body: some View {
         NavigationView{
             ZStack{
@@ -29,7 +31,7 @@ struct DashboardView: View {
                 }
                 .position(x: 300, y: 50)
                 VStack{
-                    NavigationLink(destination: ChooseKiteView(), isActive: self.$showChooseKite, label: {
+                    NavigationLink(destination: ContentView(), isActive: self.$showContentView, label: {
                         ZStack{
                             Rectangle()
                                 .fill(LinearGradient(gradient: Gradient(colors: [Color("Play"), Color("Play2")]), startPoint: .top, endPoint: .bottom))
@@ -42,7 +44,7 @@ struct DashboardView: View {
                                 .shadow(color: Color("PlayShadow") ,radius: 2)
                         }
                         .onTapGesture{
-                            self.showChooseKite = true
+                            self.showContentView = true
                         }
                     }
                     )
@@ -86,6 +88,7 @@ struct DashboardView: View {
             .ignoresSafeArea()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(LinearGradient(gradient: Gradient(colors: [Color("Bekgron"), Color("Bekgron2")]), startPoint: .top, endPoint: .bottom))
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
