@@ -21,6 +21,8 @@ class ViewModel: ObservableObject {
 //New Comment AHAH
 struct ContentView : View {
     
+    @State var showContentView: Bool = false
+    
     let vm = ViewModel()
     
     var body: some View {
