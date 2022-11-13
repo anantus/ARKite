@@ -65,7 +65,10 @@ struct ARViewContainer: UIViewRepresentable {
         let arView = ARView(frame: .zero)
         
         // Load the "Box" scene from the "Experience" Reality File
-        let mainAnchor = try! Experience.loadFloatingKite()
+        let mainAnchor = try! Experience.loadARKite()
+        let kite = mainAnchor.findEntity(named: "kite")
+        
+//        ?.playAnimation(<#T##animation: AnimationResource##AnimationResource#>, transitionDuration: <#T##TimeInterval#>, startsPaused: <#T##Bool#>)
         
         vm.onStartMoveUp = {
             mainAnchor.notifications.moveUp.post()
@@ -74,10 +77,18 @@ struct ARViewContainer: UIViewRepresentable {
             mainAnchor.notifications.moveDown.post()
         }
         vm.onStartMoveFront = {
-            mainAnchor.notifications.moveFront.post()
+            //Find kite Angle
+            let kiteAngle = findAngle(kiteCoordinates: kite!.position)
+//            let transformKite = kite!.transform.rotation + simd_quatf(angle: kiteAngle, axis: SIMD3<Float>(1,0,0))
+//            kite!.playAnimation(AnimationResource, transitionDuration: <#T##TimeInterval#>, startsPaused: <#T##Bool#>)
+//            let tempRotation = FromToByAnimation(jointNames: <#T##[String]#>)
+//            mainAnchor.notifications.moveFront.post()
+//            kite!.move(to: transformKite, relativeTo: kite!, duration: 1)
+            kite!.move(to: Transform.init(rotation: simd_quatf(angle: kiteAngle, axis: SIMD3<Float>(1,0,0))), relativeTo: kite!, duration: 10)
+//                       , translation: SIMD3<Float>(0,10,5)
         }
         vm.onStartRotate = {
-            mainAnchor.notifications.kiteRotateClockwise.post()
+            mainAnchor.notifications.moveRotateClockwise.post()
         }
         vm.onStartBoost = {
             mainAnchor.notifications.kiteStart.post()
@@ -91,6 +102,20 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {}
+    
+    func findDistance(kiteCoordinates: SIMD3<Float>) -> Float {
+        let squareX = kiteCoordinates.x * kiteCoordinates.x
+        let squareY = kiteCoordinates.y * kiteCoordinates.y
+        let squareZ = kiteCoordinates.z * kiteCoordinates.z
+        
+        return sqrt(squareX + squareY + squareZ)
+    }
+    
+    func findAngle(kiteCoordinates: SIMD3<Float>) -> Float{
+        let kiteTan : Float = 100 / findDistance(kiteCoordinates: kiteCoordinates)
+        let kiteAngle : Float = atan(kiteTan) * 180 / Float.pi
+        return kiteAngle
+    }
     
 }
 
