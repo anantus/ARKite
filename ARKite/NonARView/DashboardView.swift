@@ -31,6 +31,7 @@ struct DashboardView: View {
                 }
                 .position(x: 300, y: 50)
                 VStack{
+                    Image("MainMenu")
                     NavigationLink(destination: ContentView(), isActive: self.$showContentView, label: {
                         ZStack{
                             Rectangle()
@@ -83,7 +84,7 @@ struct DashboardView: View {
                     }
                 
                 
-                .position(x: 200, y: 500)
+//                .position(x: 200, y: 500)
             }
             .ignoresSafeArea()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
