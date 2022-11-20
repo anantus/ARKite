@@ -107,6 +107,35 @@ struct ContentView : View {
                         
                         VStack(spacing: 14) {
                             Button {
+                                vm.onStartMoveFront()
+                                // TODO: Move Front Kite
+                            } label: {
+                                ZStack(alignment: .top) {
+                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "9F6B00"), Color.init(hex: "C98A01")]), startPoint: .top, endPoint: .bottom)
+                                        .frame(width: 88, height: 89)
+                                        .contentShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
+                                        .cornerRadius(27)
+                                    
+                                    
+                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "F4DB05"), Color.init(hex: "F4970E")]), startPoint: .top, endPoint: .bottom)
+                                        .frame(width: 82, height: 82)
+                                        .contentShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                                        .cornerRadius(25)
+                                        .overlay {
+                                            VStack(spacing: 8) {
+                                                Image(systemName: "chevron.up")
+                                                    .font(.title)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(.white)
+                                                
+                                                Text("Pull Front")
+                                                    .font(.system(.subheadline, design: .rounded, weight: .heavy))
+                                                    .foregroundColor(.white)
+                                            }
+                                        }
+                                }
+                            }
+                            Button {
                                 vm.onStartMoveUp()
                                 // TODO: stretch kite
                             } label: {
