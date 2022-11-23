@@ -722,6 +722,45 @@
                             }
                           ],
                           "__version" : 1
+                        },
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "animationSpeed" : 1,
+                                          "audioGain" : 1,
+                                          "clipDuration" : 0,
+                                          "clipStart" : 0,
+                                          "iterations" : 1,
+                                          "multiplePerformType" : "ignore request",
+                                          "muteAudio" : false,
+                                          "reversed" : false,
+                                          "reverses" : false,
+                                          "target" : [
+                                            "342D6B30-5746-4D1B-A32A-A1DDA85089A6"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "type" : "startAnimate"
+                                        }
+                                      },
+                                      "identifier" : "14FB87F2-93A6-45D9-A7B4-02D06FF786D0",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "ABA32E20-B284-43EE-9FD2-3428CF1B9DE1",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
                         }
                       ],
                       "color" : [
@@ -751,6 +790,38 @@
                           ],
                           "__version" : 1
                         }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
+                },
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "isEnabled" : false
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+
+                      ],
+                      "color" : [
+                        0.49803921580314636,
+                        0.50196081399917603,
+                        0.52549022436141968,
+                        1
+                      ],
+                      "identifier" : "17348BD3-F3B5-4311-9FD6-A9A1B7224D65",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "Rotate Obstacle",
+                      "triggers" : [
+
                       ]
                     }
                   ],
@@ -984,6 +1055,13 @@
                             "typeName" : "String",
                             "value" : "obstacle"
                           }
+                        ],
+                        [
+                          "rigidBody-enabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
+                          }
                         ]
                       ]
                     },
@@ -1035,21 +1113,21 @@
               "title" : "ARKite",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.97092854976654053,
-                  4.1650366711110109e-08,
-                  -0.23936933279037476,
+                  0.9709286093711853,
+                  6.7055225372314453e-08,
+                  -0.23936927318572998,
                   0,
-                  -0.10627007484436035,
+                  -0.10627003759145737,
                   0.89604741334915161,
-                  -0.43105190992355347,
+                  -0.4310518205165863,
                   0,
-                  0.21448622643947601,
-                  0.44395846128463745,
-                  0.86999797821044922,
+                  0.21448618173599243,
+                  0.44395831227302551,
+                  0.86999809741973877,
                   0,
-                  1.7635635137557983,
-                  2.0903501510620117,
-                  3.9128587245941162,
+                  1.5345653295516968,
+                  0.62924778461456299,
+                  0.84578824043273926,
                   1
                 ],
                 "sceneTransform" : [
