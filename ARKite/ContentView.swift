@@ -17,6 +17,7 @@ class ViewModel: ObservableObject {
     var onStartMoveFront: () -> Void = { }
     var onStartRotate: () -> Void = { }
     var onStartBoost: () -> Void = { }
+    var showObstacle: () -> Void = {}
 }
 
 //New Comment AHAH
@@ -26,6 +27,7 @@ struct ContentView : View {
     
     let vm = ViewModel()
     @State var isStartPlay = false
+    
     
     var body: some View {
         ZStack {
@@ -204,8 +206,6 @@ struct ContentView : View {
                                 }
                         }
                     }
-                    
-                    
                 } .padding()
             }
             
@@ -219,15 +219,22 @@ struct ARViewContainer: UIViewRepresentable {
     
     let vm: ViewModel
     
+    
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
         
-        // Load the "Box" scene from the "Experience" Reality File 
+        // Load the "Box" scene from the "Experience" Reality File
         let mainAnchor = try! Experience.loadARKite()
-        let kite = mainAnchor.findEntity(named: "kite")
-        let initialPosition = SIMD3<Float>(0,0,0)
         
+        
+        // MARK: - MODEL ENTITY
+        let kite = mainAnchor.findEntity(named: "kite")
+        
+        // obstacle entity
+        let obstacle = mainAnchor.findEntity(named: "obstacle")
+        
+        let initialPosition = SIMD3<Float>(0,0,0)
         var distanceBetweenKite = SIMD3<Float>(0,0,0)
         
         vm.onStartMoveUp = {
@@ -238,19 +245,23 @@ struct ARViewContainer: UIViewRepresentable {
             mainAnchor.notifications.moveDown.post()
             distanceBetweenKite = kite!.position
         }
+        vm.showObstacle = {
+            mainAnchor.notifications.showObstacle.post()
+        }
+        
         vm.onStartMoveFront = {
             //Find kite Angle
             mainAnchor.notifications.moveFront.post()
             let kiteTravel = kite!.position
             print(simd_distance(kiteTravel, distanceBetweenKite))
             let kiteAngle = findAngle(kiteCoordinates: kite!.position, initialCoordinates: initialPosition, kiteDistance: simd_distance(kiteTravel, distanceBetweenKite))
-
+            
             for _ in 1...Int(kiteAngle){
                 mainAnchor.notifications.frontRotate.post()
             }
             
             print("initial distance", simd_distance(kite!.position, initialPosition))
-
+            
         }
         
         vm.onStartRotate = {
@@ -258,13 +269,48 @@ struct ARViewContainer: UIViewRepresentable {
         }
         vm.onStartBoost = {
             mainAnchor.notifications.kiteStart.post()
+            
+            mainAnchor.actions.kiteStart.onAction = printer
         }
         
-        // Add the box anchor to the scene
+        // TODO: - SHOW OBSTACLE
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { timer in
+            let kitePos = kite?.position
+            
+            
+            // after 10 seconds, show the osbtacle
+            obstacle?.position = simd_float3(0, 0, 0)
+            
+            vm.showObstacle()
+            
+            // set the initial postition first
+            
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { secTimer in
+               
+                
+                if let kitePos = kitePos {
+//                    obstacle?.transform.translation = kitePos
+                    
+                    obstacle?.move(to: .init(translation: kitePos), relativeTo: kite, duration: 5)
+                    print("================================================")
+                    print("Kite Position: \(kitePos)")
+                    print("================================================")
+                }
+                print("Timer 2 work")
+            }
+            print("Timer 1 Work")
+            timer.invalidate()
+            
+        }
+        
         arView.scene.anchors.append(mainAnchor)
         
         return arView
         
+    }
+    
+    func printer(_ entity: Entity?) -> Void {
+        print("Entity from printer: \(entity!)")
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {}
@@ -303,28 +349,43 @@ struct ContentView_Previews : PreviewProvider {
 
 
 
-//HStack{
-//    Spacer()
-//    VStack{
-//        Button("MOVE UP"){
-//            vm.onStartMoveUp()
-//        }
-//        .padding()
+//        Timer.scheduledTimer(withTimeInterval: 8, repeats: true) { firstTimer in
+//            if !obstacleShowed {
+//                let kitePos = kite?.position
+//                @State var repeatObstacleTimer = true
+////
+////                let posX = Float.random(in: 0...1)
+////                let posY = Float.random(in: 0...1)
+////                let posZ = Float.random(in: 0.5...1)
+////                obstacle?.position = kitePos ?? [posX, posY, posZ * -1]
+////
+////
+////
+////                vm.showObstacle()
 //
-//        Button("MOVE DOWN"){
-//            vm.onStartMoveDown()
+//            // move obstacle to the kite
+//
+//                Timer.scheduledTimer(withTimeInterval: 0.1, repeats: repeatObstacleTimer) { timer in
+//
+//                    guard let obstacle = obstacle else {
+//                        timer.invalidate()
+//                        return
+//                    }
+//                    if obstacle.position.y >= 2.0 {
+//                        print("Obstacle stop: \(obstacle.position.x) - \(obstacle.position.y) - \(obstacle.position.z)")
+//                        timer.invalidate()
+//                    } else {
+//                        obstacle.position.z -= 0.1
+//                        obstacle.position.y += 0.1
+//                        print("loop running: \(obstacle.position.x) - \(obstacle.position.y) - \(obstacle.position.z)")
+//                    }
+//                }
+//
 //        }
-//        Button("FRONT"){
-//            vm.onStartMoveFront()
+//
+//
+//            firstTimer.invalidate()
 //        }
-//        .padding()
-//        Button("ROTATE"){
-//            vm.onStartRotate()
-//        }
-//        .padding()
-//        Button("START"){
-//            vm.onStartBoost()
-//        }
-//        .padding()
-//    }
-// }
+
+
+
