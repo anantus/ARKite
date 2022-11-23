@@ -269,54 +269,74 @@ struct ARViewContainer: UIViewRepresentable {
         vm.onStartBoost = {
             mainAnchor.notifications.kiteStart.post()
             mainAnchor.notifications.showCoin.post()
-            Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in print("Timer work")
+//            Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in print("Timer work")
                 
                 
                     let coin1 = mainAnchor.findEntity(named: "coin1")
-                
+                    let coin2 = mainAnchor.findEntity(named: "coin2")
+                    let coin3 = mainAnchor.findEntity(named: "coin3")
+                    let coin4 = mainAnchor.findEntity(named: "coin4")
+            
                     let posisiLayanganX = kite!.position.x
                     let posisiLayanganY = kite!.position.y
                     let posisiLayanganZ = kite!.position.z
-                
-                    let posX1 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
-                    let posY1 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
-                    let posZ1 = Float.random(in: posisiLayanganZ..<posisiLayanganZ+1)
-                    coin1?.position = SIMD3<Float>(posX1,posY1
-                                                  ,posZ1)
-                
-                let coin2 = mainAnchor.findEntity(named: "coin2")
+                    
+                    var posX1 = coin1!.position.x
+                    var posY1 = coin1!.position.y
+                    var posZ1 = coin1!.position.z
+                        
+                    var posX2: Float = coin2!.position.x
+                    var posY2: Float = coin2!.position.y
+                    var posZ2: Float = coin2!.position.z
+                    
+                    var posX3: Float = coin3!.position.x
+                    var posY3: Float = coin3!.position.y
+                    var posZ3: Float = coin3!.position.z
+                    
+                    var posX4: Float = coin4!.position.x
+                    var posY4: Float = coin4!.position.y
+                    var posZ4: Float = coin4!.position.z
+                   
             
-                let posX2 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
-                let posY2 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
-                let posZ2 = Float.random(in: posisiLayanganZ..<posisiLayanganZ+1)
+            if (coin1?.position == kite!.position) {
+                posX1 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
+                posY1 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
+                posZ1 = Float.random(in: posisiLayanganZ-1..<posisiLayanganZ+1)
+                coin1?.position = SIMD3<Float>(posX1,posY1
+                                               ,posZ1)
+                
+            }
+            if (coin2?.position == kite!.position) {
+                posX2 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
+                posY2 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
+                posZ2 = Float.random(in: posisiLayanganZ-1..<posisiLayanganZ+1)
                 coin2?.position = SIMD3<Float>(posX2,posY2
-                                              ,posZ2)
-                
-                let coin3 = mainAnchor.findEntity(named: "coin3")
-            
-                let posX3 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
-                let posY3 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
-                let posZ3 = Float.random(in: posisiLayanganZ..<posisiLayanganZ+1)
+                                               ,posZ2)
+            }
+            if (coin3?.position == kite!.position) {
+                posX3 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
+                posY3 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
+                posZ3 = Float.random(in: posisiLayanganZ-1..<posisiLayanganZ+1)
                 coin3?.position = SIMD3<Float>(posX3,posY3
-                                              ,posZ3)
+                                               ,posZ3)
+            }
                 
-                let coin4 = mainAnchor.findEntity(named: "coin4")
-            
-                let posX4 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
-                let posY4 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
-                let posZ4 = Float.random(in: posisiLayanganZ..<posisiLayanganZ+1)
+            if (coin4?.position == kite!.position) {
+                posX4 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
+                posY4 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
+                posZ4 = Float.random(in: posisiLayanganZ-1..<posisiLayanganZ+1)
                 coin4?.position = SIMD3<Float>(posX4,posY4
-                                              ,posZ4)
-                
+                                               ,posZ4)
+            }
                     
 //                    print("posisi layangan X :", posisiLayanganX)
 //                    print("posisi layangan Y :", posisiLayanganY)
 //                    print("posisi layangan Z :", posisiLayanganZ)
-//                    print(posX1)
-//                    print(posY1)
-//                    print(posZ1)
+                    print(posX1)
+                    print(posY1)
+                    print(posZ1)
                 
-            }
+            
         }
 //            mainAnchor.notifications.showCoin.post()
         
