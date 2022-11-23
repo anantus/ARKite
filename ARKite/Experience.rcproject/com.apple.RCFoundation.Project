@@ -807,7 +807,45 @@
                         "__version" : 1
                       },
                       "actionGroups" : [
-
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "animationSpeed" : 1,
+                                          "audioGain" : 1,
+                                          "clipDuration" : 0,
+                                          "clipStart" : 0,
+                                          "iterations" : 1,
+                                          "multiplePerformType" : "ignore request",
+                                          "muteAudio" : false,
+                                          "reversed" : false,
+                                          "reverses" : false,
+                                          "target" : [
+                                            "342D6B30-5746-4D1B-A32A-A1DDA85089A6"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "type" : "startAnimate"
+                                        }
+                                      },
+                                      "identifier" : "E29ADAAC-1AC9-4560-A048-D6D61181E606",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "960E53D5-CC9F-47D9-8F18-2A0AF5156D7D",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
                       ],
                       "color" : [
                         0.49803921580314636,
@@ -819,9 +857,23 @@
                       "isEnabled" : true,
                       "isLooping" : false,
                       "isModal" : false,
-                      "name" : "Rotate Obstacle",
+                      "name" : "Animate Obstacle",
                       "triggers" : [
-
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
+                                  "userIdentifier" : "Animate Obstacle"
+                                },
+                                "name" : "custom"
+                              },
+                              "identifier" : "2EBE8959-4AED-4A7B-A8FE-F8BE944927A4",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
                       ]
                     }
                   ],
@@ -1125,9 +1177,9 @@
                   0.44395831227302551,
                   0.86999809741973877,
                   0,
-                  1.5345653295516968,
-                  0.62924778461456299,
-                  0.84578824043273926,
+                  1.7448204755783081,
+                  0.892475426197052,
+                  1.52243971824646,
                   1
                 ],
                 "sceneTransform" : [
