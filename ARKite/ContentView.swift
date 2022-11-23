@@ -17,6 +17,7 @@ class ViewModel: ObservableObject {
     var onStartMoveFront: () -> Void = { }
     var onStartRotate: () -> Void = { }
     var onStartBoost: () -> Void = { }
+//    var onStartCoin: () -> Void = { }
 }
 
 //New Comment AHAH
@@ -171,7 +172,8 @@ struct ContentView : View {
                         }
                     }
                 } .padding()
-            } else {
+            }
+            else {
                 VStack {
                     Spacer()
                     
@@ -217,6 +219,8 @@ struct ContentView : View {
 
 struct ARViewContainer: UIViewRepresentable {
     
+//    @State var coinShowed = false
+    
     let vm: ViewModel
     
     func makeUIView(context: Context) -> ARView {
@@ -226,6 +230,8 @@ struct ARViewContainer: UIViewRepresentable {
         // Load the "Box" scene from the "Experience" Reality File 
         let mainAnchor = try! Experience.loadARKite()
         let kite = mainAnchor.findEntity(named: "kite")
+        
+        
         let initialPosition = SIMD3<Float>(0,0,0)
         
         var distanceBetweenKite = SIMD3<Float>(0,0,0)
@@ -253,12 +259,69 @@ struct ARViewContainer: UIViewRepresentable {
 
         }
         
+//        vm.onStartCoin = {
+//            mainAnchor.notifications.showCoin.post()
+//        }
+//
         vm.onStartRotate = {
             mainAnchor.notifications.moveRotateClockwise.post()
         }
         vm.onStartBoost = {
             mainAnchor.notifications.kiteStart.post()
+            mainAnchor.notifications.showCoin.post()
+            Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in print("Timer work")
+                
+                
+                    let coin1 = mainAnchor.findEntity(named: "coin1")
+                
+                    let posisiLayanganX = kite!.position.x
+                    let posisiLayanganY = kite!.position.y
+                    let posisiLayanganZ = kite!.position.z
+                
+                    let posX1 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
+                    let posY1 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
+                    let posZ1 = Float.random(in: posisiLayanganZ..<posisiLayanganZ+1)
+                    coin1?.position = SIMD3<Float>(posX1,posY1
+                                                  ,posZ1)
+                
+                let coin2 = mainAnchor.findEntity(named: "coin2")
+            
+                let posX2 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
+                let posY2 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
+                let posZ2 = Float.random(in: posisiLayanganZ..<posisiLayanganZ+1)
+                coin2?.position = SIMD3<Float>(posX2,posY2
+                                              ,posZ2)
+                
+                let coin3 = mainAnchor.findEntity(named: "coin3")
+            
+                let posX3 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
+                let posY3 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
+                let posZ3 = Float.random(in: posisiLayanganZ..<posisiLayanganZ+1)
+                coin3?.position = SIMD3<Float>(posX3,posY3
+                                              ,posZ3)
+                
+                let coin4 = mainAnchor.findEntity(named: "coin4")
+            
+                let posX4 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
+                let posY4 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
+                let posZ4 = Float.random(in: posisiLayanganZ..<posisiLayanganZ+1)
+                coin4?.position = SIMD3<Float>(posX4,posY4
+                                              ,posZ4)
+                
+                    
+//                    print("posisi layangan X :", posisiLayanganX)
+//                    print("posisi layangan Y :", posisiLayanganY)
+//                    print("posisi layangan Z :", posisiLayanganZ)
+//                    print(posX1)
+//                    print(posY1)
+//                    print(posZ1)
+                
+            }
         }
+//            mainAnchor.notifications.showCoin.post()
+        
+        
+        
         
         // Add the box anchor to the scene
         arView.scene.anchors.append(mainAnchor)

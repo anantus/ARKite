@@ -14,10 +14,13 @@ struct DashboardView: View {
     @State var showDashboard: Bool = false
     var body: some View {
         NavigationView{
+            
             ZStack{
+                //background gedung2
                 Image("Background")
                     .aspectRatio(contentMode: .fit)
                     .position(x: 78, y: 554)
+                //coin indicator
                 ZStack(alignment: .trailing){
                     Text("25")
                         .font(.system(size:25, weight: .medium, design: .rounded))
@@ -30,18 +33,19 @@ struct DashboardView: View {
                         .padding(.horizontal, 50)
                 }
                 .position(x: 300, y: 50)
+                //main menu
                 VStack{
                     Image("MainMenu")
                     NavigationLink(destination: ContentView(), isActive: self.$showContentView, label: {
                         ZStack{
                             Rectangle()
                                 .fill(LinearGradient(gradient: Gradient(colors: [Color("Play"), Color("Play2")]), startPoint: .top, endPoint: .bottom))
-                                .frame(width: 252, height: 65)
+                                .frame(width: 185, height: 65)
                                 .cornerRadius(28)
                                 .shadow(color: Color("PlayShadow"),radius: 2, y: 10)
                             StrokeText(text: "PLAY", width: 1, color: Color("PlayBorder"))
                                 .foregroundColor(.white)
-                                .font(.system(size: 34, weight: .heavy, design: .rounded))
+                                .font(.system(size: 28, weight: .heavy, design: .rounded))
                                 .shadow(color: Color("PlayShadow") ,radius: 2)
                         }
                         .onTapGesture{
@@ -83,8 +87,6 @@ struct DashboardView: View {
                         }})
                     }
                 
-                
-//                .position(x: 200, y: 500)
             }
             .ignoresSafeArea()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
