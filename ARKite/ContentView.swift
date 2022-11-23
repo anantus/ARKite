@@ -8,6 +8,7 @@
 import SwiftUI
 import RealityKit
 import ARKit
+import Combine
 
 class ViewModel: ObservableObject {
     
@@ -26,6 +27,7 @@ struct ContentView : View {
     
     let vm = ViewModel()
     @State var isStartPlay = false
+    @State var rotate = false
     
     var body: some View {
         ZStack {
@@ -75,128 +77,158 @@ struct ContentView : View {
                         Button {
                             // TODO: rotate kite
                             vm.onStartRotate()
+                            rotate = !rotate
                         } label: {
-                            ZStack(alignment: .top) {
-                                LinearGradient(gradient: Gradient(colors: [Color.init(hex: "106514"), Color.init(hex: "3C8F49")]), startPoint: .top, endPoint: .bottom)
-                                    .frame(width: 88, height: 89)
-                                    .contentShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
-                                    .cornerRadius(27)
-                                
-                                
-                                LinearGradient(gradient: Gradient(colors: [Color.init(hex: "57BD6A"), Color.init(hex: "39A239")]), startPoint: .top, endPoint: .bottom)
-                                    .frame(width: 82, height: 82)
-                                    .contentShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                                    .cornerRadius(25)
-                                    .overlay {
-                                        VStack(spacing: 8) {
-                                            Image(systemName: "arrow.clockwise")
-                                                .font(.title)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(.white)
-                                            
-                                            Text("ROTATE")
-                                                .font(.system(.subheadline, design: .rounded, weight: .heavy))
-                                                .foregroundColor(.white)
+                            if(rotate == false){
+                                ZStack(alignment: .top) {
+                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "106514"), Color.init(hex: "3C8F49")]), startPoint: .top, endPoint: .bottom)
+                                        .frame(width: 88, height: 89)
+                                        .contentShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
+                                        .cornerRadius(27)
+                                    
+                                    
+                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "57BD6A"), Color.init(hex: "39A239")]), startPoint: .top, endPoint: .bottom)
+                                        .frame(width: 82, height: 82)
+                                        .contentShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                                        .cornerRadius(25)
+                                        .overlay {
+                                            VStack(spacing: 8) {
+                                                Image(systemName: "arrow.clockwise")
+                                                    .font(.title)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(.white)
+                                                
+                                                Text("ROTATE")
+                                                    .font(.system(.subheadline, design: .rounded, weight: .heavy))
+                                                    .foregroundColor(.white)
+                                            }
                                         }
-                                    }
+                                }
+                            }else{
+                                ZStack(alignment: .top) {
+                                    LinearGradient(gradient: Gradient(colors: [Color.red, Color.red]), startPoint: .top, endPoint: .bottom)
+                                        .frame(width: 88, height: 89)
+                                        .contentShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
+                                        .cornerRadius(27)
+                                    
+                                    
+                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "57BD6A"), Color.init(hex: "39A239")]), startPoint: .top, endPoint: .bottom)
+                                        .frame(width: 82, height: 82)
+                                        .contentShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                                        .cornerRadius(25)
+                                        .overlay {
+                                            VStack(spacing: 8) {
+                                                Image(systemName: "arrow.clockwise")
+                                                    .font(.title)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(.white)
+                                                
+                                                Text("ROTATE")
+                                                    .font(.system(.subheadline, design: .rounded, weight: .heavy))
+                                                    .foregroundColor(.white)
+                                            }
+                                        }
+                                }
                             }
+                            
                         }
                         
                         
                         Spacer()
-                        
                         VStack(spacing: 14) {
-                            Button {
-                                vm.onStartMoveFront()
-                                // TODO: Move Front Kite
-                            } label: {
-                                ZStack(alignment: .top) {
-                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "9F6B00"), Color.init(hex: "C98A01")]), startPoint: .top, endPoint: .bottom)
-                                        .frame(width: 88, height: 89)
-                                        .contentShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
-                                        .cornerRadius(27)
-                                    
-                                    
-                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "F4DB05"), Color.init(hex: "F4970E")]), startPoint: .top, endPoint: .bottom)
-                                        .frame(width: 82, height: 82)
-                                        .contentShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                                        .cornerRadius(25)
-                                        .overlay {
-                                            VStack(spacing: 8) {
-                                                Image(systemName: "chevron.up")
-                                                    .font(.title)
-                                                    .fontWeight(.bold)
-                                                    .foregroundColor(.white)
-                                                
-                                                Text("Pull Front")
-                                                    .font(.system(.subheadline, design: .rounded, weight: .heavy))
-                                                    .foregroundColor(.white)
+                            if rotate{
+                                Button {
+                                    vm.onStartMoveFront()
+                                    // TODO: Move Front Kite
+                                } label: {
+                                    ZStack(alignment: .top) {
+                                        LinearGradient(gradient: Gradient(colors: [Color.init(hex: "9F6B00"), Color.init(hex: "C98A01")]), startPoint: .top, endPoint: .bottom)
+                                            .frame(width: 88, height: 89)
+                                            .contentShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
+                                            .cornerRadius(27)
+                                        
+                                        
+                                        LinearGradient(gradient: Gradient(colors: [Color.init(hex: "F4DB05"), Color.init(hex: "F4970E")]), startPoint: .top, endPoint: .bottom)
+                                            .frame(width: 82, height: 82)
+                                            .contentShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                                            .cornerRadius(25)
+                                            .overlay {
+                                                VStack(spacing: 8) {
+                                                    Image(systemName: "chevron.up")
+                                                        .font(.title)
+                                                        .fontWeight(.bold)
+                                                        .foregroundColor(.white)
+                                                    
+                                                    Text("Pull Front")
+                                                        .font(.system(.subheadline, design: .rounded, weight: .heavy))
+                                                        .foregroundColor(.white)
+                                                }
                                             }
-                                        }
+                                    }
                                 }
                             }
-                            Button {
-                                vm.onStartMoveUp()
-                                // TODO: stretch kite
-                            } label: {
-                                ZStack(alignment: .top) {
-                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "9F6B00"), Color.init(hex: "C98A01")]), startPoint: .top, endPoint: .bottom)
-                                        .frame(width: 88, height: 89)
-                                        .contentShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
-                                        .cornerRadius(27)
-                                    
-                                    
-                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "F4DB05"), Color.init(hex: "F4970E")]), startPoint: .top, endPoint: .bottom)
-                                        .frame(width: 82, height: 82)
-                                        .contentShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                                        .cornerRadius(25)
-                                        .overlay {
-                                            VStack(spacing: 8) {
-                                                Image(systemName: "chevron.up")
-                                                    .font(.title)
-                                                    .fontWeight(.bold)
-                                                    .foregroundColor(.white)
-                                                
-                                                Text("STRETCH")
-                                                    .font(.system(.subheadline, design: .rounded, weight: .heavy))
-                                                    .foregroundColor(.white)
+                            else{
+                                Button {
+                                    vm.onStartMoveUp()
+                                    // TODO: stretch kite
+                                } label: {
+                                    ZStack(alignment: .top) {
+                                        LinearGradient(gradient: Gradient(colors: [Color.init(hex: "9F6B00"), Color.init(hex: "C98A01")]), startPoint: .top, endPoint: .bottom)
+                                            .frame(width: 88, height: 89)
+                                            .contentShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
+                                            .cornerRadius(27)
+                                        
+                                        
+                                        LinearGradient(gradient: Gradient(colors: [Color.init(hex: "F4DB05"), Color.init(hex: "F4970E")]), startPoint: .top, endPoint: .bottom)
+                                            .frame(width: 82, height: 82)
+                                            .contentShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                                            .cornerRadius(25)
+                                            .overlay {
+                                                VStack(spacing: 8) {
+                                                    Image(systemName: "chevron.up")
+                                                        .font(.title)
+                                                        .fontWeight(.bold)
+                                                        .foregroundColor(.white)
+                                                    
+                                                    Text("STRETCH")
+                                                        .font(.system(.subheadline, design: .rounded, weight: .heavy))
+                                                        .foregroundColor(.white)
+                                                }
                                             }
-                                        }
+                                    }
+                                }
+                                
+                                
+                                Button {
+                                    vm.onStartMoveDown()
+                                    // TODO: pull kite
+                                } label: {
+                                    ZStack(alignment: .top) {
+                                        LinearGradient(gradient: Gradient(colors: [Color.init(hex: "D20936"), Color.init(hex: "EA3242")]), startPoint: .top, endPoint: .bottom)
+                                            .frame(width: 88, height: 89)
+                                            .contentShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
+                                            .cornerRadius(27)
+                                        
+                                        
+                                        LinearGradient(gradient: Gradient(colors: [Color.init(hex: "FF6E51"), Color.init(hex: "FF294C")]), startPoint: .top, endPoint: .bottom)
+                                            .frame(width: 82, height: 82)
+                                            .contentShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                                            .cornerRadius(25)
+                                            .overlay {
+                                                VStack(spacing: 8) {
+                                                    Text("PULL")
+                                                        .font(.system(.subheadline, design: .rounded, weight: .heavy))
+                                                        .foregroundColor(.white)
+                                                    
+                                                    Image(systemName: "chevron.down")
+                                                        .font(.title)
+                                                        .fontWeight(.bold)
+                                                        .foregroundColor(.white)
+                                                }
+                                            }
+                                    }
                                 }
                             }
-                            
-                            
-                            Button {
-                                vm.onStartMoveDown()
-                                // TODO: pull kite
-                            } label: {
-                                ZStack(alignment: .top) {
-                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "D20936"), Color.init(hex: "EA3242")]), startPoint: .top, endPoint: .bottom)
-                                        .frame(width: 88, height: 89)
-                                        .contentShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
-                                        .cornerRadius(27)
-                                    
-                                    
-                                    LinearGradient(gradient: Gradient(colors: [Color.init(hex: "FF6E51"), Color.init(hex: "FF294C")]), startPoint: .top, endPoint: .bottom)
-                                        .frame(width: 82, height: 82)
-                                        .contentShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                                        .cornerRadius(25)
-                                        .overlay {
-                                            VStack(spacing: 8) {
-                                                Text("PULL")
-                                                    .font(.system(.subheadline, design: .rounded, weight: .heavy))
-                                                    .foregroundColor(.white)
-                                                
-                                                Image(systemName: "chevron.down")
-                                                    .font(.title)
-                                                    .fontWeight(.bold)
-                                                    .foregroundColor(.white)
-                                            }
-                                        }
-                                }
-                            }
-                            
-                            
                         }
                     }
                 } .padding()
@@ -252,10 +284,14 @@ struct ARViewContainer: UIViewRepresentable {
         
         let arView = ARView(frame: .zero)
         
-        // Load the "Box" scene from the "Experience" Reality File 
+        // Load the "Box" scene from the "Experience" Reality File
         let mainAnchor = try! Experience.loadARKite()
+        
         let kite = mainAnchor.findEntity(named: "kite")!
+        
         let initialPosition = SIMD3<Float>(0,0,0)
+        
+        var isRotate = false
         
         var distanceBetweenKite = SIMD3<Float>(0,0,0)
         
@@ -270,13 +306,13 @@ struct ARViewContainer: UIViewRepresentable {
         vm.onStartMoveFront = {
             //Find kite Angle
             var travelDistance = simd_distance(distanceBetweenKite, kite.position)
-            
+            mainAnchor.actions.forwardStart.onAction = rotateOff
             //buat inisialisasi awal
             travelDistance = (travelDistance == 0) ? 1.004 : travelDistance
             
             let kiteAngle = findAngle(kiteCoordinates: kite.position, initialCoordinates: initialPosition, travelDistance: travelDistance)
             
-    
+            
             
             for _ in 1...Int(kiteAngle){
                 mainAnchor.notifications.frontRotate.post()
@@ -284,25 +320,56 @@ struct ARViewContainer: UIViewRepresentable {
             
             mainAnchor.notifications.moveFront.post()
             
-//            let travelDistance = simd_distance(distanceBetweenKite, kite.position)
-            
             print("distance traveled: ", travelDistance)
-
+            
             for _ in 1...Int(kiteAngle){
                 mainAnchor.notifications.frontRotate.post()
             }
             
             print("initial distance: ", simd_distance(kite.position, initialPosition))
             distanceBetweenKite = kite.position
-
+            
+            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { firstTimer in
+                rotate()
+             }
         }
         
         vm.onStartRotate = {
-            mainAnchor.notifications.moveRotateClockwise.post()
-            distanceBetweenKite = kite.position
+            isRotate = !isRotate
+            if isRotate{
+                rotate()
+            }
         }
+        
         vm.onStartBoost = {
             mainAnchor.notifications.kiteStart.post()
+        }
+        
+        func rotate(){
+            mainAnchor.notifications.moveRotateClockwise.post()
+            distanceBetweenKite = kite.position
+            isRotate = true
+            
+            //Recursion
+            //setelah rotateEnd dipanggil, bakal ngelakuin rotateRecursion
+            mainAnchor.actions.rotateEnd.onAction = rotateRecursion
+        }
+        
+        func rotateRecursion(_ entity: Entity?) {
+            
+            if isRotate{
+                mainAnchor.notifications.moveRotateClockwise.post()
+                mainAnchor.actions.rotateEnd.onAction = rotateRecursion
+            }
+            
+        }
+        
+        func rotateOn(_ entity: Entity?){
+            isRotate = true
+        }
+        
+        func rotateOff(_ entity: Entity?){
+            isRotate = false
         }
         
         // Add the box anchor to the scene
@@ -331,6 +398,8 @@ struct ARViewContainer: UIViewRepresentable {
         return angle
     }
     
+    // This needs to be an instance variable, otherwise it'll
+    // get deallocated immediately and the animation won't start.
 }
 
 #if DEBUG

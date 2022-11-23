@@ -440,18 +440,18 @@
                                       "configurationBox" : {
                                         "configuration" : {
                                           "angularCoefficient" : 1,
-                                          "duration" : 0.5,
+                                          "duration" : 0.10000000149011612,
                                           "isTransformInitKeyPath" : true,
                                           "linearCoefficient" : 1,
                                           "location" : [
                                             0.32298415899276733,
-                                            0.10047720372676849,
+                                            -0.049822472035884857,
                                             -0.24730734527111053
                                           ],
                                           "moveEase" : "easeInOut",
                                           "orientation" : [
                                             0,
-                                            -0.13069732487201691,
+                                            -0.13069726526737213,
                                             0,
                                             0.99142235517501831
                                           ],
@@ -473,6 +473,37 @@
                                 }
                               ],
                               "identifier" : "26885388-F061-4D5E-ADB3-6212CE75AE67",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        },
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "target" : [
+                                            "EA8D22CD-0B2E-4493-9FDE-874EA451844D"
+                                          ],
+                                          "userIdentifier" : "RotateEnd"
+                                        },
+                                        "name" : {
+                                          "type" : "custom"
+                                        }
+                                      },
+                                      "identifier" : "AD3A004D-5C8C-4A06-A50F-4C16CEE83586",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "0C4DBFAD-ACEF-4964-BF1D-D677946B9149",
                               "isEnabled" : true
                             }
                           ],
@@ -625,6 +656,37 @@
                                     {
                                       "configurationBox" : {
                                         "configuration" : {
+                                          "target" : [
+
+                                          ],
+                                          "userIdentifier" : "forwardStart"
+                                        },
+                                        "name" : {
+                                          "type" : "custom"
+                                        }
+                                      },
+                                      "identifier" : "ACF77CBA-1708-47B6-8392-88A19A10599C",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "78EAD921-7DEC-4DCD-A5C8-DA51B046E39E",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        },
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
                                           "angularCoefficient" : 1,
                                           "duration" : 1,
                                           "isTransformInitKeyPath" : true,
@@ -659,6 +721,37 @@
                                 }
                               ],
                               "identifier" : "A08AA590-7F84-4AD4-BCA0-4329B09C39D3",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        },
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "target" : [
+                                            "EA8D22CD-0B2E-4493-9FDE-874EA451844D"
+                                          ],
+                                          "userIdentifier" : "rotationForward"
+                                        },
+                                        "name" : {
+                                          "type" : "custom"
+                                        }
+                                      },
+                                      "identifier" : "3D2D4632-355D-433C-AB0C-7D193796DEA0",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "1A6232E0-2361-499E-A150-8D95CFA2C9A3",
                               "isEnabled" : true
                             }
                           ],
@@ -867,21 +960,21 @@
               "title" : "ARKite",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.77372509241104126,
-                  5.7753055671128095e-09,
-                  -0.63352155685424805,
+                  0.32349053025245667,
+                  -2.2048629588766744e-08,
+                  -0.9462314248085022,
                   0,
-                  -0.22497093677520752,
-                  0.93482387065887451,
-                  -0.2747587263584137,
+                  -0.71681654453277588,
+                  0.65277856588363647,
+                  -0.24505980312824249,
                   0,
-                  0.59223097562789917,
-                  0.35511144995689392,
-                  0.72329676151275635,
+                  0.61767977476119995,
+                  0.75754863023757935,
+                  0.21116799116134644,
                   0,
-                  2.8324027061462402,
-                  0.9323154091835022,
-                  3.7053446769714355,
+                  1.8037198781967163,
+                  1.4330387115478516,
+                  0.17799460887908936,
                   1
                 ],
                 "sceneTransform" : [
