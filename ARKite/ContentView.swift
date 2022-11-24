@@ -16,7 +16,6 @@ class ViewModel: ObservableObject {
     var onStartMoveUp: () -> Void = { }
     var onStartMoveDown: () -> Void = { }
     var onStartMoveFront: () -> Void = { }
-    var onStartRotate: () -> Void = { }
     var onStartBoost: () -> Void = { }
 }
 
@@ -149,7 +148,6 @@ struct ContentView : View {
                     
                     Button {
                         vm.onStartBoost()
-                        vm.onStartRotate()
                         
                         withAnimation {
                             isStartPlay.toggle()
@@ -191,97 +189,59 @@ struct ContentView : View {
 struct ARViewContainer: UIViewRepresentable {
     
     let vm: ViewModel
+    let mainAnchor = try! Experience.loadARKite()
+    @State var isForward = false
+    @State var isRotate = false
     
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
-        
-        // Load the "Box" scene from the "Experience" Reality File
-        let mainAnchor = try! Experience.loadARKite()
-        
         let kite = mainAnchor.findEntity(named: "kite")!
+        // Load the "Box" scene from the "Experience" Reality File
         
         let initialPosition = SIMD3<Float>(0,0,0)
-        
-        var isRotate = false
-        
         var distanceBetweenKite = SIMD3<Float>(0,0,0)
         
         vm.onStartMoveUp = {
             mainAnchor.notifications.moveUp.post()
             distanceBetweenKite = kite.position
         }
+        
         vm.onStartMoveDown = {
             mainAnchor.notifications.moveDown.post()
             distanceBetweenKite = kite.position
         }
+        
         vm.onStartMoveFront = {
             //Find kite Angle
-            var travelDistance = simd_distance(distanceBetweenKite, kite.position)
-            mainAnchor.actions.forwardStart.onAction = rotateOff
-            //buat inisialisasi awal
-            travelDistance = (travelDistance == 0) ? 1.004 : travelDistance
-            
-            let kiteAngle = findAngle(kiteCoordinates: kite.position, initialCoordinates: initialPosition, travelDistance: travelDistance)
-            
-            
-            
-            for _ in 1...Int(kiteAngle){
-                mainAnchor.notifications.frontRotate.post()
-            }
-            
-            mainAnchor.notifications.moveFront.post()
-            
-            print("distance traveled: ", travelDistance)
-            
-            for _ in 1...Int(kiteAngle){
-                mainAnchor.notifications.frontRotate.post()
-            }
-            
-            print("initial distance: ", simd_distance(kite.position, initialPosition))
-            distanceBetweenKite = kite.position
-            
-            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { firstTimer in
-                rotate()
-             }
-        }
-        
-        vm.onStartRotate = {
-            isRotate = !isRotate
-            if isRotate{
-                rotate()
+            if isForward{
+                var travelDistance = simd_distance(distanceBetweenKite, kite.position)
+                isRotate = false
+                isForward = false
+                //buat inisialisasi awal
+                travelDistance = (travelDistance == 0) ? 1.004 : travelDistance
+                let kiteAngle = findAngle(kiteCoordinates: kite.position, initialCoordinates: initialPosition, travelDistance: travelDistance)
+                for _ in 1...Int(kiteAngle){
+                    mainAnchor.notifications.frontRotate.post()
+                }
+                mainAnchor.notifications.moveFront.post()
+                for _ in 1...Int(kiteAngle){
+                    mainAnchor.notifications.frontRotate.post()
+                }
+                distanceBetweenKite = kite.position
+                
+                //rotate
+                mainAnchor.actions.rotationForward.onAction = rotateOn
             }
         }
         
         vm.onStartBoost = {
             mainAnchor.notifications.kiteStart.post()
-        }
-        
-        func rotate(){
-            mainAnchor.notifications.moveRotateClockwise.post()
             distanceBetweenKite = kite.position
-            isRotate = true
+            mainAnchor.actions.kiteStartEnd.onAction = rotateOn
             
             //Recursion
             //setelah rotateEnd dipanggil, bakal ngelakuin rotateRecursion
-            mainAnchor.actions.rotateEnd.onAction = rotateRecursion
-        }
-        
-        func rotateRecursion(_ entity: Entity?) {
-            
-            if isRotate{
-                mainAnchor.notifications.moveRotateClockwise.post()
-                mainAnchor.actions.rotateEnd.onAction = rotateRecursion
-            }
-            
-        }
-        
-        func rotateOn(_ entity: Entity?){
-            isRotate = true
-        }
-        
-        func rotateOff(_ entity: Entity?){
-            isRotate = false
         }
         
         // Add the box anchor to the scene
@@ -308,6 +268,20 @@ struct ARViewContainer: UIViewRepresentable {
         angle = (angle > 1) ? angle : 1
         
         return angle
+    }
+    
+    func rotateRecursion(_ entity: Entity?) {
+        if isRotate{
+            mainAnchor.notifications.moveRotateClockwise.post()
+            mainAnchor.actions.rotateEnd.onAction = rotateRecursion
+        }
+    }
+    
+    func rotateOn(_ entity: Entity?){
+        isRotate = true
+        isForward = true
+        rotateRecursion(entity)
+        print("Rotate is called!")
     }
     
     // This needs to be an instance variable, otherwise it'll

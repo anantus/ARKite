@@ -85,7 +85,7 @@
                                             1,
                                             0
                                           ],
-                                          "duration" : 0,
+                                          "duration" : 1,
                                           "loops" : false,
                                           "target" : [
                                             "EA8D22CD-0B2E-4493-9FDE-874EA451844D"
@@ -108,6 +108,37 @@
                                 }
                               ],
                               "identifier" : "8FBFE63D-DA09-497C-81D2-FBADD8CC5E76",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        },
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "target" : [
+                                            "EA8D22CD-0B2E-4493-9FDE-874EA451844D"
+                                          ],
+                                          "userIdentifier" : "KiteStartEnd"
+                                        },
+                                        "name" : {
+                                          "type" : "custom"
+                                        }
+                                      },
+                                      "identifier" : "AC599233-F1E5-4668-8C52-0B8577830DBE",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "9E021367-399A-4B6E-A600-FBF678CF17FA",
                               "isEnabled" : true
                             }
                           ],
@@ -205,49 +236,6 @@
                             }
                           ],
                           "__version" : 1
-                        },
-                        {
-                          "__content" : [
-                            {
-                              "configurations" : [
-                                {
-                                  "__content" : [
-                                    {
-                                      "configurationBox" : {
-                                        "configuration" : {
-                                          "animationDuration" : 0,
-                                          "direction" : [
-                                            0,
-                                            1,
-                                            0
-                                          ],
-                                          "duration" : 0,
-                                          "loops" : false,
-                                          "target" : [
-                                            "EA8D22CD-0B2E-4493-9FDE-874EA451844D"
-                                          ],
-                                          "upVector" : [
-                                            0,
-                                            0,
-                                            0
-                                          ]
-                                        },
-                                        "name" : {
-                                          "type" : "lookAtCamera"
-                                        }
-                                      },
-                                      "identifier" : "20D86D19-2E5B-4E15-A233-12C82885BE59",
-                                      "isEnabled" : true
-                                    }
-                                  ],
-                                  "__version" : 1
-                                }
-                              ],
-                              "identifier" : "267C0C24-96E8-4C23-9F1B-3E72167BCAB4",
-                              "isEnabled" : true
-                            }
-                          ],
-                          "__version" : 1
                         }
                       ],
                       "color" : [
@@ -337,49 +325,6 @@
                                 }
                               ],
                               "identifier" : "B192B670-62F9-48B9-9DE4-1E39B3B384EA",
-                              "isEnabled" : true
-                            }
-                          ],
-                          "__version" : 1
-                        },
-                        {
-                          "__content" : [
-                            {
-                              "configurations" : [
-                                {
-                                  "__content" : [
-                                    {
-                                      "configurationBox" : {
-                                        "configuration" : {
-                                          "animationDuration" : 0,
-                                          "direction" : [
-                                            0,
-                                            1,
-                                            0
-                                          ],
-                                          "duration" : 0,
-                                          "loops" : false,
-                                          "target" : [
-                                            "EA8D22CD-0B2E-4493-9FDE-874EA451844D"
-                                          ],
-                                          "upVector" : [
-                                            0,
-                                            0,
-                                            0
-                                          ]
-                                        },
-                                        "name" : {
-                                          "type" : "lookAtCamera"
-                                        }
-                                      },
-                                      "identifier" : "E933ED4C-488B-4F8C-A664-44A18BBC6B69",
-                                      "isEnabled" : true
-                                    }
-                                  ],
-                                  "__version" : 1
-                                }
-                              ],
-                              "identifier" : "807DA672-FA59-4681-8906-70356A7621B1",
                               "isEnabled" : true
                             }
                           ],
@@ -657,7 +602,7 @@
                                       "configurationBox" : {
                                         "configuration" : {
                                           "target" : [
-
+                                            "EA8D22CD-0B2E-4493-9FDE-874EA451844D"
                                           ],
                                           "userIdentifier" : "forwardStart"
                                         },
@@ -960,21 +905,21 @@
               "title" : "ARKite",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.32349053025245667,
-                  -2.2048629588766744e-08,
-                  -0.9462314248085022,
+                  0.061839092522859573,
+                  -2.1965668395296234e-08,
+                  -0.99808615446090698,
                   0,
-                  -0.71681654453277588,
-                  0.65277856588363647,
-                  -0.24505980312824249,
+                  -0.50009304285049438,
+                  0.8654172420501709,
+                  -0.030984539538621902,
                   0,
-                  0.61767977476119995,
-                  0.75754863023757935,
-                  0.21116799116134644,
+                  0.86376112699508667,
+                  0.50105172395706177,
+                  0.053516868501901627,
                   0,
-                  1.8037198781967163,
-                  1.4330387115478516,
-                  0.17799460887908936,
+                  2.13081955909729,
+                  0.78658634424209595,
+                  -0.2774232029914856,
                   1
                 ],
                 "sceneTransform" : [
