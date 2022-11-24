@@ -18,6 +18,7 @@ class ViewModel: ObservableObject {
     var onStartMoveFront: () -> Void = { }
     var onStartRotate: () -> Void = { }
     var onStartBoost: () -> Void = { }
+    var showObstacle: () -> Void = { }
 }
 
 //New Comment AHAH
@@ -288,6 +289,7 @@ struct ARViewContainer: UIViewRepresentable {
         let mainAnchor = try! Experience.loadARKite()
         
         let kite = mainAnchor.findEntity(named: "kite")!
+        let obstacle = mainAnchor.findEntity(named: "obstacle")
         
         let initialPosition = SIMD3<Float>(0,0,0)
         
@@ -345,6 +347,42 @@ struct ARViewContainer: UIViewRepresentable {
             mainAnchor.notifications.kiteStart.post()
         }
         
+        vm.showObstacle = {
+            mainAnchor.notifications.showObstacle.post()
+        }
+        
+        
+        // TODO: - SHOW OBSTACLE
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { timer in
+            let kitePos = kite.position
+            
+            
+            // after 10 seconds, show the osbtacle
+            obstacle?.position = simd_float3(0, 0, 0)
+            
+            vm.showObstacle()
+            
+            // set the initial postition first
+            
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { secTimer in
+                obstacle?.move(to: .init(translation: kitePos), relativeTo: kite, duration: 5)
+                print("================================================")
+                print("Kite Position: \(kitePos)")
+                print("================================================")
+                
+//                if let kitePos = kitePos {
+//                    //                    obstacle?.transform.translation = kitePos
+//
+//
+//                }
+                print("Timer 2 work")
+            }
+            print("Timer 1 Work")
+            timer.invalidate()
+            
+        }
+        
+        
         func rotate(){
             mainAnchor.notifications.moveRotateClockwise.post()
             distanceBetweenKite = kite.position
@@ -380,6 +418,8 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {}
+    
+   
     
     func findAngle(kiteCoordinates: SIMD3<Float>, initialCoordinates: SIMD3<Float>, travelDistance: Float) -> Float{
         
