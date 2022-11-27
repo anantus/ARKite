@@ -21,7 +21,6 @@ class ViewModel: ObservableObject {
     var showObstacle: () -> Void = { }
 }
 
-//New Comment AHAH
 struct ContentView : View {
     
     @State var showContentView: Bool = false
@@ -296,6 +295,7 @@ struct ARViewContainer: UIViewRepresentable {
         var isRotate = false
         
         var distanceBetweenKite = SIMD3<Float>(0,0,0)
+        var kiteLatestPosition = SIMD3<Float>(0, 0, 0)
         
         vm.onStartMoveUp = {
             mainAnchor.notifications.moveUp.post()
@@ -345,6 +345,8 @@ struct ARViewContainer: UIViewRepresentable {
         
         vm.onStartBoost = {
             mainAnchor.notifications.kiteStart.post()
+            
+            kiteLatestPosition = kite.position
         }
         
         vm.showObstacle = {
@@ -366,15 +368,14 @@ struct ARViewContainer: UIViewRepresentable {
             
             Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { secTimer in
                 obstacle?.move(to: .init(translation: kitePos), relativeTo: kite, duration: 5)
+//                obstacle?.transform.rotation = simdqu
+                
+                
                 print("================================================")
                 print("Kite Position: \(kitePos)")
+                
                 print("================================================")
                 
-//                if let kitePos = kitePos {
-//                    //                    obstacle?.transform.translation = kitePos
-//
-//
-//                }
                 print("Timer 2 work")
             }
             print("Timer 1 Work")
@@ -382,6 +383,7 @@ struct ARViewContainer: UIViewRepresentable {
             
         }
         
+        // MARK: -FUNCTIONS
         
         func rotate(){
             mainAnchor.notifications.moveRotateClockwise.post()
