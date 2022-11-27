@@ -109,8 +109,6 @@ struct ContentView : View {
                             
                             Button {
                                 vm.onStartMoveDown()
-                                vm.onStartMoveDown()
-                                vm.onStartMoveDown()
                                 vm.onStartMoveFront()
                                 // TODO: pull kite
                             } label: {
