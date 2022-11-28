@@ -34,15 +34,21 @@ struct DashboardView: View {
                     Image("MainMenu")
                     NavigationLink(destination: ContentView(), isActive: self.$showContentView, label: {
                         ZStack{
-                            Rectangle()
-                                .fill(LinearGradient(gradient: Gradient(colors: [Color("Play"), Color("Play2")]), startPoint: .top, endPoint: .bottom))
-                                .frame(width: 252, height: 65)
-                                .cornerRadius(28)
-                                .shadow(color: Color("PlayShadow"),radius: 2, y: 10)
-                            StrokeText(text: "PLAY", width: 1, color: Color("PlayBorder"))
-                                .foregroundColor(.white)
-                                .font(.system(size: 34, weight: .heavy, design: .rounded))
-                                .shadow(color: Color("PlayShadow") ,radius: 2)
+//                                                        Rectangle()
+//                                                            .fill(LinearGradient(gradient: Gradient(colors: [Color("Play"), Color("Play2")]), startPoint: .top, endPoint: .bottom))
+//                                                            .frame(width: 252, height: 65)
+//                                                            .cornerRadius(28)
+//                                                            .shadow(color: Color("PlayShadow"),radius: 2, y: 10)
+//                                                        StrokeText(text: "MAIN", width: 1, color: Color("PlayBorder"))
+//                                                            .foregroundColor(.white)
+//                                                            .font(.system(size: 22, weight: .heavy, design: .rounded))
+//                                                            .shadow(color: Color("PlayShadow") ,radius: 2)
+                            MainMenuButton()
+                            Text("MAIN")
+                                .font(.title2)
+                                .fontWeight(.heavy)
+                                .foregroundColor(Color.white)
+                                .padding(.top, 10)
                         }
                         .onTapGesture{
                             self.showContentView = true
@@ -81,10 +87,10 @@ struct DashboardView: View {
                         .onTapGesture {
                             self.showSettingView = true
                         }})
-                    }
+                }
                 
                 
-//                .position(x: 200, y: 500)
+                //                .position(x: 200, y: 500)
             }
             .ignoresSafeArea()
             .frame(maxWidth: .infinity, maxHeight: .infinity)

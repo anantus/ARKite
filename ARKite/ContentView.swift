@@ -188,6 +188,7 @@ struct ARViewContainer: UIViewRepresentable {
     
     let vm: ViewModel
     let mainAnchor = try! Experience.loadARKite()
+    @State var collisionSubscription:Cancellable?
     @State var isForward = false
     @State var isRotate = false
     
@@ -195,7 +196,9 @@ struct ARViewContainer: UIViewRepresentable {
         
         let arView = ARView(frame: .zero)
         let kite = mainAnchor.findEntity(named: "kite")!
+        kite.generateCollisionShapes(recursive: true)
         // Load the "Box" scene from the "Experience" Reality File
+        collisionSubscription = arView.scene.publisher(for: CollisionEvents.Began.self, on:nil).sink(receiveValue: onCollisionBegan)
         
         let initialPosition = SIMD3<Float>(0,0,0)
         var distanceBetweenKite = SIMD3<Float>(0,0,0)
@@ -250,6 +253,13 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {}
+    private func onCollisionBegan(_ event: CollisionEvents.Began) {
+           print("collision started")
+            let firstEntity = event.entityA
+            let secondEntity = event.entityB
+            // Take appropriate action...
+        
+    }
     
     func findAngle(kiteCoordinates: SIMD3<Float>, initialCoordinates: SIMD3<Float>, travelDistance: Float) -> Float{
         
