@@ -8,6 +8,7 @@
 import SwiftUI
 import RealityKit
 import ARKit
+import Combine
 
 class ViewModel: ObservableObject {
     
@@ -248,17 +249,43 @@ struct ContentView : View {
 
 struct ARViewContainer: UIViewRepresentable {
     
-//    @State var coinShowed = false
+
     
     let vm: ViewModel
     
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
+//        var subscriptions: [Cancellable] = []
         
         // Load the "Box" scene from the "Experience" Reality File 
         let mainAnchor = try! Experience.loadARKite()
-        let kite = mainAnchor.findEntity(named: "kite")
+        let kite = mainAnchor.findEntity(named: "kite")!
+//        let subAnchor = try! Experience.loadCoins()
+        
+//        let kite = mainAnchor.findEntity(named: "kite")!
+//        let coin = subAnchor.findEntity(named: "coin1")!
+//
+//        var lygComp: CollisionComponent = kite.components[CollisionComponent]!.self
+//        var knComp: CollisionComponent = coin.components[CollisionComponent]!.self
+//
+//        lygComp.shapes = [.generateBox(size: [0.5, 0.5, 0.5])]
+//        knComp.shapes = [.generateBox(size: [0.5, 0.5, 0.5])]
+//
+//        lygComp.mode = .trigger
+//        knComp.mode = .trigger
+//
+//        kite.components.set(lygComp)
+//        coin.components.set(knComp)
+//
+//        let subscription = arView.scene.subscribe(to: CollisionEvents.Began.self,
+//                                                       on: kite) { event in
+//            print("Coins' collision occured!")
+//
+//        }
+//        subscriptions.append(subscription)
+//
+        
         
         
         let initialPosition = SIMD3<Float>(0,0,0)
@@ -267,118 +294,52 @@ struct ARViewContainer: UIViewRepresentable {
         
         vm.onStartMoveUp = {
             mainAnchor.notifications.moveUp.post()
-            distanceBetweenKite = kite!.position
+            distanceBetweenKite = kite.position
         }
         vm.onStartMoveDown = {
             mainAnchor.notifications.moveDown.post()
-            distanceBetweenKite = kite!.position
+            distanceBetweenKite = kite.position
         }
         vm.onStartMoveFront = {
             //Find kite Angle
             mainAnchor.notifications.moveFront.post()
-            let kiteTravel = kite!.position
+            let kiteTravel = kite.position
             print(simd_distance(kiteTravel, distanceBetweenKite))
-            let kiteAngle = findAngle(kiteCoordinates: kite!.position, initialCoordinates: initialPosition, kiteDistance: simd_distance(kiteTravel, distanceBetweenKite))
+            let kiteAngle = findAngle(kiteCoordinates: kite.position, initialCoordinates: initialPosition, kiteDistance: simd_distance(kiteTravel, distanceBetweenKite))
 
             for _ in 1...Int(kiteAngle){
                 mainAnchor.notifications.frontRotate.post()
             }
             
-            print("initial distance", simd_distance(kite!.position, initialPosition))
+            print("initial distance", simd_distance(kite.position, initialPosition))
 
         }
         
-//        vm.onStartCoin = {
-//            mainAnchor.notifications.showCoin.post()
-//        }
-//
         vm.onStartRotate = {
             mainAnchor.notifications.moveRotateClockwise.post()
         }
         vm.onStartBoost = {
+            
+            
             mainAnchor.notifications.kiteStart.post()
             mainAnchor.notifications.showCoin.post()
-//            Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in print("Timer work")
-                
-                
-                    let coin1 = mainAnchor.findEntity(named: "coin1")
-                    let coin2 = mainAnchor.findEntity(named: "coin2")
-                    let coin3 = mainAnchor.findEntity(named: "coin3")
-                    let coin4 = mainAnchor.findEntity(named: "coin4")
             
-                    let posisiLayanganX = kite!.position.x
-                    let posisiLayanganY = kite!.position.y
-                    let posisiLayanganZ = kite!.position.z
-                    
-                    var posX1 = coin1!.position.x
-                    var posY1 = coin1!.position.y
-                    var posZ1 = coin1!.position.z
-                        
-                    var posX2: Float = coin2!.position.x
-                    var posY2: Float = coin2!.position.y
-                    var posZ2: Float = coin2!.position.z
-                    
-                    var posX3: Float = coin3!.position.x
-                    var posY3: Float = coin3!.position.y
-                    var posZ3: Float = coin3!.position.z
-                    
-                    var posX4: Float = coin4!.position.x
-                    var posY4: Float = coin4!.position.y
-                    var posZ4: Float = coin4!.position.z
-                   
             
-            if (coin1?.position == kite!.position) {
-                posX1 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
-                posY1 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
-                posZ1 = Float.random(in: posisiLayanganZ-1..<posisiLayanganZ+1)
-                coin1?.position = SIMD3<Float>(posX1,posY1
-                                               ,posZ1)
-                
-            }
-            if (coin2?.position == kite!.position) {
-                posX2 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
-                posY2 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
-                posZ2 = Float.random(in: posisiLayanganZ-1..<posisiLayanganZ+1)
-                coin2?.position = SIMD3<Float>(posX2,posY2
-                                               ,posZ2)
-            }
-            if (coin3?.position == kite!.position) {
-                posX3 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
-                posY3 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
-                posZ3 = Float.random(in: posisiLayanganZ-1..<posisiLayanganZ+1)
-                coin3?.position = SIMD3<Float>(posX3,posY3
-                                               ,posZ3)
-            }
-                
-            if (coin4?.position == kite!.position) {
-                posX4 = Float.random(in: posisiLayanganX-1..<posisiLayanganX+1)
-                posY4 = Float.random(in: posisiLayanganY-1..<posisiLayanganY+1)
-                posZ4 = Float.random(in: posisiLayanganZ-1..<posisiLayanganZ+1)
-                coin4?.position = SIMD3<Float>(posX4,posY4
-                                               ,posZ4)
-            }
-                    
-//                    print("posisi layangan X :", posisiLayanganX)
-//                    print("posisi layangan Y :", posisiLayanganY)
-//                    print("posisi layangan Z :", posisiLayanganZ)
-                    print(posX1)
-                    print(posY1)
-                    print(posZ1)
                 
             
         }
-//            mainAnchor.notifications.showCoin.post()
-        
-        
-        
         
         // Add the box anchor to the scene
         arView.scene.anchors.append(mainAnchor)
-        
+//        arView.scene.anchors.append(subAnchor)
+//        makeCoinCollisions()
         return arView
         
     }
     
+//    func makeCoinCollisions() -> CoinCollisions {
+//        CoinCollisions()
+//    }
     func updateUIView(_ uiView: ARView, context: Context) {}
     
     func findDistance(kiteCoordinates: SIMD3<Float>, initialCoordinates: SIMD3<Float>) -> Float {
@@ -403,7 +364,10 @@ struct ARViewContainer: UIViewRepresentable {
         return angle
     }
     
+    
 }
+
+
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
