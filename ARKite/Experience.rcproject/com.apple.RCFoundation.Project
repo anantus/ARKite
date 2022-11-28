@@ -1027,11 +1027,102 @@
                     }
                   ],
                   "__version" : 3
+                },
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "isEnabled" : false
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "axis" : [
+                                            0,
+                                            1,
+                                            0
+                                          ],
+                                          "direction" : "clockwise",
+                                          "duration" : 3.854442834854126,
+                                          "iterations" : 6,
+                                          "target" : [
+                                            "F80FA74D-641B-4A25-9560-5C8D35D90283"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "type" : "spin"
+                                        }
+                                      },
+                                      "identifier" : "A8FD16B5-7323-4A3D-9B1B-D0C3987DE51F",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "C9564E65-E255-48A8-B63B-E3B195424DCE",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ],
+                      "color" : [
+                        0.49803921580314636,
+                        0.50196081399917603,
+                        0.52549022436141968,
+                        1
+                      ],
+                      "identifier" : "0FEB4638-8080-48B0-B6CF-FBB3257CC02E",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "Behavior",
+                      "triggers" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
+                                  "collidingObjects" : [
+                                    "EA8D22CD-0B2E-4493-9FDE-874EA451844D"
+                                  ],
+                                  "tags" : [
+
+                                  ],
+                                  "target" : [
+                                    "F80FA74D-641B-4A25-9560-5C8D35D90283"
+                                  ]
+                                },
+                                "name" : "collision"
+                              },
+                              "identifier" : "00576408-16F0-41C7-89E1-F8644BF70E66",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
                 }
               ],
               "gravity" : [
                 0,
-                -9.8000001907348633,
+                -0,
                 0
               ],
               "identifier" : "F9610871-0955-494F-A5C3-51D1A281BAB3",
@@ -1045,6 +1136,7 @@
                   "7EA2E5FA-7796-45A6-812B-1433C8A603C3" : null,
                   "7F5F1ADC-E5E4-4EF5-A5B5-FC43B071FFA5" : null,
                   "8D32752B-280E-4973-BF6D-A82894AC0CDA" : null,
+                  "20F88098-CDC1-4039-BD67-CFC3FAF76BB3" : null,
                   "41B0F1C2-14ED-4F14-B5F7-F039E9048623" : null,
                   "60C03391-F064-4061-AA6B-F97AC3123814" : null,
                   "62A26DB6-B4E4-44C4-82D7-C46C56814835" : null,
@@ -1147,6 +1239,20 @@
                           {
                             "typeName" : "Bool",
                             "value" : false
+                          }
+                        ],
+                        [
+                          "rigidBody-enabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
+                          }
+                        ],
+                        [
+                          "rigidBody-motionType",
+                          {
+                            "typeName" : "REMotionType",
+                            "value" : "static"
                           }
                         ]
                       ]
@@ -1266,26 +1372,59 @@
                             "typeName" : "String",
                             "value" : "obstacle"
                           }
+                        ],
+                        [
+                          "rigidBody-enabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
+                          }
+                        ],
+                        [
+                          "rigidBody-material",
+                          {
+                            "typeName" : "RigidBodyMaterial",
+                            "value" : {
+                              "builtIn" : "concrete",
+                              "overrides" : {
+
+                              }
+                            }
+                          }
+                        ],
+                        [
+                          "rigidBody-motionType",
+                          {
+                            "typeName" : "REMotionType",
+                            "value" : "static"
+                          }
+                        ],
+                        [
+                          "rigidBody-shapeType",
+                          {
+                            "typeName" : "String",
+                            "value" : "default"
+                          }
                         ]
                       ]
                     },
                     "transform" : {
                       "matrix" : [
-                        0.25,
+                        0.12214373797178268,
+                        0,
+                        -0.1893598735332489,
                         0,
                         0,
+                        0.22533586621284485,
                         0,
                         0,
-                        0.25,
+                        0.1893598735332489,
                         0,
+                        0.12214373797178268,
                         0,
-                        0,
-                        0,
-                        0.25,
-                        0,
-                        1.5627652406692505,
-                        0,
-                        0,
+                        1.4050217866897583,
+                        1.3824442625045776,
+                        0.17331063747406006,
                         1
                       ]
                     }
@@ -1311,21 +1450,21 @@
               "title" : "ARKite",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.9923701286315918,
-                  -2.0236393893924287e-08,
-                  -0.12329505383968353,
+                  0.98349905014038086,
+                  -4.0600909301247157e-08,
+                  -0.1809132993221283,
                   0,
-                  -0.051690705120563507,
-                  0.90787404775619507,
-                  -0.41604435443878174,
+                  -0.050088461488485336,
+                  0.96090924739837646,
+                  -0.27229508757591248,
                   0,
-                  0.11193610727787018,
-                  0.41924291849136353,
-                  0.90094715356826782,
+                  0.17384105920791626,
+                  0.27686333656311035,
+                  0.94505339860916138,
                   0,
-                  1.9206035137176514,
-                  3.8387496471405029,
-                  6.3014712333679199,
+                  2.9780013561248779,
+                  3.4018645286560059,
+                  9.5333461761474609,
                   1
                 ],
                 "sceneTransform" : [

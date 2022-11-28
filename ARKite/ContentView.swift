@@ -29,6 +29,7 @@ struct ContentView : View {
     @State var isStartPlay = false
     @State var rotate = false
     
+    
     var body: some View {
         ZStack {
             ARViewContainer(vm: vm)
@@ -286,16 +287,18 @@ struct ARViewContainer: UIViewRepresentable {
         
         // Load the "Box" scene from the "Experience" Reality File
         let mainAnchor = try! Experience.loadARKite()
+       
+        guard let kite = mainAnchor.findEntity(named: "kite") else { fatalError("Kite is nill")}
+        guard let obstacle = mainAnchor.findEntity(named: "obstacle") else { fatalError("Obstacle is nill")}
         
-        let kite = mainAnchor.findEntity(named: "kite")!
-        let obstacle = mainAnchor.findEntity(named: "obstacle")
+        var collisionSubscriptions = [Cancellable]()
+        
         
         let initialPosition = SIMD3<Float>(0,0,0)
         
         var isRotate = false
         
         var distanceBetweenKite = SIMD3<Float>(0,0,0)
-        var kiteLatestPosition = SIMD3<Float>(0, 0, 0)
         
         vm.onStartMoveUp = {
             mainAnchor.notifications.moveUp.post()
@@ -346,7 +349,6 @@ struct ARViewContainer: UIViewRepresentable {
         vm.onStartBoost = {
             mainAnchor.notifications.kiteStart.post()
             
-            kiteLatestPosition = kite.position
         }
         
         vm.showObstacle = {
@@ -354,26 +356,42 @@ struct ARViewContainer: UIViewRepresentable {
         }
         
         
+//        (kite as? Entity & HasPhysics & HasCollision)?.physicsBody = PhysicsBodyComponent(massProperties: .default, material: .default, mode: .dynamic)
+//        (kite as? Entity & HasPhysics & HasCollision)?.generateCollisionShapes(recursive: true)
+//        (kite as? Entity & HasPhysics & HasCollision)?.collision = CollisionComponent(shapes: [.generateBox(size: [0.3, 0.3, 0.3])], mode: .trigger, filter: .sensor)
+//
+//        (obstacle as? Entity & HasPhysics & HasCollision)?.physicsBody = PhysicsBodyComponent(massProperties: .default, material: .default, mode: .dynamic)
+//        (obstacle as? Entity & HasPhysics & HasCollision)?.generateCollisionShapes(recursive: true)
+//        (obstacle as? Entity & HasPhysics & HasCollision)?.collision = CollisionComponent(shapes: [.generateBox(size: [0.3, 0.3, 0.3])], mode: .trigger, filter: .sensor)
+//
+//
+//        collisionSubscriptions.append(arView.scene.subscribe(to: CollisionEvents.Began.self) { event in
+//            print("-----++++++++++++++++++-----------")
+//            print("Collision Start")
+//            print("-----++++++++++++++++++-----------")
+//        })
+//
+//        collisionSubscriptions.append(arView.scene.subscribe(to: CollisionEvents.Ended.self) { event in
+//            print("-----++++++++++++++++++-----------")
+//            print("Collision Ended")
+//            print("-----++++++++++++++++++-----------")
+//        })
+//
+        
         // TODO: - SHOW OBSTACLE
-        Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { timer in
-            let kitePos = kite.position
-            
-            
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { timer in
             // after 10 seconds, show the osbtacle
-            obstacle?.position = simd_float3(0, 0, 0)
+            obstacle.position = simd_float3(0, 0, 0)
             
             vm.showObstacle()
             
             // set the initial postition first
             
             Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { secTimer in
-                obstacle?.move(to: .init(translation: kitePos), relativeTo: kite, duration: 5)
-//                obstacle?.transform.rotation = simdqu
-                
-                
+                obstacle.move(to: .init(translation: [kite.position.x, kite.position.y - 0.3, kite.position.z]), relativeTo: kite, duration: 3)
+//
                 print("================================================")
-                print("Kite Position: \(kitePos)")
-                
+                print("Kite Position: \(kite.position)")
                 print("================================================")
                 
                 print("Timer 2 work")
@@ -396,12 +414,10 @@ struct ARViewContainer: UIViewRepresentable {
         }
         
         func rotateRecursion(_ entity: Entity?) {
-            
             if isRotate{
                 mainAnchor.notifications.moveRotateClockwise.post()
                 mainAnchor.actions.rotateEnd.onAction = rotateRecursion
             }
-            
         }
         
         func rotateOn(_ entity: Entity?){
@@ -452,30 +468,3 @@ struct ContentView_Previews : PreviewProvider {
 }
 #endif
 
-
-
-//HStack{
-//    Spacer()
-//    VStack{
-//        Button("MOVE UP"){
-//            vm.onStartMoveUp()
-//        }
-//        .padding()
-//
-//        Button("MOVE DOWN"){
-//            vm.onStartMoveDown()
-//        }
-//        Button("FRONT"){
-//            vm.onStartMoveFront()
-//        }
-//        .padding()
-//        Button("ROTATE"){
-//            vm.onStartRotate()
-//        }
-//        .padding()
-//        Button("START"){
-//            vm.onStartBoost()
-//        }
-//        .padding()
-//    }
-// }
