@@ -1,5 +1,20 @@
 [
   {
+    "libraryIdentifier" : "5f7133a54a29e73c5209ee77cb729044",
+    "format" : "model",
+    "displayName" : "Animate-Kite1.usdz"
+  },
+  {
+    "libraryIdentifier" : "838993301d1568063fbaf1d47c22a3d5",
+    "format" : "model",
+    "displayName" : "Kite1.usdz"
+  },
+  {
+    "libraryIdentifier" : "c24f3e5996ed5a4e18a814e3c6a7a995",
+    "format" : "model",
+    "displayName" : "Kite2.usdz"
+  },
+  {
     "libraryIdentifier" : "843499fdadc7cac45fa2b2e9be23a581",
     "format" : "model",
     "displayName" : "ASET KITE 3D.usdz"
@@ -18,5 +33,10 @@
     "libraryIdentifier" : "3ffd6865e7fe9a4bef3cbde024354ea2",
     "format" : "model",
     "displayName" : "coin.usdz"
+  },
+  {
+    "libraryIdentifier" : "72af4191ee453dbced67435968426b53",
+    "format" : "model",
+    "displayName" : "GASANIMATE2.usdz"
   }
 ]

@@ -16,12 +16,16 @@
 		438F0B24291F755F007551F5 /* ChooseKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B23291F755F007551F5 /* ChooseKiteView.swift */; };
 		438F0B26291F7569007551F5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B25291F7569007551F5 /* SettingView.swift */; };
 		553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */; };
-		553EFF1C28FD60EF00E54FA1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1B28FD60EF00E54FA1 /* ContentView.swift */; };
-		553EFF1E28FD60EF00E54FA1 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1D28FD60EF00E54FA1 /* Experience.rcproject */; };
+		553EFF1C28FD60EF00E54FA1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1B28FD60EF00E54FA1 /* GameView.swift */; };
 		553EFF2028FD60F100E54FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553EFF1F28FD60F100E54FA1 /* Assets.xcassets */; };
 		553EFF2328FD60F100E54FA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553EFF2228FD60F100E54FA1 /* Preview Assets.xcassets */; };
 		5544090429339B5800674C81 /* Animate-Kite2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 5544090329339B5800674C81 /* Animate-Kite2.usdz */; };
 		55440906293442AC00674C81 /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440905293442AC00674C81 /* MainMenuButton.swift */; };
+		554409082935034F00674C81 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 554409072935034F00674C81 /* Experience.rcproject */; };
+		5544090C2935084300674C81 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544090B2935084300674C81 /* ARViewContainer.swift */; };
+		55440910293508F200674C81 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544090F293508F200674C81 /* ARViewModel.swift */; };
+		554409122935372000674C81 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409112935372000674C81 /* CollectionViewModel.swift */; };
+		554409142935373C00674C81 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409132935373C00674C81 /* SettingsViewModel.swift */; };
 		56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AEAE7A29211BA8007424F4 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,12 +40,16 @@
 		438F0B25291F7569007551F5 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		553EFF1628FD60EF00E54FA1 /* ARKite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		553EFF1B28FD60EF00E54FA1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		553EFF1D28FD60EF00E54FA1 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
+		553EFF1B28FD60EF00E54FA1 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		553EFF1F28FD60F100E54FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		553EFF2228FD60F100E54FA1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5544090329339B5800674C81 /* Animate-Kite2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Animate-Kite2.usdz"; sourceTree = "<group>"; };
 		55440905293442AC00674C81 /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
+		554409072935034F00674C81 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
+		5544090B2935084300674C81 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		5544090F293508F200674C81 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
+		554409112935372000674C81 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
+		554409132935373C00674C81 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		56AEAE7A29211BA8007424F4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,13 +107,10 @@
 		553EFF1828FD60EF00E54FA1 /* ARKite */ = {
 			isa = PBXGroup;
 			children = (
-				56AEAE7C29211BAE007424F4 /* Extensions */,
+				5544090E2935089B00674C81 /* Model */,
+				5544090D2935089000674C81 /* ViewModel */,
+				554409092935076A00674C81 /* View */,
 				553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */,
-				553EFF1B28FD60EF00E54FA1 /* ContentView.swift */,
-				438F0B22291F753D007551F5 /* NonARView */,
-				553EFF1D28FD60EF00E54FA1 /* Experience.rcproject */,
-				5544090329339B5800674C81 /* Animate-Kite2.usdz */,
-				553EFF1F28FD60F100E54FA1 /* Assets.xcassets */,
 				553EFF2128FD60F100E54FA1 /* Preview Content */,
 			);
 			path = ARKite;
@@ -117,6 +122,45 @@
 				553EFF2228FD60F100E54FA1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		554409092935076A00674C81 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56AEAE7C29211BAE007424F4 /* Extensions */,
+				5544090A293507CE00674C81 /* ARView */,
+				438F0B22291F753D007551F5 /* NonARView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5544090A293507CE00674C81 /* ARView */ = {
+			isa = PBXGroup;
+			children = (
+				553EFF1B28FD60EF00E54FA1 /* GameView.swift */,
+				5544090B2935084300674C81 /* ARViewContainer.swift */,
+			);
+			path = ARView;
+			sourceTree = "<group>";
+		};
+		5544090D2935089000674C81 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5544090F293508F200674C81 /* ARViewModel.swift */,
+				554409112935372000674C81 /* CollectionViewModel.swift */,
+				554409132935373C00674C81 /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5544090E2935089B00674C81 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5544090329339B5800674C81 /* Animate-Kite2.usdz */,
+				554409072935034F00674C81 /* Experience.rcproject */,
+				553EFF1F28FD60F100E54FA1 /* Assets.xcassets */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		56AEAE7C29211BAE007424F4 /* Extensions */ = {
@@ -198,17 +242,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55440910293508F200674C81 /* ARViewModel.swift in Sources */,
 				438A9E0E2920CF6E0010918E /* StrokeText.swift in Sources */,
-				553EFF1C28FD60EF00E54FA1 /* ContentView.swift in Sources */,
+				553EFF1C28FD60EF00E54FA1 /* GameView.swift in Sources */,
 				438F0B20291F751B007551F5 /* DashboardView.swift in Sources */,
+				5544090C2935084300674C81 /* ARViewContainer.swift in Sources */,
 				438A9E1829210C500010918E /* UseButton.swift in Sources */,
 				438A9E102920E5A90010918E /* FrameKuning.swift in Sources */,
+				554409082935034F00674C81 /* Experience.rcproject in Sources */,
+				554409142935373C00674C81 /* SettingsViewModel.swift in Sources */,
 				55440906293442AC00674C81 /* MainMenuButton.swift in Sources */,
 				438A9E122920E5B30010918E /* FrameIjo.swift in Sources */,
 				438A9E1A29210C670010918E /* SelectedButton.swift in Sources */,
 				553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */,
+				554409122935372000674C81 /* CollectionViewModel.swift in Sources */,
 				438F0B26291F7569007551F5 /* SettingView.swift in Sources */,
-				553EFF1E28FD60EF00E54FA1 /* Experience.rcproject in Sources */,
 				56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */,
 				438F0B24291F755F007551F5 /* ChooseKiteView.swift in Sources */,
 			);
@@ -339,7 +387,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = C8B3R9N352;
+				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -371,7 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = C8B3R9N352;
+				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";

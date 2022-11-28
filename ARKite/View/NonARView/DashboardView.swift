@@ -32,7 +32,7 @@ struct DashboardView: View {
                 .position(x: 300, y: 50)
                 VStack{
                     Image("MainMenu")
-                    NavigationLink(destination: ContentView(), isActive: self.$showContentView, label: {
+                    NavigationLink(destination: GameView(), isActive: self.$showContentView, label: {
                         ZStack{
 //                                                        Rectangle()
 //                                                            .fill(LinearGradient(gradient: Gradient(colors: [Color("Play"), Color("Play2")]), startPoint: .top, endPoint: .bottom))
