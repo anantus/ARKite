@@ -237,12 +237,17 @@ struct ARViewContainer: UIViewRepresentable {
         
         vm.onStartBoost = {
             mainAnchor.notifications.kiteStart.post()
+            mainAnchor.notifications.showCoin.post()
             distanceBetweenKite = kite.position
             mainAnchor.actions.kiteStartEnd.onAction = rotateOn
             
             //Recursion
             //setelah rotateEnd dipanggil, bakal ngelakuin rotateRecursion
+            
+            //notifytabrakan
+            randomPosition(kite)
         }
+        
         
         // Add the box anchor to the scene
         arView.scene.anchors.append(mainAnchor)
@@ -282,6 +287,59 @@ struct ARViewContainer: UIViewRepresentable {
         isForward = true
         rotateRecursion(entity)
         print("Rotate is called!")
+    }
+    
+    func randomPosition(_ entity: Entity?) {
+        let kite = entity!
+//        let coin1 = mainAnchor.findEntity(named: "coin1")!
+//        let coin2 = mainAnchor.findEntity(named: "coin2")!
+//        let coin3 = mainAnchor.findEntity(named: "coin3")!
+//        let coin4 = mainAnchor.findEntity(named: "coin4")!
+        
+        let posisiLayanganX = kite.position.x
+        let posisiLayanganY = kite.position.y
+        let posisiLayanganZ = kite.position.z
+//
+//        let posX1 = Float.random(in: posisiLayanganX-1...posisiLayanganX+1)
+//        let posY1 = Float.random(in: posisiLayanganY-1...posisiLayanganY+1)
+//        let posZ1 = Float.random(in: posisiLayanganZ-1...posisiLayanganZ+1)
+//        coin1.position = SIMD3<Float>(posX1,posY1,posZ1)
+//
+//        let posX2 = Float.random(in: posisiLayanganX-1...posisiLayanganX+1)
+//        let posY2 = Float.random(in: posisiLayanganY-1...posisiLayanganY+1)
+//        let posZ2 = Float.random(in: posisiLayanganZ-1...posisiLayanganZ+1)
+//        coin2.position = SIMD3<Float>(posX2,posY2,posZ2)
+//
+//        let posX3 = Float.random(in: posisiLayanganX-1...posisiLayanganX+1)
+//        let posY3 = Float.random(in: posisiLayanganY-1...posisiLayanganY+1)
+//        let posZ3 = Float.random(in: posisiLayanganZ-1...posisiLayanganZ+1)
+//        coin3.position = SIMD3<Float>(posX3,posY3,posZ3)
+//
+//        let posX4 = Float.random(in: posisiLayanganX-1...posisiLayanganX+1)
+//        let posY4 = Float.random(in: posisiLayanganY-1...posisiLayanganY+1)
+//        let posZ4 = Float.random(in: posisiLayanganZ-1...posisiLayanganZ+1)
+//        coin4.position = SIMD3<Float>(posX4,posY4,posZ4)
+        
+        let allDisplayAction = mainAnchor.actions.allActions.filter({$0.identifier.hasPrefix("CollisionCoin")})
+        
+        print(allDisplayAction.count)
+        
+        mainAnchor.actions.collisionCoin1.onAction = {entity in
+            print("Coin 1 has collide!")
+        }
+                
+//                for displayAction in allDisplayAction {
+//                    displayAction.onAction = {entity in
+//
+//                        if let entity = entity{
+//                            let posX1 = Float.random(in: posisiLayanganX-1...posisiLayanganX+1)
+//                            let posY1 = Float.random(in: posisiLayanganY-1...posisiLayanganY+1)
+//                            let posZ1 = Float.random(in: posisiLayanganZ-1...posisiLayanganZ+1)
+//                            entity.position = SIMD3<Float>(posX1,posY1,posZ1)
+//                            print("\(entity.name) has collide")
+//                        }
+//                    }
+//                }
     }
     
     // This needs to be an instance variable, otherwise it'll
