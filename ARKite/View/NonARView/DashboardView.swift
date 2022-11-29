@@ -34,16 +34,7 @@ struct DashboardView: View {
                     Image("MainMenu")
                     NavigationLink(destination: GameView(), isActive: self.$showContentView, label: {
                         ZStack{
-//                                                        Rectangle()
-//                                                            .fill(LinearGradient(gradient: Gradient(colors: [Color("Play"), Color("Play2")]), startPoint: .top, endPoint: .bottom))
-//                                                            .frame(width: 252, height: 65)
-//                                                            .cornerRadius(28)
-//                                                            .shadow(color: Color("PlayShadow"),radius: 2, y: 10)
-//                                                        StrokeText(text: "MAIN", width: 1, color: Color("PlayBorder"))
-//                                                            .foregroundColor(.white)
-//                                                            .font(.system(size: 22, weight: .heavy, design: .rounded))
-//                                                            .shadow(color: Color("PlayShadow") ,radius: 2)
-                            MainMenuButton()
+                            MainMenuButton(buttonFrontColor: Color(hex: "106514"), buttonBackColor: Color(hex: "15B10F"), width: 250, height: 70)
                             Text("MAIN")
                                 .font(.title2)
                                 .fontWeight(.heavy)

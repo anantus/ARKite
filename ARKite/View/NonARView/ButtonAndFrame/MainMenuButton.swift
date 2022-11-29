@@ -9,18 +9,27 @@ import SwiftUI
 
 //Dipakai untuk main menu button
 struct MainMenuButton: View {
+    @State var buttonFrontColor: Color
+    @State var buttonBackColor: Color
+    @State var width: CGFloat
+    @State var height: CGFloat
+    
     var body: some View {
         ZStack{
             Buttons()
-                .frame(width: 240, height: 70)
-//                .foregroundColor(Color.gray)
+                .frame(width: width, height: height)
+                .foregroundColor(buttonBackColor)
+//            Color(hex: "106514")
+                
                 .cornerRadius(5)
                 .padding(.trailing, 10)
                 .padding(.top, 15)
             Buttons()
-                .frame(width: 240, height: 70)
-                .foregroundColor(Color.green)
+                .frame(width: 250, height: 70)
+                .foregroundColor(buttonFrontColor)
+//            Color(hex: "15B10F")
                 .cornerRadius(5)
+            
         }
     }
 }
@@ -42,6 +51,7 @@ struct Buttons: Shape {
         
         //end at top right
         path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
+
         
         return path
     }
@@ -49,6 +59,6 @@ struct Buttons: Shape {
 
 struct MainMenuButton_Previews: PreviewProvider {
     static var previews: some View {
-        MainMenuButton()
+        MainMenuButton(buttonFrontColor: Color(hex: "106514"), buttonBackColor: Color(hex: "15B10F"), width: 250, height: 70)
     }
 }

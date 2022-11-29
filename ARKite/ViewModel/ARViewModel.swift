@@ -14,6 +14,8 @@ class ARViewModel: ObservableObject {
     @Published fileprivate var obstacle: Entity
     @Published fileprivate var isForward = false
     @Published fileprivate var isRotate = false
+    @Published var coinGame = 0
+    
     @State fileprivate var distanceBetweenKite = SIMD3<Float>(0,0,0)
     
     let mainAnchor = try! Experience.loadARKite()
@@ -24,7 +26,10 @@ class ARViewModel: ObservableObject {
     init(){
         self.kite = mainAnchor.findEntity(named: "kite")!
         self.obstacle = mainAnchor.findEntity(named: "obstacle")!
+        mainAnchor.children[0] = mainAnchor.findEntity(named: "obstacle")!
         self.randomCoinPosition(kite)
+//        print(mainAnchor)
+        print(kite.children[0].children[0])
         
     }
     
@@ -151,9 +156,9 @@ class ARViewModel: ObservableObject {
         let posisiLayanganY = kite.position.y
         let posisiLayanganZ = kite.position.z
         let allDisplayAction = mainAnchor.actions.allActions.filter({$0.identifier.hasPrefix("CollisionCoin")})
+        
         for displayAction in allDisplayAction {
             displayAction.onAction = {entity in
-                
                 if let entity = entity{
                     let posX1 = Float.random(in: posisiLayanganX-0.1...posisiLayanganX+0.1)
                     let posY1 = Float.random(in: posisiLayanganY-0.1...posisiLayanganY+0.1)

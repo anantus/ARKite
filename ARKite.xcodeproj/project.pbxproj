@@ -26,6 +26,7 @@
 		55440910293508F200674C81 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544090F293508F200674C81 /* ARViewModel.swift */; };
 		554409122935372000674C81 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409112935372000674C81 /* CollectionViewModel.swift */; };
 		554409142935373C00674C81 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409132935373C00674C81 /* SettingsViewModel.swift */; };
+		5544091829360B0A00674C81 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544091729360B0A00674C81 /* DefaultKeys.swift */; };
 		56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AEAE7A29211BA8007424F4 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		5544090F293508F200674C81 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
 		554409112935372000674C81 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		554409132935373C00674C81 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		5544091729360B0A00674C81 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		56AEAE7A29211BA8007424F4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 				5544090329339B5800674C81 /* Animate-Kite2.usdz */,
 				554409072935034F00674C81 /* Experience.rcproject */,
 				553EFF1F28FD60F100E54FA1 /* Assets.xcassets */,
+				5544091729360B0A00674C81 /* DefaultKeys.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				553EFF1C28FD60EF00E54FA1 /* GameView.swift in Sources */,
 				438F0B20291F751B007551F5 /* DashboardView.swift in Sources */,
 				5544090C2935084300674C81 /* ARViewContainer.swift in Sources */,
+				5544091829360B0A00674C81 /* DefaultKeys.swift in Sources */,
 				438A9E1829210C500010918E /* UseButton.swift in Sources */,
 				438A9E102920E5A90010918E /* FrameKuning.swift in Sources */,
 				554409082935034F00674C81 /* Experience.rcproject in Sources */,
