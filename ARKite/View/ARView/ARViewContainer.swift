@@ -15,9 +15,13 @@ struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
         
-        arView.scene.anchors.first?.name = "Kite Anchor"
         arView.addCoaching()
+        
+        print("ARViewContainer: Layangan belum muncul")
+        
         arView.scene.anchors.append(anchor)
+        
+        print("ARViewContainer: Layangan muncul")
         
         return arView
         

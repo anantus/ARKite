@@ -21,10 +21,15 @@ extension ARView: ARCoachingOverlayViewDelegate {
         self.addSubview(coachingOverlay)
     }
     
+    
     public func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView) {
         // add the virtual object
-        if self.scene.anchors.first(where: { $0.name == "Kite Anchor" }) == nil {
+        if self.scene.anchors.first(where: { $0.name == "ARKite" }) == nil {
+            
+            print("DEBUG: Kite belum muncul")
             return
         }
+        
+        print("DEBUG: Kite muncul")
     }
 }
