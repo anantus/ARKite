@@ -26,6 +26,7 @@
 		55440910293508F200674C81 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544090F293508F200674C81 /* ARViewModel.swift */; };
 		554409122935372000674C81 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409112935372000674C81 /* CollectionViewModel.swift */; };
 		554409142935373C00674C81 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409132935373C00674C81 /* SettingsViewModel.swift */; };
+		562030EE2935EACA0048BB69 /* ARView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562030ED2935EACA0048BB69 /* ARView+Extension.swift */; };
 		56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AEAE7A29211BA8007424F4 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		5544090F293508F200674C81 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
 		554409112935372000674C81 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		554409132935373C00674C81 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		562030ED2935EACA0048BB69 /* ARView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView+Extension.swift"; sourceTree = "<group>"; };
 		56AEAE7A29211BA8007424F4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				56AEAE7A29211BA8007424F4 /* Color+Extension.swift */,
+				562030ED2935EACA0048BB69 /* ARView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				438A9E122920E5B30010918E /* FrameIjo.swift in Sources */,
 				438A9E1A29210C670010918E /* SelectedButton.swift in Sources */,
 				553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */,
+				562030EE2935EACA0048BB69 /* ARView+Extension.swift in Sources */,
 				554409122935372000674C81 /* CollectionViewModel.swift in Sources */,
 				438F0B26291F7569007551F5 /* SettingView.swift in Sources */,
 				56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */,
@@ -387,7 +391,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = Y26BLZ69B8;
+				DEVELOPMENT_TEAM = KFD27J2TGQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -419,7 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = Y26BLZ69B8;
+				DEVELOPMENT_TEAM = KFD27J2TGQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
