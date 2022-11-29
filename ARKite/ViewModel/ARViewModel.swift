@@ -17,6 +17,8 @@ class ARViewModel: ObservableObject {
     @State fileprivate var distanceBetweenKite = SIMD3<Float>(0,0,0)
     
     let mainAnchor = try! Experience.loadARKite()
+    
+    
     let arView = ARView(frame: .zero)
     fileprivate let initialPosition = SIMD3<Float>(0,0,0)
     

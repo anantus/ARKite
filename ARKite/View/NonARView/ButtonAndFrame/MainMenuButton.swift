@@ -12,12 +12,14 @@ struct MainMenuButton: View {
     var body: some View {
         ZStack{
             Buttons()
+                .fill(.linearGradient(colors: [Color.init(hex: "FC3E45"), Color.init(hex: "BA2424")], startPoint: .top, endPoint: .bottom))
                 .frame(width: 240, height: 70)
-//                .foregroundColor(Color.gray)
+//
                 .cornerRadius(5)
                 .padding(.trailing, 10)
                 .padding(.top, 15)
             Buttons()
+                .fill(.linearGradient(colors: [Color.init(hex: "FC3E45"), Color.init(hex: "BA2424")], startPoint: .top, endPoint: .bottom))
                 .frame(width: 240, height: 70)
                 .foregroundColor(Color.green)
                 .cornerRadius(5)
