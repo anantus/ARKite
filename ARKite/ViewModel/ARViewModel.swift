@@ -28,12 +28,10 @@ class ARViewModel: ObservableObject {
         self.obstacle = mainAnchor.findEntity(named: "obstacle")!
         mainAnchor.children[0] = mainAnchor.findEntity(named: "obstacle")!
         self.randomCoinPosition(kite)
-//        print(mainAnchor)
         print(kite.children[0].children[0])
         
     }
-    
-    
+
     
     //Function layangan untuk menjauh dari anchor
     func kiteMoveUp(){
