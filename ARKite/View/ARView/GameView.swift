@@ -44,7 +44,7 @@ struct GameView : View {
                                     .frame(width: 86, height: 28)
                                     .foregroundColor(.init(hex: "2C2C2C"))
                                     .overlay {
-                                        Text("25")
+                                        Text("\(vm.coinGame)")
                                             .font(.system(.callout, design: .rounded, weight: .semibold))
                                             .foregroundColor(.white)
                                     }

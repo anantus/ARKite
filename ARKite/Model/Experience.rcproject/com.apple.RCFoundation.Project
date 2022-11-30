@@ -873,15 +873,18 @@
                                         "configuration" : {
                                           "angularCoefficient" : 1,
                                           "animationStyle" : "basic",
-                                          "buildInAnimationType" : "pop",
+                                          "buildInAnimationType" : "none",
                                           "distance" : 1,
-                                          "duration" : 0.5,
+                                          "duration" : 0,
                                           "fadeIn" : true,
                                           "linearCoefficient" : 1,
                                           "moveEase" : "easeInOut",
                                           "respectPhysics" : false,
                                           "target" : [
-                                            "DC107218-1A85-4211-A459-CE366EB34381"
+                                            "DC107218-1A85-4211-A459-CE366EB34381",
+                                            "B5422C4D-CF44-41D1-A579-CAF541B06E33",
+                                            "25BBFF98-5091-4322-AE26-D4323C76C1DD",
+                                            "E8A9DD28-59E9-4D30-9F1C-2818346A37DB"
                                           ]
                                         },
                                         "name" : {
@@ -985,9 +988,9 @@
                                         "configuration" : {
                                           "angularCoefficient" : 1,
                                           "animationStyle" : "basic",
-                                          "buildOutAnimationType" : "none",
+                                          "buildOutAnimationType" : "scale down",
                                           "distance" : 1,
-                                          "duration" : 5,
+                                          "duration" : 0.10000000149011612,
                                           "fadeOut" : true,
                                           "linearCoefficient" : 1,
                                           "moveEase" : "easeInOut",
@@ -1005,18 +1008,38 @@
                                     }
                                   ],
                                   "__version" : 1
-                                }
-                              ],
-                              "identifier" : "1C01CFCC-8C81-4EBC-8062-AF61ADD4EF02",
-                              "isEnabled" : true
-                            }
-                          ],
-                          "__version" : 1
-                        },
-                        {
-                          "__content" : [
-                            {
-                              "configurations" : [
+                                },
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "angularCoefficient" : 1,
+                                          "duration" : 0,
+                                          "isTransformInitKeyPath" : true,
+                                          "linearCoefficient" : 1,
+                                          "location" : [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "moveEase" : "easeInOut",
+                                          "respectPhysics" : false,
+                                          "target" : [
+                                            "DC107218-1A85-4211-A459-CE366EB34381"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "arguments" : "absolute",
+                                          "type" : "transform"
+                                        }
+                                      },
+                                      "identifier" : "00698A4A-D810-4568-ABB1-937239ADD976",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                },
                                 {
                                   "__content" : [
                                     {
@@ -1036,37 +1059,9 @@
                                     }
                                   ],
                                   "__version" : 1
-                                },
-                                {
-                                  "__content" : [
-                                    {
-                                      "configurationBox" : {
-                                        "configuration" : {
-                                          "angularCoefficient" : 1,
-                                          "animationStyle" : "basic",
-                                          "buildInAnimationType" : "none",
-                                          "distance" : 1,
-                                          "duration" : 0,
-                                          "fadeIn" : true,
-                                          "linearCoefficient" : 1,
-                                          "moveEase" : "easeInOut",
-                                          "respectPhysics" : false,
-                                          "target" : [
-                                            "DC107218-1A85-4211-A459-CE366EB34381"
-                                          ]
-                                        },
-                                        "name" : {
-                                          "type" : "show"
-                                        }
-                                      },
-                                      "identifier" : "9605CFCF-3836-4D33-97A7-E7D7B144F278",
-                                      "isEnabled" : true
-                                    }
-                                  ],
-                                  "__version" : 1
                                 }
                               ],
-                              "identifier" : "835E4F9A-228D-437F-8D7A-43797F9FFFEA",
+                              "identifier" : "1C01CFCC-8C81-4EBC-8062-AF61ADD4EF02",
                               "isEnabled" : true
                             }
                           ],
@@ -1136,9 +1131,9 @@
                                         "configuration" : {
                                           "angularCoefficient" : 1,
                                           "animationStyle" : "basic",
-                                          "buildOutAnimationType" : "none",
+                                          "buildOutAnimationType" : "scale down",
                                           "distance" : 1,
-                                          "duration" : 5,
+                                          "duration" : 0.10000000149011612,
                                           "fadeOut" : true,
                                           "linearCoefficient" : 1,
                                           "moveEase" : "easeInOut",
@@ -1156,18 +1151,38 @@
                                     }
                                   ],
                                   "__version" : 1
-                                }
-                              ],
-                              "identifier" : "3F042C8A-7478-4020-8BBE-FE656A00D032",
-                              "isEnabled" : true
-                            }
-                          ],
-                          "__version" : 1
-                        },
-                        {
-                          "__content" : [
-                            {
-                              "configurations" : [
+                                },
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "angularCoefficient" : 1,
+                                          "duration" : 0,
+                                          "isTransformInitKeyPath" : true,
+                                          "linearCoefficient" : 1,
+                                          "location" : [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "moveEase" : "easeInOut",
+                                          "respectPhysics" : false,
+                                          "target" : [
+                                            "B5422C4D-CF44-41D1-A579-CAF541B06E33"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "arguments" : "absolute",
+                                          "type" : "transform"
+                                        }
+                                      },
+                                      "identifier" : "42328AD2-BFCC-44BF-9E07-9D649F991C7D",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                },
                                 {
                                   "__content" : [
                                     {
@@ -1187,37 +1202,9 @@
                                     }
                                   ],
                                   "__version" : 1
-                                },
-                                {
-                                  "__content" : [
-                                    {
-                                      "configurationBox" : {
-                                        "configuration" : {
-                                          "angularCoefficient" : 1,
-                                          "animationStyle" : "basic",
-                                          "buildInAnimationType" : "none",
-                                          "distance" : 1,
-                                          "duration" : 0,
-                                          "fadeIn" : true,
-                                          "linearCoefficient" : 1,
-                                          "moveEase" : "easeInOut",
-                                          "respectPhysics" : false,
-                                          "target" : [
-                                            "B5422C4D-CF44-41D1-A579-CAF541B06E33"
-                                          ]
-                                        },
-                                        "name" : {
-                                          "type" : "show"
-                                        }
-                                      },
-                                      "identifier" : "DA47D74C-E492-4F6F-88AF-E75D83175D40",
-                                      "isEnabled" : true
-                                    }
-                                  ],
-                                  "__version" : 1
                                 }
                               ],
-                              "identifier" : "BD91316D-EA9E-4122-B154-9F13E87ACF38",
+                              "identifier" : "3F042C8A-7478-4020-8BBE-FE656A00D032",
                               "isEnabled" : true
                             }
                           ],
@@ -1287,9 +1274,9 @@
                                         "configuration" : {
                                           "angularCoefficient" : 1,
                                           "animationStyle" : "basic",
-                                          "buildOutAnimationType" : "none",
+                                          "buildOutAnimationType" : "scale down",
                                           "distance" : 1,
-                                          "duration" : 5,
+                                          "duration" : 0.10000000149011612,
                                           "fadeOut" : true,
                                           "linearCoefficient" : 1,
                                           "moveEase" : "easeInOut",
@@ -1307,18 +1294,38 @@
                                     }
                                   ],
                                   "__version" : 1
-                                }
-                              ],
-                              "identifier" : "431CB319-EBD4-4AB1-BE45-06073664E180",
-                              "isEnabled" : true
-                            }
-                          ],
-                          "__version" : 1
-                        },
-                        {
-                          "__content" : [
-                            {
-                              "configurations" : [
+                                },
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "angularCoefficient" : 1,
+                                          "duration" : 0,
+                                          "isTransformInitKeyPath" : true,
+                                          "linearCoefficient" : 1,
+                                          "location" : [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "moveEase" : "easeInOut",
+                                          "respectPhysics" : false,
+                                          "target" : [
+                                            "25BBFF98-5091-4322-AE26-D4323C76C1DD"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "arguments" : "absolute",
+                                          "type" : "transform"
+                                        }
+                                      },
+                                      "identifier" : "CC087179-1C88-4AC7-BBF2-AD00D8B24ACC",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                },
                                 {
                                   "__content" : [
                                     {
@@ -1338,37 +1345,9 @@
                                     }
                                   ],
                                   "__version" : 1
-                                },
-                                {
-                                  "__content" : [
-                                    {
-                                      "configurationBox" : {
-                                        "configuration" : {
-                                          "angularCoefficient" : 1,
-                                          "animationStyle" : "basic",
-                                          "buildInAnimationType" : "none",
-                                          "distance" : 1,
-                                          "duration" : 0,
-                                          "fadeIn" : true,
-                                          "linearCoefficient" : 1,
-                                          "moveEase" : "easeInOut",
-                                          "respectPhysics" : false,
-                                          "target" : [
-                                            "25BBFF98-5091-4322-AE26-D4323C76C1DD"
-                                          ]
-                                        },
-                                        "name" : {
-                                          "type" : "show"
-                                        }
-                                      },
-                                      "identifier" : "4B3F851D-5C92-4E6E-8A90-ADC5DE48F52A",
-                                      "isEnabled" : true
-                                    }
-                                  ],
-                                  "__version" : 1
                                 }
                               ],
-                              "identifier" : "93EB3E5F-6FB0-4550-B4C2-487108DE7F30",
+                              "identifier" : "431CB319-EBD4-4AB1-BE45-06073664E180",
                               "isEnabled" : true
                             }
                           ],
@@ -1438,9 +1417,9 @@
                                         "configuration" : {
                                           "angularCoefficient" : 1,
                                           "animationStyle" : "basic",
-                                          "buildOutAnimationType" : "none",
+                                          "buildOutAnimationType" : "scale down",
                                           "distance" : 1,
-                                          "duration" : 5,
+                                          "duration" : 0.10000000149011612,
                                           "fadeOut" : true,
                                           "linearCoefficient" : 1,
                                           "moveEase" : "easeInOut",
@@ -1458,18 +1437,38 @@
                                     }
                                   ],
                                   "__version" : 1
-                                }
-                              ],
-                              "identifier" : "42E31DEB-C439-4967-B8F8-5DF729565262",
-                              "isEnabled" : true
-                            }
-                          ],
-                          "__version" : 1
-                        },
-                        {
-                          "__content" : [
-                            {
-                              "configurations" : [
+                                },
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "angularCoefficient" : 1,
+                                          "duration" : 0,
+                                          "isTransformInitKeyPath" : true,
+                                          "linearCoefficient" : 1,
+                                          "location" : [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "moveEase" : "easeInOut",
+                                          "respectPhysics" : false,
+                                          "target" : [
+                                            "E8A9DD28-59E9-4D30-9F1C-2818346A37DB"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "arguments" : "absolute",
+                                          "type" : "transform"
+                                        }
+                                      },
+                                      "identifier" : "0B9330B7-59D6-46EB-B4D0-279F88392A07",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                },
                                 {
                                   "__content" : [
                                     {
@@ -1489,37 +1488,9 @@
                                     }
                                   ],
                                   "__version" : 1
-                                },
-                                {
-                                  "__content" : [
-                                    {
-                                      "configurationBox" : {
-                                        "configuration" : {
-                                          "angularCoefficient" : 1,
-                                          "animationStyle" : "basic",
-                                          "buildInAnimationType" : "none",
-                                          "distance" : 1,
-                                          "duration" : 0,
-                                          "fadeIn" : true,
-                                          "linearCoefficient" : 1,
-                                          "moveEase" : "easeInOut",
-                                          "respectPhysics" : false,
-                                          "target" : [
-                                            "E8A9DD28-59E9-4D30-9F1C-2818346A37DB"
-                                          ]
-                                        },
-                                        "name" : {
-                                          "type" : "show"
-                                        }
-                                      },
-                                      "identifier" : "2C53BC2D-E15F-4C96-B7DE-3D69694C4ACA",
-                                      "isEnabled" : true
-                                    }
-                                  ],
-                                  "__version" : 1
                                 }
                               ],
-                              "identifier" : "91F6FC54-2923-4B30-ABDE-F52D72F66B82",
+                              "identifier" : "42E31DEB-C439-4967-B8F8-5DF729565262",
                               "isEnabled" : true
                             }
                           ],
@@ -2603,21 +2574,21 @@
               "title" : "ARKite",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.33580830693244934,
-                  -3.2633828084271954e-08,
-                  -0.94193041324615479,
+                  0.81868785619735718,
+                  -3.8242863098503221e-08,
+                  -0.57423865795135498,
                   0,
-                  -0.48930317163467407,
-                  0.85448962450027466,
-                  -0.174441859126091,
+                  -0.42877036333084106,
+                  0.6651880145072937,
+                  -0.61129456758499146,
                   0,
-                  0.80486983060836792,
-                  0.51946842670440674,
-                  0.28694441914558411,
+                  0.38197702169418335,
+                  0.74667584896087646,
+                  0.54458111524581909,
                   0,
-                  2.4276642799377441,
-                  0.84241974353790283,
-                  0.91532015800476074,
+                  1.8401873111724854,
+                  3.6220357418060303,
+                  3.3112831115722656,
                   1
                 ],
                 "sceneTransform" : [

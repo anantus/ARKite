@@ -139,15 +139,19 @@ class ARViewModel: ObservableObject {
         let posisiLayanganY = kite.position.y
         let posisiLayanganZ = kite.position.z
         let allDisplayAction = mainAnchor.actions.allActions.filter({$0.identifier.hasPrefix("CollisionCoin")})
+        print(allDisplayAction.count)
         
         for displayAction in allDisplayAction {
             displayAction.onAction = {entity in
                 if let entity = entity{
-                    let posX1 = Float.random(in: posisiLayanganX-0.1...posisiLayanganX+0.1)
-                    let posY1 = Float.random(in: posisiLayanganY-0.1...posisiLayanganY+0.1)
-                    let posZ1 = Float.random(in: posisiLayanganZ-0.1...posisiLayanganZ+0.1)
+                    let posX1 = Float.random(in: posisiLayanganX-2...posisiLayanganX-1)
+                    let posY1 = Float.random(in: posisiLayanganY-2...posisiLayanganY-1)
+                    let posZ1 = Float.random(in: posisiLayanganZ-2...posisiLayanganZ-1)
                     entity.position = SIMD3<Float>(posX1,posY1,posZ1)
+                    entity.move(to: .init(translation: [posX1, posY1, posZ1]), relativeTo: self.kite, duration: 0)
                     print("\(entity.name) has collide")
+                    self.coinGame += 1
+                    self.mainAnchor.notifications.showCoin.post()
                 }
             }
         }
