@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4350A4FE2936FF4A006E44D6 /* coin.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 4350A4FD2936FF4A006E44D6 /* coin.usdz */; };
 		438A9E0E2920CF6E0010918E /* StrokeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E0D2920CF6E0010918E /* StrokeText.swift */; };
 		438A9E102920E5A90010918E /* FrameKuning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E0F2920E5A90010918E /* FrameKuning.swift */; };
 		438A9E122920E5B30010918E /* FrameIjo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E112920E5B30010918E /* FrameIjo.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4350A4FD2936FF4A006E44D6 /* coin.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = coin.usdz; sourceTree = "<group>"; };
 		438A9E0D2920CF6E0010918E /* StrokeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeText.swift; sourceTree = "<group>"; };
 		438A9E0F2920E5A90010918E /* FrameKuning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameKuning.swift; sourceTree = "<group>"; };
 		438A9E112920E5B30010918E /* FrameIjo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameIjo.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				5544090329339B5800674C81 /* Animate-Kite2.usdz */,
 				554409072935034F00674C81 /* Experience.rcproject */,
+				4350A4FD2936FF4A006E44D6 /* coin.usdz */,
 				553EFF1F28FD60F100E54FA1 /* Assets.xcassets */,
 			);
 			path = Model;
@@ -231,6 +234,7 @@
 			files = (
 				553EFF2328FD60F100E54FA1 /* Preview Assets.xcassets in Resources */,
 				5544090429339B5800674C81 /* Animate-Kite2.usdz in Resources */,
+				4350A4FE2936FF4A006E44D6 /* coin.usdz in Resources */,
 				553EFF2028FD60F100E54FA1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +391,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = Y26BLZ69B8;
+				DEVELOPMENT_TEAM = C8B3R9N352;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
