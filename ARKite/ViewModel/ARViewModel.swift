@@ -167,12 +167,17 @@ class ARViewModel: ObservableObject {
         // Move the box in front of the camera slightly, otherwise
         // it will be centered on the camera position and we will
         // be inside the box and not be able to see it
-        threadSpool.transform.scale *= 0.2
-        threadSpool.transform.translation = [0, -0.2, -0.25]
+        threadSpool.transform.scale *= 0.002
+        threadSpool.transform.translation = [0, -0.2, -0.3]
     }
     
     func stretchRotateThread(){
+        let radians = -90 * Float.pi / 180.0
+        threadSpool.move(to: .init(rotation: simd_quatf(angle: radians, axis: SIMD3<Float>(1,0,0))), relativeTo: self.threadSpool, duration: 1)
+    }
+    
+    func pullRotateThread(){
         let radians = 90 * Float.pi / 180.0
-        threadSpool.move(to: .init(rotation: simd_quatf(angle: radians, axis: SIMD3<Float>(1,0,0))), relativeTo: self.kite, duration: 1)
+        threadSpool.move(to: .init(rotation: simd_quatf(angle: radians, axis: SIMD3<Float>(1,0,0))), relativeTo: self.threadSpool, duration: 1)
     }
 }
