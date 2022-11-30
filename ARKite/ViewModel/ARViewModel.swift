@@ -26,9 +26,7 @@ class ARViewModel: ObservableObject {
     init(){
         self.kite = mainAnchor.findEntity(named: "kite")!
         self.obstacle = mainAnchor.findEntity(named: "obstacle")!
-        mainAnchor.children[0] = mainAnchor.findEntity(named: "obstacle")!
         self.randomCoinPosition(kite)
-        print(kite.children[0].children[0])
         
     }
 
@@ -40,9 +38,9 @@ class ARViewModel: ObservableObject {
     }
     
     //Function layangan untuk mendekat dari anchor
-    func kiteMoveDown(){
+    func kiteMoveDown(_ entity: Entity?){
         mainAnchor.notifications.moveDown.post()
-        distanceBetweenKite = kite.position
+        mainAnchor.actions.moveDownEnd.onAction = rotateOn
     }
     
     //Function untuk menggerakan kite sekitar pusat anchor
@@ -50,22 +48,13 @@ class ARViewModel: ObservableObject {
         
         //Find kite Angle
         if isForward{
-
-            //Mencari panjang layang-layang berjalan
-            var travelDistance = simd_distance(distanceBetweenKite, kite.position)
-            distanceBetweenKite = kite.position
-            print("travel distance: \(travelDistance)")
-            
-            //buat inisialisasi awal distance perjalanan layangan
-            travelDistance = (travelDistance == 0) ? 1.004 : travelDistance
             isRotate = false
             isForward = false
             
             //Mencari angle tilt kite
             let kiteAngle = findAngle(
                 kiteCoordinates: kite.position,
-                initialCoordinates: initialPosition,
-                travelDistance: travelDistance)
+                initialCoordinates: initialPosition)
             
             //tilt kite
             kiteTilt(kiteAngle: kiteAngle)
@@ -73,7 +62,7 @@ class ARViewModel: ObservableObject {
             kiteTilt(kiteAngle: kiteAngle)
             
             //rotate loop kite
-            mainAnchor.actions.rotationForward.onAction = rotateOn
+            mainAnchor.actions.rotationForward.onAction = kiteMoveDown(_:)
         }
     }
     
@@ -85,15 +74,11 @@ class ARViewModel: ObservableObject {
     }
     
     //Function untuk mencari angle
-    func findAngle(kiteCoordinates: SIMD3<Float>, initialCoordinates: SIMD3<Float>, travelDistance: Float) -> Float{
+    func findAngle(kiteCoordinates: SIMD3<Float>, initialCoordinates: SIMD3<Float>) -> Float{
         let radius = simd_distance(kiteCoordinates, initialCoordinates)
-        print("radius \(radius)")
         let cos: Float = 1.004 / (2 * radius)
         let acos = acos(cos) * 180 / Float.pi
-        var angle : Float = 90 - acos
-        
-        print("the angle:\(angle)")
-        angle = (angle > 1) ? angle : 1
+        let angle : Float = 90 - acos
         return angle
     }
     

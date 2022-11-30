@@ -98,7 +98,6 @@ struct GameView : View {
                             
                             
                             Button {
-                                vm.kiteMoveDown()
                                 vm.kiteMoveFront()
                                 // TODO: pull kite
                             } label: {
