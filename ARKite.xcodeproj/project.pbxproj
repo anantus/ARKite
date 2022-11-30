@@ -15,6 +15,7 @@
 		438F0B20291F751B007551F5 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B1F291F751B007551F5 /* DashboardView.swift */; };
 		438F0B24291F755F007551F5 /* ChooseKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B23291F755F007551F5 /* ChooseKiteView.swift */; };
 		438F0B26291F7569007551F5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B25291F7569007551F5 /* SettingView.swift */; };
+		5509D3B42937583B00E16F6F /* GULUNGAN.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 5509D3B32937583B00E16F6F /* GULUNGAN.usdz */; };
 		55287D7329365BB600E1FF66 /* KiteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55287D7229365BB600E1FF66 /* KiteEntity.swift */; };
 		553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */; };
 		553EFF1C28FD60EF00E54FA1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1B28FD60EF00E54FA1 /* GameView.swift */; };
@@ -40,6 +41,7 @@
 		438F0B1F291F751B007551F5 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		438F0B23291F755F007551F5 /* ChooseKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseKiteView.swift; sourceTree = "<group>"; };
 		438F0B25291F7569007551F5 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		5509D3B32937583B00E16F6F /* GULUNGAN.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = GULUNGAN.usdz; sourceTree = "<group>"; };
 		55287D7229365BB600E1FF66 /* KiteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiteEntity.swift; sourceTree = "<group>"; };
 		553EFF1628FD60EF00E54FA1 /* ARKite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				5544090329339B5800674C81 /* Animate-Kite2.usdz */,
 				554409072935034F00674C81 /* Experience.rcproject */,
 				553EFF1F28FD60F100E54FA1 /* Assets.xcassets */,
+				5509D3B32937583B00E16F6F /* GULUNGAN.usdz */,
 				5544091729360B0A00674C81 /* DefaultKeys.swift */,
 				55287D7229365BB600E1FF66 /* KiteEntity.swift */,
 			);
@@ -237,6 +240,7 @@
 			files = (
 				553EFF2328FD60F100E54FA1 /* Preview Assets.xcassets in Resources */,
 				5544090429339B5800674C81 /* Animate-Kite2.usdz in Resources */,
+				5509D3B42937583B00E16F6F /* GULUNGAN.usdz in Resources */,
 				553EFF2028FD60F100E54FA1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

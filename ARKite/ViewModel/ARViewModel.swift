@@ -20,6 +20,7 @@ class ARViewModel: ObservableObject {
     
     let mainAnchor = try! Experience.loadARKite()
     let arView = ARView(frame: .zero)
+    let threadSpool = try! ModelEntity.load(named: "GULUNGAN")
     fileprivate let initialPosition = SIMD3<Float>(0,0,0)
     
     //Initialize untuk ambil entity
@@ -27,9 +28,10 @@ class ARViewModel: ObservableObject {
         self.kite = mainAnchor.findEntity(named: "kite")!
         self.obstacle = mainAnchor.findEntity(named: "obstacle")!
         self.randomCoinPosition(kite)
+        self.threadEntity()
         
     }
-
+    
     
     //Function layangan untuk menjauh dari anchor
     func kiteMoveUp(){
@@ -155,5 +157,22 @@ class ARViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    fileprivate func threadEntity(){
+        let cameraAnchor = AnchorEntity(.camera)
+        cameraAnchor.addChild(threadSpool)
+        arView.scene.addAnchor(cameraAnchor)
+        
+        // Move the box in front of the camera slightly, otherwise
+        // it will be centered on the camera position and we will
+        // be inside the box and not be able to see it
+        threadSpool.transform.scale *= 0.2
+        threadSpool.transform.translation = [0, -0.2, -0.25]
+    }
+    
+    func stretchRotateThread(){
+        let radians = 90 * Float.pi / 180.0
+        threadSpool.move(to: .init(rotation: simd_quatf(angle: radians, axis: SIMD3<Float>(1,0,0))), relativeTo: self.kite, duration: 1)
     }
 }
