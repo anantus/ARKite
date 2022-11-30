@@ -29,6 +29,9 @@
 		562030F02936116D0048BB69 /* TarikUlurButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562030EF2936116D0048BB69 /* TarikUlurButton.swift */; };
 		5652B47C29365C7B00841BEC /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5652B47B29365C7B00841BEC /* SettingButton.swift */; };
 		5652B47E2936622F00841BEC /* CoinIndicatorFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5652B47D2936622F00841BEC /* CoinIndicatorFrame.swift */; };
+		5653FBE42937257F0071CC60 /* SettingFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5653FBE32937257F0071CC60 /* SettingFrame.swift */; };
+		569C0BCB293755D800FE5767 /* SettingVARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C0BCA293755D800FE5767 /* SettingVARView.swift */; };
+		569C0BCF29376FC800FE5767 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C0BCE29376FC800FE5767 /* CustomSlider.swift */; };
 		56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AEAE7A29211BA8007424F4 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,9 @@
 		562030EF2936116D0048BB69 /* TarikUlurButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarikUlurButton.swift; sourceTree = "<group>"; };
 		5652B47B29365C7B00841BEC /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
 		5652B47D2936622F00841BEC /* CoinIndicatorFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinIndicatorFrame.swift; sourceTree = "<group>"; };
+		5653FBE32937257F0071CC60 /* SettingFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFrame.swift; sourceTree = "<group>"; };
+		569C0BCA293755D800FE5767 /* SettingVARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVARView.swift; sourceTree = "<group>"; };
+		569C0BCE29376FC800FE5767 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		56AEAE7A29211BA8007424F4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +88,8 @@
 				562030EF2936116D0048BB69 /* TarikUlurButton.swift */,
 				5652B47B29365C7B00841BEC /* SettingButton.swift */,
 				5652B47D2936622F00841BEC /* CoinIndicatorFrame.swift */,
+				5653FBE32937257F0071CC60 /* SettingFrame.swift */,
+				569C0BCE29376FC800FE5767 /* CustomSlider.swift */,
 			);
 			path = ButtonAndFrame;
 			sourceTree = "<group>";
@@ -89,6 +97,7 @@
 		438F0B22291F753D007551F5 /* NonARView */ = {
 			isa = PBXGroup;
 			children = (
+				569C0BCA293755D800FE5767 /* SettingVARView.swift */,
 				438F0B1F291F751B007551F5 /* DashboardView.swift */,
 				438F0B23291F755F007551F5 /* ChooseKiteView.swift */,
 				438F0B25291F7569007551F5 /* SettingView.swift */,
@@ -251,9 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				569C0BCF29376FC800FE5767 /* CustomSlider.swift in Sources */,
 				5652B47E2936622F00841BEC /* CoinIndicatorFrame.swift in Sources */,
 				55440910293508F200674C81 /* ARViewModel.swift in Sources */,
 				438A9E0E2920CF6E0010918E /* StrokeText.swift in Sources */,
+				569C0BCB293755D800FE5767 /* SettingVARView.swift in Sources */,
 				553EFF1C28FD60EF00E54FA1 /* GameView.swift in Sources */,
 				438F0B20291F751B007551F5 /* DashboardView.swift in Sources */,
 				5544090C2935084300674C81 /* ARViewContainer.swift in Sources */,
@@ -263,6 +274,7 @@
 				554409082935034F00674C81 /* Experience.rcproject in Sources */,
 				554409142935373C00674C81 /* SettingsViewModel.swift in Sources */,
 				55440906293442AC00674C81 /* MainMenuButton.swift in Sources */,
+				5653FBE42937257F0071CC60 /* SettingFrame.swift in Sources */,
 				438A9E122920E5B30010918E /* FrameIjo.swift in Sources */,
 				562030F02936116D0048BB69 /* TarikUlurButton.swift in Sources */,
 				438A9E1A29210C670010918E /* SelectedButton.swift in Sources */,

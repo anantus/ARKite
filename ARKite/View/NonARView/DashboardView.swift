@@ -43,7 +43,7 @@ struct DashboardView: View {
 //                                                            .foregroundColor(.white)
 //                                                            .font(.system(size: 22, weight: .heavy, design: .rounded))
 //                                                            .shadow(color: Color("PlayShadow") ,radius: 2)
-                            MainMenuButton()
+//                            MainMenuButton(firstColor: "ffffff", secondColor: "ffffff", bgColor: "ffffff", width: 50, height: 50)
                             Text("MAIN")
                                 .font(.title2)
                                 .fontWeight(.heavy)

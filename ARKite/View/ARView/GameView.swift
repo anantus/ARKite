@@ -13,7 +13,7 @@ import Combine
 struct GameView : View {
     
     @State var showContentView: Bool = false
-    @State var isStartPlay = true
+    @State var isStartPlay = false
     @State var rotate = false
     @ObservedObject var vm = ARViewModel()
     
@@ -82,29 +82,17 @@ struct GameView : View {
                             
                         }
                     } label: {
-                        ZStack(alignment: .top) {
-                            LinearGradient(gradient: Gradient(colors: [Color.init(hex: "9F6B00"), Color.init(hex: "C98A01")]), startPoint: .top, endPoint: .bottom)
-                                .frame(width: 223, height: 65)
-                                .contentShape(RoundedRectangle(cornerRadius: 31, style: .continuous))
-                                .cornerRadius(31)
-                            
-                            
-                            LinearGradient(gradient: Gradient(colors: [Color.init(hex: "F4DB05"), Color.init(hex: "F4970E")]), startPoint: .top, endPoint: .bottom)
-                                .frame(width: 217, height: 58)
-                                .contentShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
-                                .cornerRadius(28)
-                                .overlay {
-                                    VStack(spacing: 8) {
-                                        Text("FLY")
-                                            .font(.system(.title, design: .rounded, weight: .heavy))
-                                            .foregroundColor(.white)
-                                    }
-                                }
-                        }
+                        MainMenuButton(firstColor: "0099BB",
+                                       secondColor: "00608B",
+                                       bgColor: "00496B",
+                                       width: 264,
+                                       height: 78,
+                                       text: "MULAI"
+                        )
                     }
                     
                     
-                } .padding()
+                } .padding(.bottom, 50)
             }
             
             
