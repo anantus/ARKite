@@ -29,45 +29,50 @@ struct GameView : View {
             
             // Buttons UI
             if isStartPlay {
-                if useButton {
-                    VStack {
-                        HStack {
-                            LinearGradient(gradient: Gradient(colors: [Color.init(hex: "FF6E51"), Color.init(hex: "FF294C")]), startPoint: .top, endPoint: .bottom)
-                                .frame(width: 86, height: 28)
-                                .contentShape(RoundedRectangle(cornerRadius: 3, style: .continuous))
-                                .cornerRadius(3)
-                                .overlay {
-                                    Text("End Game")
-                                        .font(.system(.callout, design: .rounded, weight: .semibold))
-                                        .foregroundColor(.white)
-                                }
-                            
-                            Spacer()
-                            
-                            ZStack {
-                                HStack {
-                                    RoundedRectangle(cornerRadius: 3)
-                                        .frame(width: 86, height: 28)
-                                        .foregroundColor(.init(hex: "2C2C2C"))
-                                        .overlay {
-                                            Text("\(vm.coinGame)")
-                                                .font(.system(.callout, design: .rounded, weight: .semibold))
-                                                .foregroundColor(.white)
-                                        }
-                                } .frame(width: 103, height: 28, alignment: .trailing)
-                                
-                                HStack {
-                                    Image("coinIndicatorIcon")
-                                        .frame(width: 34)
-                                }.frame(width: 103, height: 28, alignment: .leading)
-                                
-                            } .frame(width: 103, height: 28, alignment: .center)
-                            
-                            
-                        }
+                VStack {
+                    HStack {
+                        LinearGradient(gradient: Gradient(colors: [Color.init(hex: "FF6E51"), Color.init(hex: "FF294C")]), startPoint: .top, endPoint: .bottom)
+                            .frame(width: 86, height: 28)
+                            .contentShape(RoundedRectangle(cornerRadius: 3, style: .continuous))
+                            .cornerRadius(3)
+                            .overlay {
+                                Text("End Game")
+                                    .font(.system(.callout, design: .rounded, weight: .semibold))
+                                    .foregroundColor(.white)
+                            }
                         
                         Spacer()
                         
+                        ZStack {
+                            HStack {
+                                RoundedRectangle(cornerRadius: 3)
+                                    .frame(width: 86, height: 28)
+                                    .foregroundColor(.init(hex: "2C2C2C"))
+                                    .overlay {
+                                        Text("\(vm.coinGame)")
+                                            .font(.system(.callout, design: .rounded, weight: .semibold))
+                                            .foregroundColor(.white)
+                                    }
+                            } .frame(width: 103, height: 28, alignment: .trailing)
+                            
+                            HStack {
+                                Image("coinIndicatorIcon")
+                                    .frame(width: 34)
+                            }.frame(width: 103, height: 28, alignment: .leading)
+                            
+                        } .frame(width: 103, height: 28, alignment: .center)
+                        
+                        
+                    }
+                    
+                    if vm.gameOver{
+                        Text("GAME OVER!")
+                            .foregroundColor(Color.red)
+                    }
+                    
+                    Spacer()
+                    
+                    if useButton {
                         HStack(alignment: .bottom) {
                             Spacer()
                             Spacer()
@@ -75,7 +80,6 @@ struct GameView : View {
                                 Button {
                                     vm.kiteMoveUp()
                                     vm.stretchRotateThread()
-                                    // TODO: stretch kite
                                 } label: {
                                     ZStack(alignment: .top) {
                                         LinearGradient(gradient: Gradient(colors: [Color.init(hex: "9F6B00"), Color.init(hex: "C98A01")]), startPoint: .top, endPoint: .bottom)
@@ -136,45 +140,45 @@ struct GameView : View {
                                 }
                             }
                         }
-                    } .padding()
-                }else {
-                    VStack{
-                        Text("")
-                        HStack{
+                    }else{
+                        VStack{
+                            Text("")
+                            HStack{
+                                Spacer()
+                            }
                             Spacer()
                         }
-                        Spacer()
-                    }
-                    .background(color)
-                    .gesture(
-                        DragGesture()
-                            .onChanged({ value in
-                                if position.height > 0 {
-                                    pullPush = "Pull"
-//                                    color = Color.green.opacity(0.2)
-                                    print("Pull is triggered")
-                                }else if position.height < 0 {
-                                    pullPush = "Stretch"
-//                                    color = Color.red.opacity(0.2)
-                                    print("Stretch is triggered")
-                                }
-                                position = value.translation
-                            })
-                            .onEnded(({ value in
-                                if pullPush == "Pull"{
-                                    vm.pullRotateThread()
-                                    vm.kiteMoveFront()
-                                }else if pullPush == "Stretch"{
-                                    vm.stretchRotateThread()
-                                    vm.kiteMoveUp()
-                                }
-                                pullPush = "None"
-//                                color = Color.blue.opacity(0.2)
-                                position = .zero
-                            })
+                        .background(color)
+                        .gesture(
+                            DragGesture()
+                                .onChanged({ value in
+                                    if position.height > 0 {
+                                        pullPush = "Pull"
+                                        //                                    color = Color.green.opacity(0.2)
+                                        //                                    print("Pull is triggered")
+                                    }else if position.height < 0 {
+                                        pullPush = "Stretch"
+                                        //                                    color = Color.red.opacity(0.2)
+                                        //                                    print("Stretch is triggered")
+                                    }
+                                    position = value.translation
+                                })
+                                .onEnded(({ value in
+                                    if pullPush == "Pull"{
+                                        vm.pullRotateThread()
+                                        vm.kiteMoveFront()
+                                    }else if pullPush == "Stretch"{
+                                        vm.stretchRotateThread()
+                                        vm.kiteMoveUp()
+                                    }
+                                    pullPush = "None"
+                                    //                                color = Color.blue.opacity(0.2)
+                                    position = .zero
+                                })
+                                        )
                         )
-                    )
-                }
+                    }
+                } .padding()
             } else {
                 VStack {
                     Spacer()

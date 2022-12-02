@@ -15,11 +15,6 @@
     "displayName" : "coin.usdz"
   },
   {
-    "libraryIdentifier" : "72af4191ee453dbced67435968426b53",
-    "format" : "model",
-    "displayName" : "GASANIMATE2.usdz"
-  },
-  {
     "libraryIdentifier" : "0db3dc7767a4668ab805e5e586b54b26",
     "format" : "model",
     "displayName" : "New-Animate-Kite5.usdz"
@@ -38,5 +33,10 @@
     "libraryIdentifier" : "c2c12c6da6e5b3a5788c85af65e65025",
     "format" : "model",
     "displayName" : "New-Animate-Kite.usdz"
+  },
+  {
+    "libraryIdentifier" : "b528dbc991185763b0e239e2375276b1",
+    "format" : "model",
+    "displayName" : "LPG1.usdz"
   }
 ]

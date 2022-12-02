@@ -14,6 +14,7 @@ class ARViewModel: ObservableObject {
     @Published fileprivate var obstacle: Entity
     @Published fileprivate var isForward = false
     @Published fileprivate var isRotate = false
+    @Published var gameOver = false
     @Published var coinGame = 0
     
     @State fileprivate var distanceBetweenKite = SIMD3<Float>(0,0,0)
@@ -25,7 +26,7 @@ class ARViewModel: ObservableObject {
     
     //Initialize untuk ambil entity
     init(){
-        self.kite = mainAnchor.findEntity(named: "kite")!
+        self.kite = mainAnchor.findEntity(named: "RedYellowKite")!
         self.obstacle = mainAnchor.findEntity(named: "obstacle")!
         self.randomCoinPosition(kite)
         self.threadEntity()
@@ -72,7 +73,7 @@ class ARViewModel: ObservableObject {
     func kiteFlyStart(){
         mainAnchor.notifications.kiteStart.post()
         distanceBetweenKite = kite.position
-        mainAnchor.actions.kiteStartEnd.onAction = rotateOn
+        mainAnchor.actions.kiteStartEnd.onAction = startGameInitiate
     }
     
     //Function untuk mencari angle
@@ -100,6 +101,33 @@ class ARViewModel: ObservableObject {
     }
     
     //Function untuk menyalakan rotasi rekursif
+    
+    fileprivate func startGameInitiate(_ entity: Entity?){
+        mainAnchor.notifications.showCoin.post()
+        mainAnchor.notifications.showObstacle.post()
+        animateCoin(entity)
+        rotateOn(entity)
+        mainAnchor.actions.showObstacleDone.onAction = obstacleAppear
+        
+        
+    }
+    
+    fileprivate func obstacleAppear(_ entity: Entity?){
+        animateObstacle(entity)
+        obstacleMove(entity)
+    }
+    
+    fileprivate func animateObstacle(_ entity: Entity?){
+        mainAnchor.notifications.animateObstacle.post()
+        mainAnchor.actions.animateObstacleDone.onAction = animateObstacle
+    }
+    
+    fileprivate func animateCoin(_ entity: Entity?){
+        mainAnchor.notifications.animateCoin.post()
+        mainAnchor.actions.animateCoinDone.onAction = animateCoin
+        
+    }
+    
     fileprivate func rotateOn(_ entity: Entity?){
         isRotate = true
         isForward = true
@@ -109,48 +137,52 @@ class ARViewModel: ObservableObject {
     
     
     //Function untuk menyalakan obstacle
-    fileprivate func obstacleAppear(){
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { timer in
-            // after 10 seconds, show the osbtacle
-            self.obstacle.position = simd_float3(0, 0, 0)
+    fileprivate func obstacleMove(_ entity: Entity?){
+        // after 10 seconds, show the osbtacle
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { secTimer in
             
-            self.mainAnchor.notifications.showObstacle.post()
+            let kitePosition = self.kite.position(relativeTo: nil)
+            let obstaclePosition = self.obstacle.position(relativeTo: nil)
             
-            // set the initial postition first
             
-            Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { secTimer in
-                self.obstacle.move(to: .init(translation: [self.kite.position.x, self.kite.position.y - 0.3, self.kite.position.z]), relativeTo: self.kite, duration: 3)
-                //
-                print("================================================")
-                print("Kite Position: \(self.kite.position)")
-                print("================================================")
-                
-                print("Timer 2 work")
+            if kitePosition.x > obstaclePosition.x{
+                self.mainAnchor.notifications.plusXObstacle.post()
+            }else{
+                self.mainAnchor.notifications.minXObstacle.post()
             }
-            print("Timer 1 Work")
-            timer.invalidate()
+            if kitePosition.y > obstaclePosition.y{
+                self.mainAnchor.notifications.plusYObstacle.post()
+            }else{
+                self.mainAnchor.notifications.minYObstacle.post()
+            }
+            if kitePosition.z > obstaclePosition.z{
+                self.mainAnchor.notifications.plusZObstacle.post()
+            }else{
+                self.mainAnchor.notifications.minZObstacle.post()
+            }
+            
+            self.mainAnchor.actions.gameOver.onAction = {_ in
+                print("Game over!")
+                self.gameOver = true
+            }
         }
     }
-    
     
     
     //Function untuk mengubah posisi koin setelah collide
     fileprivate func randomCoinPosition(_ entity: Entity?) {
         let kite = entity!
-        let posisiLayanganX = kite.position.x
-        let posisiLayanganY = kite.position.y
-        let posisiLayanganZ = kite.position.z
         let allDisplayAction = mainAnchor.actions.allActions.filter({$0.identifier.hasPrefix("CollisionCoin")})
         print(allDisplayAction.count)
         
         for displayAction in allDisplayAction {
             displayAction.onAction = {entity in
                 if let entity = entity{
-                    let posX1 = Float.random(in: posisiLayanganX-2...posisiLayanganX-1)
-                    let posY1 = Float.random(in: posisiLayanganY-2...posisiLayanganY-1)
-                    let posZ1 = Float.random(in: posisiLayanganZ-2...posisiLayanganZ-1)
-                    entity.position = SIMD3<Float>(posX1,posY1,posZ1)
-                    entity.move(to: .init(translation: [posX1, posY1, posZ1]), relativeTo: self.kite, duration: 0)
+                    let posX1 = Float.random(in: -15 ... 15)
+                    let posY1 = Float.random(in: 10 ... 15)
+                    let posZ1 = Float.random(in: -15 ... -10)
+//                    entity.position = SIMD3<Float>(posX1,posY1,posZ1)
+                    entity.move(to: .init(translation: SIMD3<Float>(posX1,posY1,posZ1)), relativeTo: self.kite, duration: 0)
                     print("\(entity.name) has collide")
                     self.coinGame += 1
                     self.mainAnchor.notifications.showCoin.post()
@@ -163,10 +195,6 @@ class ARViewModel: ObservableObject {
         let cameraAnchor = AnchorEntity(.camera)
         cameraAnchor.addChild(threadSpool)
         arView.scene.addAnchor(cameraAnchor)
-        
-        // Move the box in front of the camera slightly, otherwise
-        // it will be centered on the camera position and we will
-        // be inside the box and not be able to see it
         threadSpool.transform.scale *= 0.002
         threadSpool.transform.translation = [0, -0.2, -0.3]
     }
