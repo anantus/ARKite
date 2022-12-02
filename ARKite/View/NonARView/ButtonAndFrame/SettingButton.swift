@@ -48,6 +48,3 @@ struct SettingButton_Previews: PreviewProvider {
         SettingButton()
     }
 }
-
-
-

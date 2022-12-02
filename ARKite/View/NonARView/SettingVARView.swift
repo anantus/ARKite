@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingVARView: View {
     var body: some View {
         ZStack {
-            SettingFrame()
+            SettingFrame(width: 355, height: 450)
             
             VStack {
                 Text("PENGATURAN")

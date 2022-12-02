@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct SettingFrame: View {
+    let width: CGFloat
+    let height: CGFloat
+    
     var body: some View {
         ZStack {
             SettingFramePath()
                 .fill(Color.init(hex: "8B2E00"))
-                .frame(width: 355,height: 494, alignment: .center)
-                .padding(.trailing, 16)
-                .padding(.top, 16)
+                .frame(width: width, height: height, alignment: .center)
+                .padding(.trailing, (13/width) * width)
+                .padding(.top, (14/height) * height)
                 
             
             SettingFramePath()
                 .fill(.linearGradient(colors: [Color.init(hex: "FBC300"), Color.init(hex: "FEB914")], startPoint: .top, endPoint: .bottom))
-                .frame(width: 355,height: 494, alignment: .center)
+                .frame(width: width,height: height, alignment: .center)
                 .overlay {
                     VStack {
                         HStack {
@@ -49,7 +52,7 @@ struct SettingFrame: View {
                                 .padding(.trailing, 10)
                             
                         } .padding()
-                    } .frame(width: 355, height: 494)
+                    } .frame(width: width, height: height)
                 }
         }
     }
@@ -81,6 +84,6 @@ struct SettingFramePath: Shape {
 
 struct SettingFrame_Previews: PreviewProvider {
     static var previews: some View {
-        SettingFrame()
+        SettingFrame(width: 355, height: 494)
     }
 }
