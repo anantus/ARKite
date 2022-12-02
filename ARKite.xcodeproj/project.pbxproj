@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4343E0852938B74500382834 /* DashboardViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0842938B74500382834 /* DashboardViewV2.swift */; };
 		438A9E0E2920CF6E0010918E /* StrokeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E0D2920CF6E0010918E /* StrokeText.swift */; };
 		438A9E102920E5A90010918E /* FrameKuning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E0F2920E5A90010918E /* FrameKuning.swift */; };
 		438A9E122920E5B30010918E /* FrameIjo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E112920E5B30010918E /* FrameIjo.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4343E0842938B74500382834 /* DashboardViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewV2.swift; sourceTree = "<group>"; };
 		438A9E0D2920CF6E0010918E /* StrokeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeText.swift; sourceTree = "<group>"; };
 		438A9E0F2920E5A90010918E /* FrameKuning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameKuning.swift; sourceTree = "<group>"; };
 		438A9E112920E5B30010918E /* FrameIjo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameIjo.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				438F0B1F291F751B007551F5 /* DashboardView.swift */,
+				4343E0842938B74500382834 /* DashboardViewV2.swift */,
 				438F0B23291F755F007551F5 /* ChooseKiteView.swift */,
 				438F0B25291F7569007551F5 /* SettingView.swift */,
 				438A9E1629210C180010918E /* ButtonAndFrame */,
@@ -263,6 +266,7 @@
 				438A9E1A29210C670010918E /* SelectedButton.swift in Sources */,
 				553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */,
 				55287D7329365BB600E1FF66 /* KiteEntity.swift in Sources */,
+				4343E0852938B74500382834 /* DashboardViewV2.swift in Sources */,
 				554409122935372000674C81 /* CollectionViewModel.swift in Sources */,
 				438F0B26291F7569007551F5 /* SettingView.swift in Sources */,
 				56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */,
@@ -395,7 +399,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = Y26BLZ69B8;
+				DEVELOPMENT_TEAM = C8B3R9N352;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -427,7 +431,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = Y26BLZ69B8;
+				DEVELOPMENT_TEAM = C8B3R9N352;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
