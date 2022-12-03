@@ -15,24 +15,40 @@ struct LayanganFrame1: View {
     @State var width: CGFloat
     @State var height: CGFloat
     @State var picture: String
+    @State var isUsed = false
     var body: some View {
         ZStack{
             FrameBack1()
                 .fill(Color.init(hex: bgColor))
                 .frame(width: width, height: height)
-                .cornerRadius(5)
                 .padding(.trailing, (width * 0.09))
                 .padding(.top, (height * 0.15))
             FrameFront1()
                 .fill(.linearGradient(colors: [Color.init(hex: firstColor), Color.init(hex: secondColor)], startPoint: .top, endPoint: .bottom))
                 .frame(width: width, height: height)
-                .cornerRadius(5)
-            FrameInner1()
-                .fill(Color.init(hex: thirdColor))
-                .frame(width: 141, height: 128)
-                .cornerRadius(5)
-                .padding(.bottom, (height * 0.17))
-            Image("")
+            VStack(spacing: 0){
+                ZStack{
+                    FrameInner1()
+                        .fill(Color.init(hex: thirdColor))
+                        .frame(width: 141, height: 128)
+                        .shadow(radius: 2)
+                    Image("\(picture)")
+                        .resizable()
+                        .rotationEffect(.degrees(45))
+                        .frame(width: UIScreen.main.bounds.width * (1.6/8),height: UIScreen.main.bounds.height * (1/8))
+                }
+                if isUsed {
+                    DipilihButton()
+                } else {
+                    GunakanButton()
+                    
+                }
+            }
+            .onTapGesture {
+                withAnimation {
+                    isUsed.toggle()
+                }
+            }
             
         }
     }
@@ -42,10 +58,10 @@ struct FrameFront1: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         //start point - Top left
-        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY+10))
         
         //Move to top right
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY-10))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
         
         //Move to bottom right
         path.addLine(to: CGPoint(x: rect.maxX-15, y: rect.maxY))
@@ -65,7 +81,7 @@ struct FrameBack1: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         //start point - Top left
-        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY+10))
         
         //Move to top right
         path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY+15))
@@ -88,10 +104,10 @@ struct FrameInner1: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         //start point - Top left
-        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY+10))
         
         //Move to top right
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY-10))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
         
         //Move to bottom right
         path.addLine(to: CGPoint(x: rect.maxX-10, y: rect.maxY-4))
@@ -109,6 +125,6 @@ struct FrameInner1: Shape {
 
 struct LayanganFrame1_Previews: PreviewProvider {
     static var previews: some View {
-        LayanganFrame1(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 190, picture: "")
+        LayanganFrame1(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 198, picture: "Kite 1")
     }
 }

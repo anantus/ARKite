@@ -8,23 +8,18 @@
 import SwiftUI
 
 struct GunakanButton: View {
-        @State var firstColor: String
-        @State var secondColor: String
-        @State var bgColor: String
-        @State var width: CGFloat
-        @State var height: CGFloat
         
         var body: some View {
             ZStack{
                 FrontButtons()
-                    .fill(Color.init(hex: bgColor))
-                    .frame(width: width, height: height)
+                    .fill(Color.init(hex: "00496B"))
+                    .frame(width: 127, height: 33)
                     .foregroundColor(Color.green)
-                    .padding(.trailing, (width * 0.02))
-                    .padding(.top, (height * 0.2))
+                    .padding(.trailing, (130 * 0.02))
+                    .padding(.top, (36 * 0.2))
                 FrontButtons()
-                    .fill(.linearGradient(colors: [Color.init(hex: firstColor), Color.init(hex: secondColor)], startPoint: .top, endPoint: .bottom))
-                    .frame(width: width, height: height)
+                    .fill(.linearGradient(colors: [Color.init(hex: "0099BB"), Color.init(hex: "00608B")], startPoint: .top, endPoint: .bottom))
+                    .frame(width: 127, height: 33)
                     .overlay {
                         Text("GUNAKAN")
                             .foregroundColor(.white)
@@ -49,7 +44,7 @@ struct GunakanButton: View {
             path.addLine(to: CGPoint(x: rect.maxX-5, y: rect.maxY))
             
             //Move to bottom left
-            path.addLine(to: CGPoint(x: rect.minX+7, y: rect.maxY))
+            path.addLine(to: CGPoint(x: rect.minX+5, y: rect.maxY))
             
             //end at top right
             path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
@@ -61,6 +56,6 @@ struct GunakanButton: View {
 
 struct GunakanButton_Previews: PreviewProvider {
     static var previews: some View {
-        GunakanButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 130, height: 36)
+        GunakanButton()
     }
 }

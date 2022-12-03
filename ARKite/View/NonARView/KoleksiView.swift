@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct KoleksiView: View {
+    @State var showKoleksi = false
     var body: some View {
         ZStack {
             VStack{
@@ -23,21 +24,25 @@ struct KoleksiView: View {
                         .position(x: UIScreen.main.bounds.width * (2.5/5),y: UIScreen.main.bounds.height * (4.25/5))
                 }
                 .blur(radius: 5)
-                ZStack{
-                    Image("CloudNew1")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.main.bounds.width * (6.5/5),height: UIScreen.main.bounds.height * (4.25/5))
-                        .position(x: UIScreen.main.bounds.width * (4/5),y: UIScreen.main.bounds.height * (-1.8/5))
-                            .blur(radius: 5)
-                    NavigationKoleksiFrame()
-                        .position(x: UIScreen.main.bounds.width * (2.45/5),y: UIScreen.main.bounds.height * (-2.75/5))
-                    BackButton()
-                        .position(x: UIScreen.main.bounds.width * (0.6/5),y: UIScreen.main.bounds.height * (-2/5))
-                    CoinIndicatorFrame(coinCount: 100)
-                        .position(x: UIScreen.main.bounds.width * (4.2/5),y: UIScreen.main.bounds.height * (-2/5))
-                    
+                VStack(spacing: 0){
+                    ZStack{
+                        NavigationKoleksiFrame()
+                            .position(x: UIScreen.main.bounds.width * (2.45/5),y: UIScreen.main.bounds.height * (-2.2/5))
+                        BackButton()
+                            .position(x: UIScreen.main.bounds.width * (0.6/5),y: UIScreen.main.bounds.height * (-1.3/5))
+                        CoinIndicatorFrame(coinCount: 0)
+                            .position(x: UIScreen.main.bounds.width * (4.2/5),y: UIScreen.main.bounds.height * (-1.3/5))
                         
+                        
+                    }
+                    HStack {
+                        LayanganFrame1(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 198, picture: "Kite 1")
+                        LayanganFrame2(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 190, picture: "Kite 2")
+                    }
+                    HStack {
+                        LayanganFrame1(firstColor: "FFFADF", secondColor: "E1DAB2", thirdColor: "FFF9D5", bgColor: "857D4C", width: 164, height: 198, picture: "Kite 3")
+                        LayanganFrame2(firstColor: "FFFADF", secondColor: "E1DAB2", thirdColor: "FFF9D5", bgColor: "857D4C", width: 164, height: 198, picture: "Kite 4")
+                    }.padding(.bottom, 90)
                 }
             }
             

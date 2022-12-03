@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DashboardViewV2: View {
+    
     var body: some View {
         ZStack{
             VStack{
@@ -33,13 +34,13 @@ struct DashboardViewV2: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: UIScreen.main.bounds.width * (6.5/5),height: UIScreen.main.bounds.height * (4.25/5))
                         .position(x: UIScreen.main.bounds.width * (4/5),y: UIScreen.main.bounds.height * (0/5))
-                    MainMenuButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 262, height: 78)
-                        .position(x: UIScreen.main.bounds.width * (2.5/5),y: UIScreen.main.bounds.height * (-0.1/5))
+                        MainMenuButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 262, height: 78)
+                            .position(x: UIScreen.main.bounds.width * (2.5/5),y: UIScreen.main.bounds.height * (-0.1/5))
                     KoleksiMenuButton(firstColor: "15B10F", secondColor: "0F7B20", bgColor: "106514", width: 264, height: 82, text: "KOLEKSI")
                         .position(x: UIScreen.main.bounds.width * (2.5/5),y: UIScreen.main.bounds.height * (0.5/5))
                     SettingButton()
                         .position(x: UIScreen.main.bounds.width * (0.5/5),y: UIScreen.main.bounds.height * (-2/5))
-                    CoinIndicatorFrame(coinCount: 100)
+                    CoinIndicatorFrame(coinCount: 0)
                         .position(x: UIScreen.main.bounds.width * (4.2/5),y: UIScreen.main.bounds.height * (-2/5))
                     
                         

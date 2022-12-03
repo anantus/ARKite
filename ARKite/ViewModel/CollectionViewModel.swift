@@ -9,8 +9,15 @@ import Foundation
 import SwiftUI
 
 class CollectionViewModel: ObservableObject{
+    static let shared = CollectionViewModel()
     @Published var coins = 0
+    
     @Published var kiteCollection = [Kite]()
+    
+    @Published var koleksiLayangan: [KiteCollection] = [
+    KiteCollection(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 190, picture: "Kite 1"),
+    KiteCollection(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 190, picture: "Kite 2")
+    ]
     
     let keys = Keys()
     

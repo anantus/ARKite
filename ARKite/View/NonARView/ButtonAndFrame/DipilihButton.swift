@@ -8,23 +8,17 @@
 import SwiftUI
 
 struct DipilihButton: View {
-    @State var firstColor: String
-    @State var secondColor: String
-    @State var bgColor: String
-    @State var width: CGFloat
-    @State var height: CGFloat
     
     var body: some View {
         ZStack{
             FrontButtons()
-                .fill(Color.init(hex: bgColor))
-                .frame(width: width, height: height)
-                .foregroundColor(Color.green)
-                .padding(.trailing, (width * 0.02))
-                .padding(.top, (height * 0.2))
+                .fill(Color.init(hex: "9C1C1C"))
+                .frame(width: 127, height: 33)
+                .padding(.trailing, (130 * 0.02))
+                .padding(.top, (36 * 0.2))
             FrontButtons()
-                .fill(.linearGradient(colors: [Color.init(hex: firstColor), Color.init(hex: secondColor)], startPoint: .top, endPoint: .bottom))
-                .frame(width: width, height: height)
+                .fill(.linearGradient(colors: [Color.init(hex: "FC3E45"), Color.init(hex: "BA2424")], startPoint: .top, endPoint: .bottom))
+                .frame(width: 127, height: 33)
                 .overlay {
                     Text("DIPILIH")
                         .foregroundColor(.white)
@@ -38,6 +32,6 @@ struct DipilihButton: View {
 
 struct DipilihButton_Previews: PreviewProvider {
     static var previews: some View {
-        DipilihButton(firstColor: "FC3E45", secondColor: "BA2424", bgColor: "9C1C1C", width: 130, height: 36)
+        DipilihButton()
     }
 }

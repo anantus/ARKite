@@ -24,6 +24,7 @@
 		438F0B20291F751B007551F5 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B1F291F751B007551F5 /* DashboardView.swift */; };
 		438F0B24291F755F007551F5 /* ChooseKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B23291F755F007551F5 /* ChooseKiteView.swift */; };
 		438F0B26291F7569007551F5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B25291F7569007551F5 /* SettingView.swift */; };
+		43FDFD0E2939F6CB006EE9F6 /* KoleksiCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDFD0D2939F6CB006EE9F6 /* KoleksiCard.swift */; };
 		55287D7329365BB600E1FF66 /* KiteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55287D7229365BB600E1FF66 /* KiteEntity.swift */; };
 		553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */; };
 		553EFF1C28FD60EF00E54FA1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1B28FD60EF00E54FA1 /* GameView.swift */; };
@@ -58,6 +59,7 @@
 		438F0B1F291F751B007551F5 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		438F0B23291F755F007551F5 /* ChooseKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseKiteView.swift; sourceTree = "<group>"; };
 		438F0B25291F7569007551F5 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		43FDFD0D2939F6CB006EE9F6 /* KoleksiCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiCard.swift; sourceTree = "<group>"; };
 		55287D7229365BB600E1FF66 /* KiteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiteEntity.swift; sourceTree = "<group>"; };
 		553EFF1628FD60EF00E54FA1 /* ARKite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				55440905293442AC00674C81 /* MainMenuButton.swift */,
+				43FDFD0D2939F6CB006EE9F6 /* KoleksiCard.swift */,
 				4343E086293995AC00382834 /* KoleksiMenuButton.swift */,
 				4343E08C29399E8500382834 /* SettingFrame.swift */,
 				4343E08E29399EC100382834 /* SettingButton.swift */,
@@ -289,6 +292,7 @@
 				4343E0952939C25900382834 /* BackButton.swift in Sources */,
 				554409082935034F00674C81 /* Experience.rcproject in Sources */,
 				4343E08F29399EC100382834 /* SettingButton.swift in Sources */,
+				43FDFD0E2939F6CB006EE9F6 /* KoleksiCard.swift in Sources */,
 				554409142935373C00674C81 /* SettingsViewModel.swift in Sources */,
 				4343E09D2939D67D00382834 /* GunakanButton.swift in Sources */,
 				55440906293442AC00674C81 /* MainMenuButton.swift in Sources */,

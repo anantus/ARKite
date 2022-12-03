@@ -18,7 +18,14 @@ struct Kite: Identifiable{
 }
 
 struct KiteCollection{
-    //TODO: tambahin kite sesuai koleksi kite
+    var id = UUID()
+    var firstColor: String
+    var secondColor: String
+    var thirdColor: String
+    var bgColor: String
+    var width: CGFloat
+    var height: CGFloat
+    var picture: String
     
     
 }
