@@ -40,6 +40,7 @@
 		569E71B3293A0707002ABD26 /* Instruction1NEW.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 569E71B1293A0707002ABD26 /* Instruction1NEW.mp4 */; };
 		56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AEAE7A29211BA8007424F4 /* Color+Extension.swift */; };
 		56C65437293A7F5500C9557D /* CustomSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C65436293A7F5500C9557D /* CustomSwitchButton.swift */; };
+		56C65439293A890F00C9557D /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C65438293A890F00C9557D /* PauseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		569E71B1293A0707002ABD26 /* Instruction1NEW.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Instruction1NEW.mp4; sourceTree = "<group>"; };
 		56AEAE7A29211BA8007424F4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		56C65436293A7F5500C9557D /* CustomSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchButton.swift; sourceTree = "<group>"; };
+		56C65438293A890F00C9557D /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +121,9 @@
 				438F0B1F291F751B007551F5 /* DashboardView.swift */,
 				438F0B23291F755F007551F5 /* ChooseKiteView.swift */,
 				438F0B25291F7569007551F5 /* SettingView.swift */,
-				438A9E1629210C180010918E /* ButtonAndFrame */,
 				569E71AE293A05C7002ABD26 /* VideoView.swift */,
+				56C65438293A890F00C9557D /* PauseView.swift */,
+				438A9E1629210C180010918E /* ButtonAndFrame */,
 			);
 			path = NonARView;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				438A9E1A29210C670010918E /* SelectedButton.swift in Sources */,
 				553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */,
 				554409122935372000674C81 /* CollectionViewModel.swift in Sources */,
+				56C65439293A890F00C9557D /* PauseView.swift in Sources */,
 				438F0B26291F7569007551F5 /* SettingView.swift in Sources */,
 				56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */,
 				438F0B24291F755F007551F5 /* ChooseKiteView.swift in Sources */,

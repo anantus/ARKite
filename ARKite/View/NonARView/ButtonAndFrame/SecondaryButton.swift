@@ -26,8 +26,8 @@ struct SecondaryButton: View {
                         .foregroundColor(.white)
                         .font(.system(.title2, design: .default, weight: .heavy))
                 }
-                .padding(.top, (5 / height) * height)
-            .padding(.trailing, (4 / width) * width)
+                .padding(.top, 0.081 * height)
+                .padding(.trailing, 0.016 * width)
             
             
             SecondaryButtonPath(width: width, height: height)
@@ -58,10 +58,10 @@ struct SecondaryButtonPath: Shape {
         path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
         
         //Move to bottom right
-        path.addLine(to: CGPoint(x: rect.maxX - ((6/width) * width) , y: rect.maxY - ((3/height)) * height))
+        path.addLine(to: CGPoint(x: rect.maxX - (0.02 * width) , y: rect.maxY - (0.04 * height)))
         
         //Move to bottom left
-        path.addLine(to: CGPoint(x: rect.minX + ((9/width) * width), y: rect.maxY - (10/height) * height))
+        path.addLine(to: CGPoint(x: rect.minX + (0.03 * width), y: rect.maxY - (0.16 * height)))
         
         //end at top right
         path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))

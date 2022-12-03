@@ -25,8 +25,8 @@ struct PrimaryButton: View {
                         .foregroundColor(.white)
                         .font(.system(.title2, design: .default, weight: .heavy))
                 }
-                .padding(.top, (5 / height) * height)
-                .padding(.trailing, (4 / width) * width)
+                .padding(.top, 0.081 * height)
+                .padding(.trailing, 0.016 * width)
             
             
             PrimaryButtonPath(width: width, height: height)
@@ -53,13 +53,13 @@ struct PrimaryButtonPath: Shape {
         path.move(to: CGPoint(x: rect.minX, y: rect.minY))
         
         //Move to top right
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY + ((11/height) * height)))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY + (0.1 * height)))
         
         //Move to bottom right
-        path.addLine(to: CGPoint(x: rect.maxX - ((10/width) * width) , y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.maxX - (0.04 * width) , y: rect.maxY))
         
         //Move to bottom left
-        path.addLine(to: CGPoint(x: rect.minX + ((6/width) * width), y: rect.maxY + (5/height) * height))
+        path.addLine(to: CGPoint(x: rect.minX + (0.02 * width), y: rect.maxY + (0.08 * height)))
         
         //end at top right
         path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
