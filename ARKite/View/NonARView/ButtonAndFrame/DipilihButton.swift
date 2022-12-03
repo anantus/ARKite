@@ -38,6 +38,6 @@ struct DipilihButton: View {
 
 struct DipilihButton_Previews: PreviewProvider {
     static var previews: some View {
-        DipilihButton(firstColor: "FC3E45", secondColor: "BA2424", bgColor: "9C1C1C", width: 130, height: 36)
+        DipilihButton(firstColor: "FC3E45", secondColor: "BA2424", bgColor: "9C1C1C", width: 127, height: 33)
     }
 }

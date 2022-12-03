@@ -54,18 +54,20 @@ struct KoleksiView: View {
                 }
                 
             }
+            
             VStack{
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(kiteCount, id: \.self) { item in
                         if item%2 == 1{
-                            LayanganFrame1(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 190, picture: "")
+                            LayanganFrame1(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 200, picture: "Kite 1")
                         } else{
-                            LayanganFrame2(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 190, picture: "")
+                            LayanganFrame2(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 190, picture: "Kite 2")
                         }
                         
                         
                     }
                 }
+                .padding(.top, 80)
                 .padding(.horizontal)
                 .frame(maxHeight: 300)
             }

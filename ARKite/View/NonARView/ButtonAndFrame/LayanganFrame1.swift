@@ -15,6 +15,7 @@ struct LayanganFrame1: View {
     @State var width: CGFloat
     @State var height: CGFloat
     @State var picture: String
+    @State var isUsed = false
     var body: some View {
         ZStack{
             FrameBack1()
@@ -27,13 +28,32 @@ struct LayanganFrame1: View {
                 .fill(.linearGradient(colors: [Color.init(hex: firstColor), Color.init(hex: secondColor)], startPoint: .top, endPoint: .bottom))
                 .frame(width: width, height: height)
                 .cornerRadius(5)
-            FrameInner1()
-                .fill(Color.init(hex: thirdColor))
-                .frame(width: 141, height: 128)
-                .cornerRadius(5)
-                .padding(.bottom, (height * 0.17))
-            Image("")
-            
+            VStack (spacing: 0){
+                ZStack {
+                    FrameInner1()
+                        .fill(Color.init(hex: thirdColor))
+                        .frame(width: 141, height: 128)
+                        .cornerRadius(5)
+                        
+                    Image("\(picture)")
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width * (2.6/10),height: UIScreen.main.bounds.height * (1.3/10))
+                        .rotationEffect(.degrees(30))
+                        .padding(.top, 8)
+                        .padding(.trailing, 5)
+                }
+                if isUsed {
+                    DipilihButton(firstColor: "FC3E45", secondColor: "BA2424", bgColor: "9C1C1C", width: 130, height: 36)
+                } else {
+                    GunakanButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 130, height: 36)
+                }
+            }
+            .onTapGesture {
+                withAnimation {
+                    isUsed.toggle()
+                }
+            }
+                
         }
     }
 }
@@ -109,6 +129,6 @@ struct FrameInner1: Shape {
 
 struct LayanganFrame1_Previews: PreviewProvider {
     static var previews: some View {
-        LayanganFrame1(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 190, picture: "")
+        LayanganFrame1(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 210, picture: "Kite 1")
     }
 }

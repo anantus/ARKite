@@ -61,6 +61,6 @@ struct GunakanButton: View {
 
 struct GunakanButton_Previews: PreviewProvider {
     static var previews: some View {
-        GunakanButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 130, height: 36)
+        GunakanButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 127, height: 33)
     }
 }

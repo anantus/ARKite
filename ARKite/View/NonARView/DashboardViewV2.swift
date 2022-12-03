@@ -38,7 +38,7 @@ struct DashboardViewV2: View {
                             .position(x: UIScreen.main.bounds.width * (4/5),y: UIScreen.main.bounds.height * (0/5))
                         
                         SettingButton()
-                            .position(x: UIScreen.main.bounds.width * (0.5/5),y: UIScreen.main.bounds.height * (-2/5))
+                            .position(x: UIScreen.main.bounds.width * (0.6/5),y: UIScreen.main.bounds.height * (-2/5))
                         CoinIndicatorFrame(coinCount: collectVM.coins)
                             .position(x: UIScreen.main.bounds.width * (4.2/5),y: UIScreen.main.bounds.height * (-2/5))
                     }
