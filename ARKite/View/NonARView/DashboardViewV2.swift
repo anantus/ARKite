@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DashboardViewV2: View {
+    @State var showSettingNonARView = false
     let collectVM = CollectionViewModel()
     
     var body: some View {
@@ -36,11 +37,19 @@ struct DashboardViewV2: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: UIScreen.main.bounds.width * (6.5/5),height: UIScreen.main.bounds.height * (4.25/5))
                             .position(x: UIScreen.main.bounds.width * (4/5),y: UIScreen.main.bounds.height * (0/5))
+                        HStack(spacing: 200){
+                            Button {
+                                withAnimation(.linear(duration: 0.3)) {
+                                    showSettingNonARView.toggle()
+                                    
+                                }
+                            } label: {
+                                SettingButton()
+                            }
+                            CoinIndicatorFrame(coinCount: collectVM.coins)
+                        }.position(x: UIScreen.main.bounds.width * (2.5/5),y: UIScreen.main.bounds.height * (-2/5))
                         
-                        SettingButton()
-                            .position(x: UIScreen.main.bounds.width * (0.6/5),y: UIScreen.main.bounds.height * (-2/5))
-                        CoinIndicatorFrame(coinCount: collectVM.coins)
-                            .position(x: UIScreen.main.bounds.width * (4.2/5),y: UIScreen.main.bounds.height * (-2/5))
+                        
                     }
                         
                 }
@@ -63,9 +72,19 @@ struct DashboardViewV2: View {
                 .ignoresSafeArea()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(LinearGradient(gradient: Gradient(colors: [Color("BGMainPage1"), Color("BGMainPage2")]), startPoint: .top, endPoint: .bottom))
+                
         }
+        .popover(isPresented: $showSettingNonARView) {
+            SettingNonARView(showSettingNonARView: $showSettingNonARView)}
+        
     }
+    
+    
 }
+
+
+
+
 
 struct DashboardViewV2_Previews: PreviewProvider {
     static var previews: some View {
