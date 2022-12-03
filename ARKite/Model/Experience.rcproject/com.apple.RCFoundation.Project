@@ -32,7 +32,7 @@
                                       "configurationBox" : {
                                         "configuration" : {
                                           "angularCoefficient" : 1,
-                                          "duration" : 1,
+                                          "duration" : 3,
                                           "isTransformInitKeyPath" : true,
                                           "linearCoefficient" : 1,
                                           "location" : [
@@ -540,6 +540,130 @@
                                       "configurationBox" : {
                                         "configuration" : {
                                           "angularCoefficient" : 1,
+                                          "duration" : 0.05000000074505806,
+                                          "isTransformInitKeyPath" : true,
+                                          "linearCoefficient" : 1,
+                                          "location" : [
+                                            -0.32300001382827759,
+                                            0,
+                                            -0.24730734527111053
+                                          ],
+                                          "moveEase" : "easeInOut",
+                                          "orientation" : [
+                                            0,
+                                            0.13069923222064972,
+                                            0,
+                                            0.99142205715179443
+                                          ],
+                                          "respectPhysics" : false,
+                                          "target" : [
+                                            "EA8D22CD-0B2E-4493-9FDE-874EA451844D"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "arguments" : "local",
+                                          "type" : "transform"
+                                        }
+                                      },
+                                      "identifier" : "C3BFBB55-1A2F-46F4-9391-E1081910EB85",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "F0928479-5A34-428C-89DB-42D0C7910858",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        },
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "target" : [
+                                            "EA8D22CD-0B2E-4493-9FDE-874EA451844D"
+                                          ],
+                                          "userIdentifier" : "RotateEndAC"
+                                        },
+                                        "name" : {
+                                          "type" : "custom"
+                                        }
+                                      },
+                                      "identifier" : "642CF009-6726-4A8A-9E42-973282B34F62",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "8020E67B-5A14-4B4D-8241-38817ABDAEA2",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ],
+                      "color" : [
+                        0.49803921580314636,
+                        0.50196081399917603,
+                        0.52549022436141968,
+                        1
+                      ],
+                      "identifier" : "A6D5B3DA-0ACA-436D-BB33-0B05D2197952",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "Move Rotate AntiClockwise",
+                      "triggers" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
+                                  "userIdentifier" : "MoveRotateAntiClockwise"
+                                },
+                                "name" : "custom"
+                              },
+                              "identifier" : "34901489-8623-4049-B09E-28BCCE539599",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
+                },
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "isEnabled" : false
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "angularCoefficient" : 1,
                                           "duration" : 0,
                                           "isTransformInitKeyPath" : true,
                                           "linearCoefficient" : 1,
@@ -664,7 +788,7 @@
                                       "configurationBox" : {
                                         "configuration" : {
                                           "angularCoefficient" : 1,
-                                          "duration" : 0.5,
+                                          "duration" : 0.40000000596046448,
                                           "isTransformInitKeyPath" : true,
                                           "linearCoefficient" : 1,
                                           "location" : [
@@ -923,7 +1047,7 @@
                                             0,
                                             1
                                           ],
-                                          "duration" : 1,
+                                          "duration" : 0,
                                           "loops" : false,
                                           "target" : [
                                             "DC107218-1A85-4211-A459-CE366EB34381",
@@ -933,7 +1057,7 @@
                                           ],
                                           "upVector" : [
                                             0,
-                                            1,
+                                            0,
                                             0
                                           ]
                                         },
@@ -2425,10 +2549,7 @@
                                       "configurationBox" : {
                                         "configuration" : {
                                           "target" : [
-                                            "25BBFF98-5091-4322-AE26-D4323C76C1DD",
-                                            "DC107218-1A85-4211-A459-CE366EB34381",
-                                            "B5422C4D-CF44-41D1-A579-CAF541B06E33",
-                                            "E8A9DD28-59E9-4D30-9F1C-2818346A37DB"
+                                            "25BBFF98-5091-4322-AE26-D4323C76C1DD"
                                           ],
                                           "userIdentifier" : "animateCoinDone"
                                         },
@@ -2723,17 +2844,17 @@
                     },
                     "transform" : {
                       "matrix" : [
-                        0.39619389176368713,
+                        0.20000000298023224,
                         0,
                         0,
                         0,
                         0,
-                        0.39619389176368713,
+                        0.20000000298023224,
                         0,
                         0,
                         0,
                         0,
-                        0.39619389176368713,
+                        0.20000000298023224,
                         0,
                         -1.1912250518798828,
                         7.8275837898254395,
@@ -2867,17 +2988,17 @@
                     },
                     "transform" : {
                       "matrix" : [
-                        0.39619389176368713,
+                        0.20000000298023224,
                         0,
                         0,
                         0,
                         0,
-                        0.39619389176368713,
+                        0.20000000298023224,
                         0,
                         0,
                         0,
                         0,
-                        0.39619389176368713,
+                        0.20000000298023224,
                         0,
                         -0.63086789846420288,
                         5.6390361785888672,
@@ -3002,17 +3123,17 @@
                     },
                     "transform" : {
                       "matrix" : [
-                        0.39619389176368713,
+                        0.20000000298023224,
                         0,
                         0,
                         0,
                         0,
-                        0.39619389176368713,
+                        0.20000000298023224,
                         0,
                         0,
                         0,
                         0,
-                        0.39619389176368713,
+                        0.20000000298023224,
                         0,
                         1,
                         8.4419641494750977,
@@ -3138,12 +3259,12 @@
                     },
                     "transform" : {
                       "matrix" : [
-                        0.45415806770324707,
+                        0.45415765047073364,
                         0,
                         0,
                         0,
                         0,
-                        0.45415806770324707,
+                        0.45415765047073364,
                         0,
                         0,
                         0,
@@ -3413,17 +3534,17 @@
                     },
                     "transform" : {
                       "matrix" : [
-                        0.39619389176368713,
+                        0.20000000298023224,
                         0,
                         0,
                         0,
                         0,
-                        0.39619389176368713,
+                        0.20000000298023224,
                         0,
                         0,
                         0,
                         0,
-                        0.39619389176368713,
+                        0.20000000298023224,
                         0,
                         0.72854948043823242,
                         6.7191452980041504,
@@ -3464,21 +3585,21 @@
               "title" : "ARKite",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.9605749249458313,
-                  1.7988405431879073e-07,
-                  -0.2780211865901947,
+                  0.99789899587631226,
+                  1.670337752557316e-07,
+                  0.064787797629833221,
                   0,
-                  -0.13489663600921631,
-                  0.87440192699432373,
-                  -0.46607309579849243,
+                  0.052417904138565063,
+                  0.58770835399627686,
+                  -0.80737298727035522,
                   0,
-                  0.24310220777988434,
-                  0.48520225286483765,
-                  0.83992856740951538,
+                  -0.038076378405094147,
+                  0.80907285213470459,
+                  0.58647352457046509,
                   0,
-                  6.9587106704711914,
-                  13.635848999023438,
-                  18.643619537353516,
+                  -1.0660481452941895,
+                  5.2341198921203613,
+                  4.2339296340942383,
                   1
                 ],
                 "sceneTransform" : [

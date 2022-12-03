@@ -68,6 +68,9 @@ struct GameView : View {
                     if vm.gameOver{
                         Text("GAME OVER!")
                             .foregroundColor(Color.red)
+                            .onAppear{
+                                UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+                            }
                     }
                     
                     Spacer()

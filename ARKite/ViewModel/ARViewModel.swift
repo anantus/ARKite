@@ -15,9 +15,10 @@ class ARViewModel: ObservableObject {
     @Published fileprivate var isForward = false
     @Published fileprivate var isRotate = false
     @Published var gameOver = false
+    @Published var addCoin = true
     @Published var coinGame = 0
     
-    @State fileprivate var distanceBetweenKite = SIMD3<Float>(0,0,0)
+    fileprivate var initialKitePosition = SIMD3<Float>(0,0,0)
     
     let mainAnchor = try! Experience.loadARKite()
     let arView = ARView(frame: .zero)
@@ -29,7 +30,6 @@ class ARViewModel: ObservableObject {
         self.kite = mainAnchor.findEntity(named: "RedYellowKite")!
         self.obstacle = mainAnchor.findEntity(named: "obstacle")!
         self.randomCoinPosition(kite)
-        self.threadEntity()
         
     }
     
@@ -37,7 +37,6 @@ class ARViewModel: ObservableObject {
     //Function layangan untuk menjauh dari anchor
     func kiteMoveUp(){
         mainAnchor.notifications.moveUp.post()
-        distanceBetweenKite = kite.position
     }
     
     //Function layangan untuk mendekat dari anchor
@@ -51,6 +50,8 @@ class ARViewModel: ObservableObject {
         
         //Find kite Angle
         if isForward{
+            self.initialKitePosition = kite.position
+            print(self.initialKitePosition)
             isRotate = false
             isForward = false
             
@@ -65,15 +66,29 @@ class ARViewModel: ObservableObject {
             kiteTilt(kiteAngle: kiteAngle)
             
             //rotate loop kite
-            mainAnchor.actions.rotationForward.onAction = kiteMoveDown(_:)
+            mainAnchor.actions.rotationForward.onAction = kiteMoveDown
         }
     }
     
     //Function untuk penerbangan kite awal
     func kiteFlyStart(){
+        threadEntity()
         mainAnchor.notifications.kiteStart.post()
-        distanceBetweenKite = kite.position
         mainAnchor.actions.kiteStartEnd.onAction = startGameInitiate
+    }
+    
+    //Function untuk menyalakan rotasi rekursif
+    fileprivate func rotateOn(_ entity: Entity?){
+        isRotate = true
+        isForward = true
+        print(kite.position)
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
+            if self.initialKitePosition.x < self.kite.position.x{
+                self.rotateRecursionClockwise(entity)
+            } else{
+                self.rotateRecursionAntiClockwise(entity)
+            }
+        }
     }
     
     //Function untuk mencari angle
@@ -93,14 +108,20 @@ class ARViewModel: ObservableObject {
     }
     
     //Function untuk merotasi secara rekursif
-    func rotateRecursion(_ entity: Entity?) {
+    fileprivate func rotateRecursionClockwise(_ entity: Entity?) {
         if isRotate{
             mainAnchor.notifications.moveRotateClockwise.post()
-            mainAnchor.actions.rotateEnd.onAction = rotateRecursion
+            mainAnchor.actions.rotateEnd.onAction = rotateRecursionClockwise
         }
     }
     
-    //Function untuk menyalakan rotasi rekursif
+    //FUnction untuk merotasi melawan arah jarum jam secara rekursif
+    fileprivate func rotateRecursionAntiClockwise(_ entity: Entity?) {
+        if isRotate{
+            mainAnchor.notifications.moveRotateAntiClockwise.post()
+            mainAnchor.actions.rotateEndAC.onAction = rotateRecursionAntiClockwise
+        }
+    }
     
     fileprivate func startGameInitiate(_ entity: Entity?){
         mainAnchor.notifications.showCoin.post()
@@ -127,14 +148,6 @@ class ARViewModel: ObservableObject {
         mainAnchor.actions.animateCoinDone.onAction = animateCoin
         
     }
-    
-    fileprivate func rotateOn(_ entity: Entity?){
-        isRotate = true
-        isForward = true
-        rotateRecursion(entity)
-    }
-    
-    
     
     //Function untuk menyalakan obstacle
     fileprivate func obstacleMove(_ entity: Entity?){
@@ -171,21 +184,23 @@ class ARViewModel: ObservableObject {
     
     //Function untuk mengubah posisi koin setelah collide
     fileprivate func randomCoinPosition(_ entity: Entity?) {
-        let kite = entity!
         let allDisplayAction = mainAnchor.actions.allActions.filter({$0.identifier.hasPrefix("CollisionCoin")})
-        print(allDisplayAction.count)
         
         for displayAction in allDisplayAction {
             displayAction.onAction = {entity in
                 if let entity = entity{
-                    let posX1 = Float.random(in: -15 ... 15)
-                    let posY1 = Float.random(in: 10 ... 15)
-                    let posZ1 = Float.random(in: -15 ... -10)
-//                    entity.position = SIMD3<Float>(posX1,posY1,posZ1)
-                    entity.move(to: .init(translation: SIMD3<Float>(posX1,posY1,posZ1)), relativeTo: self.kite, duration: 0)
-                    print("\(entity.name) has collide")
-                    self.coinGame += 1
-                    self.mainAnchor.notifications.showCoin.post()
+                    if self.addCoin{
+                        self.addCoin = false
+                        let posX1 = Float.random(in: -10 ... 10)
+                        let posY1 = Float.random(in: 7.5 ... 10)
+                        let posZ1 = Float.random(in: -15 ... -10)
+                        entity.position = SIMD3<Float>(posX1,posY1,posZ1)
+                        self.coinGame += 1
+                        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { secTimer in
+                            self.mainAnchor.notifications.showCoin.post()
+                            self.addCoin = true
+                        }
+                    }
                 }
             }
         }
@@ -206,6 +221,6 @@ class ARViewModel: ObservableObject {
     
     func pullRotateThread(){
         let radians = 90 * Float.pi / 180.0
-        threadSpool.move(to: .init(rotation: simd_quatf(angle: radians, axis: SIMD3<Float>(1,0,0))), relativeTo: self.threadSpool, duration: 1)
+        threadSpool.move(to: .init(rotation: simd_quatf(angle: radians, axis: SIMD3<Float>(1,0,0))), relativeTo: self.threadSpool, duration: 0.5)
     }
 }
