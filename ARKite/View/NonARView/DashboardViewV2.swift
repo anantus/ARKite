@@ -49,7 +49,7 @@ struct DashboardViewV2: View {
                     NavigationLink{
                         GameView()
                     }label: {
-                        MainMenuButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 262, height: 78)
+                        MainMenuButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 262, height: 78, text: "MAIN")
                     }
                     
                     NavigationLink{

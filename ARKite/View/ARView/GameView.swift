@@ -15,7 +15,7 @@ struct GameView : View {
     @State var showContentView: Bool = false
     @State var isStartPlay = false
     @State var rotate = false
-    @State var useButton = false
+    @State var useButton = true
     @State var position = CGSize.zero
     @State var color = Color.white.opacity(0.0001)
     @State var pullPush = "None"
@@ -36,13 +36,13 @@ struct GameView : View {
                         Spacer()
                         
                         ZStack {
-                            CoinIndicatorFrame(coinCount: 10)
+                            CoinIndicatorFrame(coinCount: vm.coinGame)
                             
-                            HStack {
-                                Image("coinIcon")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                            }.frame(width: 124, height: 50, alignment: .leading)
+//                            HStack {
+//                                Image("coinIcon")
+//                                    .resizable()
+//                                    .frame(width: 50, height: 50)
+//                            }.frame(width: 124, height: 50, alignment: .leading)
                             
                         }
                         
@@ -73,7 +73,6 @@ struct GameView : View {
                             
                             
                             Button {
-                                vm.kiteMoveDown()
                                 vm.kiteMoveFront()
                                 // TODO: pull kite
                             } label: {
@@ -81,6 +80,7 @@ struct GameView : View {
                                 TarikUlurButton(firstColor: "FC3E45", secondColor: "BA2424", text: "Tarik", isRotate: false)
                             }
                         }
+                    }
                     }else{
                         VStack{
                             Text("")

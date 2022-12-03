@@ -13,7 +13,6 @@
 		4343E08B29399D3500382834 /* SettingNonARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E08A29399D3500382834 /* SettingNonARView.swift */; };
 		4343E08D29399E8500382834 /* SettingFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E08C29399E8500382834 /* SettingFrame.swift */; };
 		4343E08F29399EC100382834 /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E08E29399EC100382834 /* SettingButton.swift */; };
-		4343E09129399ED000382834 /* CoinIndicatorFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E09029399ED000382834 /* CoinIndicatorFrame.swift */; };
 		4343E0932939A5B400382834 /* NavigationKoleksiFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0922939A5B400382834 /* NavigationKoleksiFrame.swift */; };
 		4343E0952939C25900382834 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0942939C25900382834 /* BackButton.swift */; };
 		4343E0972939CCBF00382834 /* LayanganFrame1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0962939CCBF00382834 /* LayanganFrame1.swift */; };
@@ -37,14 +36,11 @@
 		55440910293508F200674C81 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544090F293508F200674C81 /* ARViewModel.swift */; };
 		554409122935372000674C81 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409112935372000674C81 /* CollectionViewModel.swift */; };
 		554409142935373C00674C81 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409132935373C00674C81 /* SettingsViewModel.swift */; };
-
 		5544091829360B0A00674C81 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544091729360B0A00674C81 /* DefaultKeys.swift */; };
 		562030F02936116D0048BB69 /* TarikUlurButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562030EF2936116D0048BB69 /* TarikUlurButton.swift */; };
 		56481D2F2938BBE0004066E1 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56481D2E2938BBE0004066E1 /* PrimaryButton.swift */; };
 		56481D312938BBEB004066E1 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56481D302938BBEB004066E1 /* SecondaryButton.swift */; };
-		5652B47C29365C7B00841BEC /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5652B47B29365C7B00841BEC /* SettingButton.swift */; };
 		5652B47E2936622F00841BEC /* CoinIndicatorFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5652B47D2936622F00841BEC /* CoinIndicatorFrame.swift */; };
-		5653FBE42937257F0071CC60 /* SettingFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5653FBE32937257F0071CC60 /* SettingFrame.swift */; };
 		569C0BCB293755D800FE5767 /* SettingVARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C0BCA293755D800FE5767 /* SettingVARView.swift */; };
 		569C0BCF29376FC800FE5767 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C0BCE29376FC800FE5767 /* CustomSlider.swift */; };
 		569C0BD12937982000FE5767 /* CustomSliderV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C0BD02937982000FE5767 /* CustomSliderV2.swift */; };
@@ -288,7 +284,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					553EFF1528FD60EF00E54FA1 = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -340,8 +336,6 @@
 				4343E0992939CCCE00382834 /* LayanganFrame2.swift in Sources */,
 				569C0BCF29376FC800FE5767 /* CustomSlider.swift in Sources */,
 				5652B47E2936622F00841BEC /* CoinIndicatorFrame.swift in Sources */,
-				55440910293508F200674C81 /* ARViewModel.swift in Sources */,
-				438A9E0E2920CF6E0010918E /* StrokeText.swift in Sources */,
 				569C0BCB293755D800FE5767 /* SettingVARView.swift in Sources */,
 				553EFF1C28FD60EF00E54FA1 /* GameView.swift in Sources */,
 				56481D312938BBEB004066E1 /* SecondaryButton.swift in Sources */,
@@ -357,23 +351,13 @@
 				554409142935373C00674C81 /* SettingsViewModel.swift in Sources */,
 				4343E09D2939D67D00382834 /* GunakanButton.swift in Sources */,
 				55440906293442AC00674C81 /* MainMenuButton.swift in Sources */,
-				438A9E1829210C500010918E /* UseButton.swift in Sources */,
-				5652B47C29365C7B00841BEC /* SettingButton.swift in Sources */,
-				438A9E102920E5A90010918E /* FrameKuning.swift in Sources */,
 				56C65437293A7F5500C9557D /* CustomSwitchButton.swift in Sources */,
-				554409082935034F00674C81 /* Experience.rcproject in Sources */,
 				56481D2F2938BBE0004066E1 /* PrimaryButton.swift in Sources */,
-				554409142935373C00674C81 /* SettingsViewModel.swift in Sources */,
 				569E71AF293A05C7002ABD26 /* VideoView.swift in Sources */,
 				569C0BD12937982000FE5767 /* CustomSliderV2.swift in Sources */,
-				55440906293442AC00674C81 /* MainMenuButton.swift in Sources */,
-				5653FBE42937257F0071CC60 /* SettingFrame.swift in Sources */,
-				438A9E122920E5B30010918E /* FrameIjo.swift in Sources */,
 				562030F02936116D0048BB69 /* TarikUlurButton.swift in Sources */,
-				438A9E1A29210C670010918E /* SelectedButton.swift in Sources */,
 				553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */,
 				55287D7329365BB600E1FF66 /* KiteEntity.swift in Sources */,
-				4343E09129399ED000382834 /* CoinIndicatorFrame.swift in Sources */,
 				4343E0852938B74500382834 /* DashboardViewV2.swift in Sources */,
 				4343E0932939A5B400382834 /* NavigationKoleksiFrame.swift in Sources */,
 				4343E0A12939F1A000382834 /* BuyButton.swift in Sources */,
@@ -511,7 +495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = KFD27J2TGQ;
+				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -543,7 +527,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = KFD27J2TGQ;
+				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
