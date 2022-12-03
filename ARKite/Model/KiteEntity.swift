@@ -8,17 +8,9 @@
 import Foundation
 import RealityKit
 
-struct Kite: Identifiable{
+struct Kite: Identifiable, Hashable{
     var id = UUID()
     let name: String
     let price: Int
     var isBought: Bool = false
-    
-    
-}
-
-struct KiteCollection{
-    //TODO: tambahin kite sesuai koleksi kite
-    
-    
 }

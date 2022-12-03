@@ -19,6 +19,7 @@ class ARViewModel: ObservableObject {
     @Published var coinGame = 0
     
     fileprivate var initialKitePosition = SIMD3<Float>(0,0,0)
+    fileprivate var collectionVM = CollectionViewModel()
     
     let mainAnchor = try! Experience.loadARKite()
     let arView = ARView(frame: .zero)
@@ -177,6 +178,7 @@ class ARViewModel: ObservableObject {
             self.mainAnchor.actions.gameOver.onAction = {_ in
                 print("Game over!")
                 self.gameOver = true
+                self.collectionVM.addCoin(coinsAfterGame: self.coinGame)
             }
         }
     }

@@ -13,10 +13,6 @@ struct Keys {
     static let coins = "coins"
     static let kiteCollection = "kiteCollection"
     
-    func saveUserDefault() {
-        defaults.set(0, forKey: Keys.coins)
-        defaults.set([], forKey: Keys.kiteCollection)
-    }
     
 }
 

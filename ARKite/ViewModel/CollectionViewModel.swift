@@ -15,8 +15,9 @@ class CollectionViewModel: ObservableObject{
     let keys = Keys()
     
     init(){
+        
         coins = keys.defaults.integer(forKey: Keys.coins)
-        kiteCollection = keys.defaults.value(forKey: Keys.kiteCollection) as! [Kite]
+        kiteCollection = keys.defaults.value(forKey: Keys.kiteCollection) as? [Kite] ?? kiteInitial()
     }
 
     
@@ -47,5 +48,15 @@ class CollectionViewModel: ObservableObject{
         var kite = findKite(kiteName: kiteName)
         kite.isBought = true
         subtractCoin(kitePrice: kite.price)
+    }
+    
+    func kiteInitial() -> [Kite]{
+        let kiteCollectionInit: [Kite] = [
+        Kite(name: "RedYellowKite", price: 0),
+        Kite(name: "BajajKite", price: 1),
+        Kite(name: "StripeKite", price: 2),
+        Kite(name: "FloralKite", price: 3),
+        ]
+        return kiteCollectionInit
     }
 }

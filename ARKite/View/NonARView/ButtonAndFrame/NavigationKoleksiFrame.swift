@@ -12,14 +12,14 @@ struct NavigationKoleksiFrame: View {
         ZStack {
             NavKoleksiFramePath2()
                 .fill(Color.init(hex: "8B2E00"))
-                .frame(width: 453,height: 494, alignment: .center)
+                .frame(width: 480,height: 494, alignment: .center)
                 .padding(.trailing, 15)
                 .padding(.top, 20)
                 
             
             NavKoleksiFramePath()
                 .fill(.linearGradient(colors: [Color.init(hex: "FBC300"), Color.init(hex: "FEB914")], startPoint: .top, endPoint: .bottom))
-                .frame(width: 458,height: 494, alignment: .center)
+                .frame(width: 480,height: 494, alignment: .center)
                 .overlay {
                     Text("KOLEKSI")
                         .foregroundColor(Color.init(hex: "8B2E00"))

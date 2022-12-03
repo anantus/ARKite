@@ -25,7 +25,6 @@
 		438F0B24291F755F007551F5 /* ChooseKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B23291F755F007551F5 /* ChooseKiteView.swift */; };
 		438F0B26291F7569007551F5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B25291F7569007551F5 /* SettingView.swift */; };
 		5509D3B62937654E00E16F6F /* GULUNGAN.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 5509D3B52937654E00E16F6F /* GULUNGAN.usdz */; };
-		5509D3B829379F7000E16F6F /* ThreadScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D3B729379F7000E16F6F /* ThreadScrollView.swift */; };
 		55287D7329365BB600E1FF66 /* KiteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55287D7229365BB600E1FF66 /* KiteEntity.swift */; };
 		553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */; };
 		553EFF1C28FD60EF00E54FA1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1B28FD60EF00E54FA1 /* GameView.swift */; };
@@ -438,7 +437,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = C8B3R9N352;
+				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -470,7 +469,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = C8B3R9N352;
+				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
