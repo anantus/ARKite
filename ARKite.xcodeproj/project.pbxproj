@@ -20,6 +20,7 @@
 		4343E09D2939D67D00382834 /* GunakanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E09C2939D67D00382834 /* GunakanButton.swift */; };
 		4343E09F2939D68A00382834 /* DipilihButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E09E2939D68A00382834 /* DipilihButton.swift */; };
 		4343E0A12939F1A000382834 /* BuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0A02939F1A000382834 /* BuyButton.swift */; };
+		43CD3A0A293BB22C000C358D /* PilihLayanganButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD3A09293BB22C000C358D /* PilihLayanganButton.swift */; };
 		5509D3B62937654E00E16F6F /* GULUNGAN.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 5509D3B52937654E00E16F6F /* GULUNGAN.usdz */; };
 		55287D7329365BB600E1FF66 /* KiteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55287D7229365BB600E1FF66 /* KiteEntity.swift */; };
 		553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */; };
@@ -64,6 +65,7 @@
 		4343E09C2939D67D00382834 /* GunakanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunakanButton.swift; sourceTree = "<group>"; };
 		4343E09E2939D68A00382834 /* DipilihButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DipilihButton.swift; sourceTree = "<group>"; };
 		4343E0A02939F1A000382834 /* BuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButton.swift; sourceTree = "<group>"; };
+		43CD3A09293BB22C000C358D /* PilihLayanganButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilihLayanganButton.swift; sourceTree = "<group>"; };
 		5509D3B52937654E00E16F6F /* GULUNGAN.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = GULUNGAN.usdz; sourceTree = "<group>"; };
 		5509D3B729379F7000E16F6F /* ThreadScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadScrollView.swift; sourceTree = "<group>"; };
 		55287D7229365BB600E1FF66 /* KiteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiteEntity.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				56481D2E2938BBE0004066E1 /* PrimaryButton.swift */,
 				56481D302938BBEB004066E1 /* SecondaryButton.swift */,
 				56C65436293A7F5500C9557D /* CustomSwitchButton.swift */,
+				43CD3A09293BB22C000C358D /* PilihLayanganButton.swift */,
 			);
 			path = ButtonAndFrame;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				56C65437293A7F5500C9557D /* CustomSwitchButton.swift in Sources */,
 				56481D2F2938BBE0004066E1 /* PrimaryButton.swift in Sources */,
 				569E71AF293A05C7002ABD26 /* VideoView.swift in Sources */,
+				43CD3A0A293BB22C000C358D /* PilihLayanganButton.swift in Sources */,
 				569C0BD12937982000FE5767 /* CustomSliderV2.swift in Sources */,
 				562030F02936116D0048BB69 /* TarikUlurButton.swift in Sources */,
 				553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */,
