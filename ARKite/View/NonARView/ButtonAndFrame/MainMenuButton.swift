@@ -8,19 +8,24 @@
 import SwiftUI
 
 //Dipakai untuk main menu button
+// bisa dipakai untuk button lanut dan akhiri di setting,
+// tombol mulai dan menu
+
 struct MainMenuButton: View {
+
     @State var firstColor: String
     @State var secondColor: String
     @State var bgColor: String
     @State var width: CGFloat
     @State var height: CGFloat
-    
+
     var body: some View {
         ZStack{
             Buttons()
                 .fill(Color.init(hex: bgColor))
                 .frame(width: width, height: height)
                 .foregroundColor(Color.green)
+
                 .cornerRadius(5)
                 .padding(.trailing, (width * 0.02))
                 .padding(.top, (height * 0.2))
@@ -45,13 +50,13 @@ struct Buttons: Shape {
         path.move(to: CGPoint(x: rect.minX, y: rect.minY))
         
         //Move to top right
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY+15))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY+14))
         
         //Move to bottom right
-        path.addLine(to: CGPoint(x: rect.maxX-15, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.maxX-10, y: rect.maxY))
         
         //Move to bottom left
-        path.addLine(to: CGPoint(x: rect.minX+10, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.minX+6, y: rect.maxY))
         
         //end at top right
         path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))

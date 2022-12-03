@@ -53,7 +53,6 @@ struct CoinIndicatorPath: Shape {
         return path
     }
 }
-
 struct CoinIndicatorFrame_Previews: PreviewProvider {
     static var previews: some View {
         CoinIndicatorFrame(coinCount: 1000)

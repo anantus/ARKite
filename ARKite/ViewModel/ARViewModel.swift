@@ -22,6 +22,8 @@ class ARViewModel: ObservableObject {
     fileprivate var collectionVM = CollectionViewModel()
     
     let mainAnchor = try! Experience.loadARKite()
+    
+    
     let arView = ARView(frame: .zero)
     let threadSpool = try! ModelEntity.load(named: "GULUNGAN")
     fileprivate let initialPosition = SIMD3<Float>(0,0,0)
