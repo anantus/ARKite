@@ -1,8 +1,51 @@
+////
+////  DashboardView.swift
+////  ARKite
+////
+////  Created by Amalia . on 12/11/22.
+////
 //
-//  DashboardView.swift
-//  ARKite
+//import SwiftUI
 //
-//  Created by Amalia . on 12/11/22.
+//struct DashboardView: View {
+//    @State var showChooseKite: Bool = false
+//    @State var showSettingView: Bool = false
+//    @State var showContentView: Bool = false
+//    @State var showDashboard: Bool = false
+//    var body: some View {
+//        NavigationView{
+//            ZStack{
+//                Image("Background")
+//                    .aspectRatio(contentMode: .fit)
+//                    .position(x: 78, y: 554)
+//                ZStack(alignment: .trailing){
+//                    Text("25")
+//                        .font(.system(size:25, weight: .medium, design: .rounded))
+//                        .foregroundColor(.white)
+//                        .padding(.horizontal, 20)
+//                        .background(.black)
+//                        .cornerRadius(3)
+//                    Image("dollar")
+//                        .aspectRatio(contentMode: .fit)
+//                        .padding(.horizontal, 50)
+//                }
+//                .position(x: 300, y: 50)
+//                VStack{
+//                    Image("MainMenu")
+//                    NavigationLink(destination: GameView(), isActive: self.$showContentView, label: {
+//                        ZStack{
+//                            MainMenuButton(buttonFrontColor: Color(hex: "106514"), buttonBackColor: Color(hex: "15B10F"), width: 250, height: 70)
+//                            Text("MAIN")
+//                                .font(.title2)
+//                                .fontWeight(.heavy)
+//                                .foregroundColor(Color.white)
+//                                .padding(.top, 10)
+//                        }
+//                        .onTapGesture{
+//                            self.showContentView = true
+//                        }
+//                    }
+//                    )
 //
 
 import SwiftUI

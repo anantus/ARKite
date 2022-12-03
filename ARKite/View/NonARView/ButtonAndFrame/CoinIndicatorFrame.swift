@@ -2,28 +2,33 @@
 //  CoinIndicatorFrame.swift
 //  ARKite
 //
-//  Created by Ricky Silitonga on 29/11/22.
+//  Created by Amalia . on 02/12/22.
 //
 
 import SwiftUI
 
 struct CoinIndicatorFrame: View {
     let coinCount: Int
-    
     var body: some View {
-        CoinIndicatorPath()
+        ZStack {
+            CoinIndicatorPath()
             .fill(.black)
             .frame(width: 93, height: 44, alignment: .center)
             .opacity(0.4)
             .overlay {
                 HStack {
                     Spacer()
-                        .frame(width: 25)
+                        .frame(width: 10)
                     Text("\(coinCount)")
                         .foregroundColor(.white)
-                    .font(.system(.title3, design: .default, weight: .heavy))
+                        .font(.system(.title3, design: .default, weight: .heavy))
                 }
             }
+            Image("KoinBaru")
+                .resizable()
+                .frame(width: 60, height: 60)
+                .offset(x: -50)
+    }
     }
 }
 
@@ -48,10 +53,8 @@ struct CoinIndicatorPath: Shape {
         return path
     }
 }
-
-
 struct CoinIndicatorFrame_Previews: PreviewProvider {
     static var previews: some View {
-        CoinIndicatorFrame(coinCount: 100)
+        CoinIndicatorFrame(coinCount: 1000)
     }
 }

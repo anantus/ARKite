@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		438A9E0E2920CF6E0010918E /* StrokeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E0D2920CF6E0010918E /* StrokeText.swift */; };
-		438A9E102920E5A90010918E /* FrameKuning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E0F2920E5A90010918E /* FrameKuning.swift */; };
-		438A9E122920E5B30010918E /* FrameIjo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E112920E5B30010918E /* FrameIjo.swift */; };
-		438A9E1829210C500010918E /* UseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E1729210C500010918E /* UseButton.swift */; };
-		438A9E1A29210C670010918E /* SelectedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E1929210C670010918E /* SelectedButton.swift */; };
+		4343E0852938B74500382834 /* DashboardViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0842938B74500382834 /* DashboardViewV2.swift */; };
+		4343E087293995AC00382834 /* KoleksiMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E086293995AC00382834 /* KoleksiMenuButton.swift */; };
+		4343E08929399D0C00382834 /* KoleksiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E08829399D0C00382834 /* KoleksiView.swift */; };
+		4343E08B29399D3500382834 /* SettingNonARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E08A29399D3500382834 /* SettingNonARView.swift */; };
+		4343E08D29399E8500382834 /* SettingFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E08C29399E8500382834 /* SettingFrame.swift */; };
+		4343E08F29399EC100382834 /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E08E29399EC100382834 /* SettingButton.swift */; };
+		4343E09129399ED000382834 /* CoinIndicatorFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E09029399ED000382834 /* CoinIndicatorFrame.swift */; };
+		4343E0932939A5B400382834 /* NavigationKoleksiFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0922939A5B400382834 /* NavigationKoleksiFrame.swift */; };
+		4343E0952939C25900382834 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0942939C25900382834 /* BackButton.swift */; };
+		4343E0972939CCBF00382834 /* LayanganFrame1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0962939CCBF00382834 /* LayanganFrame1.swift */; };
+		4343E0992939CCCE00382834 /* LayanganFrame2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0982939CCCE00382834 /* LayanganFrame2.swift */; };
+		4343E09D2939D67D00382834 /* GunakanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E09C2939D67D00382834 /* GunakanButton.swift */; };
+		4343E09F2939D68A00382834 /* DipilihButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E09E2939D68A00382834 /* DipilihButton.swift */; };
+		4343E0A12939F1A000382834 /* BuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0A02939F1A000382834 /* BuyButton.swift */; };
 		438F0B20291F751B007551F5 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B1F291F751B007551F5 /* DashboardView.swift */; };
 		438F0B24291F755F007551F5 /* ChooseKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B23291F755F007551F5 /* ChooseKiteView.swift */; };
 		438F0B26291F7569007551F5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B25291F7569007551F5 /* SettingView.swift */; };
+		5509D3B62937654E00E16F6F /* GULUNGAN.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 5509D3B52937654E00E16F6F /* GULUNGAN.usdz */; };
+		55287D7329365BB600E1FF66 /* KiteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55287D7229365BB600E1FF66 /* KiteEntity.swift */; };
 		553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */; };
 		553EFF1C28FD60EF00E54FA1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1B28FD60EF00E54FA1 /* GameView.swift */; };
 		553EFF2028FD60F100E54FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553EFF1F28FD60F100E54FA1 /* Assets.xcassets */; };
@@ -26,6 +37,8 @@
 		55440910293508F200674C81 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544090F293508F200674C81 /* ARViewModel.swift */; };
 		554409122935372000674C81 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409112935372000674C81 /* CollectionViewModel.swift */; };
 		554409142935373C00674C81 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409132935373C00674C81 /* SettingsViewModel.swift */; };
+
+		5544091829360B0A00674C81 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544091729360B0A00674C81 /* DefaultKeys.swift */; };
 		562030F02936116D0048BB69 /* TarikUlurButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562030EF2936116D0048BB69 /* TarikUlurButton.swift */; };
 		56481D2F2938BBE0004066E1 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56481D2E2938BBE0004066E1 /* PrimaryButton.swift */; };
 		56481D312938BBEB004066E1 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56481D302938BBEB004066E1 /* SecondaryButton.swift */; };
@@ -44,14 +57,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		438A9E0D2920CF6E0010918E /* StrokeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeText.swift; sourceTree = "<group>"; };
-		438A9E0F2920E5A90010918E /* FrameKuning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameKuning.swift; sourceTree = "<group>"; };
-		438A9E112920E5B30010918E /* FrameIjo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameIjo.swift; sourceTree = "<group>"; };
-		438A9E1729210C500010918E /* UseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseButton.swift; sourceTree = "<group>"; };
-		438A9E1929210C670010918E /* SelectedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedButton.swift; sourceTree = "<group>"; };
+		4343E0842938B74500382834 /* DashboardViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewV2.swift; sourceTree = "<group>"; };
+		4343E086293995AC00382834 /* KoleksiMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiMenuButton.swift; sourceTree = "<group>"; };
+		4343E08829399D0C00382834 /* KoleksiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiView.swift; sourceTree = "<group>"; };
+		4343E08A29399D3500382834 /* SettingNonARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNonARView.swift; sourceTree = "<group>"; };
+		4343E08C29399E8500382834 /* SettingFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFrame.swift; sourceTree = "<group>"; };
+		4343E08E29399EC100382834 /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
+		4343E09029399ED000382834 /* CoinIndicatorFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinIndicatorFrame.swift; sourceTree = "<group>"; };
+		4343E0922939A5B400382834 /* NavigationKoleksiFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationKoleksiFrame.swift; sourceTree = "<group>"; };
+		4343E0942939C25900382834 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		4343E0962939CCBF00382834 /* LayanganFrame1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayanganFrame1.swift; sourceTree = "<group>"; };
+		4343E0982939CCCE00382834 /* LayanganFrame2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayanganFrame2.swift; sourceTree = "<group>"; };
+		4343E09C2939D67D00382834 /* GunakanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunakanButton.swift; sourceTree = "<group>"; };
+		4343E09E2939D68A00382834 /* DipilihButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DipilihButton.swift; sourceTree = "<group>"; };
+		4343E0A02939F1A000382834 /* BuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButton.swift; sourceTree = "<group>"; };
 		438F0B1F291F751B007551F5 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		438F0B23291F755F007551F5 /* ChooseKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseKiteView.swift; sourceTree = "<group>"; };
 		438F0B25291F7569007551F5 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		5509D3B52937654E00E16F6F /* GULUNGAN.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = GULUNGAN.usdz; sourceTree = "<group>"; };
+		5509D3B729379F7000E16F6F /* ThreadScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadScrollView.swift; sourceTree = "<group>"; };
+		55287D7229365BB600E1FF66 /* KiteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiteEntity.swift; sourceTree = "<group>"; };
 		553EFF1628FD60EF00E54FA1 /* ARKite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		553EFF1B28FD60EF00E54FA1 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -64,6 +89,7 @@
 		5544090F293508F200674C81 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
 		554409112935372000674C81 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		554409132935373C00674C81 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		5544091729360B0A00674C81 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		562030EF2936116D0048BB69 /* TarikUlurButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarikUlurButton.swift; sourceTree = "<group>"; };
 		56481D2E2938BBE0004066E1 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		56481D302938BBEB004066E1 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
@@ -95,12 +121,18 @@
 		438A9E1629210C180010918E /* ButtonAndFrame */ = {
 			isa = PBXGroup;
 			children = (
-				438A9E112920E5B30010918E /* FrameIjo.swift */,
-				438A9E0F2920E5A90010918E /* FrameKuning.swift */,
-				438A9E0D2920CF6E0010918E /* StrokeText.swift */,
-				438A9E1729210C500010918E /* UseButton.swift */,
-				438A9E1929210C670010918E /* SelectedButton.swift */,
 				55440905293442AC00674C81 /* MainMenuButton.swift */,
+				4343E086293995AC00382834 /* KoleksiMenuButton.swift */,
+				4343E08C29399E8500382834 /* SettingFrame.swift */,
+				4343E08E29399EC100382834 /* SettingButton.swift */,
+				4343E09029399ED000382834 /* CoinIndicatorFrame.swift */,
+				4343E0922939A5B400382834 /* NavigationKoleksiFrame.swift */,
+				4343E0942939C25900382834 /* BackButton.swift */,
+				4343E0962939CCBF00382834 /* LayanganFrame1.swift */,
+				4343E0982939CCCE00382834 /* LayanganFrame2.swift */,
+				4343E09C2939D67D00382834 /* GunakanButton.swift */,
+				4343E09E2939D68A00382834 /* DipilihButton.swift */,
+				4343E0A02939F1A000382834 /* BuyButton.swift */,
 				562030EF2936116D0048BB69 /* TarikUlurButton.swift */,
 				5652B47B29365C7B00841BEC /* SettingButton.swift */,
 				5652B47D2936622F00841BEC /* CoinIndicatorFrame.swift */,
@@ -119,6 +151,9 @@
 			children = (
 				569C0BCA293755D800FE5767 /* SettingVARView.swift */,
 				438F0B1F291F751B007551F5 /* DashboardView.swift */,
+				4343E0842938B74500382834 /* DashboardViewV2.swift */,
+				4343E08829399D0C00382834 /* KoleksiView.swift */,
+				4343E08A29399D3500382834 /* SettingNonARView.swift */,
 				438F0B23291F755F007551F5 /* ChooseKiteView.swift */,
 				438F0B25291F7569007551F5 /* SettingView.swift */,
 				569E71AE293A05C7002ABD26 /* VideoView.swift */,
@@ -178,6 +213,7 @@
 		5544090A293507CE00674C81 /* ARView */ = {
 			isa = PBXGroup;
 			children = (
+				5509D3B729379F7000E16F6F /* ThreadScrollView.swift */,
 				553EFF1B28FD60EF00E54FA1 /* GameView.swift */,
 				5544090B2935084300674C81 /* ARViewContainer.swift */,
 			);
@@ -199,7 +235,10 @@
 			children = (
 				5544090329339B5800674C81 /* Animate-Kite2.usdz */,
 				554409072935034F00674C81 /* Experience.rcproject */,
+				5509D3B52937654E00E16F6F /* GULUNGAN.usdz */,
 				553EFF1F28FD60F100E54FA1 /* Assets.xcassets */,
+				5544091729360B0A00674C81 /* DefaultKeys.swift */,
+				55287D7229365BB600E1FF66 /* KiteEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,6 +323,7 @@
 				553EFF2328FD60F100E54FA1 /* Preview Assets.xcassets in Resources */,
 				5544090429339B5800674C81 /* Animate-Kite2.usdz in Resources */,
 				553EFF2028FD60F100E54FA1 /* Assets.xcassets in Resources */,
+				5509D3B62937654E00E16F6F /* GULUNGAN.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +334,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4343E08B29399D3500382834 /* SettingNonARView.swift in Sources */,
+				55440910293508F200674C81 /* ARViewModel.swift in Sources */,
+				4343E087293995AC00382834 /* KoleksiMenuButton.swift in Sources */,
+				4343E0992939CCCE00382834 /* LayanganFrame2.swift in Sources */,
 				569C0BCF29376FC800FE5767 /* CustomSlider.swift in Sources */,
 				5652B47E2936622F00841BEC /* CoinIndicatorFrame.swift in Sources */,
 				55440910293508F200674C81 /* ARViewModel.swift in Sources */,
@@ -302,7 +346,17 @@
 				553EFF1C28FD60EF00E54FA1 /* GameView.swift in Sources */,
 				56481D312938BBEB004066E1 /* SecondaryButton.swift in Sources */,
 				438F0B20291F751B007551F5 /* DashboardView.swift in Sources */,
+				4343E08D29399E8500382834 /* SettingFrame.swift in Sources */,
+				4343E08929399D0C00382834 /* KoleksiView.swift in Sources */,
 				5544090C2935084300674C81 /* ARViewContainer.swift in Sources */,
+				5544091829360B0A00674C81 /* DefaultKeys.swift in Sources */,
+				4343E09F2939D68A00382834 /* DipilihButton.swift in Sources */,
+				4343E0952939C25900382834 /* BackButton.swift in Sources */,
+				554409082935034F00674C81 /* Experience.rcproject in Sources */,
+				4343E08F29399EC100382834 /* SettingButton.swift in Sources */,
+				554409142935373C00674C81 /* SettingsViewModel.swift in Sources */,
+				4343E09D2939D67D00382834 /* GunakanButton.swift in Sources */,
+				55440906293442AC00674C81 /* MainMenuButton.swift in Sources */,
 				438A9E1829210C500010918E /* UseButton.swift in Sources */,
 				5652B47C29365C7B00841BEC /* SettingButton.swift in Sources */,
 				438A9E102920E5A90010918E /* FrameKuning.swift in Sources */,
@@ -318,7 +372,13 @@
 				562030F02936116D0048BB69 /* TarikUlurButton.swift in Sources */,
 				438A9E1A29210C670010918E /* SelectedButton.swift in Sources */,
 				553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */,
+				55287D7329365BB600E1FF66 /* KiteEntity.swift in Sources */,
+				4343E09129399ED000382834 /* CoinIndicatorFrame.swift in Sources */,
+				4343E0852938B74500382834 /* DashboardViewV2.swift in Sources */,
+				4343E0932939A5B400382834 /* NavigationKoleksiFrame.swift in Sources */,
+				4343E0A12939F1A000382834 /* BuyButton.swift in Sources */,
 				554409122935372000674C81 /* CollectionViewModel.swift in Sources */,
+				4343E0972939CCBF00382834 /* LayanganFrame1.swift in Sources */,
 				56C65439293A890F00C9557D /* PauseView.swift in Sources */,
 				438F0B26291F7569007551F5 /* SettingView.swift in Sources */,
 				56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */,

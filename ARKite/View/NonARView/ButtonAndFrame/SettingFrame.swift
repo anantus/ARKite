@@ -10,7 +10,6 @@ import SwiftUI
 struct SettingFrame: View {
     let width: CGFloat
     let height: CGFloat
-    
     var body: some View {
         ZStack {
             SettingFramePath()
@@ -57,8 +56,6 @@ struct SettingFrame: View {
         }
     }
 }
-
-
 struct SettingFramePath: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
@@ -80,7 +77,6 @@ struct SettingFramePath: Shape {
         return path
     }
 }
-
 
 struct SettingFrame_Previews: PreviewProvider {
     static var previews: some View {

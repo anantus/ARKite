@@ -2,7 +2,7 @@
 //  SettingButton.swift
 //  ARKite
 //
-//  Created by Ricky Silitonga on 29/11/22.
+//  Created by Amalia . on 02/12/22.
 //
 
 import SwiftUI
