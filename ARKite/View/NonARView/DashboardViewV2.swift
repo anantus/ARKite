@@ -26,6 +26,7 @@ struct DashboardViewV2: View {
                             .aspectRatio(contentMode: .fit)
                             .position(x: UIScreen.main.bounds.width * (2.5/5),y: UIScreen.main.bounds.height * (4.25/5))
                     }
+                    .blur(radius: showSettingNonARView ? 5 : 0 )
                     ZStack{
                         Image("CloudNew1")
                             .resizable()
@@ -39,10 +40,10 @@ struct DashboardViewV2: View {
                             .position(x: UIScreen.main.bounds.width * (4/5),y: UIScreen.main.bounds.height * (0/5))
                         HStack(spacing: 200){
                             Button {
-                                withAnimation(.linear(duration: 0.3)) {
-                                    showSettingNonARView.toggle()
-                                    
-                                }
+                                //                                withAnimation(.linear(duration: 0.3)) {
+                                //                                    showSettingNonARView.toggle()
+                                self.showSettingNonARView.toggle()
+                                //                                }
                             } label: {
                                 SettingButton()
                             }
@@ -51,7 +52,27 @@ struct DashboardViewV2: View {
                         
                         
                     }
+                    .blur(radius: showSettingNonARView ? 5 : 0 )
+                    
+                    
+                }
+                if !showSettingNonARView {
+                    VStack{
+                        NavigationLink{
+                            //                        GameView()
+                            ChooseKiteAR()
+                        }label: {
+                            MainMenuButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 262, height: 78, text: "MAIN")
+                        }
                         
+                        NavigationLink{
+                            KoleksiView()
+                            
+                        }label: {
+                            KoleksiMenuButton(firstColor: "15B10F", secondColor: "0F7B20", bgColor: "106514", width: 264, height: 82, text: "KOLEKSI")
+                        }
+                    }
+                    .offset(y: 50)
                 }
                 
                 VStack{
@@ -69,13 +90,19 @@ struct DashboardViewV2: View {
                 }
                 .offset(y: 50)
             }
-                .ignoresSafeArea()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(LinearGradient(gradient: Gradient(colors: [Color("BGMainPage1"), Color("BGMainPage2")]), startPoint: .top, endPoint: .bottom))
-                
+            .ignoresSafeArea()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(LinearGradient(gradient: Gradient(colors: [Color("BGMainPage1"), Color("BGMainPage2")]), startPoint: .top, endPoint: .bottom))
+            
         }
-        .popover(isPresented: $showSettingNonARView) {
-            SettingNonARView(showSettingNonARView: $showSettingNonARView)}
+        .modifier(
+            Popup(isPresented: showSettingNonARView,
+                  alignment: .center,
+                  content: {
+                      SettingNonARView(showSettingNonARView: $showSettingNonARView)
+                  }
+                 )
+        )
         
     }
     

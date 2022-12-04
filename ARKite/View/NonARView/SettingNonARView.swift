@@ -9,13 +9,19 @@ import SwiftUI
 
 struct SettingNonARView: View {
     @Environment(\.presentationMode) var showSettingNonAR
-    @Binding var showSettingNonARView : Bool
+
+//    @State var showSettingNonARView = false
+    @Binding var showSettingNonARView: Bool
     @State var musicVolume: CGFloat = 0.7
     @State var soundEffectVolume: CGFloat = 0.6
     @State var selectedGesture: GestureSetting = .classic
     
     var body: some View {
         ZStack {
+            Rectangle()
+                .fill(.white.opacity(0))
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                
             SettingFrame(width: 355, height: 450)
             
             VStack {
@@ -71,7 +77,8 @@ struct SettingNonARView: View {
                 // button lanjut dan akhiri
                     Button {
                         // TODO: - LANJUTKAN
-                        self.showSettingNonAR.wrappedValue.dismiss()
+//                        self.showSettingNonAR.wrappedValue.dismiss()
+                        self.showSettingNonARView.toggle()
                         
                     } label: {
                         MainMenuButton(firstColor: "FC3E45",
@@ -96,7 +103,7 @@ struct SettingNonARView: View {
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingNonARView(showSettingNonARView: .constant(false))
+        SettingNonARView(showSettingNonARView: .constant(true))
     }
 }
 
