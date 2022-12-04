@@ -116,7 +116,7 @@ struct ChooseKiteAR: View {
                 )
                 
                 NavigationLink {
-                    LoadKiteView(kiteName: pickedKite)
+                    LoadKiteView(kiteName: pickedKite).navigationBarBackButtonHidden(true)
                 } label: {
                     MainMenuButton(firstColor: "0099BB",
                                    secondColor: "00608B",

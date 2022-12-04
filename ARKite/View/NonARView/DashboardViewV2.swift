@@ -101,7 +101,7 @@ struct DashboardViewV2: View {
                   content: {
                       SettingNonARView(showSettingNonARView: $showSettingNonARView)
                   }
-                 )
+            )
         )
         
     }

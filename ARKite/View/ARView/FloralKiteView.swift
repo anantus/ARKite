@@ -21,7 +21,7 @@ struct FloralKiteView : View {
     @State var color = Color.white.opacity(0.0001)
     @State var pullPush = "None"
     
-    
+    @State var showPauseModal = false
     
     
     var body: some View {
@@ -32,7 +32,11 @@ struct FloralKiteView : View {
             if isStartPlay {
                 VStack {
                     HStack {
-                        SettingButton()
+                        Button {
+                            showPauseModal.toggle()
+                        } label: {
+                            SettingButton()
+                        }
                         
                         Spacer()
                         
@@ -143,7 +147,11 @@ struct FloralKiteView : View {
             
             
         }
-        
+        .modifier(
+            Popup(isPresented: showPauseModal, alignment: .center, content: {
+                PauseARView(showPause: $showPauseModal, ARView: $vm.arView)
+            })
+        )
     }
 }
 

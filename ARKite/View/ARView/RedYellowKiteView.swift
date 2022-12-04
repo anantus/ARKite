@@ -22,7 +22,7 @@ struct RedYellowKiteView : View {
     @State var pullPush = "None"
     
     
-    
+    @State var showPauseModal = false
     
     var body: some View {
         ZStack {
@@ -32,8 +32,11 @@ struct RedYellowKiteView : View {
             if isStartPlay {
                 VStack {
                     HStack {
-                        SettingButton()
-                        
+                        Button {
+                            showPauseModal.toggle()
+                        } label: {
+                            SettingButton()
+                        }
                         Spacer()
                         
                         ZStack {
@@ -143,7 +146,11 @@ struct RedYellowKiteView : View {
             
             
         }
-        
+        .modifier(
+            Popup(isPresented: showPauseModal, alignment: .center, content: {
+                PauseARView(showPause: $showPauseModal, ARView: $vm.arView)
+            })
+        )
     }
 }
 

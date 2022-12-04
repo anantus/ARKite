@@ -22,7 +22,7 @@ class RedYellowKiteViewModel: ObservableObject {
     fileprivate var collectionVM = CollectionViewModel()
     
     let mainAnchor = try! Experience.loadRedYellowKite()
-    let arView = ARView(frame: .zero)
+    var arView = ARView(frame: .zero)
     
     
     
