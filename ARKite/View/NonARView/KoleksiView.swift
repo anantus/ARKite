@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct KoleksiView: View {
-    
+    @Environment(\.presentationMode) var showKoleksi
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -45,10 +45,14 @@ struct KoleksiView: View {
                         .blur(radius: 5)
                     NavigationKoleksiFrame()
                         .position(x: UIScreen.main.bounds.width * (2.45/5),y: UIScreen.main.bounds.height * (-2.75/5))
-                    BackButton()
-                        .position(x: UIScreen.main.bounds.width * (0.6/5),y: UIScreen.main.bounds.height * (-2/5))
-                    CoinIndicatorFrame(coinCount: 100)
-                        .position(x: UIScreen.main.bounds.width * (4.2/5),y: UIScreen.main.bounds.height * (-2/5))
+                    HStack (spacing: 200) {
+                        Button {
+                            self.showKoleksi.wrappedValue.dismiss()
+                        } label: {
+                            BackButton()
+                        }
+                        CoinIndicatorFrame(coinCount: vm.coins)
+                    }.position(x: UIScreen.main.bounds.width * (2.5/5),y: UIScreen.main.bounds.height * (-2/5))
                     
                     
                 }
@@ -76,6 +80,7 @@ struct KoleksiView: View {
         .ignoresSafeArea()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LinearGradient(gradient: Gradient(colors: [Color("BGMainPage1"), Color("BGMainPage2")]), startPoint: .top, endPoint: .bottom))
+        .navigationBarBackButtonHidden(true)
     }
 }
 

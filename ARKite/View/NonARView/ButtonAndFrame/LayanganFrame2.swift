@@ -28,7 +28,7 @@ struct LayanganFrame2: View {
                 .fill(.linearGradient(colors: [Color.init(hex: firstColor), Color.init(hex: secondColor)], startPoint: .top, endPoint: .bottom))
                 .frame(width: width, height: height)
                 .cornerRadius(5)
-            VStack(spacing: 0) {
+            VStack {
                 ZStack {
                     FrameInner2()
                         .fill(Color.init(hex: thirdColor))
@@ -42,16 +42,10 @@ struct LayanganFrame2: View {
                         .padding(.top, 8)
                         .padding(.trailing, 5)
                 }
-                if isUsed {
-                    DipilihButton(firstColor: "FC3E45", secondColor: "BA2424", bgColor: "9C1C1C", width: 130, height: 36)
-                } else {
-                    GunakanButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 130, height: 36)
-                }
-            }
-            .onTapGesture {
-                withAnimation {
-                    isUsed.toggle()
-                }
+                Image(systemName: "checkmark.circle.fill")
+                    .resizable()
+                    .frame(width: 35, height: 35)
+                    .foregroundColor(Color("OldBrown"))
             }
             
         }
