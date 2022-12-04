@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  BajajKiteView.swift
 //  ARKite
 //
 //  Created by Maheswara Ananta Argono on 17/10/22.
@@ -10,7 +10,8 @@ import RealityKit
 import ARKit
 import Combine
 
-struct GameView : View {
+struct BajajKiteView : View {
+    @ObservedObject var vm = BajajKiteViewModel()
     
     @State var showContentView: Bool = false
     @State var isStartPlay = false
@@ -20,12 +21,12 @@ struct GameView : View {
     @State var color = Color.white.opacity(0.0001)
     @State var pullPush = "None"
     
-    @ObservedObject var vm = ARViewModel()
+    
     
     
     var body: some View {
         ZStack {
-            ARViewContainer(anchor: vm.mainAnchor, arView: vm.arView)
+            BajajKiteViewContainer(arView: vm.arView, anchor: vm.mainAnchor)
             
             // Buttons UI
             if isStartPlay {
@@ -37,12 +38,6 @@ struct GameView : View {
                         
                         ZStack {
                             CoinIndicatorFrame(coinCount: vm.coinGame)
-                            
-//                            HStack {
-//                                Image("coinIcon")
-//                                    .resizable()
-//                                    .frame(width: 50, height: 50)
-//                            }.frame(width: 124, height: 50, alignment: .leading)
                             
                         }
                         
@@ -138,7 +133,7 @@ struct GameView : View {
                                        bgColor: "00496B",
                                        width: 264,
                                        height: 78,
-                                       text: "MULAI"
+                                       text: "TERBANG"
                         )
                     }
                     
@@ -151,15 +146,4 @@ struct GameView : View {
         
     }
 }
-
-
-
-
-#if DEBUG
-struct GameView_Previews : PreviewProvider {
-    static var previews: some View {
-        GameView()
-    }
-}
-#endif
 

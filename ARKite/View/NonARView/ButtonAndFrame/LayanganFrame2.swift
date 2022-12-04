@@ -76,7 +76,6 @@ struct FrameFront2: Shape {
         //end at top right
         path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
 
-        
         return path
     }
 }

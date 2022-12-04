@@ -1,13 +1,15 @@
 //
-//  LayanganFrame1.swift
+//  PilihKiteButton.swift
 //  ARKite
 //
-//  Created by Amalia . on 02/12/22.
+//  Created by Maheswara Ananta Argono on 03/12/22.
 //
+
+import Foundation
 
 import SwiftUI
 
-struct LayanganFrame1: View {
+struct PilihKiteButton: View {
     @State var firstColor: String
     @State var secondColor: String
     @State var thirdColor: String
@@ -16,23 +18,18 @@ struct LayanganFrame1: View {
     @State var height: CGFloat
     @State var picture: String
     @State var isUsed = false
+    
     var body: some View {
         ZStack{
-            FrameBack1()
-                .fill(Color.init(hex: bgColor))
-                .frame(width: width, height: height)
-                .cornerRadius(5)
-                .padding(.trailing, (width * 0.09))
-                .padding(.top, (height * 0.15))
-            FrameFront1()
+            PilihKiteBack()
                 .fill(.linearGradient(colors: [Color.init(hex: firstColor), Color.init(hex: secondColor)], startPoint: .top, endPoint: .bottom))
                 .frame(width: width, height: height)
                 .cornerRadius(5)
             VStack (spacing: 0){
                 ZStack {
-                    FrameInner1()
+                    PilihKiteFront()
                         .fill(Color.init(hex: thirdColor))
-                        .frame(width: 141, height: 128)
+                        .frame(width: width-25, height: height-50)
                         .cornerRadius(5)
                         
                     Image("\(picture)")
@@ -41,11 +38,6 @@ struct LayanganFrame1: View {
                         .rotationEffect(.degrees(30))
                         .padding(.top, 8)
                         .padding(.trailing, 5)
-                }
-                if isUsed {
-                    DipilihButton(firstColor: "FC3E45", secondColor: "BA2424", bgColor: "9C1C1C", width: 130, height: 36)
-                } else {
-                    GunakanButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 130, height: 36)
                 }
             }
             .onTapGesture {
@@ -58,7 +50,7 @@ struct LayanganFrame1: View {
     }
 }
 
-struct FrameFront1: Shape {
+struct PilihKiteBack: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         //start point - Top left
@@ -81,30 +73,7 @@ struct FrameFront1: Shape {
     }
 }
 
-struct FrameBack1: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        //start point - Top left
-        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
-        
-        //Move to top right
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY+15))
-        
-        //Move to bottom right
-        path.addLine(to: CGPoint(x: rect.maxX-15, y: rect.maxY-10))
-        
-        //Move to bottom left
-        path.addLine(to: CGPoint(x: rect.minX+13, y: rect.maxY-16))
-        
-        //end at top right
-        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
-
-        
-        return path
-    }
-}
-
-struct FrameInner1: Shape {
+struct PilihKiteFront: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         //start point - Top left
@@ -117,7 +86,7 @@ struct FrameInner1: Shape {
         path.addLine(to: CGPoint(x: rect.maxX-10, y: rect.maxY-4))
         
         //Move to bottom left
-        path.addLine(to: CGPoint(x: rect.minX+8, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.minX+8, y: rect.maxY-7))
         
         //end at top right
         path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
@@ -126,8 +95,8 @@ struct FrameInner1: Shape {
     }
 }
 
-struct LayanganFrame1_Previews: PreviewProvider {
+struct PilihKiteButton_Previews: PreviewProvider {
     static var previews: some View {
-        LayanganFrame1(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 210, picture: "Kite 1")
+        PilihKiteButton(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 210, picture: "Kite 1")
     }
 }
