@@ -45,7 +45,7 @@ struct SettingButtonPath2: Shape {
         path.addLine(to: CGPoint(x: rect.minX+7, y: rect.maxY+1))
         
         //end at top right
-        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY+4))
         
         return path
     }

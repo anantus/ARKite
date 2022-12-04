@@ -14,7 +14,6 @@ struct BuyButton: View {
             CoinIndicatorPath()
             .fill(.linearGradient(colors: [Color.init(hex: "15B10F"), Color.init(hex: "0F7B20")], startPoint: .top, endPoint: .bottom))
             .frame(width: 93, height: 44, alignment: .center)
-            .opacity(0.4)
             .overlay {
                 HStack {
                     Spacer()
