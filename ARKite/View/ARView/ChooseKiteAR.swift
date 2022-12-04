@@ -10,19 +10,19 @@ import SwiftUI
 struct Item: Identifiable {
     var id: Int
     var picture: String
-    var isUsed: Bool
+    
 }
 
-class Store: ObservableObject {
-    @Published var items: [Item]
+class Store {
+    var items: [Item]
     
-    let pictures = ["Kite 1", "Kite 2", "Kite 3", "Kite 4"]
+    var pictures = ["Kite 1", "Kite 2", "Kite 3", "Kite 4"]
     
     // dummy data
     init() {
         items = []
         for i in 0...3 {
-            let new = Item(id: i, picture: pictures[i], isUsed: false)
+            let new = Item(id: i, picture: pictures[i])
             items.append(new)
         }
     }
@@ -31,9 +31,10 @@ class Store: ObservableObject {
 
 struct ChooseKiteAR: View {
     @Environment(\.presentationMode) var showChooseKite
-    @StateObject var store = Store()
+    @State var store = Store()
     @State private var snappedItem = 0.0
     @State private var draggingItem = 0.0
+    @State var pickedStore: Int = -1
     
     var body: some View {
         NavigationView {
@@ -79,7 +80,7 @@ struct ChooseKiteAR: View {
                                             .padding(.trailing, 5)
                                         //                                    }
                                     }
-                                    if item.isUsed {
+                                    if item.id == pickedStore {
                                         DipilihButton(firstColor: "FC3E45", secondColor: "BA2424", bgColor: "9C1C1C", width: 127, height: 33)
                                         
                                     } else {
@@ -90,8 +91,8 @@ struct ChooseKiteAR: View {
                                     
                                 }
                                 .onTapGesture {
-                                    //                                                                                                item.isUsed.toggle()
-                                    
+                                    pickedStore = item.id
+
                                 }
                                 
                                 
@@ -106,11 +107,11 @@ struct ChooseKiteAR: View {
                         
                     }
                 }
-                
                 .gesture(
                     DragGesture()
                         .onChanged { value in
                             draggingItem = snappedItem + value.translation.width / 100
+                           
                         }
                         .onEnded { value in
                             withAnimation {
@@ -120,8 +121,9 @@ struct ChooseKiteAR: View {
                             }
                         }
                 )
+                
                 NavigationLink {
-                    GameView()
+//                    GameView()
                 } label: {
                     MainMenuButton(firstColor: "0099BB",
                                    secondColor: "00608B",
