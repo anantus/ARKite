@@ -20,6 +20,8 @@
 		4343E09D2939D67D00382834 /* GunakanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E09C2939D67D00382834 /* GunakanButton.swift */; };
 		4343E09F2939D68A00382834 /* DipilihButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E09E2939D68A00382834 /* DipilihButton.swift */; };
 		4343E0A12939F1A000382834 /* BuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0A02939F1A000382834 /* BuyButton.swift */; };
+		43873E9A293C82D100C147A1 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43873E99293C82D100C147A1 /* Popup.swift */; };
+		43873E9C293C8ED900C147A1 /* ChooseKiteAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43873E9B293C8ED900C147A1 /* ChooseKiteAR.swift */; };
 		43CD3A0A293BB22C000C358D /* PilihLayanganButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD3A09293BB22C000C358D /* PilihLayanganButton.swift */; };
 		5509D3B62937654E00E16F6F /* GULUNGAN.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 5509D3B52937654E00E16F6F /* GULUNGAN.usdz */; };
 		55287D7329365BB600E1FF66 /* KiteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55287D7229365BB600E1FF66 /* KiteEntity.swift */; };
@@ -65,6 +67,8 @@
 		4343E09C2939D67D00382834 /* GunakanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunakanButton.swift; sourceTree = "<group>"; };
 		4343E09E2939D68A00382834 /* DipilihButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DipilihButton.swift; sourceTree = "<group>"; };
 		4343E0A02939F1A000382834 /* BuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButton.swift; sourceTree = "<group>"; };
+		43873E99293C82D100C147A1 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		43873E9B293C8ED900C147A1 /* ChooseKiteAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseKiteAR.swift; sourceTree = "<group>"; };
 		43CD3A09293BB22C000C358D /* PilihLayanganButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilihLayanganButton.swift; sourceTree = "<group>"; };
 		5509D3B52937654E00E16F6F /* GULUNGAN.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = GULUNGAN.usdz; sourceTree = "<group>"; };
 		5509D3B729379F7000E16F6F /* ThreadScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadScrollView.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				4343E0842938B74500382834 /* DashboardViewV2.swift */,
 				4343E08829399D0C00382834 /* KoleksiView.swift */,
 				4343E08A29399D3500382834 /* SettingNonARView.swift */,
+				43873E99293C82D100C147A1 /* Popup.swift */,
 				569E71AE293A05C7002ABD26 /* VideoView.swift */,
 				56C65438293A890F00C9557D /* PauseView.swift */,
 				438A9E1629210C180010918E /* ButtonAndFrame */,
@@ -206,6 +211,7 @@
 				5509D3B729379F7000E16F6F /* ThreadScrollView.swift */,
 				553EFF1B28FD60EF00E54FA1 /* GameView.swift */,
 				5544090B2935084300674C81 /* ARViewContainer.swift */,
+				43873E9B293C8ED900C147A1 /* ChooseKiteAR.swift */,
 			);
 			path = ARView;
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 				554409082935034F00674C81 /* Experience.rcproject in Sources */,
 				4343E08F29399EC100382834 /* SettingButton.swift in Sources */,
 				554409142935373C00674C81 /* SettingsViewModel.swift in Sources */,
+				43873E9A293C82D100C147A1 /* Popup.swift in Sources */,
 				4343E09D2939D67D00382834 /* GunakanButton.swift in Sources */,
 				55440906293442AC00674C81 /* MainMenuButton.swift in Sources */,
 				56C65437293A7F5500C9557D /* CustomSwitchButton.swift in Sources */,
@@ -358,6 +365,7 @@
 				554409122935372000674C81 /* CollectionViewModel.swift in Sources */,
 				4343E0972939CCBF00382834 /* LayanganFrame1.swift in Sources */,
 				56C65439293A890F00C9557D /* PauseView.swift in Sources */,
+				43873E9C293C8ED900C147A1 /* ChooseKiteAR.swift in Sources */,
 				56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,7 +495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = Y26BLZ69B8;
+				DEVELOPMENT_TEAM = C8B3R9N352;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -519,7 +527,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = Y26BLZ69B8;
+				DEVELOPMENT_TEAM = C8B3R9N352;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";

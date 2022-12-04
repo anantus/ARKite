@@ -138,7 +138,7 @@ struct GameView : View {
                                        bgColor: "00496B",
                                        width: 264,
                                        height: 78,
-                                       text: "MULAI"
+                                       text: "TERBANG"
                         )
                     }
                     

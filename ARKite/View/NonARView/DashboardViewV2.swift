@@ -39,10 +39,10 @@ struct DashboardViewV2: View {
                             .position(x: UIScreen.main.bounds.width * (4/5),y: UIScreen.main.bounds.height * (0/5))
                         HStack(spacing: 200){
                             Button {
-                                withAnimation(.linear(duration: 0.3)) {
-                                    showSettingNonARView.toggle()
-                                    
-                                }
+//                                withAnimation(.linear(duration: 0.3)) {
+//                                    showSettingNonARView.toggle()
+                                self.showSettingNonARView.toggle()
+//                                }
                             } label: {
                                 SettingButton()
                             }
@@ -51,12 +51,14 @@ struct DashboardViewV2: View {
                         
                         
                     }
+                    
                         
                 }
                 
                 VStack{
                     NavigationLink{
-                        GameView()
+//                        GameView()
+                        ChooseKiteAR()
                     }label: {
                         MainMenuButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 262, height: 78, text: "MAIN")
                     }
@@ -74,8 +76,9 @@ struct DashboardViewV2: View {
                 .background(LinearGradient(gradient: Gradient(colors: [Color("BGMainPage1"), Color("BGMainPage2")]), startPoint: .top, endPoint: .bottom))
                 
         }
-        .popover(isPresented: $showSettingNonARView) {
-            SettingNonARView(showSettingNonARView: $showSettingNonARView)}
+//        .popover(isPresented: $showSettingNonARView) {
+//            SettingNonARView(showSettingNonARView: $showSettingNonARView)}
+        .popup(isPresented: showSettingNonARView, alignment: .center, content: SettingNonARView.init)
         
     }
     
