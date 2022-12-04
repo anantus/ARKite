@@ -9,6 +9,7 @@ import SwiftUI
 import RealityKit
 import ARKit
 import Combine
+import CoreHaptics
 
 struct StripeKiteView : View {
     @ObservedObject var vm = StripeKiteViewModel()
@@ -20,7 +21,7 @@ struct StripeKiteView : View {
     @State var position = CGSize.zero
     @State var color = Color.white.opacity(0.0001)
     @State var pullPush = "None"
-    
+    @State private var engine: CHHapticEngine?
     
     
     
@@ -53,29 +54,29 @@ struct StripeKiteView : View {
                     }
                     
                     Spacer()
-                
-                if useButton {
-                    HStack(alignment: .bottom) {
-                        Spacer()
-                        Spacer()
-                        VStack(spacing: 14) {
-                            Button {
-                                vm.kiteMoveUp()
-                                // TODO: stretch kite
-                            } label: {
-                                TarikUlurButton(firstColor: "00608B", secondColor: "0099BB", text: "Ulur", isRotate: true)
-                            }
-                            
-                            
-                            Button {
-                                vm.kiteMoveFront()
-                                // TODO: pull kite
-                            } label: {
+                    
+                    if useButton {
+                        HStack(alignment: .bottom) {
+                            Spacer()
+                            Spacer()
+                            VStack(spacing: 14) {
+                                Button {
+                                    vm.kiteMoveUp()
+                                    // TODO: stretch kite
+                                } label: {
+                                    TarikUlurButton(firstColor: "00608B", secondColor: "0099BB", text: "Ulur", isRotate: true)
+                                }
                                 
-                                TarikUlurButton(firstColor: "FC3E45", secondColor: "BA2424", text: "Tarik", isRotate: false)
+                                
+                                Button {
+                                    vm.kiteMoveFront()
+                                    // TODO: pull kite
+                                } label: {
+                                    
+                                    TarikUlurButton(firstColor: "FC3E45", secondColor: "BA2424", text: "Tarik", isRotate: false)
+                                }
                             }
                         }
-                    }
                     }else{
                         VStack{
                             Text("")
@@ -126,6 +127,11 @@ struct StripeKiteView : View {
                         withAnimation {
                             isStartPlay.toggle()
                             
+                            let haptic = UINotificationFeedbackGenerator()
+                            haptic.notificationOccurred(.success)
+                            prepareHaptics()
+                            complexSuccess()
+                            
                         }
                     } label: {
                         MainMenuButton(firstColor: "0099BB",
@@ -144,6 +150,38 @@ struct StripeKiteView : View {
             
         }
         
+    }
+    
+    func prepareHaptics() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        
+        do {
+            engine = try CHHapticEngine()
+            try engine?.start()
+        } catch {
+            print("There was an error creating the engine: \(error.localizedDescription)")
+        }
+    }
+    
+    func complexSuccess() {
+        // make sure that the device supports haptics
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        var events = [CHHapticEvent]()
+        
+        // create one intense, sharp tap
+        let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 500)
+        let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 500)
+        let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: 0)
+        events.append(event)
+        
+        // convert those events into a pattern and play it immediately
+        do {
+            let pattern = try CHHapticPattern(events: events, parameters: [])
+            let player = try engine?.makePlayer(with: pattern)
+            try player?.start(atTime: 0)
+        } catch {
+            print("Failed to play pattern: \(error.localizedDescription).")
+        }
     }
 }
 

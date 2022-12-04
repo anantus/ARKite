@@ -85,7 +85,7 @@ struct ChooseKiteAR: View {
                                 }
                                 .onTapGesture {
                                     pickedKite = item.picture
-
+                                    
                                 }
                                 
                                 
@@ -104,7 +104,7 @@ struct ChooseKiteAR: View {
                     DragGesture()
                         .onChanged { value in
                             draggingItem = snappedItem + value.translation.width / 100
-                           
+                            
                         }
                         .onEnded { value in
                             withAnimation {
@@ -117,14 +117,16 @@ struct ChooseKiteAR: View {
                 
                 NavigationLink {
                     LoadKiteView(kiteName: pickedKite)
-                } label: {
-                    MainMenuButton(firstColor: "0099BB",
-                                   secondColor: "00608B",
-                                   bgColor: "00496B",
-                                   width: 266,
-                                   height: 72,
-                                   text: "MULAI")
                 }
+                label: {
+                MainMenuButton(firstColor: "0099BB",
+                               secondColor: "00608B",
+                               bgColor: "00496B",
+                               width: 266,
+                               height: 72,
+                               text: "MULAI")
+                }
+//                .disabled(true)
             }.padding(.bottom, 80)
         }
         .navigationBarBackButtonHidden(true)
