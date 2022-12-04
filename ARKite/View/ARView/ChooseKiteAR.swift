@@ -34,7 +34,7 @@ struct ChooseKiteAR: View {
     @State var store = Store()
     @State private var snappedItem = 0.0
     @State private var draggingItem = 0.0
-    @State var pickedStore: Int = -1
+    @State var pickedKite: String = ""
     
     var body: some View {
         NavigationView {
@@ -48,9 +48,6 @@ struct ChooseKiteAR: View {
                 PilihLayanganButton(width: 310, height: 96)
                 ZStack {
                     ForEach(store.items) { item in
-                        
-                        // article view
-                        
                         ZStack {
                             ZStack{
                                 FrameBack1()
@@ -69,18 +66,14 @@ struct ChooseKiteAR: View {
                                             .fill(Color.init(hex: "FFF7C6"))
                                             .frame(width: 171, height: 150)
                                             .cornerRadius(5)
-                                        //                                    NavigationLink {
-                                        //
-                                        //                                    } label: {
                                         Image(item.picture)
                                             .resizable()
                                             .frame(width: UIScreen.main.bounds.width * (3/10),height: UIScreen.main.bounds.height * (1.6/10))
                                             .rotationEffect(.degrees(30))
                                             .padding(.top, 8)
                                             .padding(.trailing, 5)
-                                        //                                    }
                                     }
-                                    if item.id == pickedStore {
+                                    if item.picture == pickedKite {
                                         DipilihButton(firstColor: "FC3E45", secondColor: "BA2424", bgColor: "9C1C1C", width: 127, height: 33)
                                         
                                     } else {
@@ -91,7 +84,7 @@ struct ChooseKiteAR: View {
                                     
                                 }
                                 .onTapGesture {
-                                    pickedStore = item.id
+                                    pickedKite = item.picture
 
                                 }
                                 
@@ -123,7 +116,7 @@ struct ChooseKiteAR: View {
                 )
                 
                 NavigationLink {
-//                    GameView()
+                    LoadKiteView(kiteName: pickedKite)
                 } label: {
                     MainMenuButton(firstColor: "0099BB",
                                    secondColor: "00608B",
@@ -153,4 +146,3 @@ struct ContentView_Previews: PreviewProvider {
         ChooseKiteAR()
     }
 }
-

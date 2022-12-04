@@ -32,7 +32,6 @@
 		553D3FC0293C980E0086A1D2 /* StripeKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FBF293C980E0086A1D2 /* StripeKiteView.swift */; };
 		553D3FC2293C98760086A1D2 /* BajajKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC1293C98760086A1D2 /* BajajKiteView.swift */; };
 		553D3FC4293C98E10086A1D2 /* FloralKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC3293C98E10086A1D2 /* FloralKiteView.swift */; };
-		553D3FC6293CA2CF0086A1D2 /* ChooseKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC5293CA2CF0086A1D2 /* ChooseKiteView.swift */; };
 		553D3FC8293CB0610086A1D2 /* LoadKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC7293CB0610086A1D2 /* LoadKiteView.swift */; };
 		553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */; };
 		553EFF1C28FD60EF00E54FA1 /* RedYellowKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1B28FD60EF00E54FA1 /* RedYellowKiteView.swift */; };
@@ -88,7 +87,6 @@
 		553D3FBF293C980E0086A1D2 /* StripeKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeKiteView.swift; sourceTree = "<group>"; };
 		553D3FC1293C98760086A1D2 /* BajajKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BajajKiteView.swift; sourceTree = "<group>"; };
 		553D3FC3293C98E10086A1D2 /* FloralKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloralKiteView.swift; sourceTree = "<group>"; };
-		553D3FC5293CA2CF0086A1D2 /* ChooseKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseKiteView.swift; sourceTree = "<group>"; };
 		553D3FC7293CB0610086A1D2 /* LoadKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadKiteView.swift; sourceTree = "<group>"; };
 		553EFF1628FD60EF00E54FA1 /* ARKite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 				553D3FBF293C980E0086A1D2 /* StripeKiteView.swift */,
 				553EFF1B28FD60EF00E54FA1 /* RedYellowKiteView.swift */,
 				5544090B2935084300674C81 /* ARViewContainer.swift */,
-				553D3FC5293CA2CF0086A1D2 /* ChooseKiteView.swift */,
 				553D3FC7293CB0610086A1D2 /* LoadKiteView.swift */,
 				43873E9B293C8ED900C147A1 /* ChooseKiteAR.swift */,
 			);
@@ -241,12 +238,12 @@
 		5544090D2935089000674C81 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				553D3FBD293C97310086A1D2 /* BajajKiteViewModel.swift */,
 				553D3FBB293C96E30086A1D2 /* FloralKiteViewModel.swift */,
 				553D3FB9293C96AA0086A1D2 /* StripeKiteViewModel.swift */,
 				5544090F293508F200674C81 /* RedYellowKiteViewModel.swift */,
 				554409112935372000674C81 /* CollectionViewModel.swift */,
 				554409132935373C00674C81 /* SettingsViewModel.swift */,
-				553D3FBD293C97310086A1D2 /* BajajKiteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -365,7 +362,6 @@
 				569C0BCB293755D800FE5767 /* SettingVARView.swift in Sources */,
 				553EFF1C28FD60EF00E54FA1 /* RedYellowKiteView.swift in Sources */,
 				56481D312938BBEB004066E1 /* SecondaryButton.swift in Sources */,
-				553D3FC6293CA2CF0086A1D2 /* ChooseKiteView.swift in Sources */,
 				4343E08D29399E8500382834 /* SettingFrame.swift in Sources */,
 				4343E08929399D0C00382834 /* KoleksiView.swift in Sources */,
 				5544090C2935084300674C81 /* ARViewContainer.swift in Sources */,
@@ -529,7 +525,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = C8B3R9N352;
+				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -561,7 +557,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = C8B3R9N352;
+				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";

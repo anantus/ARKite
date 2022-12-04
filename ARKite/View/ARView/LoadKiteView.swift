@@ -16,16 +16,14 @@ struct LoadKiteView: View {
     }
     
     func getDestination(loadKite: String) -> AnyView {
-        if loadKite == "BajajKite" {
-            return AnyView(BajajKiteView())
-        }
-        else if loadKite == "RedYellowKite" {
-            return AnyView(RedYellowKiteView())
-        } else if loadKite == "FloralKite" {
-            return AnyView(FloralKiteView())
-        } else if loadKite == "StripeKite"{
+        if loadKite == "Kite 1"{
             return AnyView(StripeKiteView())
+        }else if loadKite == "Kite 2" {
+            return AnyView(RedYellowKiteView())
+        } else if loadKite == "Kite 3" {
+            return AnyView(FloralKiteView())
         }
+        
         return AnyView(BajajKiteView())
     }
 }
