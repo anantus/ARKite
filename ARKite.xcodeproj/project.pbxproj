@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43136020293E27F7004E5CA9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4313601F293E27F7004E5CA9 /* Launch Screen.storyboard */; };
 		432AF709293E1BF000CADD4A /* KoleksiViewforiPhone8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AF708293E1BF000CADD4A /* KoleksiViewforiPhone8.swift */; };
 		432AF70B293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AF70A293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift */; };
 		432AF70D293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AF70C293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift */; };
@@ -64,6 +65,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4313601F293E27F7004E5CA9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		43136021293E2C5E004E5CA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		432AF708293E1BF000CADD4A /* KoleksiViewforiPhone8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiViewforiPhone8.swift; sourceTree = "<group>"; };
 		432AF70A293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiViewforiPhoneXS.swift; sourceTree = "<group>"; };
 		432AF70C293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiViewforiPhone13.swift; sourceTree = "<group>"; };
@@ -168,6 +171,7 @@
 		438F0B22291F753D007551F5 /* NonARView */ = {
 			isa = PBXGroup;
 			children = (
+				4313601F293E27F7004E5CA9 /* Launch Screen.storyboard */,
 				569C0BCA293755D800FE5767 /* SettingVARView.swift */,
 				4343E0842938B74500382834 /* DashboardViewV2.swift */,
 				4343E08829399D0C00382834 /* KoleksiView.swift */,
@@ -202,6 +206,7 @@
 		553EFF1828FD60EF00E54FA1 /* ARKite */ = {
 			isa = PBXGroup;
 			children = (
+				43136021293E2C5E004E5CA9 /* Info.plist */,
 				569E71B4293A070F002ABD26 /* Video */,
 				5544090E2935089B00674C81 /* Model */,
 				5544090D2935089000674C81 /* ViewModel */,
@@ -351,6 +356,7 @@
 				5544090429339B5800674C81 /* Animate-Kite2.usdz in Resources */,
 				553EFF2028FD60F100E54FA1 /* Assets.xcassets in Resources */,
 				5509D3B62937654E00E16F6F /* GULUNGAN.usdz in Resources */,
+				43136020293E27F7004E5CA9 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,12 +546,12 @@
 				DEVELOPMENT_TEAM = C8B3R9N352;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ARKite/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -572,12 +578,12 @@
 				DEVELOPMENT_TEAM = C8B3R9N352;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ARKite/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
