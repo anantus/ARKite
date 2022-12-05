@@ -126,7 +126,7 @@ struct ChooseKiteAR: View {
                                height: 72,
                                text: "MULAI")
                 }
-//                .disabled(true)
+                .disabled(pickedKite == "")
             }.padding(.bottom, 80)
         }
         .navigationBarBackButtonHidden(true)

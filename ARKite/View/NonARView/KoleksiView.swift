@@ -44,7 +44,7 @@ struct KoleksiView: View {
                         .position(x: UIScreen.main.bounds.width * (4/5),y: UIScreen.main.bounds.height * (-1.8/5))
                         .blur(radius: 5)
                     NavigationKoleksiFrame()
-                        .position(x: UIScreen.main.bounds.width * (2.45/5),y: UIScreen.main.bounds.height * (-2.75/5))
+                        .position(x: UIScreen.main.bounds.width * 0.49,y: UIScreen.main.bounds.height * -0.55)
                     HStack (spacing: 200) {
                         Button {
                             self.showKoleksi.wrappedValue.dismiss()
@@ -52,7 +52,7 @@ struct KoleksiView: View {
                             BackButton()
                         }
                         CoinIndicatorFrame(coinCount: vm.coins)
-                    }.position(x: UIScreen.main.bounds.width * (2.5/5),y: UIScreen.main.bounds.height * (-2/5))
+                    }.position(x: UIScreen.main.bounds.width * (0.5),y: UIScreen.main.bounds.height * (-0.39))
                     
                     
                 }
@@ -61,17 +61,44 @@ struct KoleksiView: View {
             
             VStack{
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(kiteCount, id: \.self) { item in
-                        if item%2 == 1{
-                            LayanganFrame1(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 200, picture: "Kite 1")
-                        } else{
-                            LayanganFrame2(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 190, picture: "Kite 2")
-                        }
+                    ForEach(vm.kiteCollection) { item in
+                            LayanganFrame1(firstColor: item.isBought ? "FBC300" : "FFFADF",
+                                           secondColor: item.isBought ? "FEB914" : "E1DAB2",
+                                           thirdColor: item.isBought ? "FFF7C6" : "FFF9D5",
+                                           bgColor: item.isBought ? "BB8800" : "857D4C",
+                                           width: 164,
+                                           height: 200,
+                                           picture: item.picture)
                         
+                                
+                               // LayanganFrame2(firstColor: item.isBought ? "FBC300" : "FFFADF",
+//                                               secondColor: item.isBought ? "FEB914" : "E1DAB2",
+//                                               thirdColor: item.isBought ? "FFF7C6" : "FFF9D5",
+//                                               bgColor: item.isBought ? "BB8800" : "857D4C",
+//                                               width: 164,
+//                                               height: 190,
+//                                               picture: item.picture)
+                            
+                            
+                            
+                            
+                        
+                        //                        if item%2 == 1{
+                        //                            LayanganFrame1(firstColor: kiteCount[0]. ? "FBC300" : "FFFADF",
+                        //                                           secondColor: "FEB914",
+                        //                                           thirdColor: "FFF7C6",
+                        //                                           bgColor: "BB8800",
+                        //                                           width: 164,
+                        //                                           height: 200,
+                        //                                           picture: "Kite 1")
+                        //                        } else{
+                        //                            LayanganFrame2(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 190, picture: "Kite 2")
+                        //                        }
+                        //
                         
                     }
                 }
-                .padding(.top, 80)
+                .padding(.top, UIScreen.main.bounds.height * 0.1)
                 .padding(.horizontal)
                 .frame(maxHeight: 300)
             }

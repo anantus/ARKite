@@ -15,7 +15,7 @@ struct LayanganFrame2: View {
     @State var width: CGFloat
     @State var height: CGFloat
     @State var picture: String
-    @State var isUsed = false
+ 
     var body: some View {
         ZStack{
             FrameBack2()
