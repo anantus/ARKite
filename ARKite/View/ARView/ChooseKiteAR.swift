@@ -39,13 +39,14 @@ struct ChooseKiteAR: View {
     var body: some View {
         NavigationView {
             VStack (spacing: 50) {
-                if UIDevice.current.name == "iPhone 8" {
+                if UIDevice.current.name == "iPhone 8" || UIDevice.current.name == "iPhone Xs" || UIDevice.current.name == "iPhone 13 mini" || UIDevice.current.name == "iPhone 12 mini" || UIDevice.current.name == "iPhone 11 Pro" || UIDevice.current.name == "iPhone X" || UIDevice.current.name == "iPhone SE" {
                     Button {
                         self.showChooseKite.wrappedValue.dismiss()
                     } label: {
                         BackButton()
                     }
                     .padding(.trailing, 300)
+                    .padding(.top, 60)
                 } else {
                     Button {
                         self.showChooseKite.wrappedValue.dismiss()
@@ -152,12 +153,12 @@ struct ChooseKiteAR: View {
     
 }
 
-//struct ChooseKiteAR_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ForEach(["iPhone 8", "iPhone 8 Plus", "iPhone 13", "iPhone XS", "iPhone 11 Pro Max", "iPhone 12 Pro Max", "iPhone 14 Pro", "iPhone 14 Pro Max"], id: \.self) { deviceName in
-//                       ChooseKiteAR()
-//                            .previewDevice(PreviewDevice(rawValue: deviceName))
-//                            .previewDisplayName(deviceName)
-//                  }
-//    }
-//}
+struct ChooseKiteAR_Previews: PreviewProvider {
+    static var previews: some View {
+        ForEach(["iPhone 8", "iPhone 14 Pro Max"], id: \.self) { deviceName in
+                       ChooseKiteAR()
+                            .previewDevice(PreviewDevice(rawValue: deviceName))
+                            .previewDisplayName(deviceName)
+                  }
+    }
+}
