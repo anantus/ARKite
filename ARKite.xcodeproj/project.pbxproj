@@ -64,6 +64,7 @@
 		569E71AF293A05C7002ABD26 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E71AE293A05C7002ABD26 /* VideoView.swift */; };
 		569E71B2293A0707002ABD26 /* Instruction2NEW.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 569E71B0293A0707002ABD26 /* Instruction2NEW.mp4 */; };
 		569E71B3293A0707002ABD26 /* Instruction1NEW.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 569E71B1293A0707002ABD26 /* Instruction1NEW.mp4 */; };
+		562030EE2935EACA0048BB69 /* ARView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562030ED2935EACA0048BB69 /* ARView+Extension.swift */; };
 		56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AEAE7A29211BA8007424F4 /* Color+Extension.swift */; };
 		56C65437293A7F5500C9557D /* CustomSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C65436293A7F5500C9557D /* CustomSwitchButton.swift */; };
 		56C65439293A890F00C9557D /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C65438293A890F00C9557D /* PauseView.swift */; };
@@ -117,6 +118,7 @@
 		5544090F293508F200674C81 /* RedYellowKiteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedYellowKiteViewModel.swift; sourceTree = "<group>"; };
 		554409112935372000674C81 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		554409132935373C00674C81 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		562030ED2935EACA0048BB69 /* ARView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView+Extension.swift"; sourceTree = "<group>"; };
 		5544091729360B0A00674C81 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		55F31946293D7D6700F1CC06 /* KiteSong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = KiteSong.wav; sourceTree = "<group>"; };
 		562030EF2936116D0048BB69 /* TarikUlurButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarikUlurButton.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				56AEAE7A29211BA8007424F4 /* Color+Extension.swift */,
+				562030ED2935EACA0048BB69 /* ARView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				569C0BD12937982000FE5767 /* CustomSliderV2.swift in Sources */,
 				562030F02936116D0048BB69 /* TarikUlurButton.swift in Sources */,
 				553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */,
+				562030EE2935EACA0048BB69 /* ARView+Extension.swift in Sources */,
 				55287D7329365BB600E1FF66 /* KiteEntity.swift in Sources */,
 				553D3FC2293C98760086A1D2 /* BajajKiteView.swift in Sources */,
 				553D3FBE293C97310086A1D2 /* BajajKiteViewModel.swift in Sources */,
@@ -577,7 +581,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = Y26BLZ69B8;
+				DEVELOPMENT_TEAM = KFD27J2TGQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -609,7 +613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = Y26BLZ69B8;
+				DEVELOPMENT_TEAM = KFD27J2TGQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";

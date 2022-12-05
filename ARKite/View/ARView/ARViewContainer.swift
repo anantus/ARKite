@@ -14,8 +14,15 @@ struct ARViewContainer: UIViewRepresentable {
     @State var anchor: (Entity & HasAnchoring)
     
     func makeUIView(context: Context) -> ARView {
-        self.arView.scene.anchors.removeAll()
-        self.arView.scene.anchors.append(anchor)
+        
+        arView.addCoaching()
+        
+        print("ARViewContainer: Layangan belum muncul")
+        
+        arView.scene.anchors.append(anchor)
+        
+        print("ARViewContainer: Layangan muncul")
+        
         return arView
         
     }
