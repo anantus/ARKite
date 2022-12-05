@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomSliderV2: View {
     // music or sound effect volume level
-    let sliderWidth: CGFloat
+    let sliderWidth: CGFloat!
     let knobFrame: CGFloat = 50
     @Binding var progress: CGFloat
    

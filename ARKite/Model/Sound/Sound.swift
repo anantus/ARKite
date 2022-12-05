@@ -15,6 +15,7 @@ struct Sound{
     @Binding var avAudioPlayer2: AVAudioPlayer!
     @Binding var musicAudio: AVAudioPlayer!
     
+    
     func getAvAudioPlayer(soundName: String, soundType: String) -> AVAudioPlayer{
         let sound = Bundle.main.path(forResource: soundName, ofType: soundType)
         let audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))

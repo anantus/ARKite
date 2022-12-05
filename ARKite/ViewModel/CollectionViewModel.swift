@@ -13,6 +13,7 @@ class CollectionViewModel: ObservableObject{
     @Published var kiteCollection = [Kite]()
     @Published var volumeSFX: CGFloat = 1.0
     @Published var volumeMusic: CGFloat = 1.0
+    @Published var gestures: Bool = false
     
     let keys = Keys()
     
@@ -21,6 +22,7 @@ class CollectionViewModel: ObservableObject{
         kiteCollection = keys.defaults.value(forKey: Keys.kiteCollection) as? [Kite] ?? kiteInitial()
         volumeSFX = keys.defaults.value(forKey: Keys.volumeSFX) as? CGFloat ?? 1.0
         volumeMusic = keys.defaults.value(forKey: Keys.volumeMusic) as? CGFloat ?? 1.0
+        gestures = keys.defaults.bool(forKey: Keys.gestures)
         
     }
 
@@ -72,5 +74,10 @@ class CollectionViewModel: ObservableObject{
     func setUserVolumeMusic(volume: CGFloat){
         keys.defaults.set(volume, forKey: Keys.volumeMusic)
         self.volumeMusic = volume
+    }
+    
+    func setUserGestures(gestures: Bool){
+        keys.defaults.set(gestures, forKey: Keys.gestures)
+        self.gestures = gestures
     }
 }

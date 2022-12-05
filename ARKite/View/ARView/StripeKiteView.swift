@@ -26,7 +26,7 @@ struct StripeKiteView : View {
     
     var body: some View {
         ZStack {
-            StripeKiteViewContainer(arView: vm.arView, anchor: vm.mainAnchor)
+            ARViewContainer(arView: vm.arView, anchor: vm.mainAnchor)
             
             // Buttons UI
             if isStartPlay {

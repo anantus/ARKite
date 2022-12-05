@@ -26,7 +26,7 @@ struct FloralKiteView : View {
     
     var body: some View {
         ZStack {
-            FloralKiteViewContainer(arView: vm.arView, anchor: vm.mainAnchor)
+            ARViewContainer(arView: vm.arView, anchor: vm.mainAnchor)
             
             // Buttons UI
             if isStartPlay {

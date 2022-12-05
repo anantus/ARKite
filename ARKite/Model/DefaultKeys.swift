@@ -14,7 +14,7 @@ struct Keys {
     static let kiteCollection = "kiteCollection"
     static let volumeSFX = "volumeSFX"
     static let volumeMusic = "volumeMusic"
-    
+    static let gestures = "gestures"
     
 }
 

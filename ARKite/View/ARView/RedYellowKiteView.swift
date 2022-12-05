@@ -15,7 +15,6 @@ struct RedYellowKiteView : View {
     
     @State var showContentView: Bool = false
     @State var isStartPlay = false
-    @State var rotate = false
     @State var useButton = true
     @State var position = CGSize.zero
     @State var color = Color.white.opacity(0.0001)
@@ -31,7 +30,7 @@ struct RedYellowKiteView : View {
     
     var body: some View {
         ZStack {
-            RedYellowKiteViewContainer(arView: vm.arView, anchor: vm.mainAnchor)
+            ARViewContainer(arView: vm.arView, anchor: vm.mainAnchor)
             
             // Buttons UI
             if isStartPlay {
@@ -84,7 +83,8 @@ struct RedYellowKiteView : View {
                             }
                         }
                     }
-                    }else{
+                    }
+                    else{
                         VStack{
                             Text("")
                             HStack{
@@ -152,7 +152,8 @@ struct RedYellowKiteView : View {
             self.sound = Sound(avAudioPlayer1: $audioPlayer, avAudioPlayer2: $audioPlayer2, musicAudio: $musicPlayer)
             self.vm.sound = self.sound
             self.sound.playMusic()
-            
+        }.onDisappear{
+            self.sound.stopMusic()
         }
         .modifier(
             Popup(isPresented: showPauseModal, alignment: .center, content: {

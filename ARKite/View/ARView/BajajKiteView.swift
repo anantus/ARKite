@@ -27,7 +27,7 @@ struct BajajKiteView : View {
     
     var body: some View {
         ZStack {
-            BajajKiteViewContainer(arView: vm.arView, anchor: vm.mainAnchor)
+            ARViewContainer(arView: vm.arView, anchor: vm.mainAnchor)
             
             // Buttons UI
             if isStartPlay {
