@@ -39,12 +39,21 @@ struct ChooseKiteAR: View {
     var body: some View {
         NavigationView {
             VStack (spacing: 50) {
-                Button {
-                    self.showChooseKite.wrappedValue.dismiss()
-                } label: {
-                    BackButton()
+                if UIDevice.current.name == "iPhone 8" {
+                    Button {
+                        self.showChooseKite.wrappedValue.dismiss()
+                    } label: {
+                        BackButton()
+                    }
+                    .padding(.trailing, 300)
+                } else {
+                    Button {
+                        self.showChooseKite.wrappedValue.dismiss()
+                    } label: {
+                        BackButton()
+                    }
+                    .padding(.trailing, 300)
                 }
-                .padding(.trailing, 300)
                 PilihLayanganButton(width: 310, height: 96)
                 ZStack {
                     ForEach(store.items) { item in
@@ -143,8 +152,12 @@ struct ChooseKiteAR: View {
     
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChooseKiteAR()
-    }
-}
+//struct ChooseKiteAR_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ForEach(["iPhone 8", "iPhone 8 Plus", "iPhone 13", "iPhone XS", "iPhone 11 Pro Max", "iPhone 12 Pro Max", "iPhone 14 Pro", "iPhone 14 Pro Max"], id: \.self) { deviceName in
+//                       ChooseKiteAR()
+//                            .previewDevice(PreviewDevice(rawValue: deviceName))
+//                            .previewDisplayName(deviceName)
+//                  }
+//    }
+//}
