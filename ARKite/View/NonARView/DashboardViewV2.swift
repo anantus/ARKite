@@ -57,6 +57,7 @@ struct DashboardViewV2: View {
                     
                 }
                 if !showSettingNonARView {
+
                     VStack{
                         NavigationLink{
                             //                        GameView()
@@ -75,20 +76,6 @@ struct DashboardViewV2: View {
                     .offset(y: 50)
                 }
                 
-                VStack{
-                    NavigationLink{
-                        ChooseKiteAR()
-                    }label: {
-                        MainMenuButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 262, height: 78, text: "MAIN")
-                    }
-                    
-                    NavigationLink{
-                        KoleksiView()
-                    }label: {
-                        KoleksiMenuButton(firstColor: "15B10F", secondColor: "0F7B20", bgColor: "106514", width: 264, height: 82, text: "KOLEKSI")
-                    }
-                }
-                .offset(y: 50)
             }
             .ignoresSafeArea()
             .frame(maxWidth: .infinity, maxHeight: .infinity)

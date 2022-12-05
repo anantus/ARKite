@@ -66,7 +66,7 @@ struct PilihKiteBack: Shape {
         path.addLine(to: CGPoint(x: rect.minX+13, y: rect.maxY-13))
         
         //end at top right
-        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY+10))
 
         
         return path

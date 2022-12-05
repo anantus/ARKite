@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingNonARView: View {
-    @Environment(\.presentationMode) var showSettingNonAR
 
 //    @State var showSettingNonARView = false
     @Binding var showSettingNonARView: Bool

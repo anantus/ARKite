@@ -12,5 +12,7 @@ struct Kite: Identifiable, Hashable{
     var id = UUID()
     let name: String
     let price: Int
-    var isBought: Bool = false
+    let picture: String
+    var isBought: Bool 
+
 }

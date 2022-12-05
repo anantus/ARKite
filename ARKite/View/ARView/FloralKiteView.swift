@@ -9,6 +9,7 @@ import SwiftUI
 import RealityKit
 import ARKit
 import Combine
+import CoreHaptics
 
 struct FloralKiteView : View {
     @ObservedObject var vm = FloralKiteViewModel()
@@ -20,6 +21,7 @@ struct FloralKiteView : View {
     @State var position = CGSize.zero
     @State var color = Color.white.opacity(0.0001)
     @State var pullPush = "None"
+    @State private var engine: CHHapticEngine?
     
     @State var showPauseModal = false
     
@@ -130,6 +132,15 @@ struct FloralKiteView : View {
                         withAnimation {
                             isStartPlay.toggle()
                             
+                        //haptic
+//                            let impact = UIImpactFeedbackGenerator(style: .heavy)
+//                            impact.impactOccurred()
+                            let haptic = UINotificationFeedbackGenerator()
+                            haptic.notificationOccurred(.success)
+                            prepareHaptics()
+                            complexSuccess()
+                            
+                            
                         }
                     } label: {
                         MainMenuButton(firstColor: "0099BB",
@@ -140,6 +151,7 @@ struct FloralKiteView : View {
                                        text: "TERBANG"
                         )
                     }
+                    
                     
                     
                 } .padding(.bottom, 50)
@@ -153,5 +165,42 @@ struct FloralKiteView : View {
             })
         )
     }
+    
+    func prepareHaptics() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+
+        do {
+            engine = try CHHapticEngine()
+            try engine?.start()
+        } catch {
+            print("There was an error creating the engine: \(error.localizedDescription)")
+        }
+    }
+    
+    func complexSuccess() {
+        // make sure that the device supports haptics
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        var events = [CHHapticEvent]()
+
+        // create one intense, sharp tap
+        let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 500)
+        let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 500)
+        let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: 0)
+        events.append(event)
+
+        // convert those events into a pattern and play it immediately
+        do {
+            let pattern = try CHHapticPattern(events: events, parameters: [])
+            let player = try engine?.makePlayer(with: pattern)
+            try player?.start(atTime: 0)
+        } catch {
+            print("Failed to play pattern: \(error.localizedDescription).")
+        }
+    }
+    
 }
+
+
+
+
 
