@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DashboardViewV2: View {
     @State var showSettingNonARView = false
-    let collectVM = CollectionViewModel()
+    @ObservedObject var collectVM = CollectionViewModel()
     
     var body: some View {
         NavigationView {
@@ -99,7 +99,7 @@ struct DashboardViewV2: View {
             Popup(isPresented: showSettingNonARView,
                   alignment: .center,
                   content: {
-                      SettingNonARView(showSettingNonARView: $showSettingNonARView)
+                      SettingNonARView(showSettingNonARView: $showSettingNonARView, collectVM: collectVM)
                   }
                  )
         )

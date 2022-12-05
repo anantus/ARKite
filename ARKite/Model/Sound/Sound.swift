@@ -10,7 +10,7 @@ import AVFAudio
 import SwiftUI
 
 struct Sound{
-    @State var volumeSFX: Float
+//    @State var volumeSFX: Float = 1
     @Binding var avAudioPlayer1: AVAudioPlayer!
     @Binding var avAudioPlayer2: AVAudioPlayer!
     @Binding var musicAudio: AVAudioPlayer!
@@ -62,5 +62,9 @@ struct Sound{
         musicAudio.numberOfLoops =  -1 // set your count here
         musicAudio.volume = 0.2
         musicAudio.play()
+    }
+    
+    func stopMusic(){
+        musicAudio.stop()
     }
 }

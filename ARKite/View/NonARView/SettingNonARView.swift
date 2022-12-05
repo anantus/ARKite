@@ -12,9 +12,17 @@ struct SettingNonARView: View {
 
 //    @State var showSettingNonARView = false
     @Binding var showSettingNonARView: Bool
-    @State var musicVolume: CGFloat = 0.7
-    @State var soundEffectVolume: CGFloat = 0.6
+    @State var musicVolume: CGFloat = 1.0
+    @State var soundEffectVolume: CGFloat = 1.0
     @State var selectedGesture: GestureSetting = .classic
+    var collectVM: CollectionViewModel
+    
+    init(showSettingNonARView: Binding<Bool>, collectVM: CollectionViewModel){
+        self._showSettingNonARView = showSettingNonARView
+        self.collectVM = collectVM
+        self.soundEffectVolume = collectVM.volumeSFX
+        self.musicVolume = collectVM.volumeMusic
+    }
     
     var body: some View {
         ZStack {
@@ -101,11 +109,11 @@ struct SettingNonARView: View {
     }
 }
 
-struct SettingView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingNonARView(showSettingNonARView: .constant(true))
-    }
-}
+//struct SettingView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SettingNonARView()
+//    }
+//}
 
 //ZStack{
 //    Rectangle()

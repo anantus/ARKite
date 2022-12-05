@@ -144,7 +144,7 @@ struct RedYellowKiteView : View {
             
             
         }.onAppear {
-            self.sound = Sound(volumeSFX: 1.0, avAudioPlayer1: $audioPlayer, avAudioPlayer2: $audioPlayer2, musicAudio: $musicPlayer)
+            self.sound = Sound(avAudioPlayer1: $audioPlayer, avAudioPlayer2: $audioPlayer2, musicAudio: $musicPlayer)
             self.vm.sound = self.sound
             self.sound.playMusic()
             

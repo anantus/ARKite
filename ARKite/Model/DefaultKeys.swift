@@ -12,6 +12,8 @@ struct Keys {
     
     static let coins = "coins"
     static let kiteCollection = "kiteCollection"
+    static let volumeSFX = "volumeSFX"
+    static let volumeMusic = "volumeMusic"
     
     
 }

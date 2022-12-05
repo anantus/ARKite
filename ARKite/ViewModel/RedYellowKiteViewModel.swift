@@ -185,6 +185,7 @@ class RedYellowKiteViewModel: ObservableObject {
                     self.gameOver = true
                     self.collectionVM.addCoin(coinsAfterGame: self.coinGame)
                     self.sound.playObstacleSound()
+                    self.sound.stopMusic()
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                 }
             }

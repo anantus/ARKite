@@ -11,12 +11,17 @@ import SwiftUI
 class CollectionViewModel: ObservableObject{
     @Published var coins = 0
     @Published var kiteCollection = [Kite]()
+    @Published var volumeSFX: CGFloat = 1.0
+    @Published var volumeMusic: CGFloat = 1.0
     
     let keys = Keys()
     
     init(){
         coins = keys.defaults.integer(forKey: Keys.coins)
         kiteCollection = keys.defaults.value(forKey: Keys.kiteCollection) as? [Kite] ?? kiteInitial()
+        volumeSFX = keys.defaults.value(forKey: Keys.volumeSFX) as? CGFloat ?? 1.0
+        volumeMusic = keys.defaults.value(forKey: Keys.volumeMusic) as? CGFloat ?? 1.0
+        
     }
 
     
@@ -57,5 +62,15 @@ class CollectionViewModel: ObservableObject{
         Kite(name: "FloralKite", price: 3),
         ]
         return kiteCollectionInit
+    }
+    
+    func setUserVolumeSFX(volume: CGFloat){
+        keys.defaults.set(volume, forKey: Keys.volumeSFX)
+        self.volumeSFX = volume
+    }
+    
+    func setUserVolumeMusic(volume: CGFloat){
+        keys.defaults.set(volume, forKey: Keys.volumeMusic)
+        self.volumeMusic = volume
     }
 }
