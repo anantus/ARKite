@@ -15,8 +15,8 @@ struct PauseARView: View {
     
     @Environment(\.presentationMode) var showKoleksi
     
-    @State var musicVolume: CGFloat = 0.7
-    @State var soundEffectVolume: CGFloat = 0.6
+    @State var musicVolume: Float = 0.7
+    @State var soundEffectVolume: Float = 0.6
     @State var selectedGesture: GestureSetting = .classic
     
     var body: some View {
@@ -36,45 +36,49 @@ struct PauseARView: View {
                 Spacer()
                 
                 // slider
-                HStack {
-                    Text("MUSIK")
-                        .font(.system(.body, design: .default, weight: .bold))
-                        .foregroundColor(Color.init(hex: "8B2E00"))
-                    
-                    Spacer()
-                    // SLIDER
+                VStack(spacing: 24) {
                     HStack {
-                        CustomSliderV2(sliderWidth: 184, progress: $musicVolume)
-                    } .padding(.trailing, 10)
+                        Text("MUSIK")
+                            .font(.system(.body, design: .default, weight: .bold))
+                            .foregroundColor(Color.init(hex: "8B2E00"))
+                        
+                        Spacer()
+                        // SLIDER
+                        HStack {
+                            CustomSliderV2(sliderWidth: 184, progress: $musicVolume)
+                        } .padding(.trailing, 10)
+                        
+                        
+                    }
                     
+                    HStack {
+                        Text("EFEK SUARA")
+                            .font(.system(.body, design: .default, weight: .bold))
+                            .foregroundColor(Color.init(hex: "8B2E00"))
+                        
+                        Spacer()
+                        // SLIDER
+                        HStack {
+                            CustomSliderV2(sliderWidth: 184, progress: $soundEffectVolume)
+                        } .padding(.trailing, 10)
+                        
+                        
+                    }
                     
+                    HStack {
+                        Text("KONTROL")
+                            .font(.system(.body, design: .default, weight: .bold))
+                            .foregroundColor(Color.init(hex: "8B2E00"))
+                        
+                        Spacer()
+                        // SLIDER
+                        CustomSwitchButton(gesture: $selectedGesture)
+                            .padding(.trailing, 10)
+                        
+                    }
                 }
                 
-                HStack {
-                    Text("EFEK SUARA")
-                        .font(.system(.body, design: .default, weight: .bold))
-                        .foregroundColor(Color.init(hex: "8B2E00"))
-                    
-                    Spacer()
-                    // SLIDER
-                    HStack {
-                        CustomSliderV2(sliderWidth: 184, progress: $soundEffectVolume)
-                    } .padding(.trailing, 10)
-                    
-                    
-                }
                 
-                HStack {
-                    Text("KONTROL")
-                        .font(.system(.body, design: .default, weight: .bold))
-                        .foregroundColor(Color.init(hex: "8B2E00"))
-                    
-                    Spacer()
-                    // SLIDER
-                    CustomSwitchButton(gesture: $selectedGesture)
-                        .padding(.trailing, 10)
-                    
-                }
                 Spacer()
                 
                 // button lanjut dan akhiri

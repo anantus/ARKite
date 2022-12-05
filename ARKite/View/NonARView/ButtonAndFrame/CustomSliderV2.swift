@@ -6,102 +6,113 @@
 //
 
 import SwiftUI
+import Sliders
 
 struct CustomSliderV2: View {
     // music or sound effect volume level
     let sliderWidth: CGFloat
-    let knobFrame: CGFloat = 50
-    @Binding var progress: CGFloat
-   
-    @State var knoobPosition: CGFloat = 0.0
-    
-    
+    let sliderHeight: CGFloat = 8
+//    let knobFrame: CGFloat = 50
+//    @Binding var progress: CGFloat
+//
+//    @State var knoobPosition: CGFloat = 0.0
+    @Binding var progress: Float
     var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(Color.init(hex: "FFDD73"))
-                .frame(width: 6, height: sliderWidth)
-            
-            LightSlider(progress: progress)
-                .fill(Color.init(hex: "8B2E00"))
-                .frame(width: 6, height: sliderWidth)
-            
-            ZStack {
-                
-                KnoobPath()
-                    .fill(Color.init(hex: "FFF4D0"))
-                    .offset(x: 0, y: knoobPosition)
-                    .frame(width: 18, height: 20)
-                
-                Rectangle()
-                    .fill(.white.opacity(0.01))
-                    .offset(x: 0, y: knoobPosition)
-                    .frame(width: knobFrame, height: knobFrame)
-                    .gesture(
-                        DragGesture(minimumDistance: 0)
-                            .onChanged({ value in
-                                calculateProgress(yLocation: value.location.y)
-                            }
-                                      )
-                    )
-                    .onAppear {
-                        calculateInitialThumPosition()
-                    }
-            }
-        }
-        .frame(width: sliderWidth, height: knobFrame, alignment: .center)
-        .rotation3DEffect(.degrees(90), axis: (x: 0, y: 0, z: 1))
+//        ZStack {
+//            Rectangle()
+//                .fill(Color.init(hex: "FFDD73"))
+//                .frame(width: 6, height: sliderWidth)
+//
+//            LightSlider(progress: progress)
+//                .fill(Color.init(hex: "8B2E00"))
+//                .frame(width: 6, height: sliderWidth)
+//
+//            ZStack {
+//                KnoobPath()
+//                    .fill(Color.init(hex: "FFF4D0"))
+//                    .offset(x: 0, y: knoobPosition)
+//                    .frame(width: 18, height: 20)
+//
+//                Rectangle()
+//                    .fill(.white.opacity(0.01))
+//                    .offset(x: 0, y: knoobPosition)
+//                    .frame(width: knobFrame, height: knobFrame)
+//                    .gesture(
+//                        DragGesture(minimumDistance: 0)
+//                            .onChanged({ value in
+//                                calculateProgress(yLocation: value.location.y)
+//                            }
+//                                      )
+//                    )
+//                    .onAppear {
+//                        calculateInitialThumPosition()
+//                    }
+//            }
+//        }
+//        .frame(width: sliderWidth, height: knobFrame, alignment: .center)
+//        .rotation3DEffect(.degrees(90), axis: (x: 0, y: 0, z: 1))
+        ValueSlider(value: $progress)
+            .valueSliderStyle(
+                HorizontalValueSliderStyle(
+                    track:
+                        HorizontalTrack(view: Color.init(hex: "8B2E00"))
+                        .frame(height: sliderHeight)
+                        .background(Color.init(hex: "FFDD73")),
+                    thumb:
+                        KnoobPath()
+                        .fill(Color.init(hex: "FFF4D0"))
+                        .frame(width: 28, height: 30)
+                )
+            )
+            .frame(width: sliderWidth, height: sliderHeight)
+        
+        
     }
     
-    private func calculateInitialThumPosition() {
-        let progressFromMiddle = 0.5 - progress
-        knoobPosition = progressFromMiddle * sliderWidth
-    }
-    
-    private func calculateProgress(yLocation: CGFloat) {
-        
-        print("yLocation: \(yLocation)")
-        var tempProgress = 0.5 - (yLocation) / sliderWidth
-        
-        if tempProgress > 1 {
-            tempProgress = 1
-        } else if tempProgress < 0 {
-            tempProgress = 0
-        }
-        progress = tempProgress
-        let progressFromMiddle = 0.5 - progress
-        knoobPosition = progressFromMiddle * sliderWidth
-        
-        print("Progress: \(tempProgress)")
-        print("TempProgress: \(tempProgress)")
-        
-    }
+//    private func calculateInitialThumPosition() {
+//        let progressFromMiddle = 0.5 - progress
+//        knoobPosition = progressFromMiddle * sliderWidth
+//    }
+//
+//    private func calculateProgress(yLocation: CGFloat) {
+//
+//        print("yLocation: \(yLocation)")
+//        var tempProgress = 0.5 - (yLocation) / sliderWidth
+//
+//        if tempProgress > 1 {
+//            tempProgress = 1
+//        } else if tempProgress < 0 {
+//            tempProgress = 0
+//        }
+//        progress = tempProgress
+//        let progressFromMiddle = 0.5 - progress
+//        knoobPosition = progressFromMiddle * sliderWidth
+//    }
     
 }
 
 
-struct LightSlider: Shape {
-    var progress: CGFloat
-    
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        
-        let width = rect.width
-        let height = rect.height
-        let progressHeight = height * (1 - progress)
-        
-        path.move(to: CGPoint(x: 0, y: progressHeight))
-//        path.addQuadCurve(to: CGPoint(x: 30, y: progressHeight), control: CGPoint(x: 0, y: progressHeight))
-        
-        
-        path.addLine(to: CGPoint(x: width, y: progressHeight))
-        path.addLine(to: CGPoint(x: width, y: height))
-        path.addLine(to: CGPoint(x: 0, y: height))
-        path.addLine(to: CGPoint(x: 0, y: progressHeight))
-        
-        return path
-    }
-}
+//struct LightSlider: Shape {
+//    var progress: CGFloat
+//
+//    func path(in rect: CGRect) -> Path {
+//        var path = Path()
+//
+//        let width = rect.width
+//        let height = rect.height
+//        let progressHeight = height * (1 - progress)
+//
+//        path.move(to: CGPoint(x: 0, y: progressHeight))
+//
+//
+//        path.addLine(to: CGPoint(x: width, y: progressHeight))
+//        path.addLine(to: CGPoint(x: width, y: height))
+//        path.addLine(to: CGPoint(x: 0, y: height))
+//        path.addLine(to: CGPoint(x: 0, y: progressHeight))
+//
+//        return path
+//    }
+//}
 
 
 struct KnoobPath: Shape {
@@ -133,6 +144,6 @@ struct KnoobPath: Shape {
 
 struct CustomSliderV2_Previews: PreviewProvider {
     static var previews: some View {
-        CustomSliderV2(sliderWidth: 200, progress: .constant(0.3))
+        CustomSliderV2(sliderWidth: 240, progress: .constant(0.4))
     }
 }
