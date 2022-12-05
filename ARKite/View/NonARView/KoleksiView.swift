@@ -13,13 +13,7 @@ struct KoleksiView: View {
         GridItem(.flexible()),
         GridItem(.flexible()),
     ]
-    let vm = CollectionViewModel()
-    
-    let kiteCount: [Int]
-    
-    init(){
-        kiteCount = Array(1...vm.kiteCollection.count)
-    }
+    @ObservedObject var vm = CollectionViewModel()
     
     
     var body: some View {
@@ -62,43 +56,42 @@ struct KoleksiView: View {
             
             VStack{
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(kiteCount, id: \.self) { item in
-                        
-                        //                            LayanganFrame1(firstColor: item.isBought ? "FBC300" : "FFFADF",
-                        //                                           secondColor: item.isBought ? "FEB914" : "E1DAB2",
-                        //                                           thirdColor: item.isBought ? "FFF7C6" : "FFF9D5",
-                        //                                           bgColor: item.isBought ? "BB8800" : "857D4C",
-                        //                                           width: 164,
-                        //                                           height: 200,
-                        //                                           picture: item.picture)
-                        //
-                        //                            LayanganFrame2(firstColor: item.isBought ? "FBC300" : "FFFADF",
-                        //                                           secondColor: item.isBought ? "FEB914" : "E1DAB2",
-                        //                                           thirdColor: item.isBought ? "FFF7C6" : "FFF9D5",
-                        //                                           bgColor: item.isBought ? "BB8800" : "857D4C",
-                        //                                           width: 164,
-                        //                                           height: 190,
-                        //                                           picture: item.picture)
+                    ForEach(Array(0...vm.kiteCollection.count-1), id: \.self) { item in
+                        let bought = vm.kiteCollection[item].isBought
                         
                         if item%2 == 1{
-                                let bought = vm.kiteCollection[item-1].isBought
+                            Button{
+                                if (!bought && (vm.coins > vm.kiteCollection[item].price)){
+                                    vm.buyKite(kiteName: vm.kiteCollection[item].name)
+                                }
+                            }label: {
                                 LayanganFrame1(firstColor: bought ? "FBC300" : "FFFADF",
                                                secondColor: bought ? "FEB914" : "E1DAB2",
                                                thirdColor: bought ? "FFF7C6" : "FFF9D5",
                                                bgColor: bought ? "BB8800" : "857D4C",
                                                width: 164,
                                                height: 210,
-                                               picture: vm.kiteCollection[item-1].picture, bought: bought, prices: vm.kiteCollection[item-1].price)
+                                               picture: vm.kiteCollection[item].picture,
+                                               bought: bought,
+                                               prices: vm.kiteCollection[item].price)
+                            }
                                 
                         } else{
-                            let bought = vm.kiteCollection[item-1].isBought
-                            LayanganFrame2(firstColor: bought ? "FBC300" : "FFFADF",
-                                           secondColor: bought ? "FEB914" : "E1DAB2",
-                                           thirdColor: bought ? "FFF7C6" : "FFF9D5",
-                                           bgColor: bought ? "BB8800" : "857D4C",
-                                           width: 164,
-                                           height: 206,
-                                           picture: vm.kiteCollection[item-1].picture, bought: bought, prices: vm.kiteCollection[item-1].price)
+                            Button{
+                                if (!bought && (vm.coins > vm.kiteCollection[item].price)){
+                                    vm.buyKite(kiteName: vm.kiteCollection[item].name)
+                                }
+                            }label: {
+                                LayanganFrame2(firstColor: bought ? "FBC300" : "FFFADF",
+                                               secondColor: bought ? "FEB914" : "E1DAB2",
+                                               thirdColor: bought ? "FFF7C6" : "FFF9D5",
+                                               bgColor: bought ? "BB8800" : "857D4C",
+                                               width: 164,
+                                               height: 206,
+                                               picture: vm.kiteCollection[item].picture,
+                                               bought: bought,
+                                               prices: vm.kiteCollection[item].price)
+                            }
                         }
                         
                         

@@ -8,7 +8,7 @@
 import Foundation
 import RealityKit
 
-struct Kite: Identifiable, Hashable{
+struct Kite: Identifiable, Hashable, Codable{
     var id = UUID()
     let name: String
     let price: Int

@@ -23,7 +23,6 @@ class CollectionViewModel: ObservableObject{
         volumeSFX = keys.defaults.value(forKey: Keys.volumeSFX) as? CGFloat ?? 1.0
         volumeMusic = keys.defaults.value(forKey: Keys.volumeMusic) as? CGFloat ?? 1.0
         gestures = keys.defaults.bool(forKey: Keys.gestures)
-        
     }
 
     
@@ -52,8 +51,15 @@ class CollectionViewModel: ObservableObject{
     //Function untuk beli kite
     func buyKite(kiteName: String){
         var kite = findKite(kiteName: kiteName)
+        let kiteIndex = kiteCollection.firstIndex(of: kite)
         kite.isBought = true
         subtractCoin(kitePrice: kite.price)
+        kiteCollection[kiteIndex!] = kite
+//        keys.defaults.set(kiteCollection, forKey: Keys.kiteCollection)
+        
+//        if let encoded = try? JSONEncoder().encode(kiteCollection) {
+//            keys.defaults.set(encoded, forKey: Keys.kiteCollection)
+//        }
     }
     
     func kiteInitial() -> [Kite]{
@@ -63,6 +69,10 @@ class CollectionViewModel: ObservableObject{
             Kite(name: "BajajKite", price: 1, picture: "Kite 4", isBought: false),
             Kite(name: "FloralKite", price: 3, picture: "Kite 3", isBought: false),
         ]
+        
+//        if let encoded = try? JSONEncoder().encode(kiteCollectionInit) {
+//            keys.defaults.set(encoded, forKey: Keys.kiteCollection)
+//        }
         return kiteCollectionInit
     }
     
