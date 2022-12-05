@@ -54,8 +54,8 @@ class CollectionViewModel: ObservableObject{
         let kiteCollectionInit: [Kite] = [
             Kite(name: "RedYellowKite", price: 0, picture: "Kite 2", isBought: true),
             Kite(name: "StripeKite", price: 0, picture: "Kite 1", isBought: true),
-            Kite(name: "BajajKite", price: 1, picture: "Kite 4"),
-            Kite(name: "FloralKite", price: 3, picture: "Kite 3"),
+            Kite(name: "BajajKite", price: 1, picture: "Kite 4", isBought: false),
+            Kite(name: "FloralKite", price: 3, picture: "Kite 3", isBought: false),
         ]
         return kiteCollectionInit
     }

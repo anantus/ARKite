@@ -14,6 +14,7 @@ struct KoleksiView: View {
         GridItem(.flexible()),
     ]
     let vm = CollectionViewModel()
+    
     let kiteCount: [Int]
     
     init(){
@@ -61,40 +62,45 @@ struct KoleksiView: View {
             
             VStack{
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(vm.kiteCollection) { item in
-                            LayanganFrame1(firstColor: item.isBought ? "FBC300" : "FFFADF",
-                                           secondColor: item.isBought ? "FEB914" : "E1DAB2",
-                                           thirdColor: item.isBought ? "FFF7C6" : "FFF9D5",
-                                           bgColor: item.isBought ? "BB8800" : "857D4C",
-                                           width: 164,
-                                           height: 200,
-                                           picture: item.picture)
+                    ForEach(kiteCount, id: \.self) { item in
                         
-                                
-                               // LayanganFrame2(firstColor: item.isBought ? "FBC300" : "FFFADF",
-//                                               secondColor: item.isBought ? "FEB914" : "E1DAB2",
-//                                               thirdColor: item.isBought ? "FFF7C6" : "FFF9D5",
-//                                               bgColor: item.isBought ? "BB8800" : "857D4C",
-//                                               width: 164,
-//                                               height: 190,
-//                                               picture: item.picture)
-                            
-                            
-                            
-                            
-                        
-                        //                        if item%2 == 1{
-                        //                            LayanganFrame1(firstColor: kiteCount[0]. ? "FBC300" : "FFFADF",
-                        //                                           secondColor: "FEB914",
-                        //                                           thirdColor: "FFF7C6",
-                        //                                           bgColor: "BB8800",
+                        //                            LayanganFrame1(firstColor: item.isBought ? "FBC300" : "FFFADF",
+                        //                                           secondColor: item.isBought ? "FEB914" : "E1DAB2",
+                        //                                           thirdColor: item.isBought ? "FFF7C6" : "FFF9D5",
+                        //                                           bgColor: item.isBought ? "BB8800" : "857D4C",
                         //                                           width: 164,
                         //                                           height: 200,
-                        //                                           picture: "Kite 1")
-                        //                        } else{
-                        //                            LayanganFrame2(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 190, picture: "Kite 2")
-                        //                        }
+                        //                                           picture: item.picture)
                         //
+                        //                            LayanganFrame2(firstColor: item.isBought ? "FBC300" : "FFFADF",
+                        //                                           secondColor: item.isBought ? "FEB914" : "E1DAB2",
+                        //                                           thirdColor: item.isBought ? "FFF7C6" : "FFF9D5",
+                        //                                           bgColor: item.isBought ? "BB8800" : "857D4C",
+                        //                                           width: 164,
+                        //                                           height: 190,
+                        //                                           picture: item.picture)
+                        
+                        if item%2 == 1{
+                                let bought = vm.kiteCollection[item-1].isBought
+                                LayanganFrame1(firstColor: bought ? "FBC300" : "FFFADF",
+                                               secondColor: bought ? "FEB914" : "E1DAB2",
+                                               thirdColor: bought ? "FFF7C6" : "FFF9D5",
+                                               bgColor: bought ? "BB8800" : "857D4C",
+                                               width: 164,
+                                               height: 210,
+                                               picture: vm.kiteCollection[item-1].picture, bought: bought, prices: vm.kiteCollection[item-1].price)
+                                
+                        } else{
+                            let bought = vm.kiteCollection[item-1].isBought
+                            LayanganFrame2(firstColor: bought ? "FBC300" : "FFFADF",
+                                           secondColor: bought ? "FEB914" : "E1DAB2",
+                                           thirdColor: bought ? "FFF7C6" : "FFF9D5",
+                                           bgColor: bought ? "BB8800" : "857D4C",
+                                           width: 164,
+                                           height: 206,
+                                           picture: vm.kiteCollection[item-1].picture, bought: bought, prices: vm.kiteCollection[item-1].price)
+                        }
+                        
                         
                     }
                 }

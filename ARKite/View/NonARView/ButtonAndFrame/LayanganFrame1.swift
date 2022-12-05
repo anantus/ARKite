@@ -15,6 +15,8 @@ struct LayanganFrame1: View {
     @State var width: CGFloat
     @State var height: CGFloat
     @State var picture: String
+    @State var bought: Bool
+    @State var prices: Int
     
     var body: some View {
         ZStack{
@@ -34,7 +36,7 @@ struct LayanganFrame1: View {
                         .fill(Color.init(hex: thirdColor))
                         .frame(width: 141, height: 128)
                         .cornerRadius(5)
-                        
+                        .shadow(radius: 3)
                     Image("\(picture)")
                         .resizable()
                         .frame(width: UIScreen.main.bounds.width * (2.6/10),height: UIScreen.main.bounds.height * (1.3/10))
@@ -42,10 +44,16 @@ struct LayanganFrame1: View {
                         .padding(.top, 8)
                         .padding(.trailing, 5)
                 }
-                Image(systemName: "checkmark.circle.fill")
-                    .resizable()
-                    .frame(width: 35, height: 35)
-                    .foregroundColor(Color("OldBrown"))
+                if bought {
+                    Image(systemName: "checkmark.circle.fill")
+                        .resizable()
+                        .frame(width: 35, height: 35)
+                        .foregroundColor(Color("OldBrown"))
+                } else {
+                    BuyButton(price: prices)
+                        .padding(.leading, 10)
+                }
+                
             }
                 
         }
@@ -122,6 +130,6 @@ struct FrameInner1: Shape {
 
 struct LayanganFrame1_Previews: PreviewProvider {
     static var previews: some View {
-        LayanganFrame1(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 196, picture: "Kite 1")
+        LayanganFrame1(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 196, picture: "Kite 1", bought: false, prices: 10)
     }
 }

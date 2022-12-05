@@ -13,6 +13,6 @@ struct Kite: Identifiable, Hashable{
     let name: String
     let price: Int
     let picture: String
-    var isBought: Bool = false
+    var isBought: Bool 
 
 }
