@@ -15,7 +15,6 @@ class CollectionViewModel: ObservableObject{
     let keys = Keys()
     
     init(){
-        
         coins = keys.defaults.integer(forKey: Keys.coins)
         kiteCollection = keys.defaults.value(forKey: Keys.kiteCollection) as? [Kite] ?? kiteInitial()
     }

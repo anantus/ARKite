@@ -21,8 +21,11 @@ struct RedYellowKiteView : View {
     @State var color = Color.white.opacity(0.0001)
     @State var pullPush = "None"
     
-    
-    
+    @State var audioPlayer: AVAudioPlayer?
+    @State var audioPlayer2: AVAudioPlayer?
+    @State var musicPlayer: AVAudioPlayer?
+    @State var sound: Sound!
+
     
     var body: some View {
         ZStack {
@@ -90,12 +93,10 @@ struct RedYellowKiteView : View {
                                 .onChanged({ value in
                                     if position.height > 0 {
                                         pullPush = "Pull"
-                                        //                                    color = Color.green.opacity(0.2)
-                                        //                                    print("Pull is triggered")
+
                                     }else if position.height < 0 {
                                         pullPush = "Stretch"
-                                        //                                    color = Color.red.opacity(0.2)
-                                        //                                    print("Stretch is triggered")
+
                                     }
                                     position = value.translation
                                 })
@@ -141,6 +142,11 @@ struct RedYellowKiteView : View {
                 } .padding(.bottom, 50)
             }
             
+            
+        }.onAppear {
+            self.sound = Sound(volumeSFX: 1.0, avAudioPlayer1: $audioPlayer, avAudioPlayer2: $audioPlayer2, musicAudio: $musicPlayer)
+            self.vm.sound = self.sound
+            self.sound.playMusic()
             
         }
         

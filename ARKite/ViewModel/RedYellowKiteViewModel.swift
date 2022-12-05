@@ -14,6 +14,7 @@ class RedYellowKiteViewModel: ObservableObject {
     @Published fileprivate var obstacle: Entity
     @Published fileprivate var isForward = false
     @Published fileprivate var isRotate = false
+    @Published var sound: Sound!
     @Published var gameOver = false
     @Published var addCoin = true
     @Published var coinGame = 0
@@ -21,11 +22,10 @@ class RedYellowKiteViewModel: ObservableObject {
     fileprivate var initialKitePosition = SIMD3<Float>(0,0,0)
     fileprivate var collectionVM = CollectionViewModel()
     
+    
+    
     let mainAnchor = try! Experience.loadRedYellowKite()
     let arView = ARView(frame: .zero)
-    
-    
-    
     
     let threadSpool = try! ModelEntity.load(named: "GULUNGAN")
     fileprivate let initialPosition = SIMD3<Float>(0,0,0)
@@ -55,7 +55,6 @@ class RedYellowKiteViewModel: ObservableObject {
         //Find kite Angle
         if isForward{
             self.initialKitePosition = kite.position
-            print(self.initialKitePosition)
             isRotate = false
             isForward = false
             
@@ -85,7 +84,6 @@ class RedYellowKiteViewModel: ObservableObject {
     fileprivate func rotateOn(_ entity: Entity?){
         isRotate = true
         isForward = true
-        print(kite.position)
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
             if self.initialKitePosition.x < self.kite.position.x{
                 self.rotateRecursionClockwise(entity)
@@ -155,6 +153,7 @@ class RedYellowKiteViewModel: ObservableObject {
     
     //Function untuk menyalakan obstacle
     fileprivate func obstacleMove(_ entity: Entity?){
+        
         // after 10 seconds, show the osbtacle
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { secTimer in
             
@@ -182,6 +181,7 @@ class RedYellowKiteViewModel: ObservableObject {
                 print("Game over!")
                 self.gameOver = true
                 self.collectionVM.addCoin(coinsAfterGame: self.coinGame)
+                self.sound.playObstacleSound()
             }
         }
     }
@@ -201,6 +201,7 @@ class RedYellowKiteViewModel: ObservableObject {
                         let posZ1 = Float.random(in: -15 ... -10)
                         entity.position = SIMD3<Float>(posX1,posY1,posZ1)
                         self.coinGame += 1
+                        self.sound.playCoinSound()
                         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { secTimer in
                             self.mainAnchor.notifications.showCoin.post()
                             self.addCoin = true

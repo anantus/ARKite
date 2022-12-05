@@ -33,11 +33,19 @@
 		553D3FC2293C98760086A1D2 /* BajajKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC1293C98760086A1D2 /* BajajKiteView.swift */; };
 		553D3FC4293C98E10086A1D2 /* FloralKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC3293C98E10086A1D2 /* FloralKiteView.swift */; };
 		553D3FC8293CB0610086A1D2 /* LoadKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC7293CB0610086A1D2 /* LoadKiteView.swift */; };
+		553D3FCA293CFBBF0086A1D2 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC9293CFBBF0086A1D2 /* Sound.swift */; };
+		553D3FCC293CFBDF0086A1D2 /* TestVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FCB293CFBDF0086A1D2 /* TestVolume.swift */; };
+		553D3FD4293CFF6E0086A1D2 /* Obstacle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FCE293CFF6E0086A1D2 /* Obstacle.mp3 */; };
+		553D3FD5293CFF6E0086A1D2 /* Yah.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FCF293CFF6E0086A1D2 /* Yah.m4a */; };
+		553D3FD6293CFF6E0086A1D2 /* Gg.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FD0293CFF6E0086A1D2 /* Gg.m4a */; };
+		553D3FD7293CFF6E0086A1D2 /* Asik.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FD1293CFF6E0086A1D2 /* Asik.m4a */; };
+		553D3FD8293CFF6E0086A1D2 /* Aduh.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FD2293CFF6E0086A1D2 /* Aduh.m4a */; };
+		553D3FD9293CFF6E0086A1D2 /* Yoi.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FD3293CFF6E0086A1D2 /* Yoi.m4a */; };
+		553D3FDB293CFF9C0086A1D2 /* Coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FDA293CFF9C0086A1D2 /* Coin.wav */; };
 		553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */; };
 		553EFF1C28FD60EF00E54FA1 /* RedYellowKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1B28FD60EF00E54FA1 /* RedYellowKiteView.swift */; };
 		553EFF2028FD60F100E54FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553EFF1F28FD60F100E54FA1 /* Assets.xcassets */; };
 		553EFF2328FD60F100E54FA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553EFF2228FD60F100E54FA1 /* Preview Assets.xcassets */; };
-		5544090429339B5800674C81 /* Animate-Kite2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 5544090329339B5800674C81 /* Animate-Kite2.usdz */; };
 		55440906293442AC00674C81 /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440905293442AC00674C81 /* MainMenuButton.swift */; };
 		554409082935034F00674C81 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 554409072935034F00674C81 /* Experience.rcproject */; };
 		5544090C2935084300674C81 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544090B2935084300674C81 /* ARViewContainer.swift */; };
@@ -88,12 +96,21 @@
 		553D3FC1293C98760086A1D2 /* BajajKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BajajKiteView.swift; sourceTree = "<group>"; };
 		553D3FC3293C98E10086A1D2 /* FloralKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloralKiteView.swift; sourceTree = "<group>"; };
 		553D3FC7293CB0610086A1D2 /* LoadKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadKiteView.swift; sourceTree = "<group>"; };
+		553D3FC9293CFBBF0086A1D2 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		553D3FCB293CFBDF0086A1D2 /* TestVolume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVolume.swift; sourceTree = "<group>"; };
+		553D3FCE293CFF6E0086A1D2 /* Obstacle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Obstacle.mp3; sourceTree = "<group>"; };
+		553D3FCF293CFF6E0086A1D2 /* Yah.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Yah.m4a; sourceTree = "<group>"; };
+		553D3FD0293CFF6E0086A1D2 /* Gg.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gg.m4a; sourceTree = "<group>"; };
+		553D3FD1293CFF6E0086A1D2 /* Asik.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Asik.m4a; sourceTree = "<group>"; };
+		553D3FD2293CFF6E0086A1D2 /* Aduh.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aduh.m4a; sourceTree = "<group>"; };
+		553D3FD3293CFF6E0086A1D2 /* Yoi.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Yoi.m4a; sourceTree = "<group>"; };
+		553D3FDA293CFF9C0086A1D2 /* Coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Coin.wav; sourceTree = "<group>"; };
+		553D3FDF293D2CAA0086A1D2 /* KiteSong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = KiteSong.m4a; sourceTree = "<group>"; };
 		553EFF1628FD60EF00E54FA1 /* ARKite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		553EFF1B28FD60EF00E54FA1 /* RedYellowKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedYellowKiteView.swift; sourceTree = "<group>"; };
 		553EFF1F28FD60F100E54FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		553EFF2228FD60F100E54FA1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5544090329339B5800674C81 /* Animate-Kite2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Animate-Kite2.usdz"; sourceTree = "<group>"; };
 		55440905293442AC00674C81 /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
 		554409072935034F00674C81 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		5544090B2935084300674C81 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
@@ -174,6 +191,23 @@
 			path = NonARView;
 			sourceTree = "<group>";
 		};
+		553D3FCD293CFF6E0086A1D2 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				553D3FDF293D2CAA0086A1D2 /* KiteSong.m4a */,
+				553D3FCE293CFF6E0086A1D2 /* Obstacle.mp3 */,
+				553D3FDA293CFF9C0086A1D2 /* Coin.wav */,
+				553D3FD0293CFF6E0086A1D2 /* Gg.m4a */,
+				553D3FD1293CFF6E0086A1D2 /* Asik.m4a */,
+				553D3FD3293CFF6E0086A1D2 /* Yoi.m4a */,
+				553D3FCF293CFF6E0086A1D2 /* Yah.m4a */,
+				553D3FD2293CFF6E0086A1D2 /* Aduh.m4a */,
+				553D3FC9293CFBBF0086A1D2 /* Sound.swift */,
+				553D3FCB293CFBDF0086A1D2 /* TestVolume.swift */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		553EFF0D28FD60EF00E54FA1 = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +285,7 @@
 		5544090E2935089B00674C81 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5544090329339B5800674C81 /* Animate-Kite2.usdz */,
+				553D3FCD293CFF6E0086A1D2 /* Sound */,
 				554409072935034F00674C81 /* Experience.rcproject */,
 				5509D3B52937654E00E16F6F /* GULUNGAN.usdz */,
 				553EFF1F28FD60F100E54FA1 /* Assets.xcassets */,
@@ -336,10 +370,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553D3FD9293CFF6E0086A1D2 /* Yoi.m4a in Resources */,
+				553D3FD6293CFF6E0086A1D2 /* Gg.m4a in Resources */,
+				553D3FD4293CFF6E0086A1D2 /* Obstacle.mp3 in Resources */,
+				553D3FD5293CFF6E0086A1D2 /* Yah.m4a in Resources */,
 				569E71B2293A0707002ABD26 /* Instruction2NEW.mp4 in Resources */,
+				553D3FD7293CFF6E0086A1D2 /* Asik.m4a in Resources */,
 				569E71B3293A0707002ABD26 /* Instruction1NEW.mp4 in Resources */,
+				553D3FD8293CFF6E0086A1D2 /* Aduh.m4a in Resources */,
+				553D3FDB293CFF9C0086A1D2 /* Coin.wav in Resources */,
 				553EFF2328FD60F100E54FA1 /* Preview Assets.xcassets in Resources */,
-				5544090429339B5800674C81 /* Animate-Kite2.usdz in Resources */,
 				553EFF2028FD60F100E54FA1 /* Assets.xcassets in Resources */,
 				5509D3B62937654E00E16F6F /* GULUNGAN.usdz in Resources */,
 			);
@@ -356,10 +396,12 @@
 				55440910293508F200674C81 /* RedYellowKiteViewModel.swift in Sources */,
 				4343E087293995AC00382834 /* KoleksiMenuButton.swift in Sources */,
 				553D3FBC293C96E30086A1D2 /* FloralKiteViewModel.swift in Sources */,
+				553D3FCC293CFBDF0086A1D2 /* TestVolume.swift in Sources */,
 				4343E0992939CCCE00382834 /* LayanganFrame2.swift in Sources */,
 				569C0BCF29376FC800FE5767 /* CustomSlider.swift in Sources */,
 				5652B47E2936622F00841BEC /* CoinIndicatorFrame.swift in Sources */,
 				569C0BCB293755D800FE5767 /* SettingVARView.swift in Sources */,
+				553D3FCA293CFBBF0086A1D2 /* Sound.swift in Sources */,
 				553EFF1C28FD60EF00E54FA1 /* RedYellowKiteView.swift in Sources */,
 				56481D312938BBEB004066E1 /* SecondaryButton.swift in Sources */,
 				4343E08D29399E8500382834 /* SettingFrame.swift in Sources */,
