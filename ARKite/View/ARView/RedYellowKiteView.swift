@@ -122,7 +122,7 @@ struct RedYellowKiteView : View {
                     
                     Button {
                         //TODO: kiteBoost
-                        vm.kiteFlyStart()
+                        vm.kiteFlyStart(isThread: !useButton)
                         
                         withAnimation {
                             isStartPlay.toggle()

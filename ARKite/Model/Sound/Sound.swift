@@ -57,7 +57,7 @@ struct Sound{
     }
     
     func playMusic(){
-        let sound = Bundle.main.path(forResource: "Aduh", ofType: "m4a")
+        let sound = Bundle.main.path(forResource: "KiteSong", ofType: "wav")
         musicAudio = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
         musicAudio.numberOfLoops =  -1 // set your count here
         musicAudio.volume = 0.2

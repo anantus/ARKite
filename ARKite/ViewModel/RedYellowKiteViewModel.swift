@@ -74,8 +74,10 @@ class RedYellowKiteViewModel: ObservableObject {
     }
     
     //Function untuk penerbangan kite awal
-    func kiteFlyStart(){
-        threadEntity()
+    func kiteFlyStart(isThread: Bool){
+        if isThread{
+            threadEntity()
+        }
         mainAnchor.notifications.kiteStart.post()
         mainAnchor.actions.kiteStartEnd.onAction = startGameInitiate
     }
@@ -178,10 +180,13 @@ class RedYellowKiteViewModel: ObservableObject {
             }
             
             self.mainAnchor.actions.gameOver.onAction = {_ in
-                print("Game over!")
-                self.gameOver = true
-                self.collectionVM.addCoin(coinsAfterGame: self.coinGame)
-                self.sound.playObstacleSound()
+                if self.gameOver == false{
+                    print("Game over!")
+                    self.gameOver = true
+                    self.collectionVM.addCoin(coinsAfterGame: self.coinGame)
+                    self.sound.playObstacleSound()
+                    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                }
             }
         }
     }
