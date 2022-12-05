@@ -11,8 +11,8 @@ import SwiftUI
 class CollectionViewModel: ObservableObject{
     @Published var coins = 0
     @Published var kiteCollection = [Kite]()
-    @Published var volumeSFX: CGFloat = 1.0
-    @Published var volumeMusic: CGFloat = 1.0
+    @Published var volumeSFX: Float = 1.0
+    @Published var volumeMusic: Float = 1.0
     @Published var gestures: Bool = false
     
     let keys = Keys()
@@ -20,8 +20,8 @@ class CollectionViewModel: ObservableObject{
     init(){
         coins = keys.defaults.integer(forKey: Keys.coins)
         kiteCollection = keys.defaults.value(forKey: Keys.kiteCollection) as? [Kite] ?? kiteInitial()
-        volumeSFX = keys.defaults.value(forKey: Keys.volumeSFX) as? CGFloat ?? 1.0
-        volumeMusic = keys.defaults.value(forKey: Keys.volumeMusic) as? CGFloat ?? 1.0
+        volumeSFX = keys.defaults.value(forKey: Keys.volumeSFX) as? Float ?? 1.0
+        volumeMusic = keys.defaults.value(forKey: Keys.volumeMusic) as? Float ?? 1.0
         gestures = keys.defaults.bool(forKey: Keys.gestures)
     }
 
@@ -76,12 +76,12 @@ class CollectionViewModel: ObservableObject{
         return kiteCollectionInit
     }
     
-    func setUserVolumeSFX(volume: CGFloat){
+    func setUserVolumeSFX(volume: Float){
         keys.defaults.set(volume, forKey: Keys.volumeSFX)
         self.volumeSFX = volume
     }
     
-    func setUserVolumeMusic(volume: CGFloat){
+    func setUserVolumeMusic(volume: Float){
         keys.defaults.set(volume, forKey: Keys.volumeMusic)
         self.volumeMusic = volume
     }
