@@ -22,7 +22,7 @@ class BajajKiteViewModel: ObservableObject {
     fileprivate var collectionVM = CollectionViewModel()
     
     let mainAnchor = try! Experience.loadBajajKite()
-    let arView = ARView(frame: .zero)
+    var arView = ARView(frame: .zero)
     
     
     

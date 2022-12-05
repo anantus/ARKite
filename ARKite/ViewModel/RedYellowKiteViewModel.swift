@@ -25,7 +25,7 @@ class RedYellowKiteViewModel: ObservableObject {
     
     
     let mainAnchor = try! Experience.loadRedYellowKite()
-    let arView = ARView(frame: .zero)
+    var arView = ARView(frame: .zero)
     
     let threadSpool = try! ModelEntity.load(named: "GULUNGAN")
     fileprivate let initialPosition = SIMD3<Float>(0,0,0)

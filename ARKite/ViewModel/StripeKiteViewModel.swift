@@ -22,7 +22,7 @@ class StripeKiteViewModel: ObservableObject {
     fileprivate var collectionVM = CollectionViewModel()
     
     let mainAnchor = try! Experience.loadStripeKite()
-    let arView = ARView(frame: .zero)
+    var arView = ARView(frame: .zero)
     
     
     

@@ -66,6 +66,7 @@
 		56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AEAE7A29211BA8007424F4 /* Color+Extension.swift */; };
 		56C65437293A7F5500C9557D /* CustomSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C65436293A7F5500C9557D /* CustomSwitchButton.swift */; };
 		56C65439293A890F00C9557D /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C65438293A890F00C9557D /* PauseView.swift */; };
+		56F2D76F293D03F900097DE4 /* PauseARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2D76E293D03F900097DE4 /* PauseARView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +133,7 @@
 		56AEAE7A29211BA8007424F4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		56C65436293A7F5500C9557D /* CustomSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchButton.swift; sourceTree = "<group>"; };
 		56C65438293A890F00C9557D /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		56F2D76E293D03F900097DE4 /* PauseARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseARView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 				5544090B2935084300674C81 /* ARViewContainer.swift */,
 				553D3FC7293CB0610086A1D2 /* LoadKiteView.swift */,
 				43873E9B293C8ED900C147A1 /* ChooseKiteAR.swift */,
+				56F2D76E293D03F900097DE4 /* PauseARView.swift */,
 			);
 			path = ARView;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				553D3FB8293B924D0086A1D2 /* PilihKiteButton.swift in Sources */,
 				554409082935034F00674C81 /* Experience.rcproject in Sources */,
 				4343E08F29399EC100382834 /* SettingButton.swift in Sources */,
+				56F2D76F293D03F900097DE4 /* PauseARView.swift in Sources */,
 				554409142935373C00674C81 /* SettingsViewModel.swift in Sources */,
 				553D3FBA293C96AA0086A1D2 /* StripeKiteViewModel.swift in Sources */,
 				43873E9A293C82D100C147A1 /* Popup.swift in Sources */,
@@ -565,7 +569,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = Y26BLZ69B8;
+				DEVELOPMENT_TEAM = KFD27J2TGQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -597,7 +601,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = Y26BLZ69B8;
+				DEVELOPMENT_TEAM = KFD27J2TGQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";

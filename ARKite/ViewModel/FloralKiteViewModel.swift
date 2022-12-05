@@ -22,7 +22,7 @@ class FloralKiteViewModel: ObservableObject {
     fileprivate var collectionVM = CollectionViewModel()
     
     let mainAnchor = try! Experience.loadFloralKite()
-    let arView = ARView(frame: .zero)
+    var arView = ARView(frame: .zero)
     
     
     
