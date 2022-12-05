@@ -48,17 +48,15 @@ struct BajajKiteView : View {
                                 CoinIndicatorFrame(coinCount: vm.coinGame)
                                 
                             }
-                            
-                            
                         }
                         
-                        if vm.gameOver{
-                            Text("GAME OVER!")
-                                .foregroundColor(Color.red)
-                                .onAppear{
-                                    UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-                                }
-                        }
+//                        if vm.gameOver{
+//                            // TODO: - GAME OVER
+//                            GameOver(coinCount: 100)
+//                                .onAppear{
+//                                    UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+//                                }
+//                        }
                         
                         Spacer()
                         
@@ -177,6 +175,26 @@ struct BajajKiteView : View {
         .modifier(
             Popup(isPresented: vm.showInstruction, alignment: .center, content: {
                 VideoView(videoName: $instructionVideoName)
+            })
+        )
+        .modifier(
+            Popup(isPresented: vm.gameOver, alignment: .center, content: {
+                GameOver(
+                    coinCount: vm.coinGame,
+                    lanjutkanAction: {
+                        // TODO: - LOAD ULANG GAME
+                    },
+                    akhiriAction: {
+                        // TODO: - BALIK KE MAIN MENU
+                        DispatchQueue.main.async {
+//                            ARView.scene.anchors.removeAll()
+                            vm.arView.scene.anchors.removeAll()
+                        }
+                    }
+                ).onAppear {
+                    UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+                }
+                    
             })
         )
     }

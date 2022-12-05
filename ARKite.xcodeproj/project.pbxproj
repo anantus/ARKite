@@ -67,7 +67,7 @@
 		569E71B3293A0707002ABD26 /* Instruction1NEW.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 569E71B1293A0707002ABD26 /* Instruction1NEW.mp4 */; };
 		56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AEAE7A29211BA8007424F4 /* Color+Extension.swift */; };
 		56C65437293A7F5500C9557D /* CustomSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C65436293A7F5500C9557D /* CustomSwitchButton.swift */; };
-		56C65439293A890F00C9557D /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C65438293A890F00C9557D /* PauseView.swift */; };
+		56C65439293A890F00C9557D /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C65438293A890F00C9557D /* GameOver.swift */; };
 		56F2D76F293D03F900097DE4 /* PauseARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2D76E293D03F900097DE4 /* PauseARView.swift */; };
 /* End PBXBuildFile section */
 
@@ -135,7 +135,7 @@
 		569E71B1293A0707002ABD26 /* Instruction1NEW.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Instruction1NEW.mp4; sourceTree = "<group>"; };
 		56AEAE7A29211BA8007424F4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		56C65436293A7F5500C9557D /* CustomSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchButton.swift; sourceTree = "<group>"; };
-		56C65438293A890F00C9557D /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		56C65438293A890F00C9557D /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		56F2D76E293D03F900097DE4 /* PauseARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseARView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,7 +190,7 @@
 				4343E08A29399D3500382834 /* SettingNonARView.swift */,
 				43873E99293C82D100C147A1 /* Popup.swift */,
 				569E71AE293A05C7002ABD26 /* VideoView.swift */,
-				56C65438293A890F00C9557D /* PauseView.swift */,
+				56C65438293A890F00C9557D /* GameOver.swift */,
 				438A9E1629210C180010918E /* ButtonAndFrame */,
 			);
 			path = NonARView;
@@ -450,7 +450,7 @@
 				4343E0A12939F1A000382834 /* BuyButton.swift in Sources */,
 				554409122935372000674C81 /* CollectionViewModel.swift in Sources */,
 				4343E0972939CCBF00382834 /* LayanganFrame1.swift in Sources */,
-				56C65439293A890F00C9557D /* PauseView.swift in Sources */,
+				56C65439293A890F00C9557D /* GameOver.swift in Sources */,
 				43873E9C293C8ED900C147A1 /* ChooseKiteAR.swift in Sources */,
 				56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */,
 			);

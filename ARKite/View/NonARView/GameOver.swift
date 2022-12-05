@@ -7,8 +7,10 @@
 
 import SwiftUI
 
-struct PauseView: View {
-    @State private var coinCount: Int = 100
+struct GameOver: View {
+    let coinCount: Int
+    let lanjutkanAction: () -> Void
+    let akhiriAction: () -> Void
     
     
     var body: some View {
@@ -60,11 +62,7 @@ struct PauseView: View {
                 
                 // button lanjut dan akhiri
                 VStack {
-                    Button {
-                        // TODO: - LANJUTKAN
-                        print("Lanjutkan button")
-                        
-                    } label: {
+                    Button(action: lanjutkanAction) {
                         MainMenuButton(firstColor: "0099BB",
                                        secondColor: "00608B",
                                        bgColor: "00496B",
@@ -72,24 +70,21 @@ struct PauseView: View {
                                        height: 65,
                                        text: "LANJUTKAN"
                         )
-                        
                     }
                     
-                    
-                    Button {
-                        // TODO: - AKHIRI PERMAINAN
-                        print("Akhiri button")
-                        
-                    } label: {
-                        SecondaryButton(firstColor: "FC3E45",
-                                        secondColor: "BA2424",
-                                        bgColor: "9C1C1C",
-                                        width: 246,
-                                        height: 61,
-                                        text: "AKHIRI PERMAINAN"
-                        )
+                    Button(action: akhiriAction) {
+                        NavigationLink {
+                            DashboardViewV2().navigationBarBackButtonHidden(true)
+                        }label: {
+                            SecondaryButton(firstColor: "FC3E45",
+                                            secondColor: "BA2424",
+                                            bgColor: "9C1C1C",
+                                            width: 246,
+                                            height: 61,
+                                            text: "AKHIRI PERMAINAN"
+                            )
+                        }
                     }
-                    
                 }
                 .padding(.bottom, 26)
             }
@@ -123,8 +118,8 @@ struct CoinFramePath: Shape {
     }
 }
 
-struct PauseView_Previews: PreviewProvider {
+struct GameOver_Previews: PreviewProvider {
     static var previews: some View {
-        PauseView()
+        GameOver(coinCount: 100, lanjutkanAction: {}, akhiriAction: {} )
     }
 }
