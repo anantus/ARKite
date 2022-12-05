@@ -17,6 +17,10 @@ class BajajKiteViewModel: ObservableObject {
     @Published var gameOver = false
     @Published var addCoin = true
     @Published var coinGame = 0
+    @Published var showInstruction = false
+    
+    
+    @Published var kiteIsAppear: Bool = false
     
     fileprivate var initialKitePosition = SIMD3<Float>(0,0,0)
     fileprivate var collectionVM = CollectionViewModel()
@@ -35,6 +39,15 @@ class BajajKiteViewModel: ObservableObject {
         self.kite = mainAnchor.findEntity(named: "kite")!
         self.obstacle = mainAnchor.findEntity(named: "obstacle")!
         self.randomCoinPosition(kite)
+        self.changeKiteStatus()
+    }
+    
+    func changeKiteStatus() {
+        mainAnchor.actions.sceneStart.onAction = { _ in
+            self.kiteIsAppear.toggle()
+            self.showInstruction.toggle()
+        }
+
     }
     
     

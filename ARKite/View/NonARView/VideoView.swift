@@ -9,7 +9,7 @@ import SwiftUI
 import AVKit
 
 struct VideoView: View {
-    let videoName: String
+    @Binding var videoName: String
     
     var body: some View {
         ZStack {
@@ -97,6 +97,6 @@ struct InstructionVideoBackroundPath: Shape {
 
 struct VideoView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoView(videoName: "Instruction1NEW")
+        VideoView(videoName: .constant("Instruction1NEW"))
     }
 }

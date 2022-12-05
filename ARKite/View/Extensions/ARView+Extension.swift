@@ -10,26 +10,27 @@ import ARKit
 import RealityKit
 
 extension ARView: ARCoachingOverlayViewDelegate {
+
+    
     
     func addCoaching() {
         
         let coachingOverlay = ARCoachingOverlayView()
         
-        coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        coachingOverlay.goal = .horizontalPlane
+        coachingOverlay.delegate = self
         coachingOverlay.session = self.session
-        self.addSubview(coachingOverlay)
+        coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        // MARK: CoachingGoal
+        coachingOverlay.goal = .horizontalPlane
+        
+        addSubview(coachingOverlay)
     }
     
     
     public func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView) {
-        // add the virtual object
-        if self.scene.anchors.first(where: { $0.name == "ARKite" }) == nil {
-            
-            print("DEBUG: Kite belum muncul")
-            return
-        }
+        coachingOverlayView.activatesAutomatically = false
         
-        print("DEBUG: Kite muncul")
+        print("DEBUG: Coaching done and entity appear")
     }
 }
