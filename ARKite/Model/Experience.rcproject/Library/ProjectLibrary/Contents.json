@@ -1,30 +1,5 @@
 [
   {
-    "libraryIdentifier" : "5f7133a54a29e73c5209ee77cb729044",
-    "format" : "model",
-    "displayName" : "Animate-Kite1.usdz"
-  },
-  {
-    "libraryIdentifier" : "838993301d1568063fbaf1d47c22a3d5",
-    "format" : "model",
-    "displayName" : "Kite1.usdz"
-  },
-  {
-    "libraryIdentifier" : "c24f3e5996ed5a4e18a814e3c6a7a995",
-    "format" : "model",
-    "displayName" : "Kite2.usdz"
-  },
-  {
-    "libraryIdentifier" : "843499fdadc7cac45fa2b2e9be23a581",
-    "format" : "model",
-    "displayName" : "ASET KITE 3D.usdz"
-  },
-  {
-    "libraryIdentifier" : "718a64f11c705261b85522d15e5d0c50",
-    "format" : "model",
-    "displayName" : "New-Animate-Kite.usdz"
-  },
-  {
     "libraryIdentifier" : "71056edca27569130f02d10c0c7243cc",
     "format" : "model",
     "displayName" : "New-Animate-Kite2.usdz"
@@ -35,8 +10,23 @@
     "displayName" : "coin.usdz"
   },
   {
-    "libraryIdentifier" : "72af4191ee453dbced67435968426b53",
+    "libraryIdentifier" : "0db3dc7767a4668ab805e5e586b54b26",
     "format" : "model",
-    "displayName" : "GASANIMATE2.usdz"
+    "displayName" : "New-Animate-Kite5.usdz"
+  },
+  {
+    "libraryIdentifier" : "78454281b5ecdad959702822082e8f35",
+    "format" : "model",
+    "displayName" : "New-Animate-Kite3.usdz"
+  },
+  {
+    "libraryIdentifier" : "b3f22c6b9f89807996bf4f8ea18bc885",
+    "format" : "model",
+    "displayName" : "New-Animate-Kite4.usdz"
+  },
+  {
+    "libraryIdentifier" : "b528dbc991185763b0e239e2375276b1",
+    "format" : "model",
+    "displayName" : "LPG1.usdz"
   }
 ]

@@ -7,50 +7,145 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		438A9E0E2920CF6E0010918E /* StrokeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E0D2920CF6E0010918E /* StrokeText.swift */; };
-		438A9E102920E5A90010918E /* FrameKuning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E0F2920E5A90010918E /* FrameKuning.swift */; };
-		438A9E122920E5B30010918E /* FrameIjo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E112920E5B30010918E /* FrameIjo.swift */; };
-		438A9E1829210C500010918E /* UseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E1729210C500010918E /* UseButton.swift */; };
-		438A9E1A29210C670010918E /* SelectedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A9E1929210C670010918E /* SelectedButton.swift */; };
-		438F0B20291F751B007551F5 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B1F291F751B007551F5 /* DashboardView.swift */; };
-		438F0B24291F755F007551F5 /* ChooseKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B23291F755F007551F5 /* ChooseKiteView.swift */; };
-		438F0B26291F7569007551F5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F0B25291F7569007551F5 /* SettingView.swift */; };
+		43136020293E27F7004E5CA9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4313601F293E27F7004E5CA9 /* Launch Screen.storyboard */; };
+		432AF709293E1BF000CADD4A /* KoleksiViewforiPhone8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AF708293E1BF000CADD4A /* KoleksiViewforiPhone8.swift */; };
+		432AF70B293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AF70A293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift */; };
+		432AF70D293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AF70C293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift */; };
+		4343E0852938B74500382834 /* DashboardViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0842938B74500382834 /* DashboardViewV2.swift */; };
+		4343E087293995AC00382834 /* KoleksiMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E086293995AC00382834 /* KoleksiMenuButton.swift */; };
+		4343E08929399D0C00382834 /* KoleksiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E08829399D0C00382834 /* KoleksiView.swift */; };
+		4343E08B29399D3500382834 /* SettingNonARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E08A29399D3500382834 /* SettingNonARView.swift */; };
+		4343E08D29399E8500382834 /* SettingFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E08C29399E8500382834 /* SettingFrame.swift */; };
+		4343E08F29399EC100382834 /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E08E29399EC100382834 /* SettingButton.swift */; };
+		4343E0932939A5B400382834 /* NavigationKoleksiFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0922939A5B400382834 /* NavigationKoleksiFrame.swift */; };
+		4343E0952939C25900382834 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0942939C25900382834 /* BackButton.swift */; };
+		4343E0972939CCBF00382834 /* LayanganFrame1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0962939CCBF00382834 /* LayanganFrame1.swift */; };
+		4343E0992939CCCE00382834 /* LayanganFrame2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0982939CCCE00382834 /* LayanganFrame2.swift */; };
+		4343E09D2939D67D00382834 /* GunakanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E09C2939D67D00382834 /* GunakanButton.swift */; };
+		4343E09F2939D68A00382834 /* DipilihButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E09E2939D68A00382834 /* DipilihButton.swift */; };
+		4343E0A12939F1A000382834 /* BuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0A02939F1A000382834 /* BuyButton.swift */; };
+		43873E9A293C82D100C147A1 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43873E99293C82D100C147A1 /* Popup.swift */; };
+		43873E9C293C8ED900C147A1 /* ChooseKiteAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43873E9B293C8ED900C147A1 /* ChooseKiteAR.swift */; };
+		43CD3A0A293BB22C000C358D /* PilihLayanganButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD3A09293BB22C000C358D /* PilihLayanganButton.swift */; };
+		5509D3B62937654E00E16F6F /* GULUNGAN.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 5509D3B52937654E00E16F6F /* GULUNGAN.usdz */; };
+		55287D7329365BB600E1FF66 /* KiteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55287D7229365BB600E1FF66 /* KiteEntity.swift */; };
+		553D3FB8293B924D0086A1D2 /* PilihKiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FB7293B924D0086A1D2 /* PilihKiteButton.swift */; };
+		553D3FBA293C96AA0086A1D2 /* StripeKiteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FB9293C96AA0086A1D2 /* StripeKiteViewModel.swift */; };
+		553D3FBC293C96E30086A1D2 /* FloralKiteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FBB293C96E30086A1D2 /* FloralKiteViewModel.swift */; };
+		553D3FBE293C97310086A1D2 /* BajajKiteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FBD293C97310086A1D2 /* BajajKiteViewModel.swift */; };
+		553D3FC0293C980E0086A1D2 /* StripeKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FBF293C980E0086A1D2 /* StripeKiteView.swift */; };
+		553D3FC2293C98760086A1D2 /* BajajKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC1293C98760086A1D2 /* BajajKiteView.swift */; };
+		553D3FC4293C98E10086A1D2 /* FloralKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC3293C98E10086A1D2 /* FloralKiteView.swift */; };
+		553D3FC8293CB0610086A1D2 /* LoadKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC7293CB0610086A1D2 /* LoadKiteView.swift */; };
+		553D3FCA293CFBBF0086A1D2 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC9293CFBBF0086A1D2 /* Sound.swift */; };
+		553D3FD4293CFF6E0086A1D2 /* Obstacle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FCE293CFF6E0086A1D2 /* Obstacle.mp3 */; };
+		553D3FD5293CFF6E0086A1D2 /* Yah.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FCF293CFF6E0086A1D2 /* Yah.m4a */; };
+		553D3FD6293CFF6E0086A1D2 /* Gg.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FD0293CFF6E0086A1D2 /* Gg.m4a */; };
+		553D3FD7293CFF6E0086A1D2 /* Asik.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FD1293CFF6E0086A1D2 /* Asik.m4a */; };
+		553D3FD8293CFF6E0086A1D2 /* Aduh.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FD2293CFF6E0086A1D2 /* Aduh.m4a */; };
+		553D3FD9293CFF6E0086A1D2 /* Yoi.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FD3293CFF6E0086A1D2 /* Yoi.m4a */; };
+		553D3FDB293CFF9C0086A1D2 /* Coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FDA293CFF9C0086A1D2 /* Coin.wav */; };
 		553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */; };
-		553EFF1C28FD60EF00E54FA1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1B28FD60EF00E54FA1 /* GameView.swift */; };
+		553EFF1C28FD60EF00E54FA1 /* RedYellowKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EFF1B28FD60EF00E54FA1 /* RedYellowKiteView.swift */; };
 		553EFF2028FD60F100E54FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553EFF1F28FD60F100E54FA1 /* Assets.xcassets */; };
 		553EFF2328FD60F100E54FA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553EFF2228FD60F100E54FA1 /* Preview Assets.xcassets */; };
-		5544090429339B5800674C81 /* Animate-Kite2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 5544090329339B5800674C81 /* Animate-Kite2.usdz */; };
 		55440906293442AC00674C81 /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440905293442AC00674C81 /* MainMenuButton.swift */; };
 		554409082935034F00674C81 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 554409072935034F00674C81 /* Experience.rcproject */; };
 		5544090C2935084300674C81 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544090B2935084300674C81 /* ARViewContainer.swift */; };
-		55440910293508F200674C81 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544090F293508F200674C81 /* ARViewModel.swift */; };
+		55440910293508F200674C81 /* RedYellowKiteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544090F293508F200674C81 /* RedYellowKiteViewModel.swift */; };
 		554409122935372000674C81 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409112935372000674C81 /* CollectionViewModel.swift */; };
 		554409142935373C00674C81 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409132935373C00674C81 /* SettingsViewModel.swift */; };
+		5544091829360B0A00674C81 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544091729360B0A00674C81 /* DefaultKeys.swift */; };
+		55F31947293D7D6700F1CC06 /* KiteSong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 55F31946293D7D6700F1CC06 /* KiteSong.wav */; };
+		562030EE2935EACA0048BB69 /* ARView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562030ED2935EACA0048BB69 /* ARView+Extension.swift */; };
+		562030F02936116D0048BB69 /* TarikUlurButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562030EF2936116D0048BB69 /* TarikUlurButton.swift */; };
+		56481D2F2938BBE0004066E1 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56481D2E2938BBE0004066E1 /* PrimaryButton.swift */; };
+		56481D312938BBEB004066E1 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56481D302938BBEB004066E1 /* SecondaryButton.swift */; };
+		5652B47E2936622F00841BEC /* CoinIndicatorFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5652B47D2936622F00841BEC /* CoinIndicatorFrame.swift */; };
+		565AED5D293DDDAB002E9F66 /* Sliders in Frameworks */ = {isa = PBXBuildFile; productRef = 565AED5C293DDDAB002E9F66 /* Sliders */; };
+		569C0BCB293755D800FE5767 /* SettingVARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C0BCA293755D800FE5767 /* SettingVARView.swift */; };
+		569C0BCF29376FC800FE5767 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C0BCE29376FC800FE5767 /* CustomSlider.swift */; };
+		569C0BD12937982000FE5767 /* CustomSliderV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C0BD02937982000FE5767 /* CustomSliderV2.swift */; };
+		569E71AF293A05C7002ABD26 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E71AE293A05C7002ABD26 /* VideoView.swift */; };
+		569E71B2293A0707002ABD26 /* Instruction2NEW.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 569E71B0293A0707002ABD26 /* Instruction2NEW.mp4 */; };
+		569E71B3293A0707002ABD26 /* Instruction1NEW.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 569E71B1293A0707002ABD26 /* Instruction1NEW.mp4 */; };
 		56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AEAE7A29211BA8007424F4 /* Color+Extension.swift */; };
+		56C65437293A7F5500C9557D /* CustomSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C65436293A7F5500C9557D /* CustomSwitchButton.swift */; };
+		56C65439293A890F00C9557D /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C65438293A890F00C9557D /* GameOver.swift */; };
+		56F2D76F293D03F900097DE4 /* PauseARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F2D76E293D03F900097DE4 /* PauseARView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		438A9E0D2920CF6E0010918E /* StrokeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeText.swift; sourceTree = "<group>"; };
-		438A9E0F2920E5A90010918E /* FrameKuning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameKuning.swift; sourceTree = "<group>"; };
-		438A9E112920E5B30010918E /* FrameIjo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameIjo.swift; sourceTree = "<group>"; };
-		438A9E1729210C500010918E /* UseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseButton.swift; sourceTree = "<group>"; };
-		438A9E1929210C670010918E /* SelectedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedButton.swift; sourceTree = "<group>"; };
-		438F0B1F291F751B007551F5 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		438F0B23291F755F007551F5 /* ChooseKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseKiteView.swift; sourceTree = "<group>"; };
-		438F0B25291F7569007551F5 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		4313601F293E27F7004E5CA9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		43136021293E2C5E004E5CA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		432AF708293E1BF000CADD4A /* KoleksiViewforiPhone8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiViewforiPhone8.swift; sourceTree = "<group>"; };
+		432AF70A293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiViewforiPhoneXS.swift; sourceTree = "<group>"; };
+		432AF70C293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiViewforiPhone13.swift; sourceTree = "<group>"; };
+		4343E0842938B74500382834 /* DashboardViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewV2.swift; sourceTree = "<group>"; };
+		4343E086293995AC00382834 /* KoleksiMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiMenuButton.swift; sourceTree = "<group>"; };
+		4343E08829399D0C00382834 /* KoleksiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiView.swift; sourceTree = "<group>"; };
+		4343E08A29399D3500382834 /* SettingNonARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNonARView.swift; sourceTree = "<group>"; };
+		4343E08C29399E8500382834 /* SettingFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFrame.swift; sourceTree = "<group>"; };
+		4343E08E29399EC100382834 /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
+		4343E09029399ED000382834 /* CoinIndicatorFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinIndicatorFrame.swift; sourceTree = "<group>"; };
+		4343E0922939A5B400382834 /* NavigationKoleksiFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationKoleksiFrame.swift; sourceTree = "<group>"; };
+		4343E0942939C25900382834 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		4343E0962939CCBF00382834 /* LayanganFrame1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayanganFrame1.swift; sourceTree = "<group>"; };
+		4343E0982939CCCE00382834 /* LayanganFrame2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayanganFrame2.swift; sourceTree = "<group>"; };
+		4343E09C2939D67D00382834 /* GunakanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunakanButton.swift; sourceTree = "<group>"; };
+		4343E09E2939D68A00382834 /* DipilihButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DipilihButton.swift; sourceTree = "<group>"; };
+		4343E0A02939F1A000382834 /* BuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButton.swift; sourceTree = "<group>"; };
+		43873E99293C82D100C147A1 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		43873E9B293C8ED900C147A1 /* ChooseKiteAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseKiteAR.swift; sourceTree = "<group>"; };
+		43CD3A09293BB22C000C358D /* PilihLayanganButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilihLayanganButton.swift; sourceTree = "<group>"; };
+		5509D3B52937654E00E16F6F /* GULUNGAN.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = GULUNGAN.usdz; sourceTree = "<group>"; };
+		55287D7229365BB600E1FF66 /* KiteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiteEntity.swift; sourceTree = "<group>"; };
+		553D3FB7293B924D0086A1D2 /* PilihKiteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilihKiteButton.swift; sourceTree = "<group>"; };
+		553D3FB9293C96AA0086A1D2 /* StripeKiteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeKiteViewModel.swift; sourceTree = "<group>"; };
+		553D3FBB293C96E30086A1D2 /* FloralKiteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloralKiteViewModel.swift; sourceTree = "<group>"; };
+		553D3FBD293C97310086A1D2 /* BajajKiteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BajajKiteViewModel.swift; sourceTree = "<group>"; };
+		553D3FBF293C980E0086A1D2 /* StripeKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeKiteView.swift; sourceTree = "<group>"; };
+		553D3FC1293C98760086A1D2 /* BajajKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BajajKiteView.swift; sourceTree = "<group>"; };
+		553D3FC3293C98E10086A1D2 /* FloralKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloralKiteView.swift; sourceTree = "<group>"; };
+		553D3FC7293CB0610086A1D2 /* LoadKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadKiteView.swift; sourceTree = "<group>"; };
+		553D3FC9293CFBBF0086A1D2 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		553D3FCE293CFF6E0086A1D2 /* Obstacle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Obstacle.mp3; sourceTree = "<group>"; };
+		553D3FCF293CFF6E0086A1D2 /* Yah.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Yah.m4a; sourceTree = "<group>"; };
+		553D3FD0293CFF6E0086A1D2 /* Gg.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gg.m4a; sourceTree = "<group>"; };
+		553D3FD1293CFF6E0086A1D2 /* Asik.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Asik.m4a; sourceTree = "<group>"; };
+		553D3FD2293CFF6E0086A1D2 /* Aduh.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aduh.m4a; sourceTree = "<group>"; };
+		553D3FD3293CFF6E0086A1D2 /* Yoi.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Yoi.m4a; sourceTree = "<group>"; };
+		553D3FDA293CFF9C0086A1D2 /* Coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Coin.wav; sourceTree = "<group>"; };
 		553EFF1628FD60EF00E54FA1 /* ARKite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		553EFF1B28FD60EF00E54FA1 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		553EFF1B28FD60EF00E54FA1 /* RedYellowKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedYellowKiteView.swift; sourceTree = "<group>"; };
 		553EFF1F28FD60F100E54FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		553EFF2228FD60F100E54FA1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5544090329339B5800674C81 /* Animate-Kite2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Animate-Kite2.usdz"; sourceTree = "<group>"; };
 		55440905293442AC00674C81 /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
 		554409072935034F00674C81 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		5544090B2935084300674C81 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
-		5544090F293508F200674C81 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
+		5544090F293508F200674C81 /* RedYellowKiteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedYellowKiteViewModel.swift; sourceTree = "<group>"; };
 		554409112935372000674C81 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		554409132935373C00674C81 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		5544091729360B0A00674C81 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
+		55F31946293D7D6700F1CC06 /* KiteSong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = KiteSong.wav; sourceTree = "<group>"; };
+		562030ED2935EACA0048BB69 /* ARView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView+Extension.swift"; sourceTree = "<group>"; };
+		562030EF2936116D0048BB69 /* TarikUlurButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarikUlurButton.swift; sourceTree = "<group>"; };
+		56481D2E2938BBE0004066E1 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		56481D302938BBEB004066E1 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		5652B47B29365C7B00841BEC /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
+		5652B47D2936622F00841BEC /* CoinIndicatorFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinIndicatorFrame.swift; sourceTree = "<group>"; };
+		5653FBE32937257F0071CC60 /* SettingFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFrame.swift; sourceTree = "<group>"; };
+		569C0BCA293755D800FE5767 /* SettingVARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVARView.swift; sourceTree = "<group>"; };
+		569C0BCE29376FC800FE5767 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		569C0BD02937982000FE5767 /* CustomSliderV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSliderV2.swift; sourceTree = "<group>"; };
+		569E71AE293A05C7002ABD26 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		569E71B0293A0707002ABD26 /* Instruction2NEW.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Instruction2NEW.mp4; sourceTree = "<group>"; };
+		569E71B1293A0707002ABD26 /* Instruction1NEW.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Instruction1NEW.mp4; sourceTree = "<group>"; };
 		56AEAE7A29211BA8007424F4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		56C65436293A7F5500C9557D /* CustomSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchButton.swift; sourceTree = "<group>"; };
+		56C65438293A890F00C9557D /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
+		56F2D76E293D03F900097DE4 /* PauseARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseARView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				565AED5D293DDDAB002E9F66 /* Sliders in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,12 +163,29 @@
 		438A9E1629210C180010918E /* ButtonAndFrame */ = {
 			isa = PBXGroup;
 			children = (
-				438A9E112920E5B30010918E /* FrameIjo.swift */,
-				438A9E0F2920E5A90010918E /* FrameKuning.swift */,
-				438A9E0D2920CF6E0010918E /* StrokeText.swift */,
-				438A9E1729210C500010918E /* UseButton.swift */,
-				438A9E1929210C670010918E /* SelectedButton.swift */,
 				55440905293442AC00674C81 /* MainMenuButton.swift */,
+				4343E086293995AC00382834 /* KoleksiMenuButton.swift */,
+				4343E08C29399E8500382834 /* SettingFrame.swift */,
+				4343E08E29399EC100382834 /* SettingButton.swift */,
+				4343E09029399ED000382834 /* CoinIndicatorFrame.swift */,
+				4343E0922939A5B400382834 /* NavigationKoleksiFrame.swift */,
+				4343E0942939C25900382834 /* BackButton.swift */,
+				4343E0962939CCBF00382834 /* LayanganFrame1.swift */,
+				4343E0982939CCCE00382834 /* LayanganFrame2.swift */,
+				4343E09C2939D67D00382834 /* GunakanButton.swift */,
+				4343E09E2939D68A00382834 /* DipilihButton.swift */,
+				4343E0A02939F1A000382834 /* BuyButton.swift */,
+				562030EF2936116D0048BB69 /* TarikUlurButton.swift */,
+				5652B47B29365C7B00841BEC /* SettingButton.swift */,
+				5652B47D2936622F00841BEC /* CoinIndicatorFrame.swift */,
+				5653FBE32937257F0071CC60 /* SettingFrame.swift */,
+				569C0BCE29376FC800FE5767 /* CustomSlider.swift */,
+				569C0BD02937982000FE5767 /* CustomSliderV2.swift */,
+				56481D2E2938BBE0004066E1 /* PrimaryButton.swift */,
+				56481D302938BBEB004066E1 /* SecondaryButton.swift */,
+				56C65436293A7F5500C9557D /* CustomSwitchButton.swift */,
+				553D3FB7293B924D0086A1D2 /* PilihKiteButton.swift */,
+				43CD3A09293BB22C000C358D /* PilihLayanganButton.swift */,
 			);
 			path = ButtonAndFrame;
 			sourceTree = "<group>";
@@ -80,12 +193,36 @@
 		438F0B22291F753D007551F5 /* NonARView */ = {
 			isa = PBXGroup;
 			children = (
-				438F0B1F291F751B007551F5 /* DashboardView.swift */,
-				438F0B23291F755F007551F5 /* ChooseKiteView.swift */,
-				438F0B25291F7569007551F5 /* SettingView.swift */,
+				4313601F293E27F7004E5CA9 /* Launch Screen.storyboard */,
+				569C0BCA293755D800FE5767 /* SettingVARView.swift */,
+				4343E0842938B74500382834 /* DashboardViewV2.swift */,
+				4343E08829399D0C00382834 /* KoleksiView.swift */,
+				432AF708293E1BF000CADD4A /* KoleksiViewforiPhone8.swift */,
+				432AF70A293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift */,
+				432AF70C293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift */,
+				4343E08A29399D3500382834 /* SettingNonARView.swift */,
+				43873E99293C82D100C147A1 /* Popup.swift */,
+				569E71AE293A05C7002ABD26 /* VideoView.swift */,
+				56C65438293A890F00C9557D /* GameOver.swift */,
 				438A9E1629210C180010918E /* ButtonAndFrame */,
 			);
 			path = NonARView;
+			sourceTree = "<group>";
+		};
+		553D3FCD293CFF6E0086A1D2 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				55F31946293D7D6700F1CC06 /* KiteSong.wav */,
+				553D3FCE293CFF6E0086A1D2 /* Obstacle.mp3 */,
+				553D3FDA293CFF9C0086A1D2 /* Coin.wav */,
+				553D3FD0293CFF6E0086A1D2 /* Gg.m4a */,
+				553D3FD1293CFF6E0086A1D2 /* Asik.m4a */,
+				553D3FD3293CFF6E0086A1D2 /* Yoi.m4a */,
+				553D3FCF293CFF6E0086A1D2 /* Yah.m4a */,
+				553D3FD2293CFF6E0086A1D2 /* Aduh.m4a */,
+				553D3FC9293CFBBF0086A1D2 /* Sound.swift */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 		553EFF0D28FD60EF00E54FA1 = {
@@ -107,6 +244,8 @@
 		553EFF1828FD60EF00E54FA1 /* ARKite */ = {
 			isa = PBXGroup;
 			children = (
+				43136021293E2C5E004E5CA9 /* Info.plist */,
+				569E71B4293A070F002ABD26 /* Video */,
 				5544090E2935089B00674C81 /* Model */,
 				5544090D2935089000674C81 /* ViewModel */,
 				554409092935076A00674C81 /* View */,
@@ -137,8 +276,14 @@
 		5544090A293507CE00674C81 /* ARView */ = {
 			isa = PBXGroup;
 			children = (
-				553EFF1B28FD60EF00E54FA1 /* GameView.swift */,
+				553D3FC3293C98E10086A1D2 /* FloralKiteView.swift */,
+				553D3FC1293C98760086A1D2 /* BajajKiteView.swift */,
+				553D3FBF293C980E0086A1D2 /* StripeKiteView.swift */,
+				553EFF1B28FD60EF00E54FA1 /* RedYellowKiteView.swift */,
 				5544090B2935084300674C81 /* ARViewContainer.swift */,
+				553D3FC7293CB0610086A1D2 /* LoadKiteView.swift */,
+				43873E9B293C8ED900C147A1 /* ChooseKiteAR.swift */,
+				56F2D76E293D03F900097DE4 /* PauseARView.swift */,
 			);
 			path = ARView;
 			sourceTree = "<group>";
@@ -146,7 +291,10 @@
 		5544090D2935089000674C81 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5544090F293508F200674C81 /* ARViewModel.swift */,
+				553D3FBD293C97310086A1D2 /* BajajKiteViewModel.swift */,
+				553D3FBB293C96E30086A1D2 /* FloralKiteViewModel.swift */,
+				553D3FB9293C96AA0086A1D2 /* StripeKiteViewModel.swift */,
+				5544090F293508F200674C81 /* RedYellowKiteViewModel.swift */,
 				554409112935372000674C81 /* CollectionViewModel.swift */,
 				554409132935373C00674C81 /* SettingsViewModel.swift */,
 			);
@@ -156,17 +304,30 @@
 		5544090E2935089B00674C81 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5544090329339B5800674C81 /* Animate-Kite2.usdz */,
+				553D3FCD293CFF6E0086A1D2 /* Sound */,
 				554409072935034F00674C81 /* Experience.rcproject */,
+				5509D3B52937654E00E16F6F /* GULUNGAN.usdz */,
 				553EFF1F28FD60F100E54FA1 /* Assets.xcassets */,
+				5544091729360B0A00674C81 /* DefaultKeys.swift */,
+				55287D7229365BB600E1FF66 /* KiteEntity.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		569E71B4293A070F002ABD26 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				569E71B1293A0707002ABD26 /* Instruction1NEW.mp4 */,
+				569E71B0293A0707002ABD26 /* Instruction2NEW.mp4 */,
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 		56AEAE7C29211BAE007424F4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				56AEAE7A29211BA8007424F4 /* Color+Extension.swift */,
+				562030ED2935EACA0048BB69 /* ARView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,6 +348,9 @@
 			dependencies = (
 			);
 			name = ARKite;
+			packageProductDependencies = (
+				565AED5C293DDDAB002E9F66 /* Sliders */,
+			);
 			productName = ARKite;
 			productReference = 553EFF1628FD60EF00E54FA1 /* ARKite.app */;
 			productType = "com.apple.product-type.application";
@@ -199,7 +363,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					553EFF1528FD60EF00E54FA1 = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -215,6 +379,9 @@
 				Base,
 			);
 			mainGroup = 553EFF0D28FD60EF00E54FA1;
+			packageReferences = (
+				565AED5B293DDDAB002E9F66 /* XCRemoteSwiftPackageReference "swiftui-sliders" */,
+			);
 			productRefGroup = 553EFF1728FD60EF00E54FA1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -229,9 +396,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553D3FD9293CFF6E0086A1D2 /* Yoi.m4a in Resources */,
+				55F31947293D7D6700F1CC06 /* KiteSong.wav in Resources */,
+				553D3FD6293CFF6E0086A1D2 /* Gg.m4a in Resources */,
+				553D3FD4293CFF6E0086A1D2 /* Obstacle.mp3 in Resources */,
+				553D3FD5293CFF6E0086A1D2 /* Yah.m4a in Resources */,
+				569E71B2293A0707002ABD26 /* Instruction2NEW.mp4 in Resources */,
+				553D3FD7293CFF6E0086A1D2 /* Asik.m4a in Resources */,
+				569E71B3293A0707002ABD26 /* Instruction1NEW.mp4 in Resources */,
+				553D3FD8293CFF6E0086A1D2 /* Aduh.m4a in Resources */,
+				553D3FDB293CFF9C0086A1D2 /* Coin.wav in Resources */,
 				553EFF2328FD60F100E54FA1 /* Preview Assets.xcassets in Resources */,
-				5544090429339B5800674C81 /* Animate-Kite2.usdz in Resources */,
 				553EFF2028FD60F100E54FA1 /* Assets.xcassets in Resources */,
+				5509D3B62937654E00E16F6F /* GULUNGAN.usdz in Resources */,
+				43136020293E27F7004E5CA9 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,23 +420,57 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55440910293508F200674C81 /* ARViewModel.swift in Sources */,
-				438A9E0E2920CF6E0010918E /* StrokeText.swift in Sources */,
-				553EFF1C28FD60EF00E54FA1 /* GameView.swift in Sources */,
-				438F0B20291F751B007551F5 /* DashboardView.swift in Sources */,
+				4343E08B29399D3500382834 /* SettingNonARView.swift in Sources */,
+				55440910293508F200674C81 /* RedYellowKiteViewModel.swift in Sources */,
+				4343E087293995AC00382834 /* KoleksiMenuButton.swift in Sources */,
+				553D3FBC293C96E30086A1D2 /* FloralKiteViewModel.swift in Sources */,
+				4343E0992939CCCE00382834 /* LayanganFrame2.swift in Sources */,
+				569C0BCF29376FC800FE5767 /* CustomSlider.swift in Sources */,
+				5652B47E2936622F00841BEC /* CoinIndicatorFrame.swift in Sources */,
+				569C0BCB293755D800FE5767 /* SettingVARView.swift in Sources */,
+				553D3FCA293CFBBF0086A1D2 /* Sound.swift in Sources */,
+				553EFF1C28FD60EF00E54FA1 /* RedYellowKiteView.swift in Sources */,
+				56481D312938BBEB004066E1 /* SecondaryButton.swift in Sources */,
+				4343E08D29399E8500382834 /* SettingFrame.swift in Sources */,
+				4343E08929399D0C00382834 /* KoleksiView.swift in Sources */,
 				5544090C2935084300674C81 /* ARViewContainer.swift in Sources */,
-				438A9E1829210C500010918E /* UseButton.swift in Sources */,
-				438A9E102920E5A90010918E /* FrameKuning.swift in Sources */,
+				5544091829360B0A00674C81 /* DefaultKeys.swift in Sources */,
+				4343E09F2939D68A00382834 /* DipilihButton.swift in Sources */,
+				4343E0952939C25900382834 /* BackButton.swift in Sources */,
+				553D3FC4293C98E10086A1D2 /* FloralKiteView.swift in Sources */,
+				553D3FB8293B924D0086A1D2 /* PilihKiteButton.swift in Sources */,
+				432AF70D293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift in Sources */,
 				554409082935034F00674C81 /* Experience.rcproject in Sources */,
+				4343E08F29399EC100382834 /* SettingButton.swift in Sources */,
+				56F2D76F293D03F900097DE4 /* PauseARView.swift in Sources */,
 				554409142935373C00674C81 /* SettingsViewModel.swift in Sources */,
+				432AF709293E1BF000CADD4A /* KoleksiViewforiPhone8.swift in Sources */,
+				553D3FBA293C96AA0086A1D2 /* StripeKiteViewModel.swift in Sources */,
+				43873E9A293C82D100C147A1 /* Popup.swift in Sources */,
+				4343E09D2939D67D00382834 /* GunakanButton.swift in Sources */,
+				553D3FC0293C980E0086A1D2 /* StripeKiteView.swift in Sources */,
 				55440906293442AC00674C81 /* MainMenuButton.swift in Sources */,
-				438A9E122920E5B30010918E /* FrameIjo.swift in Sources */,
-				438A9E1A29210C670010918E /* SelectedButton.swift in Sources */,
+				56C65437293A7F5500C9557D /* CustomSwitchButton.swift in Sources */,
+				553D3FC8293CB0610086A1D2 /* LoadKiteView.swift in Sources */,
+				56481D2F2938BBE0004066E1 /* PrimaryButton.swift in Sources */,
+				569E71AF293A05C7002ABD26 /* VideoView.swift in Sources */,
+				43CD3A0A293BB22C000C358D /* PilihLayanganButton.swift in Sources */,
+				569C0BD12937982000FE5767 /* CustomSliderV2.swift in Sources */,
+				562030F02936116D0048BB69 /* TarikUlurButton.swift in Sources */,
 				553EFF1A28FD60EF00E54FA1 /* AppDelegate.swift in Sources */,
+				562030EE2935EACA0048BB69 /* ARView+Extension.swift in Sources */,
+				55287D7329365BB600E1FF66 /* KiteEntity.swift in Sources */,
+				553D3FC2293C98760086A1D2 /* BajajKiteView.swift in Sources */,
+				553D3FBE293C97310086A1D2 /* BajajKiteViewModel.swift in Sources */,
+				4343E0852938B74500382834 /* DashboardViewV2.swift in Sources */,
+				4343E0932939A5B400382834 /* NavigationKoleksiFrame.swift in Sources */,
+				4343E0A12939F1A000382834 /* BuyButton.swift in Sources */,
 				554409122935372000674C81 /* CollectionViewModel.swift in Sources */,
-				438F0B26291F7569007551F5 /* SettingView.swift in Sources */,
+				432AF70B293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift in Sources */,
+				4343E0972939CCBF00382834 /* LayanganFrame1.swift in Sources */,
+				56C65439293A890F00C9557D /* GameOver.swift in Sources */,
+				43873E9C293C8ED900C147A1 /* ChooseKiteAR.swift in Sources */,
 				56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */,
-				438F0B24291F755F007551F5 /* ChooseKiteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,12 +602,12 @@
 				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ARKite/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -422,12 +634,12 @@
 				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ARKite/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -465,6 +677,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		565AED5B293DDDAB002E9F66 /* XCRemoteSwiftPackageReference "swiftui-sliders" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spacenation/swiftui-sliders.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		565AED5C293DDDAB002E9F66 /* Sliders */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 565AED5B293DDDAB002E9F66 /* XCRemoteSwiftPackageReference "swiftui-sliders" */;
+			productName = Sliders;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 553EFF0E28FD60EF00E54FA1 /* Project object */;
 }
