@@ -297,7 +297,7 @@
                                           "linearCoefficient" : 1,
                                           "location" : [
                                             0,
-                                            1,
+                                            2,
                                             0
                                           ],
                                           "moveEase" : "easeInOut",
@@ -2732,6 +2732,82 @@
                     }
                   ],
                   "__version" : 3
+                },
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "isEnabled" : false
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "target" : [
+                                            "F2792329-2F2F-4193-8392-375F026480ED"
+                                          ],
+                                          "userIdentifier" : "sceneStart"
+                                        },
+                                        "name" : {
+                                          "type" : "custom"
+                                        }
+                                      },
+                                      "identifier" : "7E3CDE97-1E4B-4904-801C-BC73B1FBBB0F",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "27FD8054-45E2-49DF-A5B8-D65D527EF399",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ],
+                      "color" : [
+                        0.49803921580314636,
+                        0.50196081399917603,
+                        0.52549022436141968,
+                        1
+                      ],
+                      "identifier" : "6F2270F1-7395-41E1-A342-B3F3DFADC6C9",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "sceneStart",
+                      "triggers" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
+
+                                },
+                                "name" : "start"
+                              },
+                              "identifier" : "286F1E42-AB3E-4FBE-B6B5-A93C410783F6",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
                 }
               ],
               "gravity" : [
@@ -3603,21 +3679,21 @@
               "title" : "RedYellowKite",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.81136322021484375,
+                  0.81065797805786133,
                   1.4214977284154884e-07,
-                  -0.58454233407974243,
+                  -0.58551996946334839,
                   0,
-                  -0.33862408995628357,
+                  -0.33919042348861694,
                   0.81511610746383667,
-                  -0.47002071142196655,
+                  -0.46961218118667603,
                   0,
-                  0.47646963596343994,
+                  0.47726652026176453,
                   0.57929778099060059,
-                  0.66135513782501221,
+                  0.66078031063079834,
                   0,
-                  5.0636806488037109,
-                  4.2243967056274414,
-                  5.4283332824707031,
+                  3.5259449481964111,
+                  2.261566162109375,
+                  3.9056961536407471,
                   1
                 ],
                 "sceneTransform" : [
@@ -3938,7 +4014,7 @@
                                           "linearCoefficient" : 1,
                                           "location" : [
                                             0,
-                                            1,
+                                            2,
                                             0
                                           ],
                                           "moveEase" : "easeInOut",
@@ -6373,6 +6449,82 @@
                     }
                   ],
                   "__version" : 3
+                },
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "isEnabled" : false
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "target" : [
+                                            "A0C973A8-1551-4543-B434-36707C7DDBB9"
+                                          ],
+                                          "userIdentifier" : "sceneStart"
+                                        },
+                                        "name" : {
+                                          "type" : "custom"
+                                        }
+                                      },
+                                      "identifier" : "53A5A5DF-98FB-4D9B-BFA7-811737826EC3",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "D9CD752C-AEC3-463E-AE6A-F1C6918DDC44",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ],
+                      "color" : [
+                        0.88235294818878174,
+                        0.48235294222831726,
+                        0.68627452850341797,
+                        1
+                      ],
+                      "identifier" : "338F6877-CE82-4572-8955-DC9C4D07FCD6",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "sceneStart",
+                      "triggers" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
+
+                                },
+                                "name" : "start"
+                              },
+                              "identifier" : "1247A3F5-B584-4A56-9B2D-3B72C87AC871",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
                 }
               ],
               "gravity" : [
@@ -7565,7 +7717,7 @@
                                           "linearCoefficient" : 1,
                                           "location" : [
                                             0,
-                                            1,
+                                            2,
                                             0
                                           ],
                                           "moveEase" : "easeInOut",
@@ -10000,6 +10152,82 @@
                     }
                   ],
                   "__version" : 3
+                },
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "isEnabled" : false
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "target" : [
+
+                                          ],
+                                          "userIdentifier" : "sceneStart"
+                                        },
+                                        "name" : {
+                                          "type" : "custom"
+                                        }
+                                      },
+                                      "identifier" : "41ECC981-D983-442B-A25B-59A5BFC7649C",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "B24DECEA-64A2-474B-ACFB-C7F7ADB2954C",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ],
+                      "color" : [
+                        0.86274510622024536,
+                        0.3333333432674408,
+                        0.41568627953529358,
+                        1
+                      ],
+                      "identifier" : "7D5BF1AD-A1CF-4755-B749-37A92C943C3A",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "sceneStart",
+                      "triggers" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
+
+                                },
+                                "name" : "start"
+                              },
+                              "identifier" : "7E3F0C38-434E-4DA5-B583-47838BADB5D1",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
                 }
               ],
               "gravity" : [
@@ -10857,21 +11085,21 @@
               "title" : "StripeKite",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.99880838394165039,
-                  1.2980569863429992e-07,
-                  0.048803053796291351,
+                  0.90178900957107544,
+                  1.4572475492968806e-07,
+                  -0.43217664957046509,
                   0,
-                  0.037293810397386551,
-                  0.64501345157623291,
-                  -0.76326054334640503,
+                  -0.31706902384757996,
+                  0.67952120304107666,
+                  -0.66160279512405396,
                   0,
-                  -0.031478792428970337,
-                  0.764171302318573,
-                  0.6442447304725647,
+                  0.29367291927337646,
+                  0.73365604877471924,
+                  0.61278456449508667,
                   0,
-                  -0.00018548965454101562,
-                  4.2646961212158203,
-                  3.0379402637481689,
+                  3.1197474002838135,
+                  5.3735551834106445,
+                  4.5557079315185547,
                   1
                 ],
                 "sceneTransform" : [
@@ -11192,7 +11420,7 @@
                                           "linearCoefficient" : 1,
                                           "location" : [
                                             0,
-                                            1,
+                                            2,
                                             0
                                           ],
                                           "moveEase" : "easeInOut",

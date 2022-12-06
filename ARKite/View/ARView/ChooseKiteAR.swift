@@ -7,31 +7,10 @@
 
 import SwiftUI
 
-struct Item: Identifiable {
-    var id: Int
-    var picture: String
-    
-}
-
-class Store {
-    var items: [Item]
-    
-    var pictures = ["Kite 1", "Kite 2", "Kite 3", "Kite 4"]
-    
-    // dummy data
-    init() {
-        items = []
-        for i in 0...3 {
-            let new = Item(id: i, picture: pictures[i])
-            items.append(new)
-        }
-    }
-}
-
 
 struct ChooseKiteAR: View {
     @Environment(\.presentationMode) var showChooseKite
-    @State var store = Store()
+    @ObservedObject var vm = CollectionViewModel()
     @State private var snappedItem = 0.0
     @State private var draggingItem = 0.0
     @State var pickedKite: String = ""
@@ -47,57 +26,59 @@ struct ChooseKiteAR: View {
                 .padding(.trailing, 300)
                 PilihLayanganButton(width: 310, height: 96)
                 ZStack {
-                    ForEach(store.items) { item in
-                        ZStack {
-                            ZStack{
-                                FrameBack1()
-                                    .fill(Color.init(hex: "BB8800"))
-                                    .frame(width: 194, height: 226)
-                                    .cornerRadius(5)
-                                    .padding(.trailing, (164 * 0.09))
-                                    .padding(.top, (196 * 0.15))
-                                FrameFront1()
-                                    .fill(.linearGradient(colors: [Color.init(hex: "FBC300"), Color.init(hex: "FEB914")], startPoint: .top, endPoint: .bottom))
-                                    .frame(width: 194, height: 226)
-                                    .cornerRadius(5)
-                                VStack {
-                                    ZStack {
-                                        FrameInner1()
-                                            .fill(Color.init(hex: "FFF7C6"))
-                                            .frame(width: 171, height: 150)
-                                            .cornerRadius(5)
-                                        Image(item.picture)
-                                            .resizable()
-                                            .frame(width: UIScreen.main.bounds.width * (3/10),height: UIScreen.main.bounds.height * (1.6/10))
-                                            .rotationEffect(.degrees(30))
-                                            .padding(.top, 8)
-                                            .padding(.trailing, 5)
-                                    }
-                                    if item.picture == pickedKite {
-                                        DipilihButton(firstColor: "FC3E45", secondColor: "BA2424", bgColor: "9C1C1C", width: 127, height: 33)
+                    ForEach(Array(0...vm.kiteCollection.count-1), id: \.self) { item in
+                        let kite = vm.kiteCollection[item]
+                        if kite.isBought == true{
+                            ZStack {
+                                ZStack{
+                                    FrameBack1()
+                                        .fill(Color.init(hex: "BB8800"))
+                                        .frame(width: 194, height: 226)
+                                        .cornerRadius(5)
+                                        .padding(.trailing, (164 * 0.09))
+                                        .padding(.top, (196 * 0.15))
+                                    FrameFront1()
+                                        .fill(.linearGradient(colors: [Color.init(hex: "FBC300"), Color.init(hex: "FEB914")], startPoint: .top, endPoint: .bottom))
+                                        .frame(width: 194, height: 226)
+                                        .cornerRadius(5)
+                                    VStack {
+                                        ZStack {
+                                            FrameInner1()
+                                                .fill(Color.init(hex: "FFF7C6"))
+                                                .frame(width: 171, height: 150)
+                                                .cornerRadius(5)
+                                            Image(kite.picture)
+                                                .resizable()
+                                                .frame(width: UIScreen.main.bounds.width * (3/10),height: UIScreen.main.bounds.height * (1.6/10))
+                                                .rotationEffect(.degrees(30))
+                                                .padding(.top, 8)
+                                                .padding(.trailing, 5)
+                                        }
+                                        if kite.picture == pickedKite {
+                                            DipilihButton(firstColor: "FC3E45", secondColor: "BA2424", bgColor: "9C1C1C", width: 127, height: 33)
+                                            
+                                        } else {
+                                            GunakanButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 127, height: 33)
+                                        }
                                         
-                                    } else {
-                                        GunakanButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 127, height: 33)
+                                        
+                                        
+                                    }
+                                    .onTapGesture {
+                                        pickedKite = kite.picture
+                                        
                                     }
                                     
                                     
-                                    
                                 }
-                                .onTapGesture {
-                                    pickedKite = item.picture
-                                    
-                                }
-                                
-                                
                             }
+                            //                .frame(width: 200, height: 200)
+                            
+                            .scaleEffect(1.0 - abs(distance(item)) * 0.2 )
+                            .opacity(1.0 - abs(distance(item)) * 0.3 )
+                            .offset(x: myXOffset(item), y: 0)
+                            .zIndex(1.0 - abs(distance(item)) * 0.1)
                         }
-                        //                .frame(width: 200, height: 200)
-                        
-                        .scaleEffect(1.0 - abs(distance(item.id)) * 0.2 )
-                        .opacity(1.0 - abs(distance(item.id)) * 0.3 )
-                        .offset(x: myXOffset(item.id), y: 0)
-                        .zIndex(1.0 - abs(distance(item.id)) * 0.1)
-                        
                     }
                 }
                 .gesture(
@@ -109,7 +90,7 @@ struct ChooseKiteAR: View {
                         .onEnded { value in
                             withAnimation {
                                 draggingItem = snappedItem + value.predictedEndTranslation.width / 100
-                                draggingItem = round(draggingItem).remainder(dividingBy: Double(store.items.count))
+                                draggingItem = round(draggingItem).remainder(dividingBy: Double(vm.kiteCollection.filter({$0.isBought == true}).count))
                                 snappedItem = draggingItem
                             }
                         }
@@ -132,11 +113,11 @@ struct ChooseKiteAR: View {
     }
     
     func distance(_ item: Int) -> Double {
-        return (draggingItem - Double(item)).remainder(dividingBy: Double(store.items.count))
+        return (draggingItem - Double(item)).remainder(dividingBy: Double(vm.kiteCollection.filter({$0.isBought == true}).count))
     }
     
     func myXOffset(_ item: Int) -> Double {
-        let angle = Double.pi * 2 / Double(store.items.count) * distance(item)
+        let angle = Double.pi * 2 / Double(vm.kiteCollection.filter({$0.isBought == true}).count) * distance(item)
         return sin(angle) * 200
     }
     

@@ -63,13 +63,17 @@ struct GameOver: View {
                 // button lanjut dan akhiri
                 VStack {
                     Button(action: lanjutkanAction) {
-                        MainMenuButton(firstColor: "0099BB",
-                                       secondColor: "00608B",
-                                       bgColor: "00496B",
-                                       width: 248,
-                                       height: 65,
-                                       text: "LANJUTKAN"
-                        )
+                        NavigationLink{
+                            ChooseKiteAR()
+                        } label:{
+                            MainMenuButton(firstColor: "0099BB",
+                                           secondColor: "00608B",
+                                           bgColor: "00496B",
+                                           width: 248,
+                                           height: 65,
+                                           text: "LANJUTKAN"
+                            )
+                        }
                     }
                     
                     Button(action: akhiriAction) {

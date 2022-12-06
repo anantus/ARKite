@@ -1,5 +1,5 @@
 //
-//  FloralKiteView.swift
+//  BajajKiteView.swift
 //  ARKite
 //
 //  Created by Maheswara Ananta Argono on 17/10/22.
@@ -21,9 +21,13 @@ struct FloralKiteView : View {
     @State var position = CGSize.zero
     @State var color = Color.white.opacity(0.0001)
     @State var pullPush = "None"
-    @State private var engine: CHHapticEngine?
-    
     @State var showPauseModal = false
+    @State private var engine: CHHapticEngine?
+    @State var instructionVideoName = "Instruction1NEW"
+    @State var audioPlayer: AVAudioPlayer?
+    @State var audioPlayer2: AVAudioPlayer?
+    @State var musicPlayer: AVAudioPlayer?
+    @State var sound: Sound!
     
     
     var body: some View {
@@ -31,137 +35,156 @@ struct FloralKiteView : View {
             ARViewContainer(arView: vm.arView, anchor: vm.mainAnchor)
             
             // Buttons UI
-            if isStartPlay {
-                VStack {
-                    HStack {
-                        Button {
-                            showPauseModal.toggle()
-                        } label: {
-                            SettingButton()
-                        }
-                        
-                        Spacer()
-                        
-                        ZStack {
-                            CoinIndicatorFrame(coinCount: vm.coinGame)
-                            
-                        }
-                        
-                        
-                    }
-                    
-                    if vm.gameOver{
-                        Text("GAME OVER!")
-                            .foregroundColor(Color.red)
-                            .onAppear{
-                                UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-                            }
-                    }
-                    
-                    Spacer()
-                
-                if useButton {
-                    HStack(alignment: .bottom) {
-                        Spacer()
-                        Spacer()
-                        VStack(spacing: 14) {
+            if vm.kiteIsAppear {
+                if isStartPlay {
+                    VStack {
+                        HStack {
                             Button {
-                                vm.kiteMoveUp()
-                                // TODO: stretch kite
+                                showPauseModal.toggle()
                             } label: {
-                                TarikUlurButton(firstColor: "00608B", secondColor: "0099BB", text: "Ulur", isRotate: true)
+                                SettingButton()
                             }
                             
+                            Spacer()
                             
-                            Button {
-                                vm.kiteMoveFront()
-                                // TODO: pull kite
-                            } label: {
+                            ZStack {
+                                CoinIndicatorFrame(coinCount: vm.coinGame)
                                 
-                                TarikUlurButton(firstColor: "FC3E45", secondColor: "BA2424", text: "Tarik", isRotate: false)
                             }
                         }
-                    }
-                    }else{
-                        VStack{
-                            Text("")
-                            HStack{
+                        
+                        Spacer()
+                        
+                        if !vm.collectionVM.gestures {
+                            HStack(alignment: .bottom) {
+                                Spacer()
+                                Spacer()
+                                VStack(spacing: 14) {
+                                    Button {
+                                        vm.kiteMoveUp()
+                                        // TODO: stretch kite
+                                    } label: {
+                                        TarikUlurButton(firstColor: "00608B", secondColor: "0099BB", text: "Ulur", isRotate: true)
+                                    }
+                                    
+                                    
+                                    Button {
+                                        vm.kiteMoveFront()
+                                        // TODO: pull kite
+                                    } label: {
+                                        
+                                        TarikUlurButton(firstColor: "FC3E45", secondColor: "BA2424", text: "Tarik", isRotate: false)
+                                    }
+                                }
+                            }
+                        }else{
+                            VStack{
+                                Text("")
+                                HStack{
+                                    Spacer()
+                                }
                                 Spacer()
                             }
-                            Spacer()
+                            .background(color)
+                            .gesture(
+                                DragGesture()
+                                    .onChanged({ value in
+                                        if position.height > 0 {
+                                            pullPush = "Pull"
+                                            //                                    color = Color.green.opacity(0.2)
+                                            //                                    print("Pull is triggered")
+                                        }else if position.height < 0 {
+                                            pullPush = "Stretch"
+                                            //                                    color = Color.red.opacity(0.2)
+                                            //                                    print("Stretch is triggered")
+                                        }
+                                        position = value.translation
+                                    })
+                                    .onEnded(({ value in
+                                        if pullPush == "Pull"{
+                                            vm.pullRotateThread()
+                                            vm.kiteMoveFront()
+                                        }else if pullPush == "Stretch"{
+                                            vm.stretchRotateThread()
+                                            vm.kiteMoveUp()
+                                        }
+                                        pullPush = "None"
+                                        //                                color = Color.blue.opacity(0.2)
+                                        position = .zero
+                                    })
+                                            )
+                            )
                         }
-                        .background(color)
-                        .gesture(
-                            DragGesture()
-                                .onChanged({ value in
-                                    if position.height > 0 {
-                                        pullPush = "Pull"
-                                        //                                    color = Color.green.opacity(0.2)
-                                        //                                    print("Pull is triggered")
-                                    }else if position.height < 0 {
-                                        pullPush = "Stretch"
-                                        //                                    color = Color.red.opacity(0.2)
-                                        //                                    print("Stretch is triggered")
-                                    }
-                                    position = value.translation
-                                })
-                                .onEnded(({ value in
-                                    if pullPush == "Pull"{
-                                        vm.pullRotateThread()
-                                        vm.kiteMoveFront()
-                                    }else if pullPush == "Stretch"{
-                                        vm.stretchRotateThread()
-                                        vm.kiteMoveUp()
-                                    }
-                                    pullPush = "None"
-                                    //                                color = Color.blue.opacity(0.2)
-                                    position = .zero
-                                })
-                                        )
-                        )
-                    }
-                } .padding()
-            } else {
-                VStack {
-                    Spacer()
-                    
-                    Button {
-                        //TODO: kiteBoost
-                        vm.kiteFlyStart()
+                    } .padding()
+                } else {
+                    VStack {
+                        Spacer()
                         
-                        withAnimation {
-                            isStartPlay.toggle()
-                            
-                        //haptic
-//                            let impact = UIImpactFeedbackGenerator(style: .heavy)
-//                            impact.impactOccurred()
-                            let haptic = UINotificationFeedbackGenerator()
-                            haptic.notificationOccurred(.success)
-                            prepareHaptics()
-                            complexSuccess()
-                            
-                            
+                        Button {
+                            if vm.showInstruction {
+                                vm.showInstruction.toggle()
+                                instructionVideoName = ""
+                            } else {
+                                //TODO: kiteBoost
+                                vm.kiteFlyStart()
+                                
+                                withAnimation {
+                                    isStartPlay.toggle()
+                                    let haptic = UINotificationFeedbackGenerator()
+                                    haptic.notificationOccurred(.success)
+                                    prepareHaptics()
+                                    complexSuccess()
+                                    
+                                }
+                            }
+                        } label: {
+                            MainMenuButton(firstColor: "0099BB",
+                                           secondColor: "00608B",
+                                           bgColor: "00496B",
+                                           width: 264,
+                                           height: 78,
+                                           text: (vm.showInstruction && instructionVideoName != "") ? "LEWATI" : "TERBANG"
+                            )
                         }
-                    } label: {
-                        MainMenuButton(firstColor: "0099BB",
-                                       secondColor: "00608B",
-                                       bgColor: "00496B",
-                                       width: 264,
-                                       height: 78,
-                                       text: "TERBANG"
-                        )
-                    }
-                    
-                    
-                    
-                } .padding(.bottom, 50)
+                    } .padding(.bottom, 50)
+                }
             }
-            
-            
+        }
+        .onAppear {
+            self.sound = Sound(avAudioPlayer1: $audioPlayer, avAudioPlayer2: $audioPlayer2, musicAudio: $musicPlayer)
+            self.vm.sound = self.sound
+            self.sound.playMusic()
+        }.onDisappear{
+            self.sound.stopMusic()
         }
         .modifier(
             Popup(isPresented: showPauseModal, alignment: .center, content: {
                 PauseARView(showPause: $showPauseModal, ARView: $vm.arView)
+            })
+        )
+        .modifier(
+            Popup(isPresented: vm.showInstruction, alignment: .center, content: {
+                VideoView(videoName: $instructionVideoName)
+            })
+        )
+        .modifier(
+            Popup(isPresented: vm.gameOver, alignment: .center, content: {
+                GameOver(
+                    coinCount: vm.coinGame,
+                    lanjutkanAction: {
+                        // TODO: - LOAD ULANG GAME
+                        
+                    },
+                    akhiriAction: {
+                        DispatchQueue.main.async {
+//                            ARView.scene.anchors.removeAll()
+                            vm.arView.scene.anchors.removeAll()
+                        }
+                    }
+                ).onAppear {
+                    UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+                }
+                    
             })
         )
     }
@@ -197,10 +220,5 @@ struct FloralKiteView : View {
             print("Failed to play pattern: \(error.localizedDescription).")
         }
     }
-    
 }
-
-
-
-
 

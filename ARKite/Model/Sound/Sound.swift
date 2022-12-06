@@ -14,12 +14,13 @@ struct Sound{
     @Binding var avAudioPlayer1: AVAudioPlayer!
     @Binding var avAudioPlayer2: AVAudioPlayer!
     @Binding var musicAudio: AVAudioPlayer!
+    @ObservedObject var CollectVM = CollectionViewModel()
     
     
     func getAvAudioPlayer(soundName: String, soundType: String) -> AVAudioPlayer{
         let sound = Bundle.main.path(forResource: soundName, ofType: soundType)
         let audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
-//        audioPlayer.volume = volumeSFX
+        audioPlayer.volume = CollectVM.volumeSFX
         
         return audioPlayer
     }
@@ -61,7 +62,7 @@ struct Sound{
         let sound = Bundle.main.path(forResource: "KiteSong", ofType: "wav")
         musicAudio = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
         musicAudio.numberOfLoops =  -1 // set your count here
-        musicAudio.volume = 0.2
+        musicAudio.volume = CollectVM.volumeMusic
         musicAudio.play()
     }
     

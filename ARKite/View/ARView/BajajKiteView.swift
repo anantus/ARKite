@@ -21,10 +21,13 @@ struct BajajKiteView : View {
     @State var position = CGSize.zero
     @State var color = Color.white.opacity(0.0001)
     @State var pullPush = "None"
-    
     @State var showPauseModal = false
     @State private var engine: CHHapticEngine?
     @State var instructionVideoName = "Instruction1NEW"
+    @State var audioPlayer: AVAudioPlayer?
+    @State var audioPlayer2: AVAudioPlayer?
+    @State var musicPlayer: AVAudioPlayer?
+    @State var sound: Sound!
     
     
     var body: some View {
@@ -50,17 +53,9 @@ struct BajajKiteView : View {
                             }
                         }
                         
-//                        if vm.gameOver{
-//                            // TODO: - GAME OVER
-//                            GameOver(coinCount: 100)
-//                                .onAppear{
-//                                    UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-//                                }
-//                        }
-                        
                         Spacer()
                         
-                        if useButton {
+                        if !vm.collectionVM.gestures {
                             HStack(alignment: .bottom) {
                                 Spacer()
                                 Spacer()
@@ -127,16 +122,6 @@ struct BajajKiteView : View {
                         
                         Button {
                             if vm.showInstruction {
-//                                if instructionVideoName == "Instruction1NEW" {
-//
-//                                    Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { _ in
-//                                        instructionVideoName = "Instruction2NEW"
-//                                    }
-//
-//                                } else {
-//                                    vm.showInstruction.toggle()
-//                                    instructionVideoName = ""
-//                                }
                                 vm.showInstruction.toggle()
                                 instructionVideoName = ""
                             } else {
@@ -161,11 +146,16 @@ struct BajajKiteView : View {
                                            text: (vm.showInstruction && instructionVideoName != "") ? "LEWATI" : "TERBANG"
                             )
                         }
-                        
-                        
                     } .padding(.bottom, 50)
                 }
             }
+        }
+        .onAppear {
+            self.sound = Sound(avAudioPlayer1: $audioPlayer, avAudioPlayer2: $audioPlayer2, musicAudio: $musicPlayer)
+            self.vm.sound = self.sound
+            self.sound.playMusic()
+        }.onDisappear{
+            self.sound.stopMusic()
         }
         .modifier(
             Popup(isPresented: showPauseModal, alignment: .center, content: {
@@ -183,9 +173,9 @@ struct BajajKiteView : View {
                     coinCount: vm.coinGame,
                     lanjutkanAction: {
                         // TODO: - LOAD ULANG GAME
+                        
                     },
                     akhiriAction: {
-                        // TODO: - BALIK KE MAIN MENU
                         DispatchQueue.main.async {
 //                            ARView.scene.anchors.removeAll()
                             vm.arView.scene.anchors.removeAll()

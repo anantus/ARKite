@@ -1,9 +1,10 @@
 //
-//  ARViewModel.swift
+//  KiteViewModel
 //  ARKite
 //
 //  Created by Maheswara Ananta Argono on 28/11/22.
 //
+
 import SwiftUI
 import RealityKit
 import ARKit
@@ -14,30 +15,35 @@ class RedYellowKiteViewModel: ObservableObject {
     @Published fileprivate var obstacle: Entity
     @Published fileprivate var isForward = false
     @Published fileprivate var isRotate = false
-    @Published var sound: Sound!
     @Published var gameOver = false
+    @Published var sound: Sound!
     @Published var addCoin = true
     @Published var coinGame = 0
+    @Published var showInstruction = false
+    @Published var kiteIsAppear: Bool = false
     
     fileprivate var initialKitePosition = SIMD3<Float>(0,0,0)
-    fileprivate var collectionVM = CollectionViewModel()
-    
-    
-    
+    var collectionVM = CollectionViewModel()
     let mainAnchor = try! Experience.loadRedYellowKite()
-    var arView = ARView(frame: .zero)
-    
     let threadSpool = try! ModelEntity.load(named: "GULUNGAN")
     fileprivate let initialPosition = SIMD3<Float>(0,0,0)
+    var arView = ARView(frame: .zero)
     
     //Initialize untuk ambil entity
     init(){
         self.kite = mainAnchor.findEntity(named: "kite")!
         self.obstacle = mainAnchor.findEntity(named: "obstacle")!
         self.randomCoinPosition(kite)
+        self.changeKiteStatus()
     }
     
-    
+    func changeKiteStatus() {
+        mainAnchor.actions.sceneStart.onAction = { _ in
+            self.kiteIsAppear.toggle()
+            self.showInstruction.toggle()
+        }
+
+    }
     //Function layangan untuk menjauh dari anchor
     func kiteMoveUp(){
         mainAnchor.notifications.moveUp.post()
@@ -55,6 +61,7 @@ class RedYellowKiteViewModel: ObservableObject {
         //Find kite Angle
         if isForward{
             self.initialKitePosition = kite.position
+            print(self.initialKitePosition)
             isRotate = false
             isForward = false
             
@@ -74,8 +81,8 @@ class RedYellowKiteViewModel: ObservableObject {
     }
     
     //Function untuk penerbangan kite awal
-    func kiteFlyStart(isThread: Bool){
-        if isThread{
+    func kiteFlyStart(){
+        if collectionVM.gestures{
             threadEntity()
         }
         mainAnchor.notifications.kiteStart.post()
@@ -86,6 +93,7 @@ class RedYellowKiteViewModel: ObservableObject {
     fileprivate func rotateOn(_ entity: Entity?){
         isRotate = true
         isForward = true
+        print(kite.position)
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
             if self.initialKitePosition.x < self.kite.position.x{
                 self.rotateRecursionClockwise(entity)
@@ -133,8 +141,6 @@ class RedYellowKiteViewModel: ObservableObject {
         animateCoin(entity)
         rotateOn(entity)
         mainAnchor.actions.showObstacleDone.onAction = obstacleAppear
-        
-        
     }
     
     fileprivate func obstacleAppear(_ entity: Entity?){
@@ -155,7 +161,6 @@ class RedYellowKiteViewModel: ObservableObject {
     
     //Function untuk menyalakan obstacle
     fileprivate func obstacleMove(_ entity: Entity?){
-        
         // after 10 seconds, show the osbtacle
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { secTimer in
             
@@ -180,17 +185,23 @@ class RedYellowKiteViewModel: ObservableObject {
             }
             
             self.mainAnchor.actions.gameOver.onAction = {_ in
+                
                 if self.gameOver == false{
-                    print("Game over!")
-                    self.gameOver = true
                     self.collectionVM.addCoin(coinsAfterGame: self.coinGame)
                     self.sound.playObstacleSound()
-                    self.sound.stopMusic()
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                    self.gameEnd()
                 }
             }
         }
     }
+    
+    func gameEnd(){
+        self.gameOver = true
+        self.sound.stopMusic()
+        self.arView.scene.anchors.removeAll()
+    }
+    
     
     
     //Function untuk mengubah posisi koin setelah collide

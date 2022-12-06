@@ -1,9 +1,10 @@
 //
-//  ARViewModel.swift
+//  KiteViewModel
 //  ARKite
 //
 //  Created by Maheswara Ananta Argono on 28/11/22.
 //
+
 import SwiftUI
 import RealityKit
 import ARKit
@@ -15,24 +16,18 @@ class BajajKiteViewModel: ObservableObject {
     @Published fileprivate var isForward = false
     @Published fileprivate var isRotate = false
     @Published var gameOver = false
+    @Published var sound: Sound!
     @Published var addCoin = true
     @Published var coinGame = 0
     @Published var showInstruction = false
-    
-    
     @Published var kiteIsAppear: Bool = false
     
     fileprivate var initialKitePosition = SIMD3<Float>(0,0,0)
-    fileprivate var collectionVM = CollectionViewModel()
-    
+    var collectionVM = CollectionViewModel()
     let mainAnchor = try! Experience.loadBajajKite()
-    var arView = ARView(frame: .zero)
-    
-    
-    
-    
     let threadSpool = try! ModelEntity.load(named: "GULUNGAN")
     fileprivate let initialPosition = SIMD3<Float>(0,0,0)
+    var arView = ARView(frame: .zero)
     
     //Initialize untuk ambil entity
     init(){
@@ -49,8 +44,6 @@ class BajajKiteViewModel: ObservableObject {
         }
 
     }
-    
-    
     //Function layangan untuk menjauh dari anchor
     func kiteMoveUp(){
         mainAnchor.notifications.moveUp.post()
@@ -89,7 +82,9 @@ class BajajKiteViewModel: ObservableObject {
     
     //Function untuk penerbangan kite awal
     func kiteFlyStart(){
-        threadEntity()
+        if collectionVM.gestures{
+            threadEntity()
+        }
         mainAnchor.notifications.kiteStart.post()
         mainAnchor.actions.kiteStartEnd.onAction = startGameInitiate
     }
@@ -146,8 +141,6 @@ class BajajKiteViewModel: ObservableObject {
         animateCoin(entity)
         rotateOn(entity)
         mainAnchor.actions.showObstacleDone.onAction = obstacleAppear
-        
-        
     }
     
     fileprivate func obstacleAppear(_ entity: Entity?){
@@ -192,12 +185,23 @@ class BajajKiteViewModel: ObservableObject {
             }
             
             self.mainAnchor.actions.gameOver.onAction = {_ in
-                print("Game over!")
-                self.gameOver = true
-                self.collectionVM.addCoin(coinsAfterGame: self.coinGame)
+                
+                if self.gameOver == false{
+                    self.collectionVM.addCoin(coinsAfterGame: self.coinGame)
+                    self.sound.playObstacleSound()
+                    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                    self.gameEnd()
+                }
             }
         }
     }
+    
+    func gameEnd(){
+        self.gameOver = true
+        self.sound.stopMusic()
+        self.arView.scene.anchors.removeAll()
+    }
+    
     
     
     //Function untuk mengubah posisi koin setelah collide
@@ -214,6 +218,7 @@ class BajajKiteViewModel: ObservableObject {
                         let posZ1 = Float.random(in: -15 ... -10)
                         entity.position = SIMD3<Float>(posX1,posY1,posZ1)
                         self.coinGame += 1
+                        self.sound.playCoinSound()
                         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { secTimer in
                             self.mainAnchor.notifications.showCoin.post()
                             self.addCoin = true

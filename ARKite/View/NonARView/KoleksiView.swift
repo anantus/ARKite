@@ -13,8 +13,8 @@ struct KoleksiView: View {
         GridItem(.flexible()),
         GridItem(.flexible()),
     ]
-    @ObservedObject var vm = CollectionViewModel()
-    
+    @StateObject var vm = CollectionViewModel()
+    @State var isBoughtKite: [Bool]?
     
     var body: some View {
         ZStack {
@@ -61,7 +61,7 @@ struct KoleksiView: View {
                         
                         if item%2 == 1{
                             Button{
-                                if (!bought && (vm.coins > vm.kiteCollection[item].price)){
+                                if (!bought && (vm.coins >= vm.kiteCollection[item].price)){
                                     vm.buyKite(kiteName: vm.kiteCollection[item].name)
                                 }
                             }label: {
@@ -78,7 +78,7 @@ struct KoleksiView: View {
                                 
                         } else{
                             Button{
-                                if (!bought && (vm.coins > vm.kiteCollection[item].price)){
+                                if (!bought && (vm.coins >= vm.kiteCollection[item].price)){
                                     vm.buyKite(kiteName: vm.kiteCollection[item].name)
                                 }
                             }label: {
