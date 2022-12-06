@@ -39,7 +39,7 @@ struct LayanganFrame1: View {
                         .shadow(radius: 3)
                     Image("\(picture)")
                         .resizable()
-                        .frame(width: UIScreen.main.bounds.width * (2.6/10),height: UIScreen.main.bounds.height * (1.3/10))
+                        .frame(width: UIScreen.main.bounds.width * (2.6/10),height: UIScreen.main.bounds.height * (1.5/10))
                         .rotationEffect(.degrees(30))
                         .padding(.top, 8)
                         .padding(.trailing, 5)

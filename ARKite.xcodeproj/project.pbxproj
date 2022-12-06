@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43136020293E27F7004E5CA9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4313601F293E27F7004E5CA9 /* Launch Screen.storyboard */; };
+		432AF709293E1BF000CADD4A /* KoleksiViewforiPhone8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AF708293E1BF000CADD4A /* KoleksiViewforiPhone8.swift */; };
+		432AF70B293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AF70A293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift */; };
+		432AF70D293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AF70C293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift */; };
 		4343E0852938B74500382834 /* DashboardViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0842938B74500382834 /* DashboardViewV2.swift */; };
 		4343E087293995AC00382834 /* KoleksiMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E086293995AC00382834 /* KoleksiMenuButton.swift */; };
 		4343E08929399D0C00382834 /* KoleksiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E08829399D0C00382834 /* KoleksiView.swift */; };
@@ -72,6 +76,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4313601F293E27F7004E5CA9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		43136021293E2C5E004E5CA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		432AF708293E1BF000CADD4A /* KoleksiViewforiPhone8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiViewforiPhone8.swift; sourceTree = "<group>"; };
+		432AF70A293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiViewforiPhoneXS.swift; sourceTree = "<group>"; };
+		432AF70C293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiViewforiPhone13.swift; sourceTree = "<group>"; };
 		4343E0842938B74500382834 /* DashboardViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewV2.swift; sourceTree = "<group>"; };
 		4343E086293995AC00382834 /* KoleksiMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiMenuButton.swift; sourceTree = "<group>"; };
 		4343E08829399D0C00382834 /* KoleksiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiView.swift; sourceTree = "<group>"; };
@@ -184,9 +193,13 @@
 		438F0B22291F753D007551F5 /* NonARView */ = {
 			isa = PBXGroup;
 			children = (
+				4313601F293E27F7004E5CA9 /* Launch Screen.storyboard */,
 				569C0BCA293755D800FE5767 /* SettingVARView.swift */,
 				4343E0842938B74500382834 /* DashboardViewV2.swift */,
 				4343E08829399D0C00382834 /* KoleksiView.swift */,
+				432AF708293E1BF000CADD4A /* KoleksiViewforiPhone8.swift */,
+				432AF70A293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift */,
+				432AF70C293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift */,
 				4343E08A29399D3500382834 /* SettingNonARView.swift */,
 				43873E99293C82D100C147A1 /* Popup.swift */,
 				569E71AE293A05C7002ABD26 /* VideoView.swift */,
@@ -231,6 +244,7 @@
 		553EFF1828FD60EF00E54FA1 /* ARKite */ = {
 			isa = PBXGroup;
 			children = (
+				43136021293E2C5E004E5CA9 /* Info.plist */,
 				569E71B4293A070F002ABD26 /* Video */,
 				5544090E2935089B00674C81 /* Model */,
 				5544090D2935089000674C81 /* ViewModel */,
@@ -395,6 +409,7 @@
 				553EFF2328FD60F100E54FA1 /* Preview Assets.xcassets in Resources */,
 				553EFF2028FD60F100E54FA1 /* Assets.xcassets in Resources */,
 				5509D3B62937654E00E16F6F /* GULUNGAN.usdz in Resources */,
+				43136020293E27F7004E5CA9 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,10 +439,12 @@
 				4343E0952939C25900382834 /* BackButton.swift in Sources */,
 				553D3FC4293C98E10086A1D2 /* FloralKiteView.swift in Sources */,
 				553D3FB8293B924D0086A1D2 /* PilihKiteButton.swift in Sources */,
+				432AF70D293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift in Sources */,
 				554409082935034F00674C81 /* Experience.rcproject in Sources */,
 				4343E08F29399EC100382834 /* SettingButton.swift in Sources */,
 				56F2D76F293D03F900097DE4 /* PauseARView.swift in Sources */,
 				554409142935373C00674C81 /* SettingsViewModel.swift in Sources */,
+				432AF709293E1BF000CADD4A /* KoleksiViewforiPhone8.swift in Sources */,
 				553D3FBA293C96AA0086A1D2 /* StripeKiteViewModel.swift in Sources */,
 				43873E9A293C82D100C147A1 /* Popup.swift in Sources */,
 				4343E09D2939D67D00382834 /* GunakanButton.swift in Sources */,
@@ -449,6 +466,7 @@
 				4343E0932939A5B400382834 /* NavigationKoleksiFrame.swift in Sources */,
 				4343E0A12939F1A000382834 /* BuyButton.swift in Sources */,
 				554409122935372000674C81 /* CollectionViewModel.swift in Sources */,
+				432AF70B293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift in Sources */,
 				4343E0972939CCBF00382834 /* LayanganFrame1.swift in Sources */,
 				56C65439293A890F00C9557D /* GameOver.swift in Sources */,
 				43873E9C293C8ED900C147A1 /* ChooseKiteAR.swift in Sources */,
@@ -584,12 +602,12 @@
 				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ARKite/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -616,12 +634,12 @@
 				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ARKite/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
