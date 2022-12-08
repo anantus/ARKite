@@ -21,9 +21,9 @@ struct DashboardView: View {
     
     var body: some View {
         NavigationView {
-            ZStack{
-                VStack{
-                    ZStack{
+            ZStack {
+                VStack {
+                    ZStack {
                         Image("CloudNew2")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -192,6 +192,7 @@ struct DashboardViewV2_Previews: PreviewProvider {
                        DashboardView()
                             .previewDevice(PreviewDevice(rawValue: deviceName))
                             .previewDisplayName(deviceName)
+                            .environmentObject(CollectionViewModel())
                   }
     }
 }
