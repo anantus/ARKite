@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DashboardViewV2: View {
+struct DashboardView: View {
     @State var showSettingNonARView = false
     @ObservedObject var collectVM = CollectionViewModel()
     
