@@ -47,13 +47,13 @@ struct KoleksiViewforiPhone13: View {
                         .blur(radius: 5)
                     NavigationKoleksiFrame()
                         .position(x: UIScreen.main.bounds.width * 0.49,y: UIScreen.main.bounds.height * -0.55)
-                    
+
                     HStack (spacing: 200) {
                         Button {
                             print(UIDevice.current.name)
                             self.showKoleksi.wrappedValue.dismiss()
                         } label: {
-                            
+
                             BackButton()
                         }
                         CoinIndicatorFrame(coinCount: vm.coins)
@@ -61,10 +61,10 @@ struct KoleksiViewforiPhone13: View {
                     .position(
                         x: UIScreen.main.bounds.width * (0.5),
                         y: UIScreen.main.bounds.height * (-0.39))
-                    
-                    
+
+
                 }
-                
+
             }
             
             VStack{
@@ -114,7 +114,7 @@ struct KoleksiViewforiPhone13: View {
                         }
                     }
                 }
-                .padding(.top, UIScreen.main.bounds.height * 0.1)
+                .padding(.top, UIScreen.main.bounds.height * 0.22)
                 .padding(.horizontal)
                 .frame(maxHeight: 300)
             }
@@ -124,6 +124,6 @@ struct KoleksiViewforiPhone13: View {
 
 struct KoleksiViewforiPhone13_Previews: PreviewProvider {
     static var previews: some View {
-        KoleksiViewforiPhone13()
+        KoleksiViewforiPhone13(vm: CollectionViewModel())
     }
 }

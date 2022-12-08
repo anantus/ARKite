@@ -154,6 +154,6 @@ struct KoleksiViewforiPhone8: View {
 
 struct KoleksiViewforiPhone8_Previews: PreviewProvider {
     static var previews: some View {
-        KoleksiViewforiPhone8()
+        KoleksiViewforiPhone8(vm: CollectionViewModel())
     }
 }

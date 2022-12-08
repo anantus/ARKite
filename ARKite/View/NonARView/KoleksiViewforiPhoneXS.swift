@@ -110,8 +110,7 @@ struct KoleksiViewforiPhoneXS: View {
                         }
                     }
                 }
-                }
-                .padding(.top, UIScreen.main.bounds.height * 0.18)
+                .padding(.top, UIScreen.main.bounds.height * 0.22)
                 .padding(.horizontal)
                 .frame(maxHeight: 300)
             }
@@ -121,6 +120,6 @@ struct KoleksiViewforiPhoneXS: View {
 
 struct KoleksiViewforiPhoneXS_Previews: PreviewProvider {
     static var previews: some View {
-        KoleksiViewforiPhoneXS()
+        KoleksiViewforiPhoneXS(vm: CollectionViewModel())
     }
 }
