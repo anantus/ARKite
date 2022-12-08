@@ -16,7 +16,7 @@ class CollectionViewModel: ObservableObject{
     @Published var coins = 22
     @Published var kiteCollection = [
         Kite(name: "RedYellowKite", price: 0, picture: "Kite 2", isBought: false),
-        Kite(name: "StripeKite", price: 0, picture: "Kite 1", isBought: false),
+        Kite(name: "StripeKite", price: 0, picture: "Kite 1", isBought: true),
         Kite(name: "BajajKite", price: 20, picture: "Kite 4", isBought: false),
         Kite(name: "FloralKite", price: 5, picture: "Kite 3", isBought: false),
     ]

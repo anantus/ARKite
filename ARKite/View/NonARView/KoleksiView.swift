@@ -12,8 +12,6 @@ struct KoleksiView: View {
         GridItem(.flexible()),
         GridItem(.flexible()),
     ]
-//    let vm = CollectionViewModel()
-    
 //    let kiteCount: [Int]
 //
 //
@@ -25,13 +23,13 @@ struct KoleksiView: View {
     var body: some View {
         ZStack {
             if UIDevice.current.name == "iPhone 8" || UIDevice.current.name == "iPhone SE" || UIDevice.current.name == "iPhone 8 Plus"   {
-               KoleksiViewforiPhone8(vm: vm)
+               KoleksiViewforiPhone8()
             }
             else if UIDevice.current.name == "iPhone Xs" || UIDevice.current.name == "iPhone 13 mini" || UIDevice.current.name == "iPhone 12 mini" || UIDevice.current.name == "iPhone 11 Pro" || UIDevice.current.name == "iPhone X" {
-                KoleksiViewforiPhoneXS(vm: vm)
+                KoleksiViewforiPhoneXS()
             }
             else {
-               KoleksiViewforiPhone13(vm: vm)
+               KoleksiViewforiPhone13()
             }
             
         }
