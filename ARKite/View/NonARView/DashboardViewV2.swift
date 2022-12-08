@@ -189,7 +189,7 @@ struct DashboardView: View {
 struct DashboardViewV2_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(["iPhone 8", "iPhone 8 Plus", "iPhone 13", "iPhone XS", "iPhone 11 Pro Max", "iPhone 12 Pro Max", "iPhone 14 Pro", "iPhone 14 Pro Max"], id: \.self) { deviceName in
-                       DashboardViewV2()
+                       DashboardView()
                             .previewDevice(PreviewDevice(rawValue: deviceName))
                             .previewDisplayName(deviceName)
                   }
