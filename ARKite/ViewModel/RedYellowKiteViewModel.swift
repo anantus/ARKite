@@ -11,6 +11,8 @@ import ARKit
 import Combine
 
 class RedYellowKiteViewModel: ObservableObject {
+    let mainAnchor = try! Experience.loadRedYellowKite()
+    
     @Published fileprivate var kite: Entity
     @Published fileprivate var obstacle: Entity
     @Published fileprivate var isForward = false
@@ -23,11 +25,11 @@ class RedYellowKiteViewModel: ObservableObject {
     @Published var kiteIsAppear: Bool = false
     
     fileprivate var initialKitePosition = SIMD3<Float>(0,0,0)
-    var collectionVM = CollectionViewModel()
-    let mainAnchor = try! Experience.loadRedYellowKite()
     let threadSpool = try! ModelEntity.load(named: "GULUNGAN")
     fileprivate let initialPosition = SIMD3<Float>(0,0,0)
     var arView: ARView?
+    
+    @ObservedObject var collectionVM = CollectionViewModel()
     
     //Initialize untuk ambil entity
     init(){
@@ -203,7 +205,12 @@ class RedYellowKiteViewModel: ObservableObject {
     func gameEnd(){
         self.gameOver = true
         self.sound.stopMusic()
-        self.arView!.scene.anchors.removeAll()
+        if let arView = self.arView {
+            arView.scene.anchors.removeAll()
+            arView.removeFromSuperview()
+            
+        }
+        
         self.arView = nil
     }
     

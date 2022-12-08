@@ -1,5 +1,5 @@
 //
-//  BajajKiteView.swift
+//  KiteView
 //  ARKite
 //
 //  Created by Maheswara Ananta Argono on 17/10/22.
@@ -28,14 +28,17 @@ struct BajajKiteView : View {
     @State var audioPlayer2: AVAudioPlayer?
     @State var musicPlayer: AVAudioPlayer?
     @State var sound: Sound!
+    @State var onStartAR = false
     
     
     var body: some View {
         ZStack {
-            ARViewContainer(arView: vm.arView, anchor: vm.mainAnchor)
+            if let arView = self.vm.arView{
+                ARViewContainer(arView: arView, anchor: vm.mainAnchor)
+            }
             
             // Buttons UI
-            if vm.kiteIsAppear {
+            if vm.kiteIsAppear && !vm.gameOver {
                 if isStartPlay {
                     VStack {
                         HStack {
@@ -155,7 +158,7 @@ struct BajajKiteView : View {
             self.vm.sound = self.sound
             self.sound.playMusic()
         }.onDisappear{
-            self.sound.stopMusic()
+            self.vm.gameEnd()
         }
         .modifier(
             Popup(isPresented: showPauseModal, alignment: .center, content: {

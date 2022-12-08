@@ -10,11 +10,12 @@ import SwiftUI
 
 struct ChooseKiteAR: View {
     @Environment(\.presentationMode) var showChooseKite
-    @ObservedObject var vm = CollectionViewModel()
+//    @ObservedObject var vm = CollectionViewModel()
     @State private var snappedItem = 0.0
     @State private var draggingItem = 0.0
     @State var pickedKite: String = ""
     @EnvironmentObject var coordinator: Coordinator
+    @EnvironmentObject var vm: CollectionViewModel
     
     var body: some View {
         NavigationView {
@@ -106,6 +107,16 @@ struct ChooseKiteAR: View {
                             }
                         }
                 )
+//                Button{
+//                    coordinator.displayLoadKite(loadKite: pickedKite)
+//                }label :{
+//                    MainMenuButton(firstColor: "0099BB",
+//                                   secondColor: "00608B",
+//                                   bgColor: "00496B",
+//                                   width: 266,
+//                                   height: 72,
+//                                   text: "MULAI")
+//                }
                 NavigationLink {
                     LoadKiteView(kiteName: pickedKite).navigationBarBackButtonHidden(true)
                 } label: {

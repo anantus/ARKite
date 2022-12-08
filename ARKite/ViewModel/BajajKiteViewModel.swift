@@ -11,6 +11,8 @@ import ARKit
 import Combine
 
 class BajajKiteViewModel: ObservableObject {
+    let mainAnchor = try! Experience.loadBajajKite()
+    
     @Published fileprivate var kite: Entity
     @Published fileprivate var obstacle: Entity
     @Published fileprivate var isForward = false
@@ -23,14 +25,15 @@ class BajajKiteViewModel: ObservableObject {
     @Published var kiteIsAppear: Bool = false
     
     fileprivate var initialKitePosition = SIMD3<Float>(0,0,0)
-    var collectionVM = CollectionViewModel()
-    let mainAnchor = try! Experience.loadBajajKite()
     let threadSpool = try! ModelEntity.load(named: "GULUNGAN")
     fileprivate let initialPosition = SIMD3<Float>(0,0,0)
-    var arView = ARView(frame: .zero)
+    var arView: ARView?
+    
+    @ObservedObject var collectionVM = CollectionViewModel()
     
     //Initialize untuk ambil entity
     init(){
+        arView = ARView(frame: .zero)
         self.kite = mainAnchor.findEntity(named: "kite")!
         self.obstacle = mainAnchor.findEntity(named: "obstacle")!
         self.randomCoinPosition(kite)
@@ -167,30 +170,33 @@ class BajajKiteViewModel: ObservableObject {
             let kitePosition = self.kite.position(relativeTo: nil)
             let obstaclePosition = self.obstacle.position(relativeTo: nil)
             
-            
-            if kitePosition.x > obstaclePosition.x{
-                self.mainAnchor.notifications.plusXObstacle.post()
-            }else{
-                self.mainAnchor.notifications.minXObstacle.post()
-            }
-            if kitePosition.y > obstaclePosition.y{
-                self.mainAnchor.notifications.plusYObstacle.post()
-            }else{
-                self.mainAnchor.notifications.minYObstacle.post()
-            }
-            if kitePosition.z > obstaclePosition.z{
-                self.mainAnchor.notifications.plusZObstacle.post()
-            }else{
-                self.mainAnchor.notifications.minZObstacle.post()
+            if !self.gameOver{
+                if kitePosition.x > obstaclePosition.x{
+                    self.mainAnchor.notifications.plusXObstacle.post()
+                }else{
+                    self.mainAnchor.notifications.minXObstacle.post()
+                }
+                if kitePosition.y > obstaclePosition.y{
+                    self.mainAnchor.notifications.plusYObstacle.post()
+                }else{
+                    self.mainAnchor.notifications.minYObstacle.post()
+                }
+                if kitePosition.z > obstaclePosition.z{
+                    self.mainAnchor.notifications.plusZObstacle.post()
+                }else{
+                    self.mainAnchor.notifications.minZObstacle.post()
+                }
+            }else {
+                secTimer.invalidate()
             }
             
             self.mainAnchor.actions.gameOver.onAction = {_ in
-                
                 if self.gameOver == false{
                     self.collectionVM.addCoin(coinsAfterGame: self.coinGame)
                     self.sound.playObstacleSound()
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                     self.gameEnd()
+                    
                 }
             }
         }
@@ -199,7 +205,13 @@ class BajajKiteViewModel: ObservableObject {
     func gameEnd(){
         self.gameOver = true
         self.sound.stopMusic()
-        self.arView.scene.anchors.removeAll()
+        if let arView = self.arView {
+            arView.scene.anchors.removeAll()
+            arView.removeFromSuperview()
+            
+        }
+        
+        self.arView = nil
     }
     
     
@@ -232,7 +244,7 @@ class BajajKiteViewModel: ObservableObject {
     fileprivate func threadEntity(){
         let cameraAnchor = AnchorEntity(.camera)
         cameraAnchor.addChild(threadSpool)
-        arView.scene.addAnchor(cameraAnchor)
+        arView!.scene.addAnchor(cameraAnchor)
         threadSpool.transform.scale *= 0.002
         threadSpool.transform.translation = [0, -0.2, -0.3]
     }

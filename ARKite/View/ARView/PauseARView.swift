@@ -100,10 +100,6 @@ struct PauseARView: View {
                     
                     
                     Button {
-//                        DispatchQueue.main.async {
-//                            ARView.scene.anchors.removeAll()
-//                            
-//                        }
                         coordinator.popToHomePage()
 
                     } label: {

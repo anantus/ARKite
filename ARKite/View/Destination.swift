@@ -9,10 +9,10 @@ import Foundation
 
 enum Destination: Hashable {
     case chooseKiteAR
-//    case loadKiteView(String)
+    case loadKiteView(String)
     case koleksiView
-//    case redYellowKiteView
-//    case stripeKiteView
-//    case bajajKiteView
-//    case floralKiteView
+    case redYellowKiteView
+    case stripeKiteView
+    case bajajKiteView
+    case floralKiteView
 }

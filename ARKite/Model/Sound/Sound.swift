@@ -14,7 +14,7 @@ struct Sound{
     @Binding var avAudioPlayer1: AVAudioPlayer!
     @Binding var avAudioPlayer2: AVAudioPlayer!
     @Binding var musicAudio: AVAudioPlayer!
-    @ObservedObject var CollectVM = CollectionViewModel()
+    var CollectVM =  CollectionViewModel()
     
     
     func getAvAudioPlayer(soundName: String, soundType: String) -> AVAudioPlayer{

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Yanggo: View {
     @ObservedObject var coordinator = Coordinator()
+    @ObservedObject var collectVM = CollectionViewModel()
     
     var body: some View {
         NavigationStack(path: $coordinator.path) {
@@ -21,6 +22,7 @@ struct Yanggo: View {
                 }
         }
         .environmentObject(coordinator)
+        .environmentObject(collectVM)
     }
 }
 

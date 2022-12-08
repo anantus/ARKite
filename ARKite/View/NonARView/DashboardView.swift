@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DashboardView: View {
     @State var showSettingNonARView = false
-    @ObservedObject var collectVM = CollectionViewModel()
+    @EnvironmentObject var collectVM : CollectionViewModel
     @EnvironmentObject var coordinator : Coordinator
     
     var body: some View {

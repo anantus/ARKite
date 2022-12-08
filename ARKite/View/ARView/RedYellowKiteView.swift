@@ -1,5 +1,5 @@
 //
-//  BajajKiteView.swift
+//  KiteView
 //  ARKite
 //
 //  Created by Maheswara Ananta Argono on 17/10/22.
@@ -33,10 +33,11 @@ struct RedYellowKiteView : View {
     
     var body: some View {
         ZStack {
-            ARViewContainer(arView: vm.arView!, anchor: vm.mainAnchor)
-            
+            if let arView = self.vm.arView{
+                ARViewContainer(arView: arView, anchor: vm.mainAnchor)
+            }
             // Buttons UI
-            if vm.kiteIsAppear {
+            if vm.kiteIsAppear && !vm.gameOver {
                 if isStartPlay {
                     VStack {
                         HStack {
@@ -177,9 +178,6 @@ struct RedYellowKiteView : View {
                         
                     },
                     akhiriAction: {
-                        DispatchQueue.main.async {
-//                            ARView.scene.anchors.removeAll()
-                        }
                     }
                 ).onAppear {
                     UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
