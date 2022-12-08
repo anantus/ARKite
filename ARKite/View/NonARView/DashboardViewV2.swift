@@ -88,7 +88,7 @@ struct DashboardView: View {
                                                 })
                                             }
                                         }
-                                        print("DEBUG: KITEPOS: \(kitePos)")
+//                                        print("DEBUG: KITEPOS: \(kitePos)")
                                     })
                             }
                         HStack(spacing: 200){
@@ -163,7 +163,7 @@ struct DashboardView: View {
                                 })
                             }
                         }
-                        print("DEBUG: CLOUDPOS: \(cloudPos)")
+//                        print("DEBUG: CLOUDPOS: \(cloudPos)")
                     })
             }
             

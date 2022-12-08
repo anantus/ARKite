@@ -13,8 +13,8 @@ class CollectionViewModel: ObservableObject{
     @Published var kiteCollection = [
         Kite(name: "RedYellowKite", price: 0, picture: "Kite 2", isBought: true),
         Kite(name: "StripeKite", price: 0, picture: "Kite 1", isBought: true),
-        Kite(name: "BajajKite", price: 0, picture: "Kite 4", isBought: true),
-        Kite(name: "FloralKite", price: 300, picture: "Kite 3", isBought: false),
+        Kite(name: "BajajKite", price: 0, picture: "Kite 4", isBought: false),
+        Kite(name: "FloralKite", price: 0, picture: "Kite 3", isBought: false),
     ]
     
     @Published var volumeSFX: Float = 1.0

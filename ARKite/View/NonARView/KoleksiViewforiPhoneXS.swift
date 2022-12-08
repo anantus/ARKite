@@ -13,14 +13,9 @@ struct KoleksiViewforiPhoneXS: View {
         GridItem(.flexible()),
         GridItem(.flexible()),
     ]
-    let vm = CollectionViewModel()
     
-    let kiteCount: [Int]
-    
-    
-    init(){
-        kiteCount = Array(1...vm.kiteCollection.count)
-    }
+    @State var vm : CollectionViewModel
+    @State var isPicked = -1
     
     var body: some View {
         ZStack {
@@ -68,34 +63,42 @@ struct KoleksiViewforiPhoneXS: View {
             
             VStack{
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(kiteCount, id: \.self) { item in
-                        
-                        
+                    ForEach(Array(1...vm.kiteCollection.count), id: \.self) { item in
+                        let isChosen = (isPicked == item)
                         if item%2 == 1{
-                            let bought = vm.kiteCollection[item-1].isBought
-                            LayanganFrame1(firstColor: bought ? "FBC300" : "FFFADF",
-                                           secondColor: bought ? "FEB914" : "E1DAB2",
-                                           thirdColor: bought ? "FFF7C6" : "FFF9D5",
-                                           bgColor: bought ? "BB8800" : "857D4C",
+                            let bought = (vm.kiteCollection[item-1].isBought)
+                            LayanganFrame1(firstColor: bought||isChosen ? "FBC300" : "FFFADF",
+                                           secondColor: bought||isChosen ? "FEB914" : "E1DAB2",
+                                           thirdColor: bought||isChosen ? "FFF7C6" : "FFF9D5",
+                                           bgColor: bought||isChosen ? "BB8800" : "857D4C",
                                            width: 164,
                                            height: 210,
-                                           picture: vm.kiteCollection[item-1].picture, bought: bought, prices: vm.kiteCollection[item-1].price)
+                                           picture: vm.kiteCollection[item-1].picture, bought: bought||isChosen, prices: vm.kiteCollection[item-1].price)
+                            .onTapGesture {
+                                vm.buyKite(kiteName: vm.kiteCollection[item-1].name)
+                                isPicked = item
+                            }
                             
                         } else{
                             let bought = vm.kiteCollection[item-1].isBought
-                            LayanganFrame2(firstColor: bought ? "FBC300" : "FFFADF",
-                                           secondColor: bought ? "FEB914" : "E1DAB2",
-                                           thirdColor: bought ? "FFF7C6" : "FFF9D5",
-                                           bgColor: bought ? "BB8800" : "857D4C",
+                            LayanganFrame2(firstColor: bought||isChosen ? "FBC300" : "FFFADF",
+                                           secondColor: bought||isChosen ? "FEB914" : "E1DAB2",
+                                           thirdColor: bought||isChosen ? "FFF7C6" : "FFF9D5",
+                                           bgColor: bought||isChosen ? "BB8800" : "857D4C",
                                            width: 164,
                                            height: 206,
                                            picture: vm.kiteCollection[item-1].picture, bought: bought, prices: vm.kiteCollection[item-1].price)
+                            .onTapGesture {
+                                vm.buyKite(kiteName: vm.kiteCollection[item-1].name)
+                                isPicked = item
+                            }
+                            
                         }
                         
                         
                     }
                 }
-                .padding(.top, UIScreen.main.bounds.height * 0.18)
+                .padding(.top, UIScreen.main.bounds.height * 0.22)
                 .padding(.horizontal)
                 .frame(maxHeight: 300)
             }
@@ -105,6 +108,6 @@ struct KoleksiViewforiPhoneXS: View {
 
 struct KoleksiViewforiPhoneXS_Previews: PreviewProvider {
     static var previews: some View {
-        KoleksiViewforiPhoneXS()
+        KoleksiViewforiPhoneXS(vm: CollectionViewModel())
     }
 }

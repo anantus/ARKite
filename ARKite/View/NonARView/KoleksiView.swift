@@ -26,13 +26,13 @@ struct KoleksiView: View {
     var body: some View {
         ZStack {
             if UIDevice.current.name == "iPhone 8" || UIDevice.current.name == "iPhone SE" || UIDevice.current.name == "iPhone 8 Plus"   {
-               KoleksiViewforiPhone8()
+               KoleksiViewforiPhone8(vm: vm)
             }
             else if UIDevice.current.name == "iPhone Xs" || UIDevice.current.name == "iPhone 13 mini" || UIDevice.current.name == "iPhone 12 mini" || UIDevice.current.name == "iPhone 11 Pro" || UIDevice.current.name == "iPhone X" {
-                KoleksiViewforiPhoneXS()
+                KoleksiViewforiPhoneXS(vm: vm)
             }
             else {
-               KoleksiViewforiPhone13()
+               KoleksiViewforiPhone13(vm: vm)
             }
             
         }
