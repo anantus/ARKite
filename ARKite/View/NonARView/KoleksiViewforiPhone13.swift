@@ -13,14 +13,15 @@ struct KoleksiViewforiPhone13: View {
         GridItem(.flexible()),
         GridItem(.flexible()),
     ]
-    let vm = CollectionViewModel()
-    
-    let kiteCount: [Int]
-    
-    
-    init(){
-        kiteCount = Array(1...vm.kiteCollection.count)
-    }
+//    let vm = CollectionViewModel()
+//
+//    let kiteCount: [Int]
+//
+//
+//    init(){
+//        kiteCount = Array(1...vm.kiteCollection.count)
+//    }
+    @StateObject var vm = CollectionViewModel.shared
     
     var body: some View {
         ZStack{
@@ -68,31 +69,49 @@ struct KoleksiViewforiPhone13: View {
             
             VStack{
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(kiteCount, id: \.self) { item in
-                        
-                        
-                        if item%2 == 1{
-                            let bought = vm.kiteCollection[item-1].isBought
-                            LayanganFrame1(firstColor: bought ? "FBC300" : "FFFADF",
-                                           secondColor: bought ? "FEB914" : "E1DAB2",
-                                           thirdColor: bought ? "FFF7C6" : "FFF9D5",
-                                           bgColor: bought ? "BB8800" : "857D4C",
-                                           width: 164,
-                                           height: 210,
-                                           picture: vm.kiteCollection[item-1].picture, bought: bought, prices: vm.kiteCollection[item-1].price)
-                            
-                        } else{
-                            let bought = vm.kiteCollection[item-1].isBought
-                            LayanganFrame2(firstColor: bought ? "FBC300" : "FFFADF",
-                                           secondColor: bought ? "FEB914" : "E1DAB2",
-                                           thirdColor: bought ? "FFF7C6" : "FFF9D5",
-                                           bgColor: bought ? "BB8800" : "857D4C",
+                    
+                    ForEach(0..<vm.kiteCollection.count, id: \.self) {index in
+                        if index % 2 == 1 {
+                            LayanganFrame1(firstColor: vm.kiteCollection[index].isBought ? "FBC300" : "FFFADF",
+                                           secondColor: vm.kiteCollection[index].isBought ? "FEB914" : "E1DAB2",
+                                           thirdColor: vm.kiteCollection[index].isBought ? "FFF7C6" : "FFF9D5",
+                                           bgColor: vm.kiteCollection[index].isBought ? "BB8800" : "857D4C",
                                            width: 164,
                                            height: 206,
-                                           picture: vm.kiteCollection[item-1].picture, bought: bought, prices: vm.kiteCollection[item-1].price)
+                                           picture: vm.kiteCollection[index].picture,
+                                           bought: vm.kiteCollection[index].isBought,
+                                           prices: vm.kiteCollection[index].price
+                            )
+                            .onTapGesture {
+                                if !vm.kiteCollection[index].isBought {
+                                    if vm.coins >= vm.kiteCollection[index].price {
+                                        vm.buyKite(kiteName: vm.kiteCollection[index].name)
+                                    }
+                                    // cek lagi kalau uang cukup atau gak
+                                    
+                                }
+                            }
+                        } else {
+                            LayanganFrame2(firstColor: vm.kiteCollection[index].isBought ? "FBC300" : "FFFADF",
+                                           secondColor: vm.kiteCollection[index].isBought ? "FEB914" : "E1DAB2",
+                                           thirdColor: vm.kiteCollection[index].isBought ? "FFF7C6" : "FFF9D5",
+                                           bgColor: vm.kiteCollection[index].isBought ? "BB8800" : "857D4C",
+                                           width: 164,
+                                           height: 206,
+                                           picture: vm.kiteCollection[index].picture,
+                                           bought: $vm.kiteCollection[index].isBought,
+                                           prices: vm.kiteCollection[index].price
+                            )
+                            .onTapGesture {
+                                if !vm.kiteCollection[index].isBought {
+                                    if vm.coins >= vm.kiteCollection[index].price {
+                                        vm.buyKite(kiteName: vm.kiteCollection[index].name)
+                                    }
+                                    // cek lagi kalau uang cukup atau gak
+                                    
+                                }
+                            }
                         }
-                        
-                        
                     }
                 }
                 .padding(.top, UIScreen.main.bounds.height * 0.1)

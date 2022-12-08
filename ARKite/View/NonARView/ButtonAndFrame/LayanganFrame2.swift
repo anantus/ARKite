@@ -15,7 +15,7 @@ struct LayanganFrame2: View {
     @State var width: CGFloat
     @State var height: CGFloat
     @State var picture: String
-    @State var bought: Bool
+    @Binding var bought: Bool
     @State var prices: Int
     
     var body: some View {
@@ -130,6 +130,6 @@ struct FrameInner2: Shape {
 
 struct LayanganFrame2_Previews: PreviewProvider {
     static var previews: some View {
-        LayanganFrame2(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 196, picture: "Kite 2", bought: false, prices: 100)
+        LayanganFrame2(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 196, picture: "Kite 2", bought: .constant(false), prices: 100)
     }
 }

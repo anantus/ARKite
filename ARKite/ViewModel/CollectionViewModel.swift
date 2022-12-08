@@ -9,12 +9,16 @@ import Foundation
 import SwiftUI
 
 class CollectionViewModel: ObservableObject{
-    @Published var coins = 0
+    
+    // create shared
+    static let shared = CollectionViewModel()
+    
+    @Published var coins = 22
     @Published var kiteCollection = [
-        Kite(name: "RedYellowKite", price: 0, picture: "Kite 2", isBought: true),
-        Kite(name: "StripeKite", price: 0, picture: "Kite 1", isBought: true),
-        Kite(name: "BajajKite", price: 0, picture: "Kite 4", isBought: true),
-        Kite(name: "FloralKite", price: 300, picture: "Kite 3", isBought: false),
+        Kite(name: "RedYellowKite", price: 0, picture: "Kite 2", isBought: false),
+        Kite(name: "StripeKite", price: 0, picture: "Kite 1", isBought: false),
+        Kite(name: "BajajKite", price: 20, picture: "Kite 4", isBought: false),
+        Kite(name: "FloralKite", price: 5, picture: "Kite 3", isBought: false),
     ]
     
     @Published var volumeSFX: Float = 1.0
@@ -29,6 +33,8 @@ class CollectionViewModel: ObservableObject{
         volumeSFX = keys.defaults.value(forKey: Keys.volumeSFX) as? Float ?? 1.0
         volumeMusic = keys.defaults.value(forKey: Keys.volumeMusic) as? Float ?? 1.0
         gestures = keys.defaults.bool(forKey: Keys.gestures)
+        
+        setUserCoin(coinSet: 22)
         
         if let data = keys.defaults.value(forKey: Keys.kiteCollection) as? Data {
             kiteCollection = try! PropertyListDecoder().decode([Kite].self, from: data)

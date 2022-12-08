@@ -13,11 +13,10 @@ struct KoleksiView: View {
         GridItem(.flexible()),
     ]
 //    let vm = CollectionViewModel()
-    @EnvironmentObject var vm : CollectionViewModel
     
 //    let kiteCount: [Int]
-//    
-//    
+//
+//
 //    init(){
 //        kiteCount = Array(1...vm.kiteCollection.count)
 //    }

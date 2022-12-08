@@ -18,6 +18,7 @@ struct DashboardView: View {
     @State private var reverseCloudAnimation = true
     @State private var kitePos = 0.9
     @State private var reverseKiteAnimation = true
+    @State private var invalidateTimer = false
     
     var body: some View {
         NavigationView {
@@ -89,6 +90,10 @@ struct DashboardView: View {
                                             }
                                         }
                                         print("DEBUG: KITEPOS: \(kitePos)")
+                                        
+                                        if invalidateTimer {
+                                            animationTimer.invalidate()
+                                        }
                                     })
                             }
                         HStack(spacing: 200){
@@ -164,9 +169,14 @@ struct DashboardView: View {
                             }
                         }
                         print("DEBUG: CLOUDPOS: \(cloudPos)")
+                        if invalidateTimer {
+                            animationTimer.invalidate()
+                        }
                     })
             }
-            
+            .onDisappear {
+                invalidateTimer.toggle()
+            }
         }
         .modifier(
             Popup(isPresented: showSettingNonARView,
