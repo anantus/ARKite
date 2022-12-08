@@ -64,6 +64,18 @@ struct PauseARView: View {
                         
                         
                     }
+                    
+                    HStack {
+                        Text("KONTROL")
+                            .font(.system(.body, design: .default, weight: .bold))
+                            .foregroundColor(Color.init(hex: "8B2E00"))
+                        
+                        Spacer()
+                        // SLIDER
+                        CustomSwitchButton(gesture: $selectedGesture)
+                            .padding(.trailing, 10)
+                        
+                    }
                 }
                 
                 
@@ -107,9 +119,7 @@ struct PauseARView: View {
                     }
                     
                     
-                }
-                
-                Spacer()
+                } .padding(.vertical, 10)
             }
             .padding(.vertical, 40)
             .padding(.horizontal, 20)
