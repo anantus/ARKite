@@ -79,6 +79,7 @@ struct BajajKiteView : View {
                                         TarikUlurButton(firstColor: "FC3E45", secondColor: "BA2424", text: "Tarik", isRotate: false)
                                     }
                                 }
+                                .padding(.bottom, 50)
                             }
                         }else{
                             VStack{

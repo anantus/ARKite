@@ -18,6 +18,7 @@ struct DashboardView: View {
     @State private var reverseCloudAnimation = true
     @State private var kitePos = 0.9
     @State private var reverseKiteAnimation = true
+    @State private var invalidateTimer = false
     
     //Buat GameKit
     let localPlayer = GKLocalPlayer.local
@@ -91,7 +92,11 @@ struct DashboardView: View {
                                                 })
                                             }
                                         }
-//                                        print("DEBUG: KITEPOS: \(kitePos)")
+                                        print("DEBUG: KITEPOS: \(kitePos)")
+                                        
+                                        if invalidateTimer {
+                                            animationTimer.invalidate()
+                                        }
                                     })
                             }
                         HStack(spacing: 200){
@@ -166,10 +171,15 @@ struct DashboardView: View {
                                 })
                             }
                         }
-//                        print("DEBUG: CLOUDPOS: \(cloudPos)")
+                        print("DEBUG: CLOUDPOS: \(cloudPos)")
+                        if invalidateTimer {
+                            animationTimer.invalidate()
+                        }
                     })
             }
-            
+            .onDisappear {
+                invalidateTimer.toggle()
+            }
         }
         .onAppear{
             authenticateUser()
