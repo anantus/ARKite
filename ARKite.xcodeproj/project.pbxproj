@@ -131,6 +131,7 @@
 		554409112935372000674C81 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		554409132935373C00674C81 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		5544091729360B0A00674C81 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
+		55BE4D1D2942309A00F76E72 /* ARKite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ARKite.entitlements; sourceTree = "<group>"; };
 		55D8B01F2940A4DA00488793 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		55D8B0212940A4EB00488793 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		55D8B0252940A7D900488793 /* Yanggo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yanggo.swift; sourceTree = "<group>"; };
@@ -252,6 +253,7 @@
 		553EFF1828FD60EF00E54FA1 /* ARKite */ = {
 			isa = PBXGroup;
 			children = (
+				55BE4D1D2942309A00F76E72 /* ARKite.entitlements */,
 				43136021293E2C5E004E5CA9 /* Info.plist */,
 				569E71B4293A070F002ABD26 /* Video */,
 				5544090E2935089B00674C81 /* Model */,
@@ -612,6 +614,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ARKite/ARKite.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
@@ -644,10 +647,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ARKite/ARKite.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
-				DEVELOPMENT_TEAM = KFD27J2TGQ;
+				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ARKite/Info.plist;

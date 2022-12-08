@@ -9,6 +9,7 @@ import SwiftUI
 import RealityKit
 import ARKit
 import Combine
+import GameKit
 
 class StripeKiteViewModel: ObservableObject {
     let mainAnchor = try! Experience.loadStripeKite()
@@ -194,6 +195,15 @@ class StripeKiteViewModel: ObservableObject {
                 if self.gameOver == false{
                     self.collectionVM.addCoin(coinsAfterGame: self.coinGame)
                     self.sound.playObstacleSound()
+                    
+                    GKLeaderboard.submitScore(
+                        self.coinGame,
+                        context: 0,
+                        player: GKLocalPlayer.local,
+                        leaderboardIDs: ["yangcoinhighscore"],
+                        completionHandler: {_ in
+                            print("Success?")})
+                    
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                     self.gameEnd()
                     
@@ -205,6 +215,7 @@ class StripeKiteViewModel: ObservableObject {
     func gameEnd(){
         self.gameOver = true
         self.sound.stopMusic()
+        
         if let arView = self.arView {
             arView.scene.anchors.removeAll()
             arView.removeFromSuperview()

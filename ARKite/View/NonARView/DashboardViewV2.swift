@@ -4,7 +4,7 @@
 //
 //  Created by Amalia . on 01/12/22.
 //
-
+import GameKit
 import SwiftUI
 
 struct DashboardView: View {
@@ -18,6 +18,9 @@ struct DashboardView: View {
     @State private var reverseCloudAnimation = true
     @State private var kitePos = 0.9
     @State private var reverseKiteAnimation = true
+    
+    //Buat GameKit
+    let localPlayer = GKLocalPlayer.local
     
     var body: some View {
         NavigationView {
@@ -168,6 +171,15 @@ struct DashboardView: View {
             }
             
         }
+        .onAppear{
+            authenticateUser()
+            GKAccessPoint.shared.location = .bottomLeading
+            GKAccessPoint.shared.showHighlights = true
+            GKAccessPoint.shared.isActive = true
+        }
+        .onDisappear{
+            GKAccessPoint.shared.isActive = false
+        }
         .modifier(
             Popup(isPresented: showSettingNonARView,
                   alignment: .center,
@@ -177,6 +189,16 @@ struct DashboardView: View {
             )
         )
         
+    }
+    
+    func authenticateUser() {
+        localPlayer.authenticateHandler = { vc, error in
+            guard error == nil else {
+                print(error?.localizedDescription ?? "")
+                return
+            }
+            GKAccessPoint.shared.isActive = localPlayer.isAuthenticated
+        }
     }
     
     
