@@ -9,8 +9,7 @@ import SwiftUI
 
 struct DashboardView: View {
     @State var showSettingNonARView = false
-    @EnvironmentObject var collectVM : CollectionViewModel
-    @EnvironmentObject var coordinator : Coordinator
+    @ObservedObject var collectVM = CollectionViewModel()
     
     
     // TODO: - ANIMATION SETUP
@@ -112,18 +111,19 @@ struct DashboardView: View {
                 if !showSettingNonARView {
 
                     VStack{
-                        Button{
-                            coordinator.displayChooseKite()
-                        } label: {
+                        NavigationLink{
+                            //                        GameView()
+                            ChooseKiteAR()
+                        }label: {
                             MainMenuButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 262, height: 78, text: "MAIN")
                         }
                         
-                        Button{
-                            coordinator.displayKoleksiView()
-                        }label:{
+                        NavigationLink{
+                            KoleksiView()
+                            
+                        }label: {
                             KoleksiMenuButton(firstColor: "15B10F", secondColor: "0F7B20", bgColor: "106514", width: 264, height: 82, text: "KOLEKSI")
                         }
-                        
                     }
                     .offset(y: 50)
                 }
