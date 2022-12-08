@@ -28,7 +28,6 @@ struct VideoView: View {
 struct PlayerView: UIViewRepresentable {
     let videoName: String
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PlayerView>) {
-        
     }
     
     func makeUIView(context: Context) -> UIView {
