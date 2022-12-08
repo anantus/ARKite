@@ -10,8 +10,8 @@ import RealityKit
 import ARKit
 
 struct ARViewContainer: UIViewRepresentable {
-    @State var arView: ARView
-    @State var anchor: (Entity & HasAnchoring)
+    var arView: ARView
+    var anchor: (Entity & HasAnchoring)
     
     func makeUIView(context: Context) -> ARView {
         

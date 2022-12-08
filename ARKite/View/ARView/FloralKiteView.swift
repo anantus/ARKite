@@ -159,7 +159,7 @@ struct FloralKiteView : View {
         }
         .modifier(
             Popup(isPresented: showPauseModal, alignment: .center, content: {
-                PauseARView(showPause: $showPauseModal, ARView: $vm.arView)
+                PauseARView(showPause: $showPauseModal)
             })
         )
         .modifier(

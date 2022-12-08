@@ -14,6 +14,7 @@ struct ChooseKiteAR: View {
     @State private var snappedItem = 0.0
     @State private var draggingItem = 0.0
     @State var pickedKite: String = ""
+    @EnvironmentObject var coordinator: Coordinator
     
     var body: some View {
         NavigationView {
@@ -105,7 +106,6 @@ struct ChooseKiteAR: View {
                             }
                         }
                 )
-                
                 NavigationLink {
                     LoadKiteView(kiteName: pickedKite).navigationBarBackButtonHidden(true)
                 } label: {
@@ -136,9 +136,9 @@ struct ChooseKiteAR: View {
 struct ChooseKiteAR_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(["iPhone 8", "iPhone 14 Pro Max"], id: \.self) { deviceName in
-                       ChooseKiteAR()
-                            .previewDevice(PreviewDevice(rawValue: deviceName))
-                            .previewDisplayName(deviceName)
-                  }
+            ChooseKiteAR()
+                .previewDevice(PreviewDevice(rawValue: deviceName))
+                .previewDisplayName(deviceName)
+        }
     }
 }

@@ -159,7 +159,7 @@ struct BajajKiteView : View {
         }
         .modifier(
             Popup(isPresented: showPauseModal, alignment: .center, content: {
-                PauseARView(showPause: $showPauseModal, ARView: $vm.arView)
+                PauseARView(showPause: $showPauseModal)
             })
         )
         .modifier(
@@ -178,7 +178,6 @@ struct BajajKiteView : View {
                     akhiriAction: {
                         DispatchQueue.main.async {
 //                            ARView.scene.anchors.removeAll()
-                            vm.arView.scene.anchors.removeAll()
                         }
                     }
                 ).onAppear {

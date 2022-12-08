@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct KoleksiView: View {
-    @Environment(\.presentationMode) var showKoleksi
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),

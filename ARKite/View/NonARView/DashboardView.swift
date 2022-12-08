@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct DashboardViewV2: View {
+struct DashboardView: View {
     @State var showSettingNonARView = false
     @ObservedObject var collectVM = CollectionViewModel()
+    @EnvironmentObject var coordinator : Coordinator
     
     var body: some View {
         NavigationView {
@@ -59,19 +60,18 @@ struct DashboardViewV2: View {
                 if !showSettingNonARView {
 
                     VStack{
-                        NavigationLink{
-                            //                        GameView()
-                            ChooseKiteAR()
-                        }label: {
+                        Button{
+                            coordinator.displayChooseKite()
+                        } label: {
                             MainMenuButton(firstColor: "0099BB", secondColor: "00608B", bgColor: "00496B", width: 262, height: 78, text: "MAIN")
                         }
                         
-                        NavigationLink{
-                            KoleksiView()
-                            
-                        }label: {
+                        Button{
+                            coordinator.displayKoleksiView()
+                        }label:{
                             KoleksiMenuButton(firstColor: "15B10F", secondColor: "0F7B20", bgColor: "106514", width: 264, height: 82, text: "KOLEKSI")
                         }
+                        
                     }
                     .offset(y: 50)
                 }
@@ -95,17 +95,3 @@ struct DashboardViewV2: View {
     
     
 }
-
-
-
-
-
-//struct DashboardViewV2_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ForEach(["iPhone 8", "iPhone 8 Plus", "iPhone 13", "iPhone XS", "iPhone 11 Pro Max", "iPhone 12 Pro Max", "iPhone 14 Pro", "iPhone 14 Pro Max"], id: \.self) { deviceName in
-//                       DashboardViewV2()
-//                            .previewDevice(PreviewDevice(rawValue: deviceName))
-//                            .previewDisplayName(deviceName)
-//                  }
-//    }
-//}

@@ -11,13 +11,14 @@ import ARKit
 
 struct PauseARView: View {
     @Binding var showPause: Bool
-    @Binding var ARView: ARView
     
     @Environment(\.presentationMode) var showKoleksi
     
     @State var musicVolume: Float = 0.7
     @State var soundEffectVolume: Float = 0.6
     @State var selectedGesture: GestureSetting = .classic
+    
+    @EnvironmentObject var coordinator : Coordinator
     
     var body: some View {
         ZStack {
@@ -99,23 +100,20 @@ struct PauseARView: View {
                     
                     
                     Button {
-                        DispatchQueue.main.async {
-                            ARView.scene.anchors.removeAll()
-                        }
+//                        DispatchQueue.main.async {
+//                            ARView.scene.anchors.removeAll()
+//                            
+//                        }
+                        coordinator.popToHomePage()
 
                     } label: {
-                        NavigationLink {
-                            
-                            DashboardViewV2().navigationBarBackButtonHidden(true)
-                        }label: {
-                            SecondaryButton(firstColor: "FC3E45",
-                                            secondColor: "BA2424",
-                                            bgColor: "9C1C1C",
-                                            width: 246,
-                                            height: 61,
-                                            text: "Akhiri Permainan"
-                            )
-                        }
+                        SecondaryButton(firstColor: "FC3E45",
+                                        secondColor: "BA2424",
+                                        bgColor: "9C1C1C",
+                                        width: 246,
+                                        height: 61,
+                                        text: "Akhiri Permainan"
+                        )
                     }
                     
                     
@@ -132,7 +130,7 @@ struct PauseARView: View {
 
 struct PauseARView_Previews: PreviewProvider {
     static var previews: some View {
-        PauseARView(showPause: .constant(false), ARView: .constant(ARView()))
+        PauseARView(showPause: .constant(false))
     }
 }
 

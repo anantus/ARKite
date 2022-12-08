@@ -11,7 +11,7 @@
 		432AF709293E1BF000CADD4A /* KoleksiViewforiPhone8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AF708293E1BF000CADD4A /* KoleksiViewforiPhone8.swift */; };
 		432AF70B293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AF70A293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift */; };
 		432AF70D293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AF70C293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift */; };
-		4343E0852938B74500382834 /* DashboardViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0842938B74500382834 /* DashboardViewV2.swift */; };
+		4343E0852938B74500382834 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E0842938B74500382834 /* DashboardView.swift */; };
 		4343E087293995AC00382834 /* KoleksiMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E086293995AC00382834 /* KoleksiMenuButton.swift */; };
 		4343E08929399D0C00382834 /* KoleksiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E08829399D0C00382834 /* KoleksiView.swift */; };
 		4343E08B29399D3500382834 /* SettingNonARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343E08A29399D3500382834 /* SettingNonARView.swift */; };
@@ -36,7 +36,6 @@
 		553D3FC0293C980E0086A1D2 /* StripeKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FBF293C980E0086A1D2 /* StripeKiteView.swift */; };
 		553D3FC2293C98760086A1D2 /* BajajKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC1293C98760086A1D2 /* BajajKiteView.swift */; };
 		553D3FC4293C98E10086A1D2 /* FloralKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC3293C98E10086A1D2 /* FloralKiteView.swift */; };
-		553D3FC8293CB0610086A1D2 /* LoadKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC7293CB0610086A1D2 /* LoadKiteView.swift */; };
 		553D3FCA293CFBBF0086A1D2 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D3FC9293CFBBF0086A1D2 /* Sound.swift */; };
 		553D3FD4293CFF6E0086A1D2 /* Obstacle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FCE293CFF6E0086A1D2 /* Obstacle.mp3 */; };
 		553D3FD5293CFF6E0086A1D2 /* Yah.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 553D3FCF293CFF6E0086A1D2 /* Yah.m4a */; };
@@ -56,6 +55,11 @@
 		554409122935372000674C81 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409112935372000674C81 /* CollectionViewModel.swift */; };
 		554409142935373C00674C81 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409132935373C00674C81 /* SettingsViewModel.swift */; };
 		5544091829360B0A00674C81 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544091729360B0A00674C81 /* DefaultKeys.swift */; };
+		55D8B0202940A4DA00488793 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8B01F2940A4DA00488793 /* Coordinator.swift */; };
+		55D8B0222940A4EB00488793 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8B0212940A4EB00488793 /* Destination.swift */; };
+		55D8B0262940A7D900488793 /* Yanggo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8B0252940A7D900488793 /* Yanggo.swift */; };
+		55D8B0282940AC4D00488793 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8B0272940AC4D00488793 /* ViewFactory.swift */; };
+		55D8B0482940CCF100488793 /* LoadKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8B0472940CCF100488793 /* LoadKiteView.swift */; };
 		55F31947293D7D6700F1CC06 /* KiteSong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 55F31946293D7D6700F1CC06 /* KiteSong.wav */; };
 		562030EE2935EACA0048BB69 /* ARView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562030ED2935EACA0048BB69 /* ARView+Extension.swift */; };
 		562030F02936116D0048BB69 /* TarikUlurButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562030EF2936116D0048BB69 /* TarikUlurButton.swift */; };
@@ -81,7 +85,7 @@
 		432AF708293E1BF000CADD4A /* KoleksiViewforiPhone8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiViewforiPhone8.swift; sourceTree = "<group>"; };
 		432AF70A293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiViewforiPhoneXS.swift; sourceTree = "<group>"; };
 		432AF70C293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiViewforiPhone13.swift; sourceTree = "<group>"; };
-		4343E0842938B74500382834 /* DashboardViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewV2.swift; sourceTree = "<group>"; };
+		4343E0842938B74500382834 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		4343E086293995AC00382834 /* KoleksiMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiMenuButton.swift; sourceTree = "<group>"; };
 		4343E08829399D0C00382834 /* KoleksiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoleksiView.swift; sourceTree = "<group>"; };
 		4343E08A29399D3500382834 /* SettingNonARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNonARView.swift; sourceTree = "<group>"; };
@@ -107,7 +111,6 @@
 		553D3FBF293C980E0086A1D2 /* StripeKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeKiteView.swift; sourceTree = "<group>"; };
 		553D3FC1293C98760086A1D2 /* BajajKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BajajKiteView.swift; sourceTree = "<group>"; };
 		553D3FC3293C98E10086A1D2 /* FloralKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloralKiteView.swift; sourceTree = "<group>"; };
-		553D3FC7293CB0610086A1D2 /* LoadKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadKiteView.swift; sourceTree = "<group>"; };
 		553D3FC9293CFBBF0086A1D2 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		553D3FCE293CFF6E0086A1D2 /* Obstacle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Obstacle.mp3; sourceTree = "<group>"; };
 		553D3FCF293CFF6E0086A1D2 /* Yah.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Yah.m4a; sourceTree = "<group>"; };
@@ -128,6 +131,11 @@
 		554409112935372000674C81 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		554409132935373C00674C81 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		5544091729360B0A00674C81 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
+		55D8B01F2940A4DA00488793 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		55D8B0212940A4EB00488793 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		55D8B0252940A7D900488793 /* Yanggo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yanggo.swift; sourceTree = "<group>"; };
+		55D8B0272940AC4D00488793 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		55D8B0472940CCF100488793 /* LoadKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadKiteView.swift; sourceTree = "<group>"; };
 		55F31946293D7D6700F1CC06 /* KiteSong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = KiteSong.wav; sourceTree = "<group>"; };
 		562030ED2935EACA0048BB69 /* ARView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView+Extension.swift"; sourceTree = "<group>"; };
 		562030EF2936116D0048BB69 /* TarikUlurButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarikUlurButton.swift; sourceTree = "<group>"; };
@@ -195,7 +203,7 @@
 			children = (
 				4313601F293E27F7004E5CA9 /* Launch Screen.storyboard */,
 				569C0BCA293755D800FE5767 /* SettingVARView.swift */,
-				4343E0842938B74500382834 /* DashboardViewV2.swift */,
+				4343E0842938B74500382834 /* DashboardView.swift */,
 				4343E08829399D0C00382834 /* KoleksiView.swift */,
 				432AF708293E1BF000CADD4A /* KoleksiViewforiPhone8.swift */,
 				432AF70A293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift */,
@@ -269,6 +277,10 @@
 				56AEAE7C29211BAE007424F4 /* Extensions */,
 				5544090A293507CE00674C81 /* ARView */,
 				438F0B22291F753D007551F5 /* NonARView */,
+				55D8B01F2940A4DA00488793 /* Coordinator.swift */,
+				55D8B0272940AC4D00488793 /* ViewFactory.swift */,
+				55D8B0212940A4EB00488793 /* Destination.swift */,
+				55D8B0252940A7D900488793 /* Yanggo.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,9 +293,9 @@
 				553D3FBF293C980E0086A1D2 /* StripeKiteView.swift */,
 				553EFF1B28FD60EF00E54FA1 /* RedYellowKiteView.swift */,
 				5544090B2935084300674C81 /* ARViewContainer.swift */,
-				553D3FC7293CB0610086A1D2 /* LoadKiteView.swift */,
 				43873E9B293C8ED900C147A1 /* ChooseKiteAR.swift */,
 				56F2D76E293D03F900097DE4 /* PauseARView.swift */,
+				55D8B0472940CCF100488793 /* LoadKiteView.swift */,
 			);
 			path = ARView;
 			sourceTree = "<group>";
@@ -424,6 +436,7 @@
 				55440910293508F200674C81 /* RedYellowKiteViewModel.swift in Sources */,
 				4343E087293995AC00382834 /* KoleksiMenuButton.swift in Sources */,
 				553D3FBC293C96E30086A1D2 /* FloralKiteViewModel.swift in Sources */,
+				55D8B0482940CCF100488793 /* LoadKiteView.swift in Sources */,
 				4343E0992939CCCE00382834 /* LayanganFrame2.swift in Sources */,
 				569C0BCF29376FC800FE5767 /* CustomSlider.swift in Sources */,
 				5652B47E2936622F00841BEC /* CoinIndicatorFrame.swift in Sources */,
@@ -442,16 +455,18 @@
 				432AF70D293E1DDC00CADD4A /* KoleksiViewforiPhone13.swift in Sources */,
 				554409082935034F00674C81 /* Experience.rcproject in Sources */,
 				4343E08F29399EC100382834 /* SettingButton.swift in Sources */,
+				55D8B0262940A7D900488793 /* Yanggo.swift in Sources */,
 				56F2D76F293D03F900097DE4 /* PauseARView.swift in Sources */,
 				554409142935373C00674C81 /* SettingsViewModel.swift in Sources */,
 				432AF709293E1BF000CADD4A /* KoleksiViewforiPhone8.swift in Sources */,
+				55D8B0222940A4EB00488793 /* Destination.swift in Sources */,
 				553D3FBA293C96AA0086A1D2 /* StripeKiteViewModel.swift in Sources */,
 				43873E9A293C82D100C147A1 /* Popup.swift in Sources */,
 				4343E09D2939D67D00382834 /* GunakanButton.swift in Sources */,
+				55D8B0202940A4DA00488793 /* Coordinator.swift in Sources */,
 				553D3FC0293C980E0086A1D2 /* StripeKiteView.swift in Sources */,
 				55440906293442AC00674C81 /* MainMenuButton.swift in Sources */,
 				56C65437293A7F5500C9557D /* CustomSwitchButton.swift in Sources */,
-				553D3FC8293CB0610086A1D2 /* LoadKiteView.swift in Sources */,
 				56481D2F2938BBE0004066E1 /* PrimaryButton.swift in Sources */,
 				569E71AF293A05C7002ABD26 /* VideoView.swift in Sources */,
 				43CD3A0A293BB22C000C358D /* PilihLayanganButton.swift in Sources */,
@@ -462,13 +477,14 @@
 				55287D7329365BB600E1FF66 /* KiteEntity.swift in Sources */,
 				553D3FC2293C98760086A1D2 /* BajajKiteView.swift in Sources */,
 				553D3FBE293C97310086A1D2 /* BajajKiteViewModel.swift in Sources */,
-				4343E0852938B74500382834 /* DashboardViewV2.swift in Sources */,
+				4343E0852938B74500382834 /* DashboardView.swift in Sources */,
 				4343E0932939A5B400382834 /* NavigationKoleksiFrame.swift in Sources */,
 				4343E0A12939F1A000382834 /* BuyButton.swift in Sources */,
 				554409122935372000674C81 /* CollectionViewModel.swift in Sources */,
 				432AF70B293E1D0800CADD4A /* KoleksiViewforiPhoneXS.swift in Sources */,
 				4343E0972939CCBF00382834 /* LayanganFrame1.swift in Sources */,
 				56C65439293A890F00C9557D /* GameOver.swift in Sources */,
+				55D8B0282940AC4D00488793 /* ViewFactory.swift in Sources */,
 				43873E9C293C8ED900C147A1 /* ChooseKiteAR.swift in Sources */,
 				56AEAE7B29211BA8007424F4 /* Color+Extension.swift in Sources */,
 			);

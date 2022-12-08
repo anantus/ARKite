@@ -11,7 +11,7 @@ struct GameOver: View {
     let coinCount: Int
     let lanjutkanAction: () -> Void
     let akhiriAction: () -> Void
-    
+    @EnvironmentObject var coordinator : Coordinator
     
     var body: some View {
         ZStack {
@@ -62,32 +62,24 @@ struct GameOver: View {
                 
                 // button lanjut dan akhiri
                 VStack {
-                    Button(action: lanjutkanAction) {
-                        NavigationLink{
-                            ChooseKiteAR()
-                        } label:{
-                            MainMenuButton(firstColor: "0099BB",
-                                           secondColor: "00608B",
-                                           bgColor: "00496B",
-                                           width: 248,
-                                           height: 65,
-                                           text: "LANJUTKAN"
-                            )
-                        }
+                    Button(action: {
+                        coordinator.playAgain()}) {
+                        MainMenuButton(firstColor: "0099BB",
+                                       secondColor: "00608B",
+                                       bgColor: "00496B",
+                                       width: 248,
+                                       height: 65,
+                                       text: "LANJUTKAN")
                     }
                     
-                    Button(action: akhiriAction) {
-                        NavigationLink {
-                            DashboardViewV2().navigationBarBackButtonHidden(true)
-                        }label: {
-                            SecondaryButton(firstColor: "FC3E45",
-                                            secondColor: "BA2424",
-                                            bgColor: "9C1C1C",
-                                            width: 246,
-                                            height: 61,
-                                            text: "AKHIRI PERMAINAN"
-                            )
-                        }
+                    Button(action: {
+                        coordinator.popToHomePage()}) {
+                        SecondaryButton(firstColor: "FC3E45",
+                                        secondColor: "BA2424",
+                                        bgColor: "9C1C1C",
+                                        width: 246,
+                                        height: 61,
+                                        text: "AKHIRI PERMAINAN")
                     }
                 }
                 .padding(.bottom, 26)
