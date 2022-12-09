@@ -66,18 +66,6 @@ struct PauseARView: View {
                         
                         
                     }
-                    
-                    HStack {
-                        Text("KONTROL")
-                            .font(.system(.body, design: .default, weight: .bold))
-                            .foregroundColor(Color.init(hex: "8B2E00"))
-                        
-                        Spacer()
-                        // SLIDER
-                        CustomSwitchButton(gesture: $selectedGesture)
-                            .padding(.trailing, 10)
-                        
-                    }
                 }
                 
                 
@@ -86,9 +74,10 @@ struct PauseARView: View {
                 // button lanjut dan akhiri
                 VStack(spacing: 20) {
                     Button {
-                        //TODO: -BACK TO THE GAME AND DISMISS MODAL
                         showPause.toggle()
                         sound?.changeVol(sfxVol: soundEffectVolume, musicVol: musicVolume)
+                        collectVM.volumeSFX = soundEffectVolume
+                        collectVM.volumeMusic = musicVolume
                     } label: {
                         PrimaryButton(firstColor: "0099BB",
                                       secondColor: "00608B",
@@ -103,7 +92,10 @@ struct PauseARView: View {
                     
                     Button {
                         coordinator.popToHomePage()
-
+                        sound?.changeVol(sfxVol: soundEffectVolume, musicVol: musicVolume)
+                        collectVM.volumeSFX = soundEffectVolume
+                        collectVM.volumeMusic = musicVolume
+                        
                     } label: {
                         SecondaryButton(firstColor: "FC3E45",
                                         secondColor: "BA2424",
@@ -115,7 +107,9 @@ struct PauseARView: View {
                     }
                     
                     
-                } .padding(.vertical, 10)
+                }
+                
+                Spacer()
             }
             .padding(.vertical, 40)
             .padding(.horizontal, 20)
@@ -129,4 +123,3 @@ struct PauseARView: View {
         
     }
 }
-
