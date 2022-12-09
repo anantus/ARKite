@@ -15,24 +15,9 @@ class ViewFactory {
         switch destination {
         case .chooseKiteAR:
             ChooseKiteAR()
-            
-        case .loadKiteView(let kiteName):
-            LoadKiteView(kiteName: kiteName).navigationBarBackButtonHidden(true)
         
         case .koleksiView:
             KoleksiView()
-            
-        case .redYellowKiteView:
-            RedYellowKiteView().navigationBarBackButtonHidden(true)
-            
-        case .stripeKiteView:
-            StripeKiteView().navigationBarBackButtonHidden(true)
-            
-        case .bajajKiteView:
-            BajajKiteView().navigationBarBackButtonHidden(true)
-            
-        case .floralKiteView:
-            FloralKiteView().navigationBarBackButtonHidden(true)
             
         }
         

@@ -163,7 +163,7 @@ struct BajajKiteView : View {
         }
         .modifier(
             Popup(isPresented: showPauseModal, alignment: .center, content: {
-                PauseARView(showPause: $showPauseModal)
+                PauseARView(showPause: $showPauseModal, sound: $sound)
             })
         )
         .modifier(

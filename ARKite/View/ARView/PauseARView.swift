@@ -16,9 +16,10 @@ struct PauseARView: View {
     
     @State var musicVolume: Float = 0.7
     @State var soundEffectVolume: Float = 0.6
-    @State var selectedGesture: GestureSetting = .classic
+    @Binding var sound : Sound?
     
     @EnvironmentObject var coordinator : Coordinator
+    @EnvironmentObject var collectVM : CollectionViewModel
     
     var body: some View {
         ZStack {
@@ -75,6 +76,7 @@ struct PauseARView: View {
                     Button {
                         //TODO: -BACK TO THE GAME AND DISMISS MODAL
                         showPause.toggle()
+                        sound?.changeVol(sfxVol: soundEffectVolume, musicVol: musicVolume)
                     } label: {
                         PrimaryButton(firstColor: "0099BB",
                                       secondColor: "00608B",
@@ -110,13 +112,11 @@ struct PauseARView: View {
             .frame(width: 355,height: 494, alignment: .center)
             
         }
+        .onAppear{
+            soundEffectVolume = self.collectVM.volumeSFX
+            musicVolume = self.collectVM.volumeMusic
+        }
         
-    }
-}
-
-struct PauseARView_Previews: PreviewProvider {
-    static var previews: some View {
-        PauseARView(showPause: .constant(false))
     }
 }
 
