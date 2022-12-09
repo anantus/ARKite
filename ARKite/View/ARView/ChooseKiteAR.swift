@@ -142,16 +142,6 @@ struct ChooseKiteAR: View {
                                 }
                             }
                     )
-                    //                Button{
-                    //                    coordinator.displayLoadKite(loadKite: pickedKite)
-                    //                }label :{
-                    //                    MainMenuButton(firstColor: "0099BB",
-                    //                                   secondColor: "00608B",
-                    //                                   bgColor: "00496B",
-                    //                                   width: 266,
-                    //                                   height: 72,
-                    //                                   text: "MULAI")
-                    //                }
                     
                     
                     NavigationLink {
