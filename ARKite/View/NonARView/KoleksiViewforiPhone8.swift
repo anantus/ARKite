@@ -15,7 +15,7 @@ struct KoleksiViewforiPhone8: View {
         GridItem(.flexible()),
     ]
     
-    @StateObject var vm = CollectionViewModel.shared
+    @EnvironmentObject var vm : CollectionViewModel
     @State private var showingPopup = false
     
 //    let kiteCount: [Int]
@@ -122,8 +122,8 @@ struct KoleksiViewforiPhone8: View {
     }
 }
 
-struct KoleksiViewforiPhone8_Previews: PreviewProvider {
-    static var previews: some View {
-        KoleksiViewforiPhone8(vm: CollectionViewModel())
-    }
-}
+//struct KoleksiViewforiPhone8_Previews: PreviewProvider {
+//    static var previews: some View {
+//        KoleksiViewforiPhone8(vm: CollectionViewModel())
+//    }
+//}

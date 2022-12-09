@@ -112,7 +112,12 @@ struct ChooseKiteAR: View {
                                             
                                         }
                                         .onTapGesture {
-                                            pickedKite = kite.picture
+                                            if pickedKite == ""{
+                                                pickedKite = kite.picture
+                                            } else {
+                                                pickedKite = ""
+                                            }
+                                            
                                             
                                         }
                                         
@@ -149,12 +154,22 @@ struct ChooseKiteAR: View {
                             LoadKiteView(kiteName: pickedKite).navigationBarBackButtonHidden(true)
                         }
                     } label: {
-                        MainMenuButton(firstColor: "0099BB",
-                                       secondColor: "00608B",
-                                       bgColor: "00496B",
-                                       width: 266,
-                                       height: 72,
-                                       text: "MULAI")
+                        if pickedKite != "" {
+                            MainMenuButton(firstColor: "0099BB",
+                                           secondColor: "00608B",
+                                           bgColor: "00496B",
+                                           width: 266,
+                                           height: 72,
+                                           text: "MULAI")
+                        } else {
+                            MainMenuButton(firstColor: "808080",
+                                           secondColor: "707070",
+                                           bgColor: "101010",
+                                           width: 266,
+                                           height: 72,
+                                           text: "MULAI")
+                        }
+                        
                         
                     }
                 }.padding(.bottom, 80)

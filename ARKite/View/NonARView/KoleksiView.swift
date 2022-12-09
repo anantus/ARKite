@@ -12,12 +12,6 @@ struct KoleksiView: View {
         GridItem(.flexible()),
         GridItem(.flexible()),
     ]
-//    let kiteCount: [Int]
-//
-//
-//    init(){
-//        kiteCount = Array(1...vm.kiteCollection.count)
-//    }
     
     
     var body: some View {
