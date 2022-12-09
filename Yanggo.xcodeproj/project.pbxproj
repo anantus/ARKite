@@ -131,7 +131,7 @@
 		554409112935372000674C81 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		554409132935373C00674C81 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		5544091729360B0A00674C81 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
-		55BE4D1D2942309A00F76E72 /* ARKite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ARKite.entitlements; sourceTree = "<group>"; };
+		55BE4D1D2942309A00F76E72 /* Yanggo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Yanggo.entitlements; sourceTree = "<group>"; };
 		55D8B01F2940A4DA00488793 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		55D8B0212940A4EB00488793 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		55D8B0252940A7D900488793 /* Yanggo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yanggo.swift; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 		553EFF0D28FD60EF00E54FA1 = {
 			isa = PBXGroup;
 			children = (
-				553EFF1828FD60EF00E54FA1 /* ARKite */,
+				553EFF1828FD60EF00E54FA1 /* Yanggo */,
 				553EFF1728FD60EF00E54FA1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -250,19 +250,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		553EFF1828FD60EF00E54FA1 /* ARKite */ = {
+		553EFF1828FD60EF00E54FA1 /* Yanggo */ = {
 			isa = PBXGroup;
 			children = (
-				55BE4D1D2942309A00F76E72 /* ARKite.entitlements */,
+				55BE4D1D2942309A00F76E72 /* Yanggo.entitlements */,
 				43136021293E2C5E004E5CA9 /* Info.plist */,
-				569E71B4293A070F002ABD26 /* Video */,
 				5544090E2935089B00674C81 /* Model */,
 				5544090D2935089000674C81 /* ViewModel */,
 				554409092935076A00674C81 /* View */,
 				553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */,
 				553EFF2128FD60F100E54FA1 /* Preview Content */,
 			);
-			path = ARKite;
+			path = Yanggo;
 			sourceTree = "<group>";
 		};
 		553EFF2128FD60F100E54FA1 /* Preview Content */ = {
@@ -318,6 +317,7 @@
 		5544090E2935089B00674C81 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				569E71B4293A070F002ABD26 /* Video */,
 				553D3FCD293CFF6E0086A1D2 /* Sound */,
 				554409072935034F00674C81 /* Experience.rcproject */,
 				5509D3B52937654E00E16F6F /* GULUNGAN.usdz */,
@@ -614,14 +614,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ARKite/ARKite.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Yanggo/Yanggo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Yanggo/Preview Content\"";
 				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ARKite/Info.plist;
+				INFOPLIST_FILE = Yanggo/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
@@ -647,14 +647,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ARKite/ARKite.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Yanggo/Yanggo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ARKite/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Yanggo/Preview Content\"";
 				DEVELOPMENT_TEAM = Y26BLZ69B8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ARKite/Info.plist;
+				INFOPLIST_FILE = Yanggo/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
