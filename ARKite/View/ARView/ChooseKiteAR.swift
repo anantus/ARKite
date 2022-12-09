@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ChooseKiteAR: View {
     @Environment(\.presentationMode) var showChooseKite
-    //    @ObservedObject var vm = CollectionViewModel()
     @State private var snappedItem = 0.0
     @State private var draggingItem = 0.0
     @State var pickedKite: String = ""
@@ -112,7 +111,7 @@ struct ChooseKiteAR: View {
                                             
                                         }
                                         .onTapGesture {
-                                            if pickedKite == ""{
+                                            if pickedKite == "" || pickedKite != kite.picture{
                                                 pickedKite = kite.picture
                                             } else {
                                                 pickedKite = ""

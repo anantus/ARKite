@@ -94,12 +94,8 @@ struct StripeKiteView : View {
                                     .onChanged({ value in
                                         if position.height > 0 {
                                             pullPush = "Pull"
-                                            //                                    color = Color.green.opacity(0.2)
-                                            //                                    print("Pull is triggered")
                                         }else if position.height < 0 {
                                             pullPush = "Stretch"
-                                            //                                    color = Color.red.opacity(0.2)
-                                            //                                    print("Stretch is triggered")
                                         }
                                         position = value.translation
                                     })
@@ -175,13 +171,10 @@ struct StripeKiteView : View {
                 GameOver(
                     coinCount: vm.coinGame,
                     lanjutkanAction: {
-                        // TODO: - LOAD ULANG GAME
                         
                     },
                     akhiriAction: {
-                        DispatchQueue.main.async {
-//                            ARView.scene.anchors.removeAll()
-                        }
+                        
                     }
                 ).onAppear {
                     UIImpactFeedbackGenerator(style: .heavy).impactOccurred()

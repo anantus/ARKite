@@ -13,7 +13,7 @@ struct DashboardView: View {
     @EnvironmentObject var coordinator : Coordinator
     
     
-    // TODO: - ANIMATION SETUP
+    //ANIMATION SETUP
     @State private var cloudPos = 1.5
     @State private var reverseCloudAnimation = true
     @State private var kitePos = 0.9
@@ -93,7 +93,6 @@ struct DashboardView: View {
                                                 })
                                             }
                                         }
-                                        print("DEBUG: KITEPOS: \(kitePos)")
                                         
                                         if invalidateTimer {
                                             animationTimer.invalidate()
@@ -102,10 +101,7 @@ struct DashboardView: View {
                             }
                         HStack(spacing: 200){
                             Button {
-                                //                                withAnimation(.linear(duration: 0.3)) {
-                                //                                    showSettingNonARView.toggle()
                                 self.showSettingNonARView.toggle()
-                                //                                }
                             } label: {
                                 SettingButton()
                             }
@@ -172,7 +168,6 @@ struct DashboardView: View {
                                 })
                             }
                         }
-                        print("DEBUG: CLOUDPOS: \(cloudPos)")
                         if invalidateTimer {
                             animationTimer.invalidate()
                         }
@@ -183,7 +178,7 @@ struct DashboardView: View {
             }
         }
         .onAppear{
-//            authenticateUser()
+            authenticateUser()
             GKAccessPoint.shared.location = .bottomLeading
             GKAccessPoint.shared.showHighlights = true
             GKAccessPoint.shared.isActive = true

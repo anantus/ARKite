@@ -16,9 +16,6 @@ struct Yanggo: View {
             DashboardView()
                 .navigationDestination(for: Destination.self) { destination in
                     ViewFactory.destinationToView(destination)
-                        .onAppear{
-                            print(coordinator.path.count)
-                        }
                 }
         }
         .environmentObject(coordinator)

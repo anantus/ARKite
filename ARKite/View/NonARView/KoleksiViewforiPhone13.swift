@@ -48,7 +48,6 @@ struct KoleksiViewforiPhone13: View {
                     // back button and coin indicator
                     HStack (spacing: 200) {
                         Button {
-                            print(UIDevice.current.name)
                             self.showKoleksi.wrappedValue.dismiss()
                         } label: {
                             

@@ -13,7 +13,6 @@ class Coordinator: ObservableObject {
     
     func popToHomePage() {
         path.removeLast(path.count)
-        print(path.count)
     }
     
     func previousPage() {

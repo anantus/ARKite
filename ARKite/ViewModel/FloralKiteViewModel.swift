@@ -65,7 +65,6 @@ class FloralKiteViewModel: ObservableObject {
         //Find kite Angle
         if isForward{
             self.initialKitePosition = kite.position
-            print(self.initialKitePosition)
             isRotate = false
             isForward = false
             
@@ -97,7 +96,6 @@ class FloralKiteViewModel: ObservableObject {
     fileprivate func rotateOn(_ entity: Entity?){
         isRotate = true
         isForward = true
-        print(kite.position)
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
             if self.initialKitePosition.x < self.kite.position.x{
                 self.rotateRecursionClockwise(entity)

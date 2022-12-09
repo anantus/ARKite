@@ -45,7 +45,6 @@ struct KoleksiViewforiPhoneXS: View {
                     
                     HStack (spacing: 200) {
                         Button {
-                            print(UIDevice.current.name)
                             self.showKoleksi.wrappedValue.dismiss()
                         } label: {
                             
