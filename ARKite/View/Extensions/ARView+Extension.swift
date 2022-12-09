@@ -30,7 +30,5 @@ extension ARView: ARCoachingOverlayViewDelegate {
     
     public func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView) {
         coachingOverlayView.activatesAutomatically = false
-        
-        print("DEBUG: Coaching done and entity appear")
     }
 }

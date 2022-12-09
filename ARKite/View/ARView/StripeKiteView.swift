@@ -1,5 +1,5 @@
 //
-//  BajajKiteView.swift
+//  KiteView
 //  ARKite
 //
 //  Created by Maheswara Ananta Argono on 17/10/22.
@@ -28,14 +28,17 @@ struct StripeKiteView : View {
     @State var audioPlayer2: AVAudioPlayer?
     @State var musicPlayer: AVAudioPlayer?
     @State var sound: Sound!
+    @State var onStartAR = false
     
     
     var body: some View {
         ZStack {
-            ARViewContainer(arView: vm.arView, anchor: vm.mainAnchor)
+            if let arView = self.vm.arView{
+                ARViewContainer(arView: arView, anchor: vm.mainAnchor)
+            }
             
             // Buttons UI
-            if vm.kiteIsAppear {
+            if vm.kiteIsAppear && !vm.gameOver {
                 if isStartPlay {
                     VStack {
                         HStack {
@@ -75,7 +78,7 @@ struct StripeKiteView : View {
                                         
                                         TarikUlurButton(firstColor: "FC3E45", secondColor: "BA2424", text: "Tarik", isRotate: false)
                                     }
-                                }
+                                } .padding(.bottom, 50)
                             }
                         }else{
                             VStack{
@@ -91,12 +94,8 @@ struct StripeKiteView : View {
                                     .onChanged({ value in
                                         if position.height > 0 {
                                             pullPush = "Pull"
-                                            //                                    color = Color.green.opacity(0.2)
-                                            //                                    print("Pull is triggered")
                                         }else if position.height < 0 {
                                             pullPush = "Stretch"
-                                            //                                    color = Color.red.opacity(0.2)
-                                            //                                    print("Stretch is triggered")
                                         }
                                         position = value.translation
                                     })
@@ -155,11 +154,11 @@ struct StripeKiteView : View {
             self.vm.sound = self.sound
             self.sound.playMusic()
         }.onDisappear{
-            self.sound.stopMusic()
+            self.vm.gameEnd()
         }
         .modifier(
             Popup(isPresented: showPauseModal, alignment: .center, content: {
-                PauseARView(showPause: $showPauseModal, ARView: $vm.arView)
+                PauseARView(showPause: $showPauseModal, sound: $sound)
             })
         )
         .modifier(
@@ -172,14 +171,10 @@ struct StripeKiteView : View {
                 GameOver(
                     coinCount: vm.coinGame,
                     lanjutkanAction: {
-                        // TODO: - LOAD ULANG GAME
                         
                     },
                     akhiriAction: {
-                        DispatchQueue.main.async {
-//                            ARView.scene.anchors.removeAll()
-                            vm.arView.scene.anchors.removeAll()
-                        }
+                        
                     }
                 ).onAppear {
                     UIImpactFeedbackGenerator(style: .heavy).impactOccurred()

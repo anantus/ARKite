@@ -10,11 +10,13 @@ import AVFAudio
 import SwiftUI
 
 struct Sound{
-//    @State var volumeSFX: Float = 1
     @Binding var avAudioPlayer1: AVAudioPlayer!
     @Binding var avAudioPlayer2: AVAudioPlayer!
     @Binding var musicAudio: AVAudioPlayer!
-    @ObservedObject var CollectVM = CollectionViewModel()
+    
+    var CollectVM =  CollectionViewModel()
+    var audioVolume = 0
+    var musicVolume = 0
     
     
     func getAvAudioPlayer(soundName: String, soundType: String) -> AVAudioPlayer{
@@ -68,5 +70,11 @@ struct Sound{
     
     func stopMusic(){
         musicAudio.stop()
+    }
+    
+    func changeVol(sfxVol: Float, musicVol: Float){
+        CollectVM.volumeSFX = sfxVol
+        CollectVM.volumeMusic = musicVol
+        musicAudio.volume = musicVol
     }
 }

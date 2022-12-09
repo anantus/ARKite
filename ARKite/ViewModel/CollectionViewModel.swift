@@ -9,12 +9,14 @@ import Foundation
 import SwiftUI
 
 class CollectionViewModel: ObservableObject{
+    
+    
     @Published var coins = 0
     @Published var kiteCollection = [
         Kite(name: "RedYellowKite", price: 0, picture: "Kite 2", isBought: true),
         Kite(name: "StripeKite", price: 0, picture: "Kite 1", isBought: true),
-        Kite(name: "BajajKite", price: 0, picture: "Kite 4", isBought: true),
-        Kite(name: "FloralKite", price: 300, picture: "Kite 3", isBought: false),
+        Kite(name: "BajajKite", price: 50, picture: "Kite 4", isBought: false),
+        Kite(name: "FloralKite", price: 100, picture: "Kite 3", isBought: false),
     ]
     
     @Published var volumeSFX: Float = 1.0
@@ -30,6 +32,7 @@ class CollectionViewModel: ObservableObject{
         volumeMusic = keys.defaults.value(forKey: Keys.volumeMusic) as? Float ?? 1.0
         gestures = keys.defaults.bool(forKey: Keys.gestures)
         
+        //Initiate kite collection
         if let data = keys.defaults.value(forKey: Keys.kiteCollection) as? Data {
             kiteCollection = try! PropertyListDecoder().decode([Kite].self, from: data)
         } else{
