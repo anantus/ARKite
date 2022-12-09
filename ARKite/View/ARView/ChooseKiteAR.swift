@@ -174,6 +174,7 @@ struct ChooseKiteAR: View {
                     }
                 }.padding(.bottom, 80)
             }
+            .background(LinearGradient(gradient: Gradient(colors: [Color("BGMainPage1"), Color("BGMainPage2")]), startPoint: .top, endPoint: .bottom))
         }
         .navigationBarBackButtonHidden(true)
     }
