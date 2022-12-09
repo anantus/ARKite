@@ -182,7 +182,7 @@ struct DashboardView: View {
             }
         }
         .onAppear{
-            authenticateUser()
+//            authenticateUser()
             GKAccessPoint.shared.location = .bottomLeading
             GKAccessPoint.shared.showHighlights = true
             GKAccessPoint.shared.isActive = true

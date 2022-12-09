@@ -13,15 +13,10 @@ struct KoleksiViewforiPhone13: View {
         GridItem(.flexible()),
         GridItem(.flexible()),
     ]
-//    let vm = CollectionViewModel()
-//
-//    let kiteCount: [Int]
-//
-//
-//    init(){
-//        kiteCount = Array(1...vm.kiteCollection.count)
-//    }
+    
     @StateObject var vm = CollectionViewModel.shared
+    
+    @State private var showingPopup = false
     
     var body: some View {
         ZStack{
@@ -72,32 +67,8 @@ struct KoleksiViewforiPhone13: View {
                     
                     ForEach(0..<vm.kiteCollection.count, id: \.self) {index in
                         if index % 2 == 1 {
-                            LayanganFrame1(firstColor: vm.kiteCollection[index].isBought ? "FBC300" : "FFFADF",
-                                           secondColor: vm.kiteCollection[index].isBought ? "FEB914" : "E1DAB2",
-                                           thirdColor: vm.kiteCollection[index].isBought ? "FFF7C6" : "FFF9D5",
-                                           bgColor: vm.kiteCollection[index].isBought ? "BB8800" : "857D4C",
-                                           width: 164,
-                                           height: 206,
-                                           picture: vm.kiteCollection[index].picture,
-                                           bought: vm.kiteCollection[index].isBought,
-                                           prices: vm.kiteCollection[index].price
-                            )
-                            .onTapGesture {
-                                if !vm.kiteCollection[index].isBought {
-                                    if vm.coins >= vm.kiteCollection[index].price {
-                                        vm.buyKite(kiteName: vm.kiteCollection[index].name)
-                                    }
-                                    // cek lagi kalau uang cukup atau gak
-                                    
-                                }
-                            }
-                        } else {
-                            LayanganFrame2(firstColor: vm.kiteCollection[index].isBought ? "FBC300" : "FFFADF",
-                                           secondColor: vm.kiteCollection[index].isBought ? "FEB914" : "E1DAB2",
-                                           thirdColor: vm.kiteCollection[index].isBought ? "FFF7C6" : "FFF9D5",
-                                           bgColor: vm.kiteCollection[index].isBought ? "BB8800" : "857D4C",
-                                           width: 164,
-                                           height: 206,
+                            LayanganFrame1(width: 164,
+                                           height: 220,
                                            picture: vm.kiteCollection[index].picture,
                                            bought: $vm.kiteCollection[index].isBought,
                                            prices: vm.kiteCollection[index].price
@@ -106,8 +77,26 @@ struct KoleksiViewforiPhone13: View {
                                 if !vm.kiteCollection[index].isBought {
                                     if vm.coins >= vm.kiteCollection[index].price {
                                         vm.buyKite(kiteName: vm.kiteCollection[index].name)
+                                    } else {
+                                        showingPopup.toggle()
                                     }
-                                    // cek lagi kalau uang cukup atau gak
+                                    
+                                }
+                            }
+                        } else {
+                            LayanganFrame2(width: 164,
+                                           height: 220,
+                                           picture: vm.kiteCollection[index].picture,
+                                           bought: $vm.kiteCollection[index].isBought,
+                                           prices: vm.kiteCollection[index].price
+                            )
+                            .onTapGesture {
+                                if !vm.kiteCollection[index].isBought {
+                                    if vm.coins >= vm.kiteCollection[index].price {
+                                        vm.buyKite(kiteName: vm.kiteCollection[index].name)
+                                    } else {
+                                        showingPopup.toggle()
+                                    }
                                     
                                 }
                             }
@@ -117,6 +106,11 @@ struct KoleksiViewforiPhone13: View {
                 .padding(.top, UIScreen.main.bounds.height * 0.22)
                 .padding(.horizontal)
                 .frame(maxHeight: 300)
+            }
+        }
+        .alert("YangCoin kamu kurang!", isPresented: $showingPopup) {
+            Button("Oke") {
+                showingPopup.toggle()
             }
         }
     }

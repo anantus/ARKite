@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct LayanganFrame2: View {
-    @State var firstColor: String
-    @State var secondColor: String
-    @State var thirdColor: String
-    @State var bgColor: String
     @State var width: CGFloat
     @State var height: CGFloat
     @State var picture: String
@@ -21,19 +17,19 @@ struct LayanganFrame2: View {
     var body: some View {
         ZStack{
             FrameBack2()
-                .fill(Color.init(hex: bgColor))
+                .fill(Color(bought ? "YellowBackgroundModal" : "CollectionBackground"))
                 .frame(width: width, height: height)
                 .cornerRadius(5)
                 .padding(.trailing, (width * 0.09))
                 .padding(.top, (height * 0.15))
             FrameFront2()
-                .fill(.linearGradient(colors: [Color.init(hex: firstColor), Color.init(hex: secondColor)], startPoint: .top, endPoint: .bottom))
+                .fill(.linearGradient(colors: [Color(bought ? "YellowLightModal" : "CollectionLight"), Color(bought ? "YellowDarkModal" : "CollectionDark")], startPoint: .top, endPoint: .bottom))
                 .frame(width: width, height: height)
                 .cornerRadius(5)
             VStack {
                 ZStack {
                     FrameInner2()
-                        .fill(Color.init(hex: thirdColor))
+                        .fill(Color(bought ? "YellowForegroundModal" : "CollectionForeground"))
                         .frame(width: 141, height: 128)
                         .cornerRadius(5)
                         .padding(.top, height * 0.01)
@@ -49,7 +45,7 @@ struct LayanganFrame2: View {
                     Image(systemName: "checkmark.circle.fill")
                         .resizable()
                         .frame(width: 35, height: 35)
-                        .foregroundColor(Color("OldBrown"))
+                        .foregroundColor(Color("YellowBackgroundTitle"))
                 } else {
                     BuyButton(price: prices)
                         .padding(.leading, 10)
@@ -130,6 +126,6 @@ struct FrameInner2: Shape {
 
 struct LayanganFrame2_Previews: PreviewProvider {
     static var previews: some View {
-        LayanganFrame2(firstColor: "FBC300", secondColor: "FEB914", thirdColor: "FFF7C6", bgColor: "BB8800", width: 164, height: 196, picture: "Kite 2", bought: .constant(false), prices: 100)
+        LayanganFrame2(width: 164, height: 196, picture: "Kite 2", bought: .constant(false), prices: 100)
     }
 }

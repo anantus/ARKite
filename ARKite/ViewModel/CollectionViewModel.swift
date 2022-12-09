@@ -34,7 +34,7 @@ class CollectionViewModel: ObservableObject{
         volumeMusic = keys.defaults.value(forKey: Keys.volumeMusic) as? Float ?? 1.0
         gestures = keys.defaults.bool(forKey: Keys.gestures)
         
-        setUserCoin(coinSet: 22)
+        setUserCoin(coinSet: 2)
         
         if let data = keys.defaults.value(forKey: Keys.kiteCollection) as? Data {
             kiteCollection = try! PropertyListDecoder().decode([Kite].self, from: data)
