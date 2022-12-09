@@ -67,6 +67,7 @@ struct DashboardView: View {
                                 let maxPos = 0.9
                                 let minPos = 0.8
                                 
+                                // animation timer
                                     _ = Timer.scheduledTimer(withTimeInterval: animationInterval, repeats: true, block: { animationTimer in
                                         
                                         if reverseKiteAnimation {

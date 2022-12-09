@@ -40,22 +40,25 @@ struct KoleksiViewforiPhone13: View {
                         .frame(width: UIScreen.main.bounds.width * (6.5/5),height: UIScreen.main.bounds.height * (4.25/5))
                         .position(x: UIScreen.main.bounds.width * (4/5),y: UIScreen.main.bounds.height * (-1.8/5))
                         .blur(radius: 5)
+                    
+                    // top navigation
                     NavigationKoleksiFrame()
                         .position(x: UIScreen.main.bounds.width * 0.49,y: UIScreen.main.bounds.height * -0.55)
 
+                    // back button and coin indicator
                     HStack (spacing: 200) {
                         Button {
                             print(UIDevice.current.name)
                             self.showKoleksi.wrappedValue.dismiss()
                         } label: {
-
+                            
                             BackButton()
                         }
                         CoinIndicatorFrame(coinCount: vm.coins)
-                    }
-                    .position(
+                    } .position(
                         x: UIScreen.main.bounds.width * (0.5),
-                        y: UIScreen.main.bounds.height * (-0.39))
+                        y: UIScreen.main.bounds.height * (-0.39)
+                    )
 
 
                 }
@@ -64,7 +67,6 @@ struct KoleksiViewforiPhone13: View {
             
             VStack{
                 LazyVGrid(columns: columns, spacing: 20) {
-                    
                     ForEach(0..<vm.kiteCollection.count, id: \.self) {index in
                         if index % 2 == 1 {
                             LayanganFrame1(width: 164,
@@ -97,7 +99,6 @@ struct KoleksiViewforiPhone13: View {
                                     } else {
                                         showingPopup.toggle()
                                     }
-                                    
                                 }
                             }
                         }
