@@ -119,7 +119,7 @@
 		553D3FD2293CFF6E0086A1D2 /* Aduh.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aduh.m4a; sourceTree = "<group>"; };
 		553D3FD3293CFF6E0086A1D2 /* Yoi.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Yoi.m4a; sourceTree = "<group>"; };
 		553D3FDA293CFF9C0086A1D2 /* Coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Coin.wav; sourceTree = "<group>"; };
-		553EFF1628FD60EF00E54FA1 /* ARKite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		553EFF1628FD60EF00E54FA1 /* Yanggo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yanggo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553EFF1928FD60EF00E54FA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		553EFF1B28FD60EF00E54FA1 /* RedYellowKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedYellowKiteView.swift; sourceTree = "<group>"; };
 		553EFF1F28FD60F100E54FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -245,7 +245,7 @@
 		553EFF1728FD60EF00E54FA1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				553EFF1628FD60EF00E54FA1 /* ARKite.app */,
+				553EFF1628FD60EF00E54FA1 /* Yanggo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -349,9 +349,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		553EFF1528FD60EF00E54FA1 /* ARKite */ = {
+		553EFF1528FD60EF00E54FA1 /* Yanggo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 553EFF2628FD60F100E54FA1 /* Build configuration list for PBXNativeTarget "ARKite" */;
+			buildConfigurationList = 553EFF2628FD60F100E54FA1 /* Build configuration list for PBXNativeTarget "Yanggo" */;
 			buildPhases = (
 				553EFF1228FD60EF00E54FA1 /* Sources */,
 				553EFF1328FD60EF00E54FA1 /* Frameworks */,
@@ -361,12 +361,12 @@
 			);
 			dependencies = (
 			);
-			name = ARKite;
+			name = Yanggo;
 			packageProductDependencies = (
 				565AED5C293DDDAB002E9F66 /* Sliders */,
 			);
 			productName = ARKite;
-			productReference = 553EFF1628FD60EF00E54FA1 /* ARKite.app */;
+			productReference = 553EFF1628FD60EF00E54FA1 /* Yanggo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -384,7 +384,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 553EFF1128FD60EF00E54FA1 /* Build configuration list for PBXProject "ARKite" */;
+			buildConfigurationList = 553EFF1128FD60EF00E54FA1 /* Build configuration list for PBXProject "Yanggo" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -400,7 +400,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				553EFF1528FD60EF00E54FA1 /* ARKite */,
+				553EFF1528FD60EF00E54FA1 /* Yanggo */,
 			);
 		};
 /* End PBXProject section */
@@ -678,7 +678,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		553EFF1128FD60EF00E54FA1 /* Build configuration list for PBXProject "ARKite" */ = {
+		553EFF1128FD60EF00E54FA1 /* Build configuration list for PBXProject "Yanggo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				553EFF2428FD60F100E54FA1 /* Debug */,
@@ -687,7 +687,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		553EFF2628FD60F100E54FA1 /* Build configuration list for PBXNativeTarget "ARKite" */ = {
+		553EFF2628FD60F100E54FA1 /* Build configuration list for PBXNativeTarget "Yanggo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				553EFF2728FD60F100E54FA1 /* Debug */,

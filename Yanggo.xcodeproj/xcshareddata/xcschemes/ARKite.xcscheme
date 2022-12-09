@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "553EFF1528FD60EF00E54FA1"
-               BuildableName = "ARKite.app"
-               BlueprintName = "ARKite"
-               ReferencedContainer = "container:ARKite.xcodeproj">
+               BuildableName = "Yanggo.app"
+               BlueprintName = "Yanggo"
+               ReferencedContainer = "container:Yanggo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "553EFF1528FD60EF00E54FA1"
-            BuildableName = "ARKite.app"
-            BlueprintName = "ARKite"
-            ReferencedContainer = "container:ARKite.xcodeproj">
+            BuildableName = "Yanggo.app"
+            BlueprintName = "Yanggo"
+            ReferencedContainer = "container:Yanggo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "553EFF1528FD60EF00E54FA1"
-            BuildableName = "ARKite.app"
-            BlueprintName = "ARKite"
-            ReferencedContainer = "container:ARKite.xcodeproj">
+            BuildableName = "Yanggo.app"
+            BlueprintName = "Yanggo"
+            ReferencedContainer = "container:Yanggo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
