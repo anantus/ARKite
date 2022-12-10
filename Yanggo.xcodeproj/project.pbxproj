@@ -55,12 +55,12 @@
 		554409122935372000674C81 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409112935372000674C81 /* CollectionViewModel.swift */; };
 		554409142935373C00674C81 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554409132935373C00674C81 /* SettingsViewModel.swift */; };
 		5544091829360B0A00674C81 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544091729360B0A00674C81 /* DefaultKeys.swift */; };
+		55BE4D2129442E0100F76E72 /* KiteSong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 55BE4D2029442E0100F76E72 /* KiteSong.wav */; };
 		55D8B0202940A4DA00488793 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8B01F2940A4DA00488793 /* Coordinator.swift */; };
 		55D8B0222940A4EB00488793 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8B0212940A4EB00488793 /* Destination.swift */; };
 		55D8B0262940A7D900488793 /* Yanggo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8B0252940A7D900488793 /* Yanggo.swift */; };
 		55D8B0282940AC4D00488793 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8B0272940AC4D00488793 /* ViewFactory.swift */; };
 		55D8B0482940CCF100488793 /* LoadKiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8B0472940CCF100488793 /* LoadKiteView.swift */; };
-		55F31947293D7D6700F1CC06 /* KiteSong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 55F31946293D7D6700F1CC06 /* KiteSong.wav */; };
 		562030EE2935EACA0048BB69 /* ARView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562030ED2935EACA0048BB69 /* ARView+Extension.swift */; };
 		562030F02936116D0048BB69 /* TarikUlurButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562030EF2936116D0048BB69 /* TarikUlurButton.swift */; };
 		56481D2F2938BBE0004066E1 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56481D2E2938BBE0004066E1 /* PrimaryButton.swift */; };
@@ -132,12 +132,12 @@
 		554409132935373C00674C81 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		5544091729360B0A00674C81 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		55BE4D1D2942309A00F76E72 /* Yanggo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Yanggo.entitlements; sourceTree = "<group>"; };
+		55BE4D2029442E0100F76E72 /* KiteSong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = KiteSong.wav; sourceTree = "<group>"; };
 		55D8B01F2940A4DA00488793 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		55D8B0212940A4EB00488793 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		55D8B0252940A7D900488793 /* Yanggo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yanggo.swift; sourceTree = "<group>"; };
 		55D8B0272940AC4D00488793 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		55D8B0472940CCF100488793 /* LoadKiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadKiteView.swift; sourceTree = "<group>"; };
-		55F31946293D7D6700F1CC06 /* KiteSong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = KiteSong.wav; sourceTree = "<group>"; };
 		562030ED2935EACA0048BB69 /* ARView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView+Extension.swift"; sourceTree = "<group>"; };
 		562030EF2936116D0048BB69 /* TarikUlurButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarikUlurButton.swift; sourceTree = "<group>"; };
 		56481D2E2938BBE0004066E1 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 		553D3FCD293CFF6E0086A1D2 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				55F31946293D7D6700F1CC06 /* KiteSong.wav */,
+				55BE4D2029442E0100F76E72 /* KiteSong.wav */,
 				553D3FCE293CFF6E0086A1D2 /* Obstacle.mp3 */,
 				553D3FDA293CFF9C0086A1D2 /* Coin.wav */,
 				553D3FD0293CFF6E0086A1D2 /* Gg.m4a */,
@@ -411,9 +411,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				553D3FD9293CFF6E0086A1D2 /* Yoi.m4a in Resources */,
-				55F31947293D7D6700F1CC06 /* KiteSong.wav in Resources */,
 				553D3FD6293CFF6E0086A1D2 /* Gg.m4a in Resources */,
 				553D3FD4293CFF6E0086A1D2 /* Obstacle.mp3 in Resources */,
+				55BE4D2129442E0100F76E72 /* KiteSong.wav in Resources */,
 				553D3FD5293CFF6E0086A1D2 /* Yah.m4a in Resources */,
 				569E71B2293A0707002ABD26 /* Instruction2NEW.mp4 in Resources */,
 				553D3FD7293CFF6E0086A1D2 /* Asik.m4a in Resources */,
