@@ -29,6 +29,7 @@ struct StripeKiteView : View {
     @State var musicPlayer: AVAudioPlayer?
     @State var sound: Sound!
     @State var onStartAR = false
+    @EnvironmentObject var collectVM : CollectionViewModel
     
     
     var body: some View {
@@ -155,6 +156,7 @@ struct StripeKiteView : View {
             self.sound.playMusic()
         }.onDisappear{
             self.vm.gameEnd()
+            self.collectVM.coins = self.vm.collectionVM.coins
         }
         .modifier(
             Popup(isPresented: showPauseModal, alignment: .center, content: {
