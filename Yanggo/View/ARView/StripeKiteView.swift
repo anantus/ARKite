@@ -150,6 +150,7 @@ struct StripeKiteView : View {
                 }
             }
         }
+        .edgesIgnoringSafeArea(.all)
         .onAppear {
             self.sound = Sound(avAudioPlayer1: $audioPlayer, avAudioPlayer2: $audioPlayer2, musicAudio: $musicPlayer)
             self.vm.sound = self.sound

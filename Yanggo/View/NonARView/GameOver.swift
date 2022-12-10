@@ -62,16 +62,6 @@ struct GameOver: View {
                 
                 // button lanjut dan akhiri
                 VStack {
-//                    Button(action: {
-//                        coordinator.playAgain()}) {
-//                        MainMenuButton(firstColor: "0099BB",
-//                                       secondColor: "00608B",
-//                                       bgColor: "00496B",
-//                                       width: 248,
-//                                       height: 65,
-//                                       text: "LANJUTKAN")
-//                    }
-                    
                     Button(action: {
                         coordinator.popToHomePage()}) {
                         SecondaryButton(firstColor: "FC3E45",
