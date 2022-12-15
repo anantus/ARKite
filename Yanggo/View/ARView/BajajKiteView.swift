@@ -29,6 +29,7 @@ struct BajajKiteView : View {
     @State var musicPlayer: AVAudioPlayer?
     @State var sound: Sound!
     @State var onStartAR = false
+    
     @EnvironmentObject var collectVM : CollectionViewModel
     
     
